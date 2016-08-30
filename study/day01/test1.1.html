@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{margin: 0;padding: 0;}
+		.clear:after{content: '';height: 0px;display: block;clear: both;overflow: none}
+		.clear{--ms-zoom: 1}
+		li{width: 100px;height: 40px;list-style: none;border: 1px solid black;background: #ccf;color: blue;}
+		div{width: 100px;height: 0px;border: 1px solid black;transition: all 0.5s;overflow: hidden;}
+		ul{float: left;}
+	</style>
+</head>
+<body class="clear">
+	<ul>
+		<li>1</li>
+		<div>第一块</div>
+	</ul>
+	<ul>
+		<li>2</li>
+		<div>第二块</div>
+	</ul>
+	<ul>
+		<li>3</li>
+		<div>第三块</div>
+	</ul>
+	<script src='../lib/common.js'></script>
+	<script>
+		$('ul li').hover(function(e){
+			$(e.currentTarget).css({'color':'red','background':'pink'});
+			$(e.currentTarget).siblings().css({'height':'100px'});
+		},function(e){
+			$(e.currentTarget).siblings().css({'height':'0px'});
+			$(e.currentTarget).css({'color':'blue','background':'#ccf'});
+		})
+	</script>
+
+</body>
+</html>

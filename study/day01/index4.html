@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		.active{color: red;}
+	</style>
+</head>
+<body>
+    <div id="div-box">
+    	<div id="box1">id为div-box的节点1</div>
+		<div id="box2">id为div-box的节点2</div>
+		<div id="box3">id为div-box的节点3</div>
+    </div>
+
+	<script src="../lib/common.js"></script>
+	<script>
+		$(function(){
+			//给获取到的节点对象增加class
+			//$('节点对象').addClass('active')
+
+			//$('#div-box').addClass('active');//添加class
+			//$('#div-box').removeClass('active');//删除class
+			//$('#div-box').toggleClass('active');//节点如果已经有active了就删除,如果没有就加上active
+
+			$('#div-box').hide();//隐藏节点
+			$('#div-box').show();//显示节点
+
+			//$('#div-box').toggle();//对于现在的隐藏或显示取反
+			//$('#div-box').toggle(false);//隐藏
+			//$('#div-box').toggle(ture);//显示
+
+			$('#div-box div');//获取#div-box下的所有div
+			$('#div-box div').first();//获取#div-box下的第一个div
+			$('#div-box div:eq(0)');//获取#div-box下的第一个div
+			$('#div-box').last();//获取#div-box下的最后一个元素
+
+			//获取同级别的其他节点对象
+			//$('节点').siblings();
+			$('#div-box div').first().addClass('firstClass').siblings();//对#div-box下的第一个div添加firstClass,兄弟也添加
+			//????
+
+			//$('#div-box div').last().addClass('active');
+
+
+
+
+
+		});
+	</script>
+</body>
+</html>

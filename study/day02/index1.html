@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+
+    <p class="myp" data-type='abcd' style="line-height: 30px">----------------标尺位置--------------</p>
+	<script src="../lib/common.js"></script>
+	<script>
+		$(function(){
+			//创建标签
+			//jquery   $('<li></li>')   $('</li>') 推荐使用第一种
+			//append() 在元素内部的最后增加节点
+			$('body').append('<li>动态添加第一个</li>')
+			//appendTo() 和append()相似,对象互换
+			$('<li>动态添加第二个</li>').appendTo($('body'));
+			//prepend() 在最前面增加节点
+			$('body').prepend('<li>动态添加第三个</li>');
+			//prependTo() 于perpend相似,对象互换
+			$('<li>动态添加第四个</li>').prependTo($('body'));
+
+			//after在元素后面增加节点
+			$('p.myp').after('<p>放置在p标签后面的第二个p标签</p>');
+			$('p.myp').before('<p>放置在p标签前面的第三个p标签</p>');
+
+			//删除节点 remove()
+			//         removeClass()去掉节点对象的class
+			//         removeAttr() 去掉节点对象的属性 
+			// Attr 包括在标签上的所有'='赋值的属性,比如自定义的<li data-type='naodn'></li>  data-type就是属性
+
+			//attr()获取当前元素的属性值
+			$('p.myp').attr('data-type');
+			//.css 修改样式style
+			//attr() 赋值当前节点的属性值
+			$('p.myp').attr('data-type','test2');
+
+			//insertAfter()把元素放置在节点的后面
+			//与after相似 操作对象互换
+			$('<li>insertAfter</li>').insertAfter($('p.myp'));
+			//insertBefore()把元素放在节点的前面
+			$('<li>insertBefore</li>').insertBefore($('p.myp'));
+
+
+		});
+	</script>
+</body>
+</html>

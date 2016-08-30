@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+<div id="div_box">div节点id</div>
+<div class="div_box">div节点class</div>
+<div>div节点 标签</div>
+<div data-type ="custom">自定义查询</div>
+
+	<script src="../lib/common.js" type="text/javascript" charset="utf-8"></script>
+
+	<script>
+	//简化 $(document).ready(funtion(){})
+		$(function(){
+			//1以id方式获取节点
+			var $_divid = $('#div_box');//f返回节点集合
+			var divid = document.getElementById('div_box');//返回节点,不是对象
+			//两者相互转换
+			$(divid);//js转成jq
+			$_divid[0];//jq转成js
+
+			//2以class名字获取对象
+			var $class = $('.div_box');
+			$class[0]//转成原生节点
+			$($class[0]);//转成jq
+
+			//3以标签名获取
+			var tag = $('div');
+			//4自定义查询
+			$('[data-type="custom"]');
+
+
+
+
+		})
+	</script>
+</body>
+</html>
