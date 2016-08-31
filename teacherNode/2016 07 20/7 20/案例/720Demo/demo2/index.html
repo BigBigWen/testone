@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		*{margin: 0px;padding: 0px;}
+		/* 当一个容器，它包含的元素都是浮动元素时，会造成容器的高度塌陷为0的情况*/
+
+		/* clear ：清除浮动 */
+
+		.box{ width: 880px;margin: 0px auto;
+			background: url(images/bg.gif) no-repeat;
+		 }
+
+		 span{ float: left;width: 70px;height: 400px;}
+		 span:hover{ width: 600px; }
+
+		 .span1{ background: url(images/child1.jpg) no-repeat; }
+		 .span2{ background: url(images/child2.jpg) no-repeat; }
+		 .span3{ background: url(images/child3.jpg) no-repeat; }
+		 .span4{ background: url(images/child4.jpg) no-repeat; }
+		 .span5{ background: url(images/child5.jpg) no-repeat; }
+
+		 .content{ width: 1000px;height: 300px;background-color: red;margin: 0px auto; }
+
+         /* 清除浮动方式3 */
+         /*:after 在容器的最后插入一个元素
+         hack 技术
+         */
+		 .clearfix:after{
+            content: "";
+            display: block;
+            clear: both;
+            height: 0px;
+            overflow: hidden;
+		 }
+         /* 让ie浏览器 强制布局，包含的浮动元素 */
+		 .clearfix{ -ms-zoom: 1; }
+
+	</style>
+</head>
+<body>
+<!--清除浮动方式2： overflow:hidden; 
+     overflow：hidden；强制容器包含他的子元素
+     高度得到修正
+     style="overflow: hidden;"
+ -->
+	<div class="box  clearfix" >
+        <!-- span.span$*5 ctrl + e-->
+
+		<span class="span1"></span>
+		<span class="span2"></span>
+		<span class="span3"></span>
+		<span class="span4"></span>
+		<span class="span5"></span>
+
+		<!-- 清除浮动方式1：在容器的底部增加一个元素，属性设置为 clear:both  -->
+		<!--  <div style="clear:both">
+		 	
+		 </div> -->
+	</div>
+
+	<div class="content"></div>
+</body>
+</html>

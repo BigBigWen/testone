@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		.box{
+			/*
+			   h-shadow:  阴影 在 x 轴方向的偏移，可以为负值;
+			   v-shadow:  阴影在 y 轴方向的偏移，可以为负值;
+			   blur：    模糊半径，阴影的模糊程度，值越大，越模糊
+			   spread：  阴影的向外的扩展
+			   color:    阴影的颜色;
+			   inset：   内阴影
+			*/
+			/*box-shadow: h-shadow v-shadow blur spread color inset;*/
+			width: 100px;height: 100px;background-color: black;
+			margin-bottom: 50px;
+		}
+		.box1{box-shadow: 10px 10px 5px red;}
+
+        /* spread : 阴影的向外扩展*/
+		.box2{box-shadow: 10px 10px 0px 10px red;}
+
+         /* 模糊半径 */
+		.box3{ box-shadow: 0px 0px 100px 0px red; }
+	</style>
+</head>
+<body>
+	<div class="box box1"></div>
+	<div class="box box2"></div>
+	<div class="box box3"></div>
+</body>
+</html>

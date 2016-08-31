@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+
+    <button type="button">自动生成5条新闻</button>
+    <ul id="ulId">
+    	
+    </ul>
+
+	<script>
+	    // var array = [];
+	    //当生成数组时，8指定数组容量，保留8个
+		var array = new Array();
+		array.push('移动互联网终端就是通过无线技术上网接入互联网的终端设备');
+		array.push('它的主要功能就是移动上网，因此对于各种网络的支持就十分重要');
+		array.push('Wifi自不用说，各种标准的3G网络支持也渐渐成为了标配。');
+		array.push('移动互联网终端设备配置足够用，性价比最高是移便携式动互联网终端的最大优点');
+		array.push('MID，即Mobile Internet Device，移动互联网设备');
+	    array.push('MID的重量少于300克，英特尔甚至称，MID可放入钱包中携带');
+	    array.push('自MID概念提出以后，一直被业内看作是一款革命性的创新产品');
+	    array.push('上网本的市场定位为：一是需要第二台甚至第三台笔记本电脑的商务人士');
+
+        //返回的是数组
+	    var buttonElement = document.getElementsByTagName('button')[0];
+
+	    var ulElement = document.getElementById('ulId');
+	    //onclick 指向的是一个方法，
+	    buttonElement.onclick = function(){
+	    	//生成变量，保存所有的新闻列表
+	    	var newsList = '';
+	    	for( var i = 0 ;i < 5; i++ ){
+	    		//获取 0 ~７的随机数
+	    		var index = Math.floor(Math.random()*8);
+
+	    		//生成的随机数 = Math.floor(Math.random()*总数 + 第一个可能的数)
+                if( newsList.indexOf( array[index]) != -1){
+                	//去除重复
+                  i--;
+                  continue;
+                }
+	    		//通过下标获取新闻
+	    		var news = '<li>' + array[index] + '</li>';
+
+	    		newsList += news;
+	    	}
+
+	    	ulElement.innerHTML = newsList;
+	    }
+
+	</script>
+</body>
+</html>

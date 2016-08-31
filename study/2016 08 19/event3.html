@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+<div id="position"></div>
+	<script>
+	//ommousemove是鼠标移动事件
+	var divElement1 = document.getElementById('position');
+		document.onmousemove = function(ev){
+			ev = ev || event;
+			//ev.client  获取当前鼠标坐标
+			divElement1.innerHTML = 'x坐标'+ev.clientX+'Y坐标'+ev.clientY;
+		}
+	</script>
+</body>
+</html>

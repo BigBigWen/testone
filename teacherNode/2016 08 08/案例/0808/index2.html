@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		#myTestDiv{width: 100px;height: 100px;border: 1px solid black;display: none;}
+	</style>
+</head>
+<body>
+	<button id="button1" type="button">显示</button>
+	<button id="button2" type="button">变宽</button>
+	<button id="button3" type="button">变高</button>
+	<button id="button4" type="button">修改背景色</button>
+
+	<div id="myTestDiv"></div>
+
+	<script>
+		var button1Element = document.getElementById("button1");
+		// 把匿名函数赋值给onclick，那么onclick 也代表函数的入口地址
+        button1Element.onclick = function(){
+            var myTestDivElement = document.getElementById("myTestDiv");
+            myTestDivElement.style.display = 'block';
+        }
+
+        var button2Element = document.getElementById('button2');
+        // button2Element.onclick 该方法是button2按钮点击时，系统自动帮我们调用
+        button2Element.onclick = function(){
+        	var myTestDivElement = document.getElementById('myTestDiv');
+        	myTestDivElement.style.width = '200px';
+        }
+
+	</script>
+</body>
+</html>

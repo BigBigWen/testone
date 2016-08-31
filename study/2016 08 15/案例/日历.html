@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>简易日历</title>
+	<link rel="stylesheet" href="">
+	<style>
+	*{margin: 0px;padding: 0px;}
+	body{background-color: #ccc;font-family: arial;}
+	.container{width: 250px;margin: 100px auto; background-color: #fcc;padding-bottom: 10px;}	
+	.flexbox{display: flex;flex-direction: row;flex-wrap: wrap;width: 100%;justify-content: space-around;}
+	.month{width: 60px;height: 60px;margin: 10px;background-color: #faa;text-align: center;padding-top: 10px;box-sizing: border-box;}
+	.actionInfo{margin:10px;border: 1px solid #fff;}
+
+	.active{background-color: #ffc;color:red;}
+	</style>
+	
+</head>
+<body>
+	<div class="container">
+	<!-- 月份 -->
+		<div class="flexbox">
+			<div class="month active">
+				<h2>1</h2>
+				<p>JNA</p>
+			</div>
+			<div class="month">
+				<h2>2</h2>
+				<p>FEB</p>
+			</div>
+			<div class="month">
+				<h2>3</h2>
+				<p>JNA</p>
+			</div>
+			<div class="month">
+				<h2>4</h2>
+				<p>JNA</p>
+			</div>
+			<div class="month">
+				<h2>5</h2>
+				<p>JNA</p>
+			</div>
+			<div class="month">
+				<h2>6</h2>
+				<p>JUN</p>
+			</div>
+			<div class="month">
+				<h2>7</h2>
+				<p>JUL</p>
+			</div>
+			<div class="month">
+				<h2>8</h2>
+				<p>AUG</p>
+			</div>
+			<div class="month">
+				<h2>9</h2>
+				<p>SEP</p>
+			</div>
+			<div class="month">
+				<h2>10</h2>
+				<p>OCT</p>
+			</div>
+			<div class="month">
+				<h2>11</h2>
+				<p>NOV</p>
+			</div>
+			<div class="month">
+				<h2>12</h2>
+				<p>DEC</p>
+			</div>
+		</div>
+		<!-- 活动详情 -->
+		<div class="actionInfo">
+			<h2 id="actionTitle">1 月活动</h2>
+			<p id="actionMessage">快过年了,大家去哪里玩</p>
+		</div>
+	</div>
+
+	<script>
+		window.onload = function(){
+			var messageArr = ['1月份活动:哈哈哈','2月份活动:嘻嘻嘻','3月份活动:嘿嘿嘿','4月份活动:哼哼哼','5月份活动:啦啦啦','6月份活动:哗哗哗','7月份活动:呼呼呼','8月份活动:坑坑坑','10月份活动:嗯嗯嗯','11月份活动:呼呼呼','12月份活动:哈哈哈']
+			//通过class来选择元素,返回类似数组的对象,把class属性中包含month的提取出来
+			var monthList = document.getElementsByClassName('month');
+			for( var i = 0 ; i < monthList.length ; i++){
+
+				//给每一个月份的对象添加属性,次序
+				monthList[i].older = i;
+
+				monthList[i].onclick = function(){//自己的高亮,其他的默认
+                //遍历月的对象等于自己的高亮
+                for( var j = 0 ;j < monthList.length;j++){
+                	if( j == this.older){
+                		//高亮
+                		//className 重写所有class的值
+                		this.className = 'month active';
+                	}else{
+                		//默认
+                		monthList[j].className = 'month';
+                	}
+                }
+                //2 展示信息
+                var older = this.older;
+                var message = messageArr[older];
+
+                var actionTitle = document.getElementById('actionTitle');
+                actionTitle.innerHTML = (older+1)+'月活动';
+                var actionMessage = document.getElementById('actionMessage');
+                actionMessage.innerHTML = message;
+				}
+			}
+		}
+	</script>
+</body>
+</html>

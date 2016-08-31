@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<input type="button" name="" value="按钮1">
+	<input type="button" name="" value="按钮2">
+	<script>
+		var inputs =document.getElementsByTagName('input');
+		inputs[0].ondblclick = function(){
+			console.log('您双击了');
+		}
+		inputs[1].onmousedown = function(){
+			console.log('按下');
+		}
+		inputs[1].onmouseup = function(){
+			console.log('松开');
+		}
+	</script>
+</body>
+</html>

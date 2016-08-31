@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+	    //指定一个函数，延迟执行
+		// setTimeout()
+
+		//指定一个函数，每间隔一段时间，调用指定的函数
+		// setInterval()
+
+        //返回定时器对象
+		// var timer = setTimeout(函数入口,超时时间);
+		function  printHelloWorld() {
+			   console.log('Hello world');
+		}
+        
+        //
+		var timerId = setTimeout(printHelloWorld,5000);
+
+		//可以通过clearTimeout,取消一个定时器
+		clearTimeout(timerId);
+
+        //setInterval,每隔一秒调用函数，参数以及返回值和setTimeout一致，直到定时器取消
+        var timer2Id = setInterval(function(){
+        	console.log("my timer");
+        },1000);
+
+        clearInterval(timer2Id);
+
+	</script>
+</body>
+</html>

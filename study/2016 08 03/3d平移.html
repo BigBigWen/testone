@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>3d平移</title>
+	<link rel="stylesheet" href="">
+	<style>
+	*{margin: 0;padding: 0}
+	div{width: 200px;height: 200px;border: 1px solid black;margin: 10px auto;position: relative;transform-style:preserve-3d;perspective: 200px;}
+	/*perspective景深 模拟现实世界远大近小 默认值是none
+	眼睛离屏幕的距离*/
+	/*transform-style:preserve-3d;保留子元素3d特性*/
+	div img{width: 100px;height: 100px; position: absolute;left: 50%;top: 50%;margin-left: -50px;margin-top: -50px;
+	   	transition: all 2s;}
+	   	/*x y方向上和2d没啥区别*/
+	 .box1 img:hover{
+	 	transform: translateX(100px);
+	 }
+	  .box2 img:hover{
+	 	transform: translateY(100px);
+	 }
+	  .box3 img:hover{
+	 	transform: translateZ(100px);
+	 }
+		
+	</style>
+	
+</head>
+<body>
+	<div class="box1">
+		<img src="images/8.jpg" alt="">
+	</div>
+	<div class="box2">
+		<img src="images/8.jpg" alt="">
+	</div>
+	<div class="box3">
+		<img src="images/8.jpg" alt="">
+	</div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		*{ margin: 0;padding: 0; }
+		.container{ width: 610px;margin: 0 auto; }
+		.top>a{ display: inline-block;width: 80px;height: 30px;line-height: 30px;text-align: center; }
+		.top>a:nth-child(1){ background: url(images/tabTitleBg2.png) no-repeat bottom center; }
+		textarea{ width: 610px;height: 150px; }
+		#distributeButton{ width: 80px;height: 40px;margin: 10px 0px; }
+
+		.distribute{ width: 610px;height: 80px;background-color: lightgray; padding-top: 5px; margin-bottom: 10px; overflow: hidden;}
+		.distribute>img{ float: left; }
+		.distribute>a{ float:right; }
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="top">
+			<a href="#">说句话</a>
+			<a href="#">发照片</a>
+		</div>
+
+		<textarea name=""></textarea>
+
+		<button id="distributeButton" type="button">发布</button>
+
+		<div id = "content">
+			<div>
+				<img src="images/img.png" alt="">
+			</div>
+		</div>
+	</div>
+
+
+
+	<script>
+		window.onload = function(){
+			var buttonElement = document.getElementById('distributeButton');
+			buttonElement.onclick = function(){
+				var textAreaElement = document.getElementsByTagName('textarea')[0];
+				var distributeContent = textAreaElement.value;
+				if( distributeContent.trim().length == 0 ){
+					alert('请输入评论的内容后再发布');
+					return;
+				}
+
+				//1:先获取容器
+				var contentElement = document.getElementById('content');
+				//2:构建内容（节点）
+				var distributeNode = document.createElement('div');
+				distributeNode.className = 'distribute';
+
+	            var imageNode = document.createElement('img');
+	            imageNode.src="images/img2.png";
+
+	            var deleteNode = document.createElement('a');
+	            deleteNode.appendChild(document.createTextNode('删除'));
+                //对生成的删除节点安插onclick事件
+	            deleteNode.onclick = function(){
+                   this.parentNode.parentNode.removeChild(this.parentNode);
+	            }
+
+	            var spanNode = document.createElement('span');
+	            spanNode.innerHTML = distributeContent.trim();	
+
+	            //把节点联合起来
+	            distributeNode.appendChild(imageNode);
+	            distributeNode.appendChild(deleteNode);
+	            distributeNode.appendChild(spanNode);
+
+	            distributeNode.style.height = '0px';
+
+                //把父节点加到内容节点上
+           		contentElement.insertBefore(distributeNode,contentElement.firstElementChild);
+
+                //生成定时器，把高度增加到80px，到80px后停掉定时器
+           		doStrechHeight(distributeNode,'80px');
+			}
+
+			function doStrechHeight(ele,totalHeight){
+                ele.timer = setInterval(function(){
+                	ele.style.height = (parseInt(ele.style.height) + 10 ) + 'px';
+                	if( parseInt(ele.style.height) >= parseInt(totalHeight) ){
+                		clearInterval(ele.timer);
+                	}
+                },10);
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+	//指定一个函数,延迟执行
+		//settTimeout()
+		//setInterval()    指定一个函数,每间隔一段时间,调用指定函数
+		//var timer = setTimeout(函数入口,超时时间); 返回定时器对象
+		function prinHelloWord(){
+			console.log('hello word')
+		}
+		var timer = setTimeout(prinHelloWord,500);
+		clearTimeout(timer) //取消定时器
+
+
+         //每隔一秒调用函数,直到定时器取消
+		var timer2 =  setInterval(function(){
+			console.log('my timer');
+		},500)
+		clearInterval(timer2);
+	</script>
+</body>
+</html>

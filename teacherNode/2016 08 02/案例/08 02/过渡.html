@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<!--
+	   css3 提供2  transition 过渡动画
+	   keyframe: 关键帧动画 
+	 -->
+	 <style>
+	 	*{margin: 0px;padding: 0px;}
+	 	.box{ width: 200px;height: 100px;background-color: black;margin: 10px auto; 
+           
+            transition:background-color 1s linear; 
+            transition-timing-function:e;
+            
+	 	}
+	 	.box:hover{background-color: red;}
+	 	/* transition 是简写形式
+          
+          transition-property: 属性名称;  对那个属性做动画
+                               all;       针对所有变化的属性做动画
+
+          transition-duration: 过渡动画的持续时间 单位描述  5s = 5秒;
+                               必须写，默认为0
+
+          transition-delay:过渡动画延长多久后 开始  单位是 s 秒;
+
+          transition-timing-function: 控制动画期间时间的分配
+                linear: 动画是匀速进行;
+                ease：开始慢，然后加速，最后慢下来
+                ease-in:开始慢 ，以后原来越快;
+                ease-out:开始快，逐渐减速;
+                ease-in-out:开始和结束时慢，中间块;
+
+                默认值 ease
+          ;
+	 	*/
+         .box1{
+         	width: 100px;height: 100px;background-color: black;margin: 10px auto;
+         	transition-property:border-radius ;
+         	transition-duration: 1s;
+         }
+         .box1:hover{
+         	border-radius: 50px;
+         }
+
+         /* 对多个属性同时进行动画 */
+         .box2{
+         	width: 100px;height: 100px;background-color: black;margin: 10px auto;
+            
+            /* transition-property :后面跟多个属性*/
+         	/*transition-property: border-radius background-color;*/
+         	transition-property: all;
+         	transition-duration: 1s;
+         }
+
+         .box2:hover{ 
+         	border-radius: 50px;
+         	background-color: red;
+          }
+
+          .box3{
+          	width: 100px;height: 100px;background-color: black;margin: 10px auto;
+
+          	transition-property: all;
+          	transition-duration: 5s;
+          	/* 延迟5s 后开始执行动画 */
+          	transition-delay: 5s;
+          }
+
+          .box3:hover{
+          	border-radius: 50px;
+          }
+
+         
+          .box4{
+          	width: 100px;height: 100px;background-color: black;margin: 10px auto;
+          	transition-property:transform;
+          	transition-duration: 5s;
+          	transition-timing-function: linear;
+          }
+
+         .box4:hover{
+         	transform:translateX(200px);
+         }
+
+         .container{
+         	position: relative;
+         	width: 600px;height: 100px;
+         	border:1px solid black;
+         	margin: 0px auto;
+         }
+
+         .box5,.box6,.box7,.box8{ position: absolute;top: 0px;left: 0px;width: 100px;height: 100px;}
+         .box5{
+         	background-color: red;
+         	transition-property: transform;
+         	transition-duration: 5s;
+         	transition-timing-function: linear;
+         }
+
+         .box6{
+         	background-color: green;
+         	transition-property: transform;
+         	transition-duration: 5s;
+         	transition-timing-function: ease-in;
+         }
+
+         .box7{
+         	background-color: yellow;
+         	transition-property: transform;
+         	transition-duration: 5s;
+         	transition-timing-function: ease-out;
+         }
+
+         .box8{
+         	background-color: blue;
+         	transition-property: transform;
+         	transition-duration: 5s;
+         	transition-timing-function: ease-in-out;
+         }
+
+         .box5:hover,.box6:hover,.box7:hover,.box8:hover{
+         	transform: translateX(500px);
+         }
+
+
+        .box9{
+        	width: 100px;height: 100px;background-color: black;margin: 10px auto;
+        	/* 简写形式 */
+        	transition: all 1s ease-in-out;
+        }
+        .box9:hover{
+        	background-color: red;
+        }
+
+
+	 </style>
+
+</head>
+<body>
+	 <div class="box"></div>
+	 <div class="box1"></div>
+	 <div class="box2"></div>
+	 <div class="box3"></div>
+	 <div class="box4"></div>
+
+	 <div class="container">
+	 	<div class="box5"></div>
+	 	<div class="box6"></div>
+	 	<div class="box7"></div>
+	 	<div class="box8"></div>
+	 </div>
+	 <div class="box9"></div>
+</body>
+</html>

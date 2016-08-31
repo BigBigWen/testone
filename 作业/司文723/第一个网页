@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="css/1.css">
+</head>
+<body>
+	<div class="container clear">
+	<!-- 顶部开始 -->
+		<div class="top clear">
+			<a src="#" class="top-logo"><img src="images/logo.png" alt=""></a>
+			<div class="top-right">
+				<span>SEARCH:</span>
+				<input class="inputsearch" type="search" name="" value="" placeholder="">
+				<input class="btn-search" type="button" name="" value="搜索">
+			</div>
+		</div>
+		<!-- 顶部结束 -->
+		<!-- 焦点图开始 -->
+		
+			<ul class="banner">
+				<li><a href="#" class="banner-inner"><img src="images/banner1.png" alt=""></a></li>
+			</ul>
+		
+		<!-- 焦点图结束 -->
+		<!-- 导航开始 -->
+		<ul class="nav clear">
+			<li><a href="#" class="current">导航1</a></li>
+			<li><a href="#">导航2</a></li>
+			<li><a href="#">导航3</a></li>
+			<li><a href="#">导航4</a></li>
+			<li><a href="#">导航5</a></li>
+			<li><a href="#">导航6</a></li>
+			<li><a href="#">导航7</a></li>
+			<li><a href="#">导航8</a></li>
+			<li><a href="#">导航9</a></li>
+		</ul>
+		<!-- 导航结束 -->
+		<!-- 主体区 -->
+		<div class="main clear">
+			<div class="main-left">
+			<!-- 左侧第一块开始 -->
+				<div class="mb10">
+					<h1 class="main-left-title1">左侧标题一</h1>
+					<ul class="main-left-list1">
+						<li><a href="">公司简介</a></li>
+						<li><a href="">公司简介</a></li>
+						<li><a href="">公司简介</a></li>
+						<li><a href="">公司简介</a></li>
+						<li><a href="">公司简介</a></li>
+						<li><a href="">公司简介</a></li>
+						<li><a href="">公司简介</a></li>
+						<li><a href="">公司简介</a></li>
+					</ul>
+				</div>
+				<!-- 左侧第一块结束 -->
+				<!-- 左侧第二块开始 -->
+				<div class="">
+					<h1 class="main-left-title">联系我们</h1>
+					<div class="main-left-textbox1">
+						<p>地址：杭州市莫干山路2168号 </p>
+		                <p> 邮编: 300009 </p>
+				        <p>电话：0571-98765432</p>
+				        <p> 传真：0573-12345678 </p>
+				        <p>网址: www.abcde.com </p>
+				        <p>邮箱: boss@gmail.com</p>
+					</div>
+				</div>
+				<!-- 第二块结束 -->
+			</div>
+			<div class="main-right">
+				<div class="main-rightof1">
+					<h2 class="main-right-title1 clear">
+						<span class="main-right-title-text1">公司简介</span>
+						<a href="#" class="main-right-moreicon">more</a>
+					</h2>
+				</div>
+
+
+
+				<div class="main-rightof2">
+				<div class="main-rightof2-left">
+					<h2 class="main-right-title2 clear">
+						<span class="main-right-title-text1">公司简介</span>
+						<a href="#" class="main-right-moreicon">more</a>
+					</h2>
+				</div>
+					<div class="main-rightof2-lright">
+						<h2 class="main-right-title2 clear">
+						<span class="main-right-title-text1">公司简介</span>
+						<a href="#" class="main-right-moreicon">more</a>
+					</h2>
+					</div>
+				</div>
+
+
+				<div class="main-rightof3">
+					saef
+				</div>
+			</div>
+		</div>
+		<!-- 主体区结束 -->
+		<!-- 页脚区开始 -->
+		<div class="footer"></div>
+		<!-- 页脚区结束 -->
+	</div>
+</body>
+</html>

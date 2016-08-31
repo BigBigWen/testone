@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>四位验证码</title>
+	<link rel="stylesheet" href="">
+	<style>
+	*{margin: 0px auto;padding: 0px;}
+	#input{border-radius: 10px;border: 3px solid pink;margin: 10px auto;display: block;}
+	#button{border-radius: 5px;border: 1px solid black;margin: 10px auto;display: block;}
+
+	
+	</style>
+	
+</head>
+<body>
+	<input id="input" type="text" name="" value="" placeholder="">
+	<br><br>
+	<button id="button" type="button">点击获取验证码</button>
+	<script>
+		var button = document.getElementById('button');
+		var input = document.getElementById('input');
+		
+		button.onclick = function(){
+			var str = '';
+			array1 = new  Array('a','b','c','d','e','1','2','3')
+			for( var i = 0;i < 4;i++){
+				 str += array1[Math.floor(Math.random()*8)];
+			}
+			input.value = str;
+		}
+
+		
+
+	</script>
+</body>
+</html>

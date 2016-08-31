@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		td{ background-color: lightgray;text-align: center; width: 100px;}
+	</style>
+</head>
+<body>
+	<!-- <table border="1" cellpadding="0" cellspacing="5">
+		<tr> <td>a</td> <td>a</td> </tr>
+		<tr> <td>a</td> <td>a</td> </tr>
+		<tr> <td>a</td> <td>a</td> </tr>
+
+	</table> -->
+   
+	<script>
+		document.write('<table border="1" cellpadding="0" cellspacing="5">');
+         
+        for( var i = 1; i <= 9; i++ ){
+            document.write('<tr>');
+        	
+        	for(var j = 1; j <= 9;j++ ){
+               if( j <= i ){
+                 document.write("<td>"); 
+
+                 //字符串拼接 2*2=4
+                 document.write( String(i) + '*' + String(j) + '=' + String(i*j) );
+
+                 document.write('</td>');
+               }
+        	}
+        	document.write("</tr>");
+        }
+		document.write('</table>');
+	</script>
+</body>
+</html>

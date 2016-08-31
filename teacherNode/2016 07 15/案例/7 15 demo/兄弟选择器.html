@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		/* 兄弟选择器 */
+       /* 使用div1 找到对应的标签 后代p 
+       + a p标签后的兄弟 ，直找最近的那个
+       */
+		#div1 p+a{ background-color: red; color: yellow; }
+
+		/*普通兄弟选择器
+        ~ 找p后的所有的兄弟标签
+		*/
+		#div1 p~a{ background-color: red;color:blue; }
+
+		/*伪类选择器*/
+		/*:link 未被点击*/
+		#div2 a:link{ color:black; }   
+		 /*鼠标悬停在元素上的式样*/
+		#div2 a:hover{ color:red; }
+		/*鼠标点击时的式样*/
+		#div2 a:active{ color:green; }
+		/*访问过后的式样
+		 visited 由于网页缓存的原因，一旦点击后就变成访问后的式样
+		*/
+		#div2 a:visited{ color:pink; }
+	</style>
+</head>
+<body>
+	<div id="div1">
+	    <a href="#">我的链接</a>
+		<p></p>
+		<a href="#">我的链接</a>
+		<a href="#">我的链接</a>
+	</div>
+
+	<div id="div2">
+		<a href="#">链接元素</a>
+		<a href="#">链接元素</a>
+		<a href="#">链接元素</a>
+	</div>
+</body>
+</html>

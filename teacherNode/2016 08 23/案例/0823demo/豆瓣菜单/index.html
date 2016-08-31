@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+	    *{ margin: 0px;padding: 0px; }
+		.box{ position: absolute;bottom: 0px;right: 0px; width: 200px;height: 357px;overflow: hidden;}
+		.top{ background: url(images/4.png) no-repeat; width: 200px;position: absolute;top:312px;left: 200px;height: 312px;}
+		.bottom{ background: url(images/1.png) no-repeat; width: 200px;height: 45px;position: absolute;top:312px;left:200px;}
+		button{ background: url(images/2.png);width: 30px;height: 49px;position: absolute;bottom: 0px;right: 0px;}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="top"></div>
+		<div class="bottom"></div>
+		<button type="button"></button>
+	</div>
+
+    <script>
+        var topElement = document.getElementsByClassName('top')[0];
+        var bottomElement = document.getElementsByClassName('bottom')[0];
+    	var buttonElement = document.getElementsByTagName('button')[0];
+    	buttonElement.onclick = function(){
+           //移动bottom left 0 位置
+           startMove(bottomElement,'left','0px',function(){
+              topElement.style.left = '0px';
+              //把top element的top 值移动到0px
+              startMove(topElement,'top','0px',null);
+           });
+    	}
+
+        topElement.onclick = function(){
+        	startMove(topElement,'top','312px',function(){
+        	  topElement.style.left = '200px';
+              startMove(bottomElement,'left','200px',null);
+        	});
+        }
+
+
+        //////////////////////////////////////////////////////////
+        //obj           哪个元素运动
+        //attributeName 哪个属性移动
+        //endValue      最终的值
+        //endFun        运动结束后调用的函数
+    	function startMove( obj,attributeName,endValue,endFun ){
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function(){
+            	//获取当前值
+            	var currentValue = getStyle(obj,attributeName);
+            	//计算步长
+            	var speed = (parseInt(endValue) - parseInt(currentValue))/6;
+
+            	//修正步长
+            	speed = speed > 0 ? Math.ceil(speed):Math.floor(speed);
+
+            	//修改式样的值
+            	obj.style[attributeName] = (parseInt(currentValue) + speed) + 'px';
+
+            	if( obj.style[attributeName] == endValue ){
+            		//已经到达最终值
+            		clearInterval(obj.timer);
+            		//动画结束，调用传递过来的endFun
+            		if( endFun ){ //判断endFun 是否有合法的入口地址
+            			//调用指定的结束处理函数
+            			endFun();
+            		}
+            	}
+            },30);
+    	}
+
+        function getStyle( obj,styleName ){
+        	if( obj.currentStyle ){
+        		return obj.currentStyle[styleName];
+        	}else{
+        		return getComputedStyle(obj,null)[styleName];
+        	}
+        }
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>伪类</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+input:enabled
+{
+	/*outline: 1px solid red;*/
+	background-color: #fcc;
+	/*border: 10px solid black;*/
+}
+input:focus
+{
+	outline: 1px solid blue;
+}
+input:disable
+{
+	background-color: #ccc;
+}
+p::selection{color: red;background-color: #0f0;}
+input:readonly{background-color: blue;}
+input:read-write{background-color: yellow;}
+
+		
+	</style>
+</head>
+<body>
+	<p>
+	<input type="text" name="" value="" placeholder="" >
+	<input type="text" name="" value="" placeholder="" disabled="">
+	<input type="text" name="" value="" placeholder="" readonly="">
+	<input type="text" name="" value="" placeholder="" readwrite="">
+	</p>
+	<p style="border: 1px solid black">金佛也无法,磨豆腐吃,参考方法 名称昆明for分开门of</p>
+</body>
+</html>

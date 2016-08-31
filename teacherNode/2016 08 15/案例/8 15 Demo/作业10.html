@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<select name="">
+		<option value="1">1.2米以下</option>
+		<option value="2">大中小学生</option>
+		<option value="3">离退休人员</option>
+		<option value="4">老年人</option>
+		<option value="5">其他</option>
+	</select>
+
+	<button type="button">计算票价</button>
+
+	<script>
+		window.onload = function(){
+			var selectElement = document.getElementsByTagName('select')[0];
+			var buttonElement = document.getElementsByTagName('button')[0];
+
+			buttonElement.onclick = function(){
+				var message = '';
+                var selectValue = selectElement.value;
+                switch(selectValue){
+                	case '1': message = '0';break;
+                	case '2': message = '20';break;
+                	case '3': message = '0';break;
+                	case '4': message = '50';break;
+                	case '5': message = '100';break;
+                }
+
+                alert(message);
+			}
+		}
+	</script>
+</body>
+</html>

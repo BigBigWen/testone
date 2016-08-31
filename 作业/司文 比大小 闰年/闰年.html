@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>闰年判断</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<label>请输入年份<input id="year" type="text" name="" value="" onkeyup="if(event.keyCode !=37 && event.keyCode != 39){if (! /^[0-5]{0,1}[0-9]{1}$/ig.test(this.value)){this.value='';}}"></label>
+	<button id="judge" type="button">开始判断</button>
+	<span id="result"></span>
+	<script>
+		var yearElement = document.getElementById('year');
+		var judgeElement = document.getElementById('judge');
+		judgeElement.onclick = function(){
+			var yearValue = yearElement.value;
+			var year = parseFloat(yearValue);
+			
+			if ( (year % 4 == 0 && year % 100 !== 0) || year % 400 == 0 ) {
+				result = "闰年";
+			}else if (year < 0 || isNaN(year)) {
+				alert("请输入正确的年份好吗? ^_^");
+				resetElement.onclick;
+				teturn;
+
+			}
+			else { result = "平年" ;}
+
+			var resultElement = document.getElementById("result");
+			resultElement.innerHTML = result;
+		}
+
+	</script>
+</body>
+</html>

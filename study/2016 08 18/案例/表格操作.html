@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		//js对表格有特殊的支持,可以让我们方便的插入行,删除行
+		//插入cell  删除cell等操作
+		var tableEle = document.createElement('table');
+		tableEle.border = '1px';
+		tableEle.width= '500px';
+
+		var tbodyEle = document.createElement('tbody');
+		tableEle.appendChild(tbodyEle);
+		for( var i = 0 ; i < 5 ;i++){
+			//插入行
+			tbodyEle.insertRow(i);
+			for( var j = 0 ;j < 5 ;j++){
+				//插入列
+				//tbodyEle.row[i] 得到i行元素
+				var row = tbodyEle.rows[i];
+				console.log(row);
+				row.insertCell(j);
+				//赋值 先找到对应的cell
+				//row.cells 是一个数组,包含所有的cell
+				var cell = row.cells[j];
+				cell.appendChild(document.createTextNode('row'+i+'col'+j));
+			}
+		}
+		document.body.appendChild(tableEle);
+	</script>
+</body>
+</html>

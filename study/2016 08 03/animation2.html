@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>animation</title>
+	<link rel="stylesheet" href="">
+	<style>
+		/*animation-fill-mode:none默认值,动画结束立即回到初始状态
+		                      forwards 动画结束后维持动画的结束状态
+		                      backwards 再有delay的情况先立即使用第一帧的数据
+		                      both 是backward和forward的结合体
+		 */
+	*{margin: 0px ;padding: 0px;}
+	@keyframes animation1{
+		0%{background-color: pink;}
+		100%{background-color: red;}
+	}
+	.box{width: 100px;height: 100px;margin: 10px auto;
+		-webkit-animation: animation1 5s  5s 3  both;
+		-o-animation: animation1 5s  5s 3  both;
+		animation: animation1 5s  5s 3  both;
+	}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>

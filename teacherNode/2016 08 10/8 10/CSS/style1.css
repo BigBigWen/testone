@@ -1,0 +1,4 @@
+
+/*style1 的背景 */
+*{margin: 0;padding: 0;}
+body{ background-image: url(../bg.gif); }

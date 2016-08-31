@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>倾斜导航</title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{margin: 0px;padding: 0px;}
+		li{list-style: none;}
+		a{list-style: none;}
+		.clear:after{content: "";height: 0px;display: block;clear: both;overflow: hidden}
+		.clear{-ms-zoom:1;}
+		ul>li{
+			width: 100px;float: left;
+			height: 30px;line-height: 30px;
+			background-color: red;
+			margin-right: 5px;
+			text-align: center;
+			transform: skewX(30deg);
+		}
+		ul>li a{display: block;transform: skewX(-30deg);}
+	</style>
+
+</head>
+<body>
+	<ul class="clear">
+		<li><a href="#">导航一</a></li>
+		<li><a href="#">导航一</a></li>
+		<li><a href="#">导航一</a></li>
+		<li><a href="#">导航一</a></li>
+		<li><a href="#">导航一</a></li>
+		<li><a href="#">导航一</a></li>
+	</ul>
+</body>
+</html>

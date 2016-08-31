@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+	    *{margin: 0;padding: 0;}
+		.box{ width: 200px;height: 200px;background-color: red; margin-bottom: 10px;}
+		/*border-radius :设置圆角*/
+		/* 设置一个值：指定x 和  y 都是 50px
+           设置圆角的顺序：从左上角开始，顺时针
+           设置一个值，4个角都使用相同的角度
+		*/
+		.box1{ border-radius:50px;  }
+        /*设置2个值时，对角关系 
+          左上角和右下角 50px
+          右上角和左下角 100px
+        */
+		.box2{ border-radius: 50px 100px; }
+         
+         /* 对border-radius 设置 3个值
+            第一个左上角
+            第二对角线 右上角 和 左下角 
+            第三个值 是右下角
+         */
+		.box3{ border-radius: 50px 100px 70px; }
+
+        /*  设置4个值，每个角按照顺时针顺序写*/
+		.box4{ border-radius:50px 70px 80px 100px}
+         
+         /*x/y   设置 x 方向的偏移  y 方向的偏移*/
+		.box5{ border-radius:50px/100px;  }
+
+        /* x1 x2 x3 x4 / y1 y2 y3 y4  */
+        /* / 之前都是 x 方向的偏移 顺序 顺时针
+           / 之后都是y */
+	    .box6{ border-radius: 50px 60px 80px 90px/100px 50px 100px 50px }
+
+         /* 允许我们只设置一个角
+            border-top-left-radius :x y;
+            border-top-right-radius: ;
+        	border-bottom-left-radius: ;
+        	border-bottom-right-radius:
+         */
+        .box7{ border-top-left-radius: 50px 100px;  
+        }
+
+        /*可以把数值写成百分比 
+          x 偏移 宽 * 百分比
+          y 偏移 高 * 百分比
+        */
+        .box8{ border-radius: 50%; }
+
+        .box9{
+         width: 200px;height: 100px;
+         background-color: red;
+        /* border-top-left-radius: 100px 100px;
+         border-top-right-radius: 100px 100px; */
+         border-radius: 100px 100px 0px 0px /100px 100px 0px 0px;
+          }
+
+	</style>
+</head>
+<body>
+	<div class="box box1"></div>
+	<div class="box box2"></div>
+	<div class="box box3"></div>
+	<div class="box box4"></div>
+	<div class="box box5"></div>
+	<div class="box box6"></div>
+    <div class="box box7"></div>
+    <div class="box box8"></div>
+    <div class="box9"></div>
+</body>
+</html>

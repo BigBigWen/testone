@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>径向渐变</title>
+	<link rel="stylesheet" href="">
+	<style>
+		/*径向渐变是从一个指定的点向四周进行渐变.
+		shape:可以是圆形也可以是椭圆形;
+
+		*/
+		*{margin: 10px auto; padding: 0;}
+		.box{width: 200px ;height: 200px;
+			/*浏览器前缀省略*/
+		     background: -webkit-radial-gradient(yellow,red);
+		}
+		/*background: radial-gradient(position,shape size,渐变色1,渐变色2....)*/
+		/*position: 1 :坐标像素值
+		            2 :文字值 top right,top left....
+		            3  :百分比
+		            4  :默认是中心点;
+		 */
+		 .box1{background: -webkit-radial-gradient(top right,yellow,pink,red);}
+		 .box2{background: -webkit-radial-gradient(0px 100px,yellow,green,red);}
+		 .box6{background: -webkit-radial-gradient( 50% 10%  ,ellipse,blue,red,yellow);}
+		 /*shape:向外扩散的渐变形状 默认为椭圆
+		 circle:圆形;
+		 ellipse:以椭圆的方式向外渐变;
+		 */
+		 .box3{width: 200px;height: 100px; background: -webkit-radial-gradient(circle,yellow,green,red)}
+		 .box4{width: 200px;height: 100px; background: -webkit-radial-gradient(ellipse,yellow,green,red)}
+		 /*size
+		       closest-side;渐变扩展到最近的边;
+		       farthes-side:渐变扩展到最远的边;
+		       closest-corner:渐变到最近的角;
+		 */
+		 .box5{background: -webkit-radial-gradient(130px 100px,circle ,yellow 20%,green 50%,blue 80%);}
+		 /*非均匀分布的渐变 ,使用颜色加百分比*/
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<div class="box box1"></div>
+	<div class="box box2"></div>
+	<div class="box box3"></div>
+	<div class="box box4"></div>
+	<div class="box box5"></div>
+	<div class="box box6"></div>
+</body>
+</html>

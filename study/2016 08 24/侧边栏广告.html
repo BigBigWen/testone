@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{margin: 0;padding: 0}
+		#mydiv{width: 100px;height: 100px;background-color: blue;position: absolute;}
+	</style>
+</head>
+<body style="height:2000px">
+	<div id="mydiv"></div>
+	<script>
+	var divEle = document.getElementById('mydiv');
+		window.onload = function(){
+			//left和top
+			var clientWidth = document.documentElement.clientWidth||document.body.clientWidth;
+			var clientHeight = document.documentElement.clientHeight||document.body.clientHeight;
+			var  selfWidth =divEle.offsetWidth;
+			var  selfHeight = divEle.offsetHeight;
+
+			var left = clientWidth - selfWidth;
+			var top = (clientHeight-selfHeight)/2;
+			divEle.style.left = left+'px';
+			divEle.style.top = top+'px';
+
+		}
+		//这时候  onresize 窗体大小发生变化  onscroll文档内容发生滚动 用谁都可以
+		document.onresize = document.onscroll = function(){
+			//获取滚出去的高度 scrolltop
+			var scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
+			//视图区高度
+			var clientHeight = document.documentElement.clientHeight||document.body.clientHeight;
+			//自身的高度
+			var selfHeight = divEle.offsetHeight;
+			//应该在的高度
+			var top = parseInt(scrollTop+(clientHeight-selfHeight)/2);
+			// //最终应该在的位置
+			// divEle.style.top = top+'px';
+			//使用动画,从现在的位置调整到应该在的位置
+			startMoveTop(divEle,top);
+           
+		}
+		function startMoveTop(obj,endPos){
+			//从当前位置滚顶到endPos的位置
+			clearInterval(obj.timer);
+			obj.timer = setInterval(function(){
+				//获取当前位置
+				var currentTop = obj.offsetTop;
+				var speed = (parseInt(endPos)-parseInt(currentTop))/5;
+				if(speed>0){
+					Math.ceil(speed);
+				}
+				if(speed< 0){
+					Math.floor(speed);
+				}
+				obj.style.top = (currentTop+speed)+'px';
+				if(parseInt(obj.style.top) == parseInt(endPos)){
+					clearInterval(obj.timer);
+				}
+			},20);
+		}
+	</script>
+</body>
+</html>

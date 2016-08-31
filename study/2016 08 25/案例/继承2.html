@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		//原型继承
+		function animal(){
+			//私有的放在构造函数内部
+			this.name = name;
+		}
+		//共享的放到原型对象中
+		animal.prototype.sleep = function(){
+			console.log('动物睡眠');
+		}
+
+		function bird(){
+
+		}
+		//让子类的原型等于 父类的一个一个对象,实现继承 
+		var animal1 = new animal('小鸟1')
+		bird.prototype = animal1;
+		var bird1 = new bird();
+		//修正bird的constrctor
+		bird.prototype.constructor = bird; 
+		bird1.sleep();
+		console.log(bird.prototype.constructor);
+
+	</script>
+</body>
+</html>

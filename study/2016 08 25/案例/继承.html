@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		//面向对象三大特性  封装 继承 多态
+		//封装:把属性和行为绑定在一起
+		//继承:父类中的属性和行为,子类自动获取
+		//多态:相同的接口,不同的行为
+		function animal(name){
+			this.name = name;
+			this.move = function(){
+				console.log('动物运动');
+			}
+		}
+		animal.prototype.type = '动物类';
+		// animal.prototype.move = function(){
+		// 	console.log('动物运动');
+		// }
+
+		function bird(name){
+			//this指向bird1
+
+			//当call调用函数时,animal函数中的this指针就是你传入的第一个对象
+//1通过调用父类原型中的属性和方法
+			animal.call(this,name);
+		}
+//2 获取父类原型中的属性和方法
+        for( var prop in animal.prototype){
+        	bird.prototype[prop] = animal.prototype[prop];
+        }
+        console.log(bird.prototype.constructor)
+
+		var bird1 = new bird('小鸟1');
+		//调用完之后.bird1就继承了animal的name ,move 属性
+
+        console.log(Object.getPrototypeOf(bird1));
+
+		console.log(bird1.name);
+		console.log(bird1.move);
+		console.log(bird1.type);
+	</script>
+</body>
+</html> 

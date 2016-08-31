@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		*{margin: 0;padding: 0;}
+	</style>
+</head>
+<body>
+<!-- 所谓的vertical-align ：设置行内框跟行框对齐方式
+     行内框：对于非置换元素，设置line-height就可以影响到行内框
+             对于img，img的高度作为行内框的高度
+     行框： 能够包含所有的行内框，一个虚拟的框
+ -->
+	<p style="height:50px;line-height:50px;border: 1px solid black;">
+		<span style="font-size: 30px;line-height:30px;background-color: yellow;vertical-align:top;">xyf</span>
+	</p>
+
+    <br><br>
+
+	<!-- 注意：line-height具有继承的特点，如果父元素设置的line-heigh 自己没有设置，那么自动继承父元素的line-heigh -->
+	<p style="height:50px;line-height:50px;border: 1px solid black;">
+		<span style="background-color:yellow;vertical-align:top;">xyf</span>
+	</p>
+
+    <br><br>
+
+    <!-- 默认情况下，图片的基线（也就是图片的底部）和父容器中的文字的基线是对齐的 -->
+    <p style="background-color:gray;border:1px solid black;font-size:50px">
+    	<img src="15.jpg" alt="" style="vertical-align:middle;">xyf
+    </p>
+
+    <!-- line-height:1.5  
+       
+     -->
+
+</body>
+</html>

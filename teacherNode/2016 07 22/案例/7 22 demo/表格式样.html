@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		table{
+			/*caption-side:标题的位置
+              top
+              bottom
+			*/
+			caption-side: bottom;
+
+			/*指定cell边框是否合并
+              separate: 不合并;
+              collapse: 合并边框;
+			*/
+			border-collapse: separate;
+            /* 对于空的cell 是否显示
+              hide
+              show
+
+              针对边框分离的时候有效
+            */
+
+			empty-cells: hide;
+		}
+
+
+        /* 
+         不要使用 父子选择器 ，因为table 自动生成一个tbody 标签
+         使用后代选择器
+         */
+		#mytable tr:nth-child(odd){ background-color: gray; }
+		#mytable tr:nth-child(even){ background-color: pink; }
+	</style>
+</head>
+<body>
+	<table border="1" width="600px">
+		<caption>table title and/or explanatory text</caption>
+		<thead>
+			<tr>
+				<th>header</th><th>header</th><th>header</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>data</td><td>data</td><td>data</td>
+			</tr>
+			<tr>
+				<td></td><td></td><td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<br>
+
+	<table id="mytable" border="1px" width="600px">
+	<!-- table 自动生成一个tbody -->
+		<tr>
+		   <td>data</td><td>data</td><td>data</td>
+		</tr>
+		<tr>
+		   <td>data</td><td>data</td><td>data</td>
+		</tr>
+		<tr>
+		   <td>data</td><td>data</td><td>data</td>
+		</tr>
+		<tr>
+		   <td>data</td><td>data</td><td>data</td>
+		</tr>
+	</table>
+</body>
+</html>

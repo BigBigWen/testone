@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>链接和图像标签</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+<!-- href a标签的属性 
+ href 代表链接跳转的地址
+ 1：跳转到外部网站
+ 2：跳转到开头
+ 3：可以跳转到图片等文件
+ 4：可以跳转到以id表示的位置
+-->
+	<a href="http://www.baidu.com">百度</a>
+	<a href="#">首页</a>
+	<a href="./images/1.jpg">图片</a>
+	<!-- # +　某个元素ｉｄ的值 -->
+	<a href="#pid1">跳转到某一个元素所在的位置</a>
+
+     <br><br><br><br><br><br><br><br><br><br>
+     <br><br><br><br><br><br><br><br><br><br>
+     <br><br><br><br><br><br><br><br><br><br>
+     <br><br><br><br><br><br><br><br><br><br>
+     <br><br><br><br><br><br><br><br><br><br>
+     <br><br><br><br><br><br><br><br><br><br>
+<!-- 对p标签指定id，id表示唯一标识一个元素 -->
+    <p ">河南郑州金水</p>
+    <!-- p#pid ctrl +　ｅ　生成带id属性的标签 -->
+    <p id="pid"></p>
+    <!-- p.pclass ctrl + e 生成 带class属性的标签 
+    class 可以指示一类标签拥有同样的式样
+    -->
+    <p class="pclass">p1</p>
+    <span class="pclass"></span>
+
+    <a href="#">首页</a>
+
+<hr>
+
+<!-- target ：目标在哪里打开
+
+_blank  ：在新的窗口打开我要跳转的内容
+_self   : 在自身的窗口打开
+_parent : 在框架集的父窗口上打开
+framename: 在指定的框架集上打开
+ -->
+    <a href="http://www.baidu.com" target="_blank">百度</a>
+    <a href="http://www.baidu.com" target="_self">百度</a>
+
+    <a href="index3.html" target="myframe">链接2</a>
+
+<!-- 在框架中显示html文件 -->
+   <!-- <iframe name="myframe" src="http://www.baidu.com" width="500px" height="500px"></iframe> -->
+<!-- title 对链接内容的提示 -->
+   <a href="http://www.baidu.com" title="百度的网页地址">百度两下</a>  
+
+<!-- 展示一张图片
+ src :指定要展示的图片路径
+ a:网络图片
+ b:本地图片
+
+ width height只指定一个等比例拉伸，图片不变形
+ pixel 长度单位
+ -->
+   <img src="images/1.jpg" width="100px"  style="border:1px solid red">
+   <!-- alt 在图片下载失败或者图片路径处错误的情况下显示的提示 -->
+   <img  id="pid1" src="images/2.jpg" alt="图片">
+
+   <hr>
+
+<!-- 使用usermap 生成热点 -->
+   <img src="images/1.jpg" width="100px" height="100px" usemap="#mymap">
+   <map name="mymap">
+   <!-- shape 形状
+      rect  矩形
+      circle 圆形
+      多边形
+
+      coords:坐标
+        rect     x1 y1 x2 y2
+        circle   x y 半径
+        多边形   6个点
+
+      href:跳转的链接地址
+    -->
+
+       <!-- <area shape="rect" coords="0,0,50,50" href="http://www.baidu.com"> -->
+
+       <area shape="circle" coords="50,50,50" href="http://www.baidu.com">
+   </map>
+
+   <!-- a 标签中嵌套非文字内容 -->
+   <a href="http://www.baidu.com">
+       <img src="images/1.jpg" width="10px" height="100px">
+   </a>
+   
+   <!-- figure 插入图表 -->
+   <figure>
+       <!-- 标题可以放在img的前后 -->
+       <figcaption>图片</figcaption>
+       <img src="images/1.jpg" width="200px" height="200px">
+   </figure>
+   <figure>
+     <figcaption>text picture</figcaption>
+     <img src="images/15.jpg" alt="加载失败">
+     
+   </figure>
+
+</body>
+</html>

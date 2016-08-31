@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{margin: 0;padding: 0;}
+		ul{ width: 200px;margin: 100px auto; border: 1px solid black;}
+		ul>li{ list-style: none;text-align: center;line-height: 60px; height: 60px;}
+
+	</style>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+
+	<script type="text/javascript">
+		window.onload = function(){
+			//使用定时器，获取当前的时间，并更新到界面上
+			setInterval(updateTime,1000);
+
+			function updateTime(){
+				var date = new Date();
+
+				var year = date.getFullYear();
+				var month = date.getMonth() + 1; //month 从 0 开始
+				var day   = date.getDate();
+
+				var week  = date.getDay(); //0 星期日 
+				var hour  = date.getHours();
+				var minutes = date.getMinutes();
+				var second  = date.getSeconds();
+
+                var liList = document.getElementsByTagName('li');
+                liList[0].innerHTML = year + ' 年' + formatString(month) + '月';
+                liList[1].innerHTML = formatString(day);
+                liList[2].innerHTML = getWeekName(week);
+                liList[3].innerHTML = formatString(hour) + " : " + formatString(minutes) + " : " + formatString(second);
+ 			}
+
+            // if( 2 == '2' ) true
+
+			function getWeekName( week ){
+				switch( week ){
+					//===
+					case 0:return '星期日';
+					case 1:return '星期一';
+					case 2:return '星期二';
+					case 3:return '星期三';
+					case 4:return '星期四';
+					case 5:return '星期五';
+					case 6:return '星期六';
+				}
+			}
+
+            // 一个函数没有指定返回值时，返回的是undefined
+			function formatString(inputStr) {
+				  if( parseInt(inputStr) < 10 ){
+				  	return '0' + inputStr;
+				  }
+
+				  return inputStr;
+			}
+		}
+	</script>
+</body>
+</html>

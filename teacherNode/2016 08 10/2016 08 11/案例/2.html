@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div>
+	<label>姓名：<input type="text" id="inputText" name="" value=""></label>
+</div>
+<div>
+	<label>密码：<input type="password" id="inputPwd" name="" value=""></label>
+</div>
+<input type="button" id="inputBtn" name="" value="登录">
+
+	
+<script type="text/javascript">
+	var iText=document.getElementById("inputText");
+	var iPwd=document.getElementById("inputPwd");
+	var iBtn=document.getElementById("inputBtn");
+
+	iBtn.onclick=function(){
+		var iTextValue=iText.value;
+		var iPwdValue=iPwd.value;
+		if(iTextValue.length<7 || iPwdValue.length<9){
+			alert("位数太少了，从新输入");
+		}else{
+			alert("登录成功！");
+		}
+		;		
+
+	}
+
+
+
+</script>
+
+
+</body>
+</html>

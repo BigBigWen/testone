@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+   <input id="input1" type="text" name="" value="" placeholder="">
+   <input id="input2" type="text" name="" value="" placeholder="">
+   <input id="button" type="button" name="" value="替换">
+   <div id="box">
+   	我同桌是个捣蛋鬼 我同桌是个捣蛋鬼 我同桌是个捣蛋鬼 我同桌是个捣蛋鬼 我同桌是个捣蛋鬼 我同桌是个捣蛋鬼 我同桌是个捣蛋鬼我同桌是个捣蛋鬼我同桌是个捣蛋鬼我同桌是个捣蛋鬼我同桌是个捣蛋鬼我同桌是个捣蛋鬼我同桌是个捣蛋鬼我同桌是个捣蛋鬼我同桌是个捣蛋鬼
+   </div>
+	<script>
+		var input1 = document.getElementById('input1');
+		var input2 = document.getElementById('input2');
+		var btn = document.getElementById('button');
+		var box = document.getElementById('box');
+
+		btn.onclick = function(){
+			//var newstr = box.innerHTML.split('是');
+			//console.log(newstr);
+			var newstr1 = box.innerHTML.split(input1.value).join('<span style="background:red;">'+input2.value+'</span>');
+			box.innerHTML = newstr1;
+
+		}
+
+	</script>
+</body>
+</html>

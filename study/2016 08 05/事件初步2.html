@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+	*{margin: 50px auto;}
+		#mydiv{width: 200px;height: 80px;border: 1px solid #f00;background-color: #fcc;transition: all 1s;}
+	}
+	</style>
+</head>
+<body>
+<!-- 方式3 -->
+	<input id="firstInput" type="button"  name="" value="显示">
+	<input id="search" type="search" name="" value="" placeholder="">
+	<input id="secondInput" type="button" name=""  value="隐藏">
+	<div id="mydiv">请看好你的钱包</div>
+
+	<script >
+		var firstInput =document.getElementById("firstInput");
+		var secondInput =document.getElementById("secondInput");
+		var mydiv =document.getElementById("mydiv");
+		var s1=document.getElementById("search");
+
+
+		function show(){
+			mydiv.style.display='block';
+			mydiv.style.transform = 'rotate(45deg)';
+		};
+		function hide(){
+			// alert(1);
+			mydiv.style.display='none';
+		};
+		//注意没有(),只把函数名复制给onclick.加()等于调用
+		firstInput.onclick = show;
+		secondInput.onclick = hide;
+		s1.onclick = show;
+	</script>
+	
+	
+</body>
+</html>

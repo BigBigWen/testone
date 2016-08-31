@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		.div1{ width: 400px;height: 400px;
+			/*background 是简写形式*/
+              background: red url(15.jpg) no-repeat center center;
+
+              /*指定背景图片是否根据内容的滚动而关东
+                scroll：当内容滚动时背景一起滚动
+                fixed：不滚动,一旦设置fixed只有，背景的位置参考的是 body，窗体
+              */
+              /*background-attachment: scroll;*/
+              /*background-attachment: fixed;*/
+            /*  background-attachment: fixed;
+              */
+              /*当自身包含有比自己区域更大的孩子，而且可以
+                设置overflow为scroll时
+
+                local会随着滚动条的移动而移动
+                没有local 背景不会移动  
+              */
+              background-attachment: local;
+              /*不显示*/
+              /*overflow: hidden;*/
+              /*scroll 加上滚动条显示*/
+              overflow: scroll;
+              /*一直显示*/
+              /*overflow: visible;*/
+		 }
+
+/*当子容器的大小超出父容器，溢出处理*/
+		 .div1 .content{
+		 	width: 500px;height: 500px;
+		 	background-color: rgba(0,255,0,0.5);
+		 }
+	</style>
+</head>
+<body>
+	<div class="div1">
+		<div class="content">
+			abcdefg
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{margin: 0;padding: 0}
+		.clear:after{content: '';height: 0px;display: block;clear: both;overflow: hidden;}
+		.clear{--ms-zoom: 1}
+		#container{width: 430px;height: 410px;border: 1px solid #548BB9;padding: 5px 10px;margin: 100px auto;box-sizing: border-box;}
+		#container>#textbox{width: 410px;height: 280px;border: 1px dashed #ccc;overflow: auto;}
+		#container>textarea{height: 65px;width: 100%;margin: 10px 0;}
+		#container>button{width: 100px;height: 26px;text-align: center;float: right;}
+		.messageBox{width: 100%;}
+		#textbox .leftMessage{border-radius: 10%;background-color: #d3d3d3;float: left;display: table;margin: 10px;line-height: 20px;padding: 10px;}
+		#textbox .rightMessage{border-radius: 10%;background-color: #9ACD32;float: right;display: table;margin: 10px;line-height: 20px;padding: 10px;}
+		/*自动换行word-break:black-all*/
+	</style>
+</head>
+<body>
+	<div id="container" class='clear'>
+		<div id="textbox" ">
+             <div class="messageBox clear">
+             	<p class="leftMessage">Hellow?</p>
+             </div>
+             <div class="messageBox clear">
+             	<p class="leftMessage">哈喽</p>
+             </div> 
+              <div class="messageBox clear">
+             	 <p class="rightMessage">你好</p>
+             </div> 
+             <div class="messageBox clear">
+             	<p class="leftMessage">哈哈哈哈哈</p>
+             </div>
+             <div class="messageBox clear">
+             	 <p class="leftMessage">哈哈哈哈哈</p>
+             </div>
+		</div>
+		<!--由于浮动,导致不能分行,可以加容器包含元素,让元素在容器内进行浮动,让容器占据一行
+		也可以在元素后面加一个空的元素,让这个空的元素左右不能有浮动 <div style = 'clear:both'></div> -->
+		<textarea name=""></textarea>
+		<button id="sent" type="button">发送</button>
+	</div>
+	<script>
+		var textbox = document.getElementById('textbox');
+		var input = document.getElementsByTagName('textarea')[0];
+		var  send = document.getElementById('sent');
+		sent.onclick = function(){
+			var inputValue = input.value;
+			if(inputValue.length>0){
+			textbox.innerHTML += '<div class="messageBox clear"><p class="rightMessage">'+input.value+'</p></div>';
+			    input.value="";//清空的时候一定要直接对input.value进行,不能对inputValue进行,对变量进行重置,但是只是变量变了,并没有把值传递到input.value上
+			textbox.scrollTop = textbox.scrollHeight;
+		}else{alert('请输入内容后发送')}
+
+		}
+		input.onkeydown = function(e){
+			var ev =e||event;
+			// if( ( ev.vbKeyControl && ev.vbKeyReturn )||(ev.keyCode == 17 && ev.keyCode ==13 ))//为什么这样写不行 同时按下enter和ctrl
+				if(ev.ctrlKey && ev.keyCode==13)
+				//if(ev.vbKeyControl||ev.keyCode == 17)//只按下ctrl
+			{
+				textbox.innerHTML += '<div class="messageBox clear"><p class="rightMessage">'+input.value+'</p></div>';
+			    input.value="";
+			textbox.scrollTop = textbox.scrollHeight;//textbox.scrollIntoView();
+
+			} 
+		}
+		
+
+
+	</script>
+</body>
+</html>

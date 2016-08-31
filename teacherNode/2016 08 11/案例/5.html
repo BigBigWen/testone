@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="inputTxt" name="" value="" placeholder="">
+	<input type="button" id="inputBtn" name="" value="获取验证码">
+
+	<script type="text/javascript">
+		var arr1=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','0','1','2','3','4','5','6','7','8','9'];
+		var iTxt=document.getElementById("inputTxt");
+		var iBtn=document.getElementById("inputBtn");
+		iBtn.onclick=function(){
+			var str="";
+			for(i=0;i<6;i++){
+				//创建一个0-36之间随机数
+				var suiji=parseInt(Math.random()*36);
+				//创建一个数组里面的随机索引数
+				var code=arr1[suiji];
+				str=str+code;
+			}
+			//
+			iTxt.value=str;
+		};
+
+	</script>
+
+
+
+</body>
+</html>

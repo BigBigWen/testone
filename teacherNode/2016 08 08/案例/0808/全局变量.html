@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+	    // 全局变量：程序在运行中，一直占据空间
+	    // 全局变量有命名冲突的问题
+	    //1
+		var mytest = 100;
+
+		//定义函数，没有调用不会执行
+		function myfunc1(){
+			//4
+			console.log("myfunc1");
+		}
+
+       //2
+       console.log('abc');
+
+       //3
+       myfun1();
+
+	</script>
+
+	<script src="first.js"></script>
+
+	<script src="second.js"></script>
+
+	<script>
+		console.log(mytest);
+	</script>
+</body>
+</html>

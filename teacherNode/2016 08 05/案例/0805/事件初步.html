@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		#mydiv{ width: 200px;height: 80px;border: 1px solid black;background-color: yellow; }
+	</style>
+</head>
+<body>
+<!--  onclick 代表点击事件，
+     "" 写入点击后事件的处理
+ -->
+ <!-- 方式1 -->
+	<!-- <input type="button" onclick="mydiv.style.display='block' " name="" value="显示">
+	<input type="button" onclick="mydiv.style.display='none' " name="" value="隐藏">
+
+	<div id="mydiv">请看好你的钱包</div> -->
+
+	<!-- 方式2 函数的方式 来控制 -->
+
+	<input type="button" onclick="show()" name="" value="显示">
+	<input type="button" onclick="hide()" name="" value="隐藏">
+
+	<div id="mydiv">请看好你的钱包</div>
+
+
+   <script>
+   	    function show(){
+   	    	// 通过id 来找到 元素
+   	    	var mydiv = document.getElementById("mydiv");
+   	    	//通过修改display 属性来控制显示或者隐藏
+   	    	mydiv.style.display = 'block';
+   	    }
+
+   	    function hide(){
+            var mydiv = document.getElementById('mydiv');
+            mydiv.style.display = 'none';
+   	    }
+   </script>
+
+</body>
+</html>

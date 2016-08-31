@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{margin: 0;padding: 0;}
+		div[class*="box"]{
+			width: 800px;margin:10px auto;
+			border:2px solid #f00;
+		}
+		.box1 section{ width: 100px; background-color: #0f0; margin-right:10px;}
+		.box1{display: flex;display: -webkit-flex;}
+        .box1 .last{order:-1;}
+        .box1 .first{order:-1;}
+		/* box2 */
+        .box2{display: flex;display: -webkit-flex;}
+
+       /* 如果子元素宽度的总和小于父级的宽度，
+       又希望子元素平分父级所剩余的宽度，先确定子元素所占的比例大小，
+       子元素的实际宽度=(子元素flex-grow值 /所有子元素flex-grow的总和) * 剩余值+自身的宽度值 
+       */
+       /* (1/4)*200+自身宽度 */
+        .box2 .son1{flex-basis:100px; background-color: #ff0;
+  flex-grow:1; 
+        }
+        .box2 .son2{flex-basis:200px; background-color: #00f;
+  flex-grow:2;
+        }
+        .box2 .son3{flex-basis:300px; background-color: #0f0;
+  flex-grow:1; }
+
+
+
+  /* box3 */
+        .box3{display: flex;display: -webkit-flex;}
+
+        .box3 .son1{flex-basis:300px; background-color: #ff0;
+       flex-shrink:2;
+        }
+        .box3 .son2{flex-basis:200px; background-color: #00f;
+       flex-shrink:4;
+ 
+        }
+        .box3 .son3{flex-basis:500px; background-color: #0f0;
+        flex-shrink: 1;
+   }
+/* box4 */
+.box4{display: flex; display:-webkit-flex;}
+/*
+当子级的宽度和大于父级宽度，又有收缩比率的时候，
+1.先计算超出值  
+2.加权值= 各个项目的收缩比率*basis，累加
+3.（basis* (收缩比率/加权值) )*超出值
+4.子级实际宽度=basis-第三步的值
+
+1. 超出400px
+2. 2*200+3*900+1*100=3200
+3. 200*(2/3200)*400
+4. 实际的值=basis-第三步的值
+
+ */
+
+.box4 .son1{ background-color: #ff0;
+      flex:0 2 200px;
+        }
+ .box4 .son2{ background-color: #00f;
+      flex:0 3 900px;
+        }
+.box4 .son3{ background-color: #0f0;
+       flex:0 1 100px;
+   }
+
+	</style>
+
+
+</head>
+<body>
+	<div class="box1">
+	<section class="first">1</section>
+	<section>2</section>
+	<section>3</section>
+	<section class="last">4</section>
+	</div>
+	<div class="box2">
+	<section class="son1">1</section>
+	<section class="son2">2</section>
+	<section class="son3">3</section>
+	</div>
+
+	<div class="box3">
+	<section class="son1">1</section>
+	<section class="son2">2</section>
+	<section class="son3">3</section>
+	</div>
+
+	<div class="box4">
+	<section class="son1">1</section>
+	<section class="son2">2</section>
+	<section class="son3">3</section>
+	</div>
+
+
+
+
+</body>
+</html>

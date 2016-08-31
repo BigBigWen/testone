@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		//一个函数的返回值,用return语句实现
+		//对于return 的内容,可以是数值,可以是对象,也可以是一个函数
+
+		function outF(){
+
+		//返回一个函数,相当于把函数的入口地址返回出去
+		//return 函数
+		function innerF(){
+			console.log('hello word');
+		  }
+		  //返回函数函数名,就相当于把函数的入口地址返回
+		  return innerF;
+		}
+		//调用外部的outF,把返回的结果,存到变量中
+		var returnF = outF();
+		//对一个等于函数入口地址的变量加(),相当于函数调用
+		returnF()
+	</script>
+</body>
+</html>

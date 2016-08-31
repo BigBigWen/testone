@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>放大 炫酷按钮</title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{margin: 0px;padding: 0px}
+		.container{width: 400px;height: 600px;background-color: #000;margin: 100px auto;position: relative;}
+		.circle1,.circle2,.circle3{width: 200px;height: 200px;position: absolute;top: 200px;left: 100px;border: 1px solid #fff;border-radius: 100px;}
+		.circle1{color: #fff;text-align: center;line-height: 200px;z-index: 3;}
+		@keyframes animation2{
+			0%{transform: scale(1,1);opacity: 1;}
+			100%{transform: scale(1.8,1.8);opacity: 0;}
+		}
+		@keyframes animation3{
+			0%{transform: scale(1,1);opacity: 1;}
+			100%{transform: scale(1.2,1.2);opacity: 0;}
+		}
+		.circle1:hover~.circle2{
+			-webkit-animation: animation2 2s  infinite ;
+			-o-animation: animation2 2s  infinite ;
+			animation: animation2 2s  infinite ;
+
+		}
+		.circle1:hover~.circle3{
+			-webkit-animation: animation3 2s  infinite ;
+			-o-animation: animation3 2s  infinite ;
+			animation: animation3 2s  infinite ;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+
+		<div class="circle1">search</div>
+		<div class="circle2"></div>
+		<div class="circle3"></div>
+		
+	</div>
+</body>
+</html>

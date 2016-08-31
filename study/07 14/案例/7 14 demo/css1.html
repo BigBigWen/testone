@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>css 学习</title>
+
+	<!-- link 定义外部的文件和该文件之间的关系
+	stylesheet 指明是一个式样表
+	href：指定css文件的路径
+
+	通过link标签把外部式样表作用于html
+	 -->
+	<link rel="stylesheet" href="style.css">
+	<!-- 内部式样表写在head中，必须写在style标签中
+	  语法：
+
+	  选择器{ 属性名:属性值；属性名:属性值 }
+	 -->
+	 <style type="text/css" media="screen">
+	 /*type  表明类型是css   media 面向的媒介类型：
+       screen 面向屏幕   print  面向打印机  tv  面向电视
+	 */
+	    /*影响到html中的所有a标签*/
+	 	a{ color:green; }
+	 </style>
+</head>
+<body>
+	<!-- css 控制元素在浏览器中的展示方式
+
+     1：浏览器默认式样
+     2：用户设置的式样
+     3：外部式样表
+     4：内部式样表
+     5：行内是样表
+
+     共同叠加在一起最终形成一个式样
+	 -->
+	 <!-- css 式样语法 -->
+	 <!-- 属性名：属性值；属性名：属性值； -->
+
+	<p style="background-color: red;color:white;">this is test</p>
+	<p>this is test 2</p>
+
+    <a href="#">链接1</a>
+    <a href="#">链接2</a>
+
+
+	<!-- 式样表的写法有3中
+       1：外部式样表
+       2：内部式样表
+       3：行内式样：使用的是标签的style属性
+	 -->
+</body>
+</html>

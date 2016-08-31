@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		
+		/*  元素选择器  p{} */
+		/*  id 选择器  #id值{}*/
+		/*  类选择器   .class名{}*/
+		/* 后代选择器 p a{} 空格代表祖先和后代的关系*/
+		/* 父子选择器 p>a{} */
+		/* 兄弟选择器 p+span{}  紧跟p后的一个span兄弟*/
+		/* 兄弟选择器 p~span{}  p后的所有span兄弟*/
+
+		/*伪类选择器
+          a:link{}; 从未访问过的链接式样
+          a:hover{}; 鼠标悬停在元素上时的式样
+          a:focus{}; 当元素获取焦点时的式样
+          a:active{}; 当鼠标点击时的式样
+          a:visited{}; 链接被访问后的式样
+		*/
+
+		/*属性选择器*/
+        *{ margin: 0px;padding: 0px; }
+        p{ height: 30px;line-height: 30px;border: 1px solid black; margin-bottom: 2px;}
+        /* p 标签中包含person 属性 */
+        p[person]{ border: 1px solid red; }
+
+        /* p 标签中属性person 值为abc */
+        p[person='abc']{ border: 1px solid blue; }
+
+        /* p标签中的属性person的值以test开头 */
+        p[person^='test']{border: 1px solid green;}
+
+        /*p 标签中的person 属性 以html结尾*/
+        p[person $= "html"]{border: 1px solid gray;}
+        
+        /*p 标签的person属性的值包含small 字符串*/
+        p[person *= "small"]{border: 1px solid pink;}
+
+        /*p 标签 中person属性值是一个列表项，其中一项是big*/
+        p[person ~= "big"]{ border: 1px solid yellow; }
+
+        /*p 标签中person属性值 是it 或者it- 开头的*/
+        p[person|="it"]{ border: 1px solid orangeb; }
+
+	</style>
+</head>
+<body>
+	<!-- <a href=""></a> -->
+	<p person="">测试文本</p>
+	<p person="abc">person="abc"</p>
+
+	<p person="test1">person="test1"</p>
+	<p person="test">person="test"</p>
+
+	<p person="1601html">person="1601html"</p>
+	<p person="html">person="html"</p>
+
+	<p person="123small456">person="123small456"</p>
+
+	<p person="http big ftp">person="http big ftp"</p>
+
+	<p person="it-1">person="it-1"</p>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		/*共通式样*/
+		*{ margin:0px;padding: 0px; }
+        .clearfix:after{ content: "";display: block;clear: both;height: 0px;}
+        .clearfix{ -ms-zoom: 1; }
+
+        /* 导航栏式样 */
+        #nav{ 
+        	width: 1200px;
+        	margin: 20px auto;
+        	background-color: red; }
+
+        #nav .left{ margin-left: 50px; }
+        
+        #nav .left ul li{ 
+        	float: left;
+        	width: 84px;
+        	text-align: center; 
+        	list-style: none;
+        	line-height: 35px;
+        	/*设置li的position*/
+        	position: relative;
+        }
+
+        /*hover 时背景色修改*/
+        #nav .left ul li:hover{ background-color: pink; }
+
+        /* font-weight: bolder; 粗体显示 */
+        #nav .left ul li a{ 
+        	color: white;
+        	font-size: 14px;
+        	font-weight: bolder; 
+        	text-decoration: none;
+        }
+
+        /*hot 处理,使用绝对定位，父级元素必须设置非static*/
+        #nav .left ul li .hot{
+        	background: url(images/icon1.png) no-repeat;
+        	width: 27px;height: 14px;
+        	position: absolute;
+        	top:-5px;
+        	right: 5px;
+        }
+
+       #nav .left ul li .seperator{
+       	   width: 1px;background-color: yellow;
+       	   position: absolute;
+       	   right: 0px;
+       	   /*当没有设置高度的时，设置top和bottom后自动计算高度*/
+       	   top:5px;
+       	   bottom: 5px;
+       }
+
+
+        #nav .right{ float: right; }
+        #nav .right a{ text-decoration: none;
+                       color: white;
+                       font-size: 14px;
+                       font-weight: bolder;
+                       vertical-align: middle;
+         }
+        #nav .right img{ vertical-align: middle; }
+
+	</style>
+</head>
+<body>
+	<div id="nav" class="clearfix">
+		<div class="left">
+			<ul>
+				<li>
+				    <a href="#">首页</a>
+				    <i class="seperator"></i>
+				</li>
+				<li>
+					<a href="#">品牌团</a>
+					<i class="seperator"></i>
+				</li>
+				<li>
+					<a href="#">优品汇</a>
+					<span class="hot"></span>
+					<i class="seperator"></i>
+				</li>
+				<li>
+					<a href="#">9块9包邮</a>
+					<i class="seperator"></i>
+				</li>
+				<li>
+					<a href="#">20元封顶</a>
+					<i class="seperator"></i>
+				</li>
+				<li>
+					<a href="#">特卖商城</a>
+					<i class="seperator"></i>
+				</li>
+				<li>
+					<a href="#">积分商城</a>
+				</li>
+			</ul>
+		</div>
+		<div class="right">
+			<a href="#">精选广告</a>
+			<img src="images/signin-icon1.gif" alt="">
+		</div>
+	</div>
+
+</body>
+</html>

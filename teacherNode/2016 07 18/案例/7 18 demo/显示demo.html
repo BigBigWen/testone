@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		*{ margin: 0px;padding: 0px; }
+		div span{
+			width: 100px;height: 50px;
+			border: 1px solid red;
+			display: inline-block;
+			/*对于单行文本，当行高和高度一样时，垂直居中*/
+			line-height: 50px;
+			/* 让文字水平居中*/
+			text-align: center;
+		}
+
+		.content{
+			width: 200px;
+			background-color: yellow;
+			font-size: 12px;
+			border: 1px solid black;
+			/*display:none 元素不显示*/
+			display: none;
+		}
+
+        /*选择器的综合使用*/
+		/*div span:hover+div{
+			display: block;
+		}*/
+
+       #spanid:hover+div{
+       	 display: block;
+       }
+	</style>
+</head>
+<body>
+	<!-- <a href="#" title="asss">链接</a> -->
+
+	<div>
+	   <span id="spanid">我的提示</span>
+	   <div class="content">
+	   	    我的提示说明，我的提示说明
+	   	    我的提示说明，我的提示说明
+	   	    我的提示说明，我的提示说明
+	   	    我的提示说明，我的提示说明
+	   	    我的提示说明，我的提示说明
+	   	    我的提示说明，我的提示说明
+	   	    我的提示说明，我的提示说明
+	   	    我的提示说明，我的提示说明
+	   </div>
+	</div>
+</body>
+</html>

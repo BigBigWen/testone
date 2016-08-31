@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{margin: 0;padding: 0;}
+		div[class*='box']{width:800px;margin:0 auto;border:1px solid #333;}
+		div[class*='box'] section:nth-child(1){background-color: pink;
+          width: 80px; height: 50px;
+		}
+		div[class*='box'] section:nth-child(2){background-color: green;
+width: 40px; height: 100px;
+		}
+		div[class*='box'] section:nth-child(3){background-color: red;
+width: 70px;height: 150px;
+		}
+		div[class*='box'] section:nth-child(4){background-color: blue;
+ 			width: 200px; height: 90px;
+		}
+		
+		/* box1 stretch是align-items的默认值，如果子元素不设置高度，
+   那么它的高度会是父元素中子级中高度最大的那个值
+		 */
+		.box1{display: flex; display: -webkit-flex;
+			align-items:stretch;
+		}
+		/* 元素顶对齐 */
+		.box2{
+			display: flex;display: -webkit-flex;
+			align-items:flex-start;
+		}
+		/* 元素底对齐 */
+		.box3{
+			display: flex;display: -webkit-flex;
+			align-items:flex-end;
+		}
+		/* 各个元素相对居中 */
+		.box4{
+			display: flex;display: -webkit-flex;
+			align-items:center;
+			/* justify-content: center; */
+		}
+		/*按照文字基线对齐 */
+		.box5{
+			display: flex;display:-webkit-flex;
+			align-items: baseline;
+		}
+		
+		
+		
+		
+		
+
+
+
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<section>1</section>
+		<section>2</section>
+		<section>3</section>
+		<section>4</section>
+		
+	</div>
+	<div class="box2">
+		<section>1</section>
+		<section>2</section>
+		<section>3</section>
+		<section>4</section>
+		
+		
+	</div>
+	<div class="box3">
+		<section>1</section>
+		<section>2</section>
+		<section>3</section>
+		<section>4</section>
+		
+	</div>
+	<div class="box4">
+		<section>1</section>
+		<section>2</section>
+		<section>3</section>
+		<section>4</section>
+		
+	</div>
+	<div class="box5">
+		<section>1</section>
+		<section>2</section>
+		<section>3快乐</section>
+		<section>4djgkdf</section>
+		
+	</div>
+	
+
+</body>
+</html>

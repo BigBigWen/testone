@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style id='mystyle'>
+	#mydiv{
+		width: 100px;
+		height: 100px;
+		background-color: blue;
+	}
+		
+	</style>
+
+</head>
+<body>
+	<div id="mydiv"></div>
+	<script>
+	//使用sheet 快速获取式样表,只对style元素和link元素有效
+		var styleEle = document.getElementById('mystyle');
+		//
+		var sheet = styleEle.sheet || styleEle.styleSheet;
+		var rules = sheet.cssRules ||sheet.rules;
+		var firstRules = rules[0];
+		console.log(firstRules.selectorText);
+		console.log(firstRules.style.cssText);
+		console.log(firstRules.style.width);
+		console.log(firstRules.style.height);
+
+	</script>
+</body>
+</html>

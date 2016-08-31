@@ -1,0 +1,41 @@
+@charset "utf-8";
+*{margin: 0px;padding: 0px;}
+li{list-style: none;}
+a{text-decoration: none;}
+
+
+body{background-color: #000;}
+
+/*整体*/
+.container
+    {
+    	width: 700px;height: 520px;
+    	background-color: #526374;
+    	margin: 0 auto;
+    	margin-top: 30px;
+    	border: 1px solid white;
+    }
+.top{height: 70px;line-height: 70px;color: white;}
+.top>p{font-size: 14px;font-weight: bold;text-align: center; }
+.top>p>span{font-size: 20px;/*vertical-align: middle;*/}
+/*内容*/
+.content{position: relative;margin-top: 20px;width: 700px;height: 280px;}
+ .content>.left
+      {
+      	padding-left: 30px;
+        width: 400px;height: 280px;
+        overflow: hidden;
+      }
+
+
+.content>.right
+     {
+     	width: 115px;height: 280px;
+     	overflow: scroll;
+     	position: absolute;top: 0px;right: 0px;
+     }
+
+.content>.right li img{width:115px;height: 85px; }
+.bottom{ margin-left: 30px;margin-top: 40px;}
+.bottom p{ color: white;font-size: 12px;}
+.bottom p a{color: white;font-size: 12px;}

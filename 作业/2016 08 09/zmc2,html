@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+     <label>请输入一个三位数<input id="input" type="text" name="" value=""></label>
+     <button id="button" type="button">点我会让百位和个位颠倒</button>
+     <span id="result"></span>
+	<script>
+		var inputElement = document.getElementById('input');
+		
+		var buttonElement = document.getElementById('button');
+		buttonElement.onclick = function(){
+			var inputValue = inputElement.value;
+		    var inputNumber = parseInt(inputValue) ;
+			var a = parseInt( inputNumber / 100 );
+			var b = parseInt( ( inputNumber % 100 ) / 10 );
+			var c = parseInt( inputNumber % 10 );
+			var d = c*100+b*10+a;
+			var resultElement = document.getElementById('result');
+			resultElement.innerHTML = d ;
+		}
+	</script>
+</body>
+</html>

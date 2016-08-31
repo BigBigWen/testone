@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{ margin:0;padding: 0; }
+		p{
+			border: 1px solid black;
+			line-height: 30px;
+			height: 30px;
+			margin-bottom: 5px;
+		}
+
+		p a{ display: block;background:url(icon1.gif) no-repeat 5px center;padding-left: 30px; height: 30px; }
+
+       a[href *= "ppt"]{ background-image: url(icon1.gif); }
+       a[href *= "pdf"]{ background-image: url(icon2.gif); }
+       a[href *= "txt"]{ background-image: url(icon3.gif); }
+       a[href *= "doc"]{ background-image: url(icon4.gif); }
+       a[href *= "xls"]{ background-image: url(icon5.gif); }
+
+
+	</style>
+</head>
+<body>
+	<p><a href="http://ppt/test.com">测试文档</a></p>
+	<p><a href="http://pdf/test.com">测试文档</a></p>
+	<p><a href="http://txt/test.com">测试文档</a></p>
+	<p><a href="http://doc/test.com">测试文档</a></p>
+	<p><a href="http://xls/test.com">测试文档</a></p>
+</body>
+</html>

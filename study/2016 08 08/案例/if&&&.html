@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>当if遇上逻辑操作符</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		//三个逻辑操作符
+		//&& 于(并且)  ||或(或者)  !非(去反)
+		//if (条件1 && 条件2)   当条件1和条件2同时为true时,整体表达式的值才为true
+		var age =18;
+		var  sex ='女';
+		//首先判断第一个条件是否为真,如果为真再去判断第二个条件
+		//如果第一个条件为假,结果直接为假,不再判断第二个条件,条件短路
+		if (age== 18 && sex =='女') {
+			console.log('妙龄')
+		}  
+		//if(条件1 || 条件2)
+		//当两个条件一个为真时,整体为真,不再判断第二个条件
+		//两个条件都假时,整体为假
+		var age =86;
+		if (age<10 ||age>80) {
+			console.log('弱势群体')
+			document.write('保护人群')
+		}
+		//!取反
+		 var b1 =false;
+		if (!b1) {
+			document.write('取反成正')
+		}
+		//算术运算符,关系运算符,逻辑运算符,优先级,算数运算符>关系运算符>逻辑运算符
+		//可以通过()来修改优先级   
+
+		//直接执行匿名函数,最外层的()代表整个匿名函数为一个整体
+
+
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>index1</title>
+	<link rel="stylesheet" href="">
+	<style>
+	#divtest{width: 100px;height: 100px;border: 1px solid black;display: none;}
+		
+	</style>
+
+</head>
+<body>
+	<button id="button1" type="button">显示</button>
+	<button id="button2" type="button">变宽</button>
+	<button id="button3" type="button">变高</button>
+	<button id="button4" type="button">变色</button>
+	<div id="divtest">
+		
+	</div>
+	<script>
+		var button1 = document.getElementById("button1");
+		var button2 = document.getElementById("button2");
+		var button3 = document.getElementById("button3");
+		var button4 = document.getElementById("button4");
+
+//不要加().加()等于函数调用,立即执行
+		button1.onclick =show;
+		button2.onclick =makewidth;
+		button3.onclick =makeheight;
+		button4.onclick =makecolor;
+
+		function show(){
+			var button1=document.getElementById("button1");
+			divtest.style.display ="block";
+		};
+		function makewidth(){
+			var button1 =document.getElementById('button2');
+			divtest.style.width= '200px'
+		};
+		function makeheight(){
+			var button3 =document.getElementById('button3')
+			divtest.style.height ='200px';
+		};
+		function makecolor(){
+			var button4 =document.getElementById('button4');
+			divtest.style.backgroundColor ='red';
+		};
+	</script>
+</body>
+</html>

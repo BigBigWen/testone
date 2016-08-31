@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+     
+     <button type="button">追加节点</button>
+     <button type="button">插入节点</button>
+     <button type="button">替换节点</button>
+     <button type="button">删除节点</button>
+     <button type="button">copy节点</button>
+     <button type="button">转移节点</button>
+
+
+	<ul id="ulId">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+
+	<script type="text/javascript">
+		//对于元素节点有以下个函数，可供我们操作文档树
+		//parendNode.appendChild( ele );  把ele 元素放到最末尾
+
+		//把newEle 插入到oldEle之前
+		//parendNode.insertBefore(newEle,oldEle)
+
+		//替换一个节点,newELe 替换掉 oldEle
+		//parendNode.replaceChild( newEle,oldELe)
+
+        //删除 ele 节点
+		//parendNode.removeChild( ele );
+
+        //copy一个节点，deep 是Boolean 变量，true 连孩子一起copy
+        //                                   false 只copy节点本身
+		//cloneNode(deep)
+
+		
+		var buttonList = document.getElementsByTagName('button');
+		//追加
+		buttonList[0].onclick = function(){
+			//1:追加一个节点
+			//a:生成一个元素节点  <li></li>
+			var liEle = document.createElement('li');
+			//b:在生成的元素上添加文本节点  参数是文本节点的值
+			var textNode = document.createTextNode('5');
+			//c:让文本节点称为元素节点的子节点 <li>5</li>
+			liEle.appendChild(textNode);
+			//d:追加到ul的最后面
+			var ulElement = document.getElementById('ulId');
+			ulElement.appendChild(liEle);
+		}
+
+		//插入
+		buttonList[1].onclick = function(){
+			var newNode = document.createElement('li');
+			newNode.appendChild(document.createTextNode('a'));
+			var ulElement = document.getElementById('ulId');
+            ulElement.insertBefore(newNode,ulElement.firstChild);
+            //ulElement.insertBefore(newNode,ulElement.lastChild);
+
+            //追加到最后同appendChild
+            ulElement.insertBefore(newNode,null);
+
+            var allNode = ulElement.childNodes;
+		}
+
+		//替换
+		buttonList[2].onclick = function(){
+			var newNode = document.createElement('li');
+			newNode.innerHTML = 'b';
+
+			var ulElement = document.getElementById('ulId');
+			ulElement.replaceChild(newNode,ulElement.firstElementChild);
+		}
+
+		//删除
+		buttonList[3].onclick = function(){
+			var ulElement = document.getElementById('ulId');
+			if( ulElement.childElementCount > 0){
+				ulElement.removeChild(ulElement.firstElementChild);
+			}
+		}
+
+		//copy
+		buttonList[4].onclick = function(){
+			var ulElement = document.getElementById('ulId');
+			var copyDeep  = ulElement.cloneNode(true);
+			var copyLight = ulElement.cloneNode(false);
+
+			console.log(copyDeep);
+			console.log(copyLight);
+		}
+
+		//转移
+		//一个节点在文档树只能存在一个位置
+		buttonList[5].onclick = function(){
+			var ulElement = document.getElementById('ulId');
+			ulElement.appendChild(ulElement.firstElementChild);
+		}
+
+	</script>
+</body>
+</html>

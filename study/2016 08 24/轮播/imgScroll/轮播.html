@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+	*{margin: 0px;padding:0;}
+	.clear:after{content: '';height: 0;display: block;clear: both;overflow: hidden;}
+	.clear{--ms-zoom: 1}
+	.container{position: relative;width: 490px;height: 170px;margin: 50px auto;}
+	.imgList>img{position: absolute;top: 0px;left: 0px;}
+	.indicator{position: absolute;bottom: 0px;right: 0px;}
+	.indicator li{float: left;width: 40px;height: 40px;text-align: center;line-height: 40px;background-color: rgba(100,100,100,.5);margin-left: 2px;list-style: none;}
+	.indicator .active{background-color: red;color:#fff;}	
+	</style>
+	
+</head>
+<body>
+	<div class="container">
+		<div class="imgList">
+			<img src="img1.gif" alt="">
+			<img src="img2.jpg" alt="">
+			<img src="img3.jpg" alt="">
+			<img src="img4.jpg" alt="">
+			<img src="img5.png" alt="">
+			<img src="img6.jpg" alt="">
+		</div>
+		<div class="indicator">
+			<ul class="clear">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+			</ul>
+		</div>
+	</div>
+
+	<script>
+	//生成一个定时器
+		var timer = setInterval(runLoop,1000);
+		//指示当前显示的是第几个
+		var showIndex = 0;
+		var imgList = document.getElementsByTagName('img');//得到图片列表
+	    var indicator = document.getElementsByTagName('li');//指示符列表
+
+		function runLoop(){
+			//高亮显示图片
+			activeItem(showIndex);
+
+			//轮播
+			showIndex++;
+			if( showIndex == 6){
+				showIndex = 0;
+			}
+
+		}
+		function activeItem(itemIndex){
+			
+			for( var i = 0; i < imgList.length;i++){
+				if( itemIndex==i ){
+					//需要显示高亮的部分 图片 指示符
+					imgList[i].style.display = 'block';
+					indicator[i].className = 'active';
+				}else{
+					//其他的图片不高亮,其他的指示符不高亮
+					imgList[i].style.display= 'none';
+					indicator[i].className = '';
+				}
+			}
+		}
+
+		//鼠标移动上去和移开的操作
+		for( var i = 0; i < indicator.length;i++){
+			indicator[i].index = i;
+			indicator[i].onmouseover = function(){
+				
+				//停掉定时器
+                 clearInterval(timer);//timer是setinterval的返回值
+				//显示当前对应的图片并高亮指示器
+				activeItem(this.index);
+
+			}
+			indicator[i].onmouseout = function(){
+				showIndex = this.index;
+				timer = setInterval(runLoop,1000)
+			}
+		}
+
+	</script>
+</body>
+</html>

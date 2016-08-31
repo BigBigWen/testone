@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title></title>
+</head>
+    <style type="text/css">
+    /* 重置 */
+    	*{margin: 0;padding: 0; font-size: 12px;}
+    	a{text-decoration:none;}
+    	img{border:0 none; display:block;
+/* 一定要这样设置，个别需要修改的在修改宽度 */
+    	 width: 100%;}
+    	li{list-style:none;}
+.clear{clear:both;}
+       /* 先测量大块区域的大小 */
+    	.list-container{width: 1200px; margin: 10px auto;}
+    	/* 再确定一行有几个 测量宽度是多少 */
+        .list-container ul li{ width: 224px; background-color: #f5f5f5;  border:1px solid #f7f7f7;
+        	-webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        /* margin-right等于 width*(一行的个数)+ （一行的个数-1）*y= 1200  y就是margin-right的值 才能使区域铺满  */
+float:left; margin-right: 20px;
+/* 和下面的元素有些间距 */
+ margin-bottom:15px;  	
+
+}
+
+
+        .list-img{display: block; width: 100%;}
+        .list-title{color:#3c3c3c;display: block; line-height:18px; padding:3px 10px; text-align: :justify;}
+        .list-det{padding:5px 10px;}
+        .list-det span{line-height:24px;}
+        .list-detof1{color:#F40; font-size: 16px; font-family: "微软雅黑"; }
+        .list-detof2{ color:#9ca0aa; float: right; }
+        .list-container ul li:hover{border:1px solid #f00;}
+        /* 每到临近右边缘，也就是每行的最后一个需要把margin-right:0;这样才可以
+        方法一 用css添加  */
+        .list-container li.nomargin{
+               margin-right: 0;
+       } 
+       /*方法2  后期会学到用css3的方式 */
+       /*  .list-container li:nth-child(5n){
+               margin-right: 0;
+       } */
+    </style>
+<body>
+	<div class="list-container">
+	<!-- 像这种块级列表类的通常用ul li来表示 -->
+		<ul>
+			<li>
+				<a href="#" title="" class="list-img"><img src="images/list1.jpg" alt=""></a>
+				<a href="#" title="" class="list-title">Dior迪奥魅惑液态唇膏液体口红唇釉唇彩专柜简装Tester试用装</a>
+				<p class="list-det">
+					<span class="list-detof2">销量：90</span>
+					<span class="list-detof1">30元</span>
+				</p>
+			</li>
+			<li>
+				<a href="#" title="" class="list-img"><img src="images/list2.jpg" alt=""></a>
+				<a href="#" title="" class="list-title">Dior迪奥魅惑液态唇膏液体口红唇釉唇彩专柜简装Tester试用装</a>
+				<p class="list-det">
+					<span class="list-detof2">销量：90</span>
+					<span class="list-detof1">30元</span>
+				</p>
+
+			</li>
+			<li>
+				<a href="#" title="" class="list-img"><img src="images/list3.jpg" alt=""></a>
+				<a href="#" title="" class="list-title">Dior迪奥魅惑液态唇膏液体口红唇釉唇彩专柜简装Tester试用装</a>
+				<p class="list-det">
+					<span class="list-detof2">销量：90</span>
+					<span class="list-detof1">30元</span>
+				</p>
+
+			</li>
+			<li>
+				<a href="#" title="" class="list-img"><img src="images/list4.jpg" alt=""></a>
+				<a href="#" title="" class="list-title">Dior迪奥魅惑液态唇膏液体口红唇釉唇彩专柜简装Tester试用装</a>
+				<p class="list-det">
+					<span class="list-detof2">销量：90</span>
+					<span class="list-detof1">30元</span>
+				</p>
+			</li>
+			<li class="nomargin">
+				<a href="#" title="" class="list-img"><img src="images/list5.jpg" alt=""></a>
+				<a href="#" title="" class="list-title">Dior迪奥魅惑液态唇膏液体口红唇釉唇彩专柜简装Tester试用装</a>
+				<p class="list-det">
+					<span class="list-detof2">销量：90</span>
+					<span class="list-detof1">30元</span>
+				</p>
+
+			</li>
+
+			<li>
+				<a href="#" title="" class="list-img"><img src="images/list1.jpg" alt=""></a>
+				<a href="#" title="" class="list-title">Dior迪奥魅惑液态唇膏液体口红唇釉唇彩专柜简装Tester试用装</a>
+				<p class="list-det">
+					<span class="list-detof2">销量：90</span>
+					<span class="list-detof1">30元</span>
+				</p>
+			</li>
+			<li>
+				<a href="#" title="" class="list-img"><img src="images/list2.jpg" alt=""></a>
+				<a href="#" title="" class="list-title">Dior迪奥魅惑液态唇膏液体口红唇釉唇彩专柜简装Tester试用装</a>
+				<p class="list-det">
+					<span class="list-detof2">销量：90</span>
+					<span class="list-detof1">30元</span>
+				</p>
+
+			</li>
+			<li>
+				<a href="#" title="" class="list-img"><img src="images/list3.jpg" alt=""></a>
+				<a href="#" title="" class="list-title">Dior迪奥魅惑液态唇膏液体口红唇釉唇彩专柜简装Tester试用装</a>
+				<p class="list-det">
+					<span class="list-detof2">销量：90</span>
+					<span class="list-detof1">30元</span>
+				</p>
+
+			</li>
+			<li>
+				<a href="#" title="" class="list-img"><img src="images/list4.jpg" alt=""></a>
+				<a href="#" title="" class="list-title">Dior迪奥魅惑液态唇膏液体口红唇釉唇彩专柜简装Tester试用装</a>
+				<p class="list-det">
+					<span class="list-detof2">销量：90</span>
+					<span class="list-detof1">30元</span>
+				</p>
+			</li>
+			<li class="nomargin">
+				<a href="#" title="" class="list-img"><img src="images/list5.jpg" alt=""></a>
+				<a href="#" title="" class="list-title">Dior迪奥魅惑液态唇膏液体口红唇釉唇彩专柜简装Tester试用装</a>
+				<p class="list-det">
+					<span class="list-detof2">销量：90</span>
+					<span class="list-detof1">30元</span>
+				</p>
+
+			</li>
+
+
+
+
+
+
+			
+
+		</ul>
+<div class="clear"></div>
+
+	</div>
+
+
+</body>
+</html>

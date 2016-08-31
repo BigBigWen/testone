@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		
+       div{
+			width: 300px;height: 300px;
+			background-color: blue;
+		}
+		.myclass{
+			width: 200px;height: 200px;
+			background-color: green;
+		}
+
+		#mydiv{
+			width: 100px;height: 100px;
+			background-color: red;
+		}
+		/*行内选择器的权重 1000
+		  id 选择器权重    100
+		  class 选择器权重 10
+		  元素选择器权重   1
+		*/
+		.class1{
+          width: 100px;height: 100px;
+          background-color: red;
+		}
+
+		.class2{
+           width: 100px;height: 100px;
+           background-color: green;
+		}
+		/*当权重一样时，定义在后面的式样起作用*/
+	
+      #div1 p{  
+      	/*100 +1 = 101 */
+        background-color: red;
+      } 
+
+      .class3 p{
+       /*10 + 1 = 11*/
+       background-color: blue;
+      }
+
+	</style>
+</head>
+<body>
+	<div id="mydiv" class="myclass" style="width:400px;height: 400px;background-color:yellow;">
+		
+	</div>
+
+<!-- 多个class 值之间用空格隔开 -->
+	<div class="class2 class1">
+		
+	</div>
+
+
+	<div id="div1" class="class3">
+		<p>test</p>
+	</div>
+</body>
+</html>

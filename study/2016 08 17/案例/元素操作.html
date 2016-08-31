@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>dom元素操作</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+<button type="button">追加节点</button>
+<button type="button">插入节点</button>
+<button type="button">替换节点</button>
+<button type="button">删除节点</button>
+<button type="button">赋值节点</button>
+<button type="button">转移节点</button>
+	<ul id="ulid">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+	<script>
+		//对于元素节点有以下几个函数,可供我们操作文档树
+		//parendNode.appendChild( ele ); 把ele元素放到最末尾
+
+		//把newele 插入到 oldele之前
+		//parendNode.insertBefore(newele,oldele);
+
+		//替换一个节点
+		//parendNode.replaceChild(newele,oldele)
+
+		//删除ele节点
+		//parendNode.removeChild(ELE);
+
+		//copy一个节点,是bool变量    true 连孩子一起copy   false 只copy自己本身
+		//parentNode.(deep);
+
+		
+
+		var buttonList = document.getElementsByTagName('button');
+		var ulEle = document.getElementById('ulid');
+		buttonList[0].onclick = function(){//追加节点
+			//1追加节点
+			var liEle = document.createElement('li');//首先生成一个元素节点
+			var textEle = document.createTextNode('5');//生成元素上添加文本内容
+			//让文本节点成为元素节点的子节点
+			liEle.appendChild(textEle);
+			//追加到ul最后面
+			
+			ulEle.appendChild(liEle);
+
+		}
+		//插入
+		buttonList[1].onclick = function(){
+			var newNode = document.createElement('li');
+			var textEle = document.createTextNode('a');
+			newNode.appendChild(textEle);
+			ulEle.insertBefore(newNode,firstChild)
+		}
+		//替换
+		buttonList[2].onclick = function(){
+			var newNode = document.createElement('li');
+			var  textEle = document.createTextNode('b');
+			newNode.appendChild(textEle);
+			ulEle.replaceChild(newNode,ulEle.firstChild);
+		}
+		//删除节点
+		buttonList[3].onclick = function(){
+			if( ulEle.childElementCount){
+				ulEle.removeChild(ulEle.firstChild);
+			}
+		}
+		buttonList[4].onclick = function(){
+			var copyDeep = ulEle.cloneNode(true);
+			var copyLight = ulEle.cloneNode(false);
+			console.log(copyDeep);
+			console.log(copyLight);
+
+		}
+		//转移
+		buttonList[5].onclick = function(){
+			ulEle.appendChild( ulEle.firstElementChild );
+		}
+
+	</script>
+
+</body>
+</html>

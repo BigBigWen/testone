@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<form id="form1" action="http://baidu.com" method="get" accept-charset="utf-8">
+	<input type="text" name="" id="input1" value="" placeholder="">
+
+	<select id="select1" name="">
+		<option value="值1">1111111111</option>
+		<option value="值2">2222</option>
+		<option value="值3">3333333</option>
+	</select>
+	<input type="text" id="input2" name="" value="请输入姓名：" placeholder="">
+
+   	<input type="submit" id="submitbtn" name="" value="提交">
+   	<input type="reset" id="resetbtn" name="" value="重置">
+</form>
+<script type="text/javascript">
+var input1=document.getElementById("input1");
+//当文本域里面的文本被选中的时候
+input1.onselect=function(){
+	alert(this.value);
+};
+//
+var select1=document.getElementById("select1");
+select1.onchange=function(){
+	alert(this.value);
+};
+
+var input2=document.getElementById("input2");
+//当元素获取焦点的时候触发
+/*input2.onfocus=function(){
+	this.value="";
+
+};*/
+//当元素失去焦点的时候触发
+
+input2.onchange=function(){
+	this.style.backgroundColor="#333";
+};
+input2.onblur=function(){
+	 this.value="1111111111";
+	this.style.backgroundColor="#ff0";
+};
+//
+
+var submitbtn=document.getElementById("submitbtn");
+var form1=document.getElementById("form1");
+form1.onsubmit=function(){
+		// alert("正在提交");
+		//阻止提交表单
+		return false;
+};
+
+var resetbtn=document.getElementById("resetbtn");
+form1.onreset=function(){
+	//是一个系统确认框，返回值是true(是默认的，代表确定) false(取消);
+	//confirm里面的内容指的是提示用户的信息
+	var confirmbox=confirm("确定要重置么？");
+	if(confirmbox){
+		return true;
+	}
+	else{
+		return false;
+
+	}
+
+};
+
+
+
+
+</script>
+
+
+</body>
+</html>

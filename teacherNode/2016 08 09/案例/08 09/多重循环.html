@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+	// 多重循环中，while do while  for 可以相互嵌套
+		// for()
+		// {
+		// 	for(){
+		// 		for(){
+		// 			for(){
+
+		// 			}
+		// 		}
+		// 	}
+		// }
+
+    document.write("<br>");
+    //对于有行又有列这种情况，通常使用多重循环来实现
+    //外部循环控制行，内部循环控制的是列
+    for( var i = 0 ; i < 4; i++ ){            
+    	for( var j = 0;j < 5;j++ ){
+    		document.write("*");
+    	}
+
+    	document.write("<br>");
+    }
+
+// 分析外部控制变量和内部控制变量的关系
+
+// *                    i = 0   j = 0  *  其他的 空格
+// **                   i = 1   j = 0 1 *  其他 空格
+// ***                  i = 2   j = 0 1 2 *  其他空格
+// ****                 i = 3   j = 0 1 2 3 *  其他空格
+
+// j <= i 输出 *　其他的输出　空格
+   for( var i = 0; i < 4; i++ )
+   {
+   	//外层循环控制行
+   	  for( var j = 0; j < 4; j++ ){
+   	  	//内部循环控制列
+        if( j <= i){
+        	document.write("*");
+        }else{
+        	document.write("&nbsp;");
+        }
+   	  }
+
+   	  document.write("<br>");
+   }
+
+
+document.write("<br>");
+// ****         i = 0   j = 0 1 2 3   
+// ***          i = 1   j = 0 1 2 
+// **           i = 2   j = 0 1
+// *            i = 3   j = 0
+// j < 4 - i
+
+   for( var i = 0; i < 4; i++ ){
+   	for( var j = 0 ;j < 4; j++){
+       if( j < 4-i ){
+       	document.write("*");
+       }else{
+       	document.write("&nbsp;")
+       }
+   	}
+   	document.write("<br>")
+   }
+
+
+document.write("<br>");
+
+//    *           
+//   ***           
+//  *****          
+// *******    
+for( var i = 0 ; i < 4; i++ ){
+	for( var j = 0; j < 7;j++ ){
+        if( j >= 3-i && j <= 3+i ){
+        	document.write("*");
+        }else{
+        	document.write('!');
+        }
+	}
+
+	document.write("<br>");
+}
+
+	</script>
+</body>
+</html>

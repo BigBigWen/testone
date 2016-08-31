@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>鼠标事件</title>
+</head>
+<body>
+	<ul>
+		<li>1111</li>
+		<li>2222</li>
+		<li>3333</li>
+		<li>4444</li>
+		<li>5555</li>
+	</ul>
+	<script type="text/javascript">
+		var liElementList = document.getElementsByTagName('li');
+		//ommouseover:鼠标移动到某元素上时,在该对象上触发mouseover,从而调用颜色
+		for(var i =0; i< liElementList.length;i++){
+			liElementList[i].onmouseover = function (){
+				this.style.backgroundColor = 'red';
+			}
+			liElementList[i].onmouseout = function (){
+				this.style.backgroundColor = 'white';
+			}
+		}
+	</script>
+</body>
+</html>

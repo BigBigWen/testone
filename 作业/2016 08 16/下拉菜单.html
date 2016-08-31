@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>下拉菜单</title>
+	<link rel="stylesheet" href="">
+	<style>
+	*{margin: 0;padding: 0;}
+	.clear:after{clear: both;content: '';height: 0;display: block;overflow: hidden;}
+	.clear{--ms-zoom: 1}
+	.header{width: 960px;height: 30px;background-color: #fcc;margin: 0 auto;}
+	.header>ul{float: left;margin-left: 80px;background-color: #fcc;width: 100px;}
+	.header>ul>li{list-style: none;line-height: 30px;text-align: center;width: 100px;}
+	.header>ul>li>a{display: block;text-decoration: none;line-height: 30px;width: 100px;color: black;}
+	.header>ul>li>a:hover{background-color: #faa;color: red;}
+	.header>ul>li:nth-child(2){border: 1px solid #fbb;display: none;}
+	</style>
+	
+</head>
+<body>
+	<div class="header clear">
+		<ul>
+		<li id="title">发现宝贝</li>
+		<li>
+			<a href="#">买买买</a>
+			<a href="#">吃吃吃</a>
+			<a href="#">逛逛逛</a>
+			<a href="#">逛逛逛</a>
+		</li>
+		
+	</ul>
+	<ul>
+		<li  id="title">我的淘宝</li>
+		<li>
+			<a href="#">买买买</a>
+			<a href="#">吃吃吃</a>
+			<a href="#">逛逛逛</a>
+		</li>
+	</ul>
+	<ul>
+		<li  id="title">卖家中心</li>
+		<li>
+			<a href="#">买买买</a>
+			<a href="#">吃吃吃</a>
+			<a href="#">逛逛逛</a>
+		</li>
+	</ul>
+	<ul>
+		<li  id="title">联系我们</li>
+	</ul>
+	<ul>
+		<li  id="title">收藏角</li>
+		<li>
+			<a href="#">买买买</a>
+			<a href="#">吃吃吃</a>
+		
+		</li>
+	</ul>
+	</div>
+	<script>
+		var ulList = document.getElementsByTagName('ul');
+		for( var i = 0 ;i < ulList.length;i++){
+			ulList[i].onmouseover = function(){
+				this.lastElementChild.style.display = 'block';
+				console.log(this.lastElementChild);
+			}
+			ulList[i].onmouseout = function(){
+				if(this.childElementCount >=2){
+					this.lastElementChild.style.display = 'none';
+				}
+			}
+		}
+	</script>
+</body>
+</html>

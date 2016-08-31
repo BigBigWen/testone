@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+    <a href="http://www.baidu.com" title="">百度</a>
+	<script>
+		window.onload = function  (e) {
+			//当页面的所有资源加载完成，图片，脚本，css文件
+			console.log('window.onload')
+		}
+
+		window.onunload = function(e){
+           //当页面卸载掉，触发的事件,资源清理
+           console.log('window.onunload');
+		}
+
+		//在页面卸载之前，beforeunload 事件，利用该事件可以阻止页面离开
+		window.addEventListener('beforeunload',function(e){
+            //询问用户离开还是留下
+            //不能使用 prompt() 提示
+            var message = '确定要离开吗?';
+            //2:把message 赋值给 event的returnValue
+            var ev = e || window.event;
+            ev.returnValue = message;
+            //3：把 message 返回
+            return message;
+		});
+
+		//当DOM树建立完成之后，系统触发一个DOMContentLoaded 事件，该事件在window的onload之前
+        document.addEventListener('DOMContentLoaded',function(e){
+        	console.log('DOM 树建立完成，就可以对dom进行操作');
+        });
+
+        //在加载文档的过程成，如果想关注加载的过程，可以使用readystatechange,   loading  complete(loaded)
+
+        document.addEventListener('readystatechange', function(e){
+            var ev = e || window.event;
+            //状态的变化 存在 event 的目标对象的属性中 readyState
+            //也就是document的属性 
+            if( ev.target.readyState == 'loaded' || ev.target.readyState == 'complete'){
+            	//文档的加载过程完成
+            	console.log('文档加载完成');
+            }
+        });
+
+        // $('document').ready( function(){} )
+
+
+        //当手机屏幕旋转时，发生屏幕旋转的事件 orientationchange 事件，该事件发生在window上，通过window.orientation 来获取手机旋转的方向
+        window.onload = function(e){
+        	window.addEventListener('orientationchange',function(){
+        		//通过 window的orientation获取手机的方向
+        		var orientation = window.orientation;
+        		switch(orientation){
+        			case 0: console.log('肖像模式');break;
+        			case -90:console.log('屏幕左旋转90度');break;
+        			case 90: console.log('屏幕向右旋转90度');break;
+        			case 180:console.log('肖像向下');break;
+        			default:console.log('没有获取到方向信息');
+        		}
+        	});
+        }
+         
+	</script>
+        
+</body>
+</html>

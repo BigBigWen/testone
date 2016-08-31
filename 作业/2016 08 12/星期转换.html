@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>星期转换</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<input id="week" type="text" name="" value="" placeholder="">
+	<button id="button" type="button">点击转换</button>
+	<span id="span"></span>
+	<script>
+		var week  = document.getElementById('week');
+		var button = document.getElementById('button');
+		button.onclick = function(){
+			var weekValue = week.value;
+			var weekNumber = Number(weekValue)
+				switch (weekNumber) {
+					case 1:
+					   resultStr = '星期一';
+					   break;
+					case 2:
+					    resultStr = '星期二';
+					    break;
+					case 3:
+					    resultStr = '星期三';
+					    break;
+					case 4:
+					    resultStr = '星期四';
+					    break;
+					case 5:
+					    resultStr = '星期五';
+					    break;
+					case 6:
+					     resultStr = '星期六';
+					     break;
+					case 0:
+					     resultStr = '星期天';
+					     break;
+					default:
+					     resultStr= '星期错误';
+					     break
+				}
+			var result = document.getElementById('span');
+			result.innerHTML = resultStr;
+		}
+	</script>
+</body>
+</html>

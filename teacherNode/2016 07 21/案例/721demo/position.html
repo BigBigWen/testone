@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<!-- 定位：设置元素的位置，对元素的位置进行微调或者参照基准变更 -->
+	<style type="text/css" media="screen">
+	/*
+       position: static  relateive absolute fixed;
+
+       static:默认，按照文档流的布局，布局到哪了是哪里;
+       relateive： 相对定位，可以通过 top left right bottom 对元素本身坐在的位置进行微调, relateive 不会脱离文档流
+       ，原有的位置不会被侵占，相对于在static状态他的位置
+       top,left,right,bottom 相对于原来的的顶部，左边，右边和下边
+	*/
+		/*
+           absolute：绝对定位，也是通过top left，right，bottom
+                     相对于自己的祖先容器，第一个设为非static的容器
+                     第一个设置为relative 或者是 absolute,fixed
+                     如果祖先容器都没有设置，找到body位置
+
+                     一旦一个元素使用绝对布局，他就从文档流中脱离处理，后续的而元素，把他所占的空间填充
+		*/
+
+        /*对于发生相互覆盖的情况，使用z-index的属性来调整次序，z-index值越大，层次越高，能覆盖比他z-index低的元
+
+        z-index值只对设置了定位为 relative 或者是 absolute的元素起作用
+        */
+
+        /*fixed：固定定位，只相对于窗口的左上角进行定位，也是使用top left right bottom 来进行定位的*/
+
+		*{ margin: 0px;padding: 0px; }
+		#box1{ width: 300px;height: 200px;border: 1px solid black; }
+        input{ position: relative;top:50px; left:10px; }
+
+
+        #box2{ width:500px; height: 500px;background-color: red;  }
+        #content{ width: 400px;height: 400px;background-color: green; 
+                  position: relative;
+        }
+        #child1{ width: 300px;height: 100px;background-color: yellow;position: absolute;top:10px;left: 10px; z-index: 2;}
+
+        #child2{ width: 330px;height: 102px;background-color: blue; 
+                  ;display: inline-block;z-index: 3;position: relative;
+        }
+
+        #fixedbox{ width: 60px;height: 200px; position: fixed;top:50px;right: 10px;background-color: red; }
+	</style>
+</head>
+<body>
+	 <div id="box1">
+	 	 这是一个测试文字这是一个测试文字这是一个测试文字这是一个测试文字,测试文字
+	 	 <input type="text" name="" value="" placeholder="">
+	 	 这是一个测试文字这是一个测试文字这是一个测试文字这是一个测试文字
+	 </div>
+
+	 <div id="box2">
+	 	<div id="content">
+	 		<div id="child1"></div>
+	 		<div id="child2"></div>
+	 	</div>
+	 </div>
+
+	 <div id="fixedbox">fixed</div>
+</body>
+</html>

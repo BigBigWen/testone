@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<button type="button">click me</button>
+	<script>
+		var button = document.getElementsByTagName('button')[0];
+		button.onclick = function(){
+			//this 指向 button
+			console.log(this);
+			//系统 调用 button.onclick();
+		}
+
+        //在全局作用域内this 指向window
+		console.log(this);
+
+		//创建一个对象
+		var p = {
+		    name:'h5',
+		    sayName:function(){
+		    	//this 指向 p
+		    	console.log(this.name);
+		    } 
+		}
+        //一个对象中的函数，只能通过对象来调用，所以函数内部的this 指针只能指向该对性
+		p.sayName();
+
+
+       //如果是构造函数，new CreateP 调用，
+       //this 指针 指向创建的对象 也就是p2
+       function CreateP(name,age){
+	       	this.name = name;
+	       	this.age = age;
+       }
+       
+       //通过new 的方式调用，this指向创建的对象
+       var p2 = new CreateP('a',1);
+
+       //普通函数调用，全局函数，this == window
+       // CreateP('b',2);
+
+
+       //函数，使用call ，apply 方式调用，函数内部的this，指向call或者是apply的第一个参数
+
+       var sum(a,b){
+       	console.log(this);
+       	return a + b;
+       }
+
+       var p3 = {};
+       //sum内部的this == p3
+       sum.call(p3,1,1);
+	</script>
+</body>
+</html>

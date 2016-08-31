@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>元素的属性</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<div id="mydiv" class="mytestClass"></div>
+	<!-- h5 支持自定义属性 自定义属性要求date-开头 -->
+	<div id="mydiv2" data-id="dateid" data-test="datatest"></div>
+	<script>
+		var divElement2 = document.getElementById('mydiv2');
+		console.log(divElement2.getAttribute('data-id'));
+		//h5提供更简单的方式访问自定义属性
+		console.log(divElement2.dataset.id);
+		console.log(divElement2.dataset.test);
+		divElement2.dataset.id = 'xxx';
+		console.log(divElement2.dataset.id);
+		//一个元素对象,可以通过Attributes属性得到所有的属性节点
+		var attrList = divElement2.attributes;
+		for( var i = 0 ; i < attrList.length;i++){
+			var attrNode = attrList[i];
+			console.log(attrNode.nodeType);
+			console.log(attrNode.nodeName);
+			console.log(attrNode.nodeValue);
+		}
+	</script>
+	<!-- <script>
+		//一个元素节点,要操作属性
+		//getAttribute('属性名')获取属性值  
+		//   setAttribute('属性名,属性值')设置属性值 
+		//  removeAttribute('')删除属性值
+
+		var divElement = document.getElementById('mydiv');
+		console.log(divElement.getAttribute('id'));
+		console.log(divElement.getAttribute('class')); 
+
+		divElement.setAttribute('width','100px');
+		divElement.setAttribute('height','100px');
+		 console.log(divElement.getAttribute('width'));
+         console.log(divElement.getAttribute('height'));
+
+         divElement.removeAttribute('width');
+         divElement.removeAttribute('height');
+         console.log(divElement.getAttribute('width'));
+         console.log(divElement.getAttribute('height'));
+	</script> -->
+</body>
+</html>

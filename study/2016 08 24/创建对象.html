@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+	 //类:一个抽象概念,对象是具体的东西,js引用类型
+	 //对象是一系列键值对的组合
+//1:使用object创建对象
+		var people1 = new Object();
+
+		//使用赋值语句 添加属性
+		people1.name = '张三';
+		people1.age = '30';
+		//取值
+		console.log(people1.name);
+		console.log(people1['name']);
+		var text = 'name';
+		console.log(people1[text]);
+		//删除
+		delete people1.name;
+         //使用赋值语句给对象添加行为
+		people1.eat = function(){
+			console.log('光吃不长肉');
+		}
+		//调用people1的函数
+		people1.eat();
+
+
+//使用字面量的方式创建对象
+//key:value,   -------后面以逗号分割-------
+       var people2 = {
+       	name:'李四',
+       	age:'30',
+       	weight:'80',
+       	eat:function(){
+       		this.weight+=10;
+       		console.log();
+       	},
+       	sleep:function(){
+       		console.log('sleep')
+       	}
+
+       };
+       console.log(people2.name);
+       people2.eat();
+       people2.sleep();
+
+       //var people3 = {};
+       console.log('---------------')
+
+ //3工厂方法 : 使用一个方法,该方法返回一个创建的对象
+      function creatPeople(){
+      	var p = new Object();
+      	p.name = 'name';
+      	p.age = 0;
+      	p.weight = 100;
+
+      	p.eat = function(){console.log('eat');}
+      	p.sleep = function(){console.log('sleep');}
+
+      	return p;
+      }
+
+      var people3 = creatPeople();
+      var people4 = creatPeople();
+      console.log(people3.name);
+      people3.eat();
+      console.log(people4.name);
+      people4.sleep();
+//4 使用构造函数方式创建对象
+//构造函数 
+    //1没有显示的创建对象
+    //直接将属性和方法赋值给this对象(this就是创建的对象)
+    //没有返回值,没有return语句
+    //函数名首字母大写
+       function People(name,age,weight){
+       	this.name = name;//this 指向函数的调用对象
+       	this.age = age;
+       	this.weight = weight;
+       	this.eat = function(){
+       		console.log('eat');
+       	 }
+       	this.sleep = function(){
+       		console.log('sleep');
+       	 }
+       }
+ //一个函数是不是构造函数要看调用方式,以new开始调用的就是构造函数
+       var People5 = new People('王五',30,100);
+       var People6 = new People('HAHA',20,40);
+       console.log(People5); 
+       console.log(People6);
+
+
+//每一个函数都是一个对象
+//每一个函数,都可以通过函数名调用 call apply
+function sum(a,b){
+      console.log(this);
+      return a+b;
+}
+  sum(1,1);//2
+  window.sum(1,1)//2
+  //所有全局变量和全局函数都作为window属性  或 函数
+  //call 第一个参数,指明哪个对象调用了sum
+  //也可以说sum中的this指向第一个参数
+  sum.call(this,1,1);//2  this指向windiw
+  sum.call(window,1,1);
+
+      var p6 = {name:'p6'};
+      sum.call(p6,1,1)
+
+      //apply使用和call一样,只不过参数传递方式和数组一样
+      sum.apply(p6,['a','b']);
+
+	</script>
+</body>
+</html>

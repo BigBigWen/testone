@@ -1,0 +1,74 @@
+*{margin: 0px;padding: 0px;}
+
+.container{ 
+	width: 1200px;
+    height: 600px;
+    border: 5px solid red;
+    border-radius: 5px;
+    background: url(../images/hougong.jpg) no-repeat;
+   
+     /* 增加景深*/
+    perspective: 800px;
+    text-align: center;
+ }
+
+ .container h1{ color:orange;}
+
+ .playcard{
+ 	height: 221px;width: 121px;
+ 	position: relative;
+ 	display: inline-block;
+ 	transform-style: preserve-3d;
+ 	transition: all 0.5s;
+ 	margin-top: 100px;
+
+ }
+
+ .face{
+ 	height: 201px;width: 81px;margin: 10px 20px;
+ 	position: absolute;top: 0px;left: 0px;
+ 	border-radius: 5px;
+ }
+
+/* 前面*/
+ .face1{
+ 	background: url(../images/hougong1.jpg);
+ 	transform: translateZ(10px);
+ }
+
+ /*后面*/
+ .face2{
+ 	background: url(../images/hougong1.jpg);
+ 	transform: translateZ(-10px);
+ }
+
+ /*左边*/
+ .face3{
+ 	background: url(../images/boot.jpg);
+ 	width:20px;height: 201px;
+ 	transform: rotateY(-90deg) translateZ(10px);
+ }
+
+ /*右边*/
+ .face4{
+ 	background: url(../images/boot.jpg);
+ 	width: 20px;height: 201px;
+ 	transform: rotateY(90deg) translateZ(71px);
+ }
+
+ .card2>.face1{ background: url(../images/hongong2.jpg); }
+ .card2>.face2{ background: url(../images/hongong2.jpg); }
+
+ .card3>.face1{ background: url(../images/hongong3.jpg); }
+ .card3>.face2{ background: url(../images/hongong3.jpg); }
+
+ .card4>.face1{ background: url(../images/hongong4.jpg); }
+ .card4>.face2{ background: url(../images/hongong4.jpg); }
+
+ .card5>.face1{ background: url(../images/hougong1.jpg); }
+ .card5>.face2{ background: url(../images/hougong1.jpg); }
+
+ .card6>.face1{ background: url(../images/hongong6.jpg); }
+ .card6>.face2{ background: url(../images/hongong6.jpg); }
+
+ .playcard:hover{ transform:rotateY(180deg); }

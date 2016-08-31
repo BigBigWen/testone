@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>图片边框</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+	*{margin: 0px;padding: 0px;}
+		.box1{
+			width: 200px;height: 200px;
+			border: 27px solid #000;
+			/* border-image-source:边框图片地址 必须*/
+			/*border-image-slice: 告诉图片如何切分 指定四个切分线的偏移 必须*/
+			/*border-image-width: 宽度,可选*/
+			/*border-image-outset:  可选,通常为0*/
+			/*border-image-repeat: 除了四个角之外的空白区域如何填充*/
+			border-image-source: url(../images/border2.png);
+			/*指定边框图片如何划分*/
+			border-image-slice:27;
+			/*指定图片边框的宽度,通常和切分出来的边框一致*/
+			border-image-width: 27px;
+			/*空白区域如何填充
+			stretch:直接填充拉伸,导致图片变形,默认值
+			repeat:根据切出来的图片大小直接重复,有可能会截断一部分图;
+			round:调整切出来图片的大小,适应图片能够完整平铺
+			space:不调整图片的大小,调整图片间的间隙,是图片能够完整平铺,不出现截断现象;
+			*/
+			border-image-repeat: stretch;
+		}
+		.box2{
+			width: 200px;height: 200px;
+			border: 27px solid #000;
+			border-image: url(../images/border-radius1.png) 27 repeat;
+		}
+		.box3{
+			width: 200px;height: 200px;
+			border:30px solid pink;
+			border-image: url(../images/border2.png) 30 stretch;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<div class="box3"></div>
+</body>
+</html>

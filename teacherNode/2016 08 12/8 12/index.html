@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+    <input id = "input1" type="text" name="" value="" placeholder="">
+    <button id="buttonId" type="button">显示星期</button>
+    <span id="result"></span>
+
+
+	<script>
+		var inputElement = document.getElementById('input1');
+		var buttonElement = document.getElementById('buttonId');
+		var result = '';
+		buttonElement.onclick = function(){
+			var inputValue = inputElement.value;
+			switch(inputValue){
+				case '0': result = '星期日';break;
+				case '1': result = '星期一';break;
+				case '2': result = '星期二';break;
+				case '3': result = '星期三';break;
+				case '4': result = '星期四';break;
+				case '5': result = '星期五';break;
+				case '6': result = '星期六';break;
+				default:result = "输入非法";
+			}
+
+			var spanElement = document.getElementById('result');
+			spanElement.innerHTML = result;
+		}
+
+       
+	</script>
+</body>
+</html>

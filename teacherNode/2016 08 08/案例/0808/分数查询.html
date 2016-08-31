@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<label>请输入分数：<input id="inputScore" type="text" name="" value=""></label>
+	<button id="seachButton" type="button">查询</button>
+	<!-- 不及格 ，及格，良好优秀，输入不合法 -->
+	<span id="result"></span>
+
+   <script>
+   	  var inputElement = document.getElementById("inputScore");
+   	  var searchButton = document.getElementById('seachButton');
+
+   	  searchButton.onclick = function(){
+   	  	  var inputValue = inputElement.value;
+   	  	  var inputValueNumber = parseFloat(inputValue);
+          
+          //如果输入的NaN
+   	  	  if(isNaN(inputValueNumber)){
+              var resultElement = document.getElementById('result');
+              resultElement.innerHTML = "你输入的不是一个数值";
+              //函数只要碰到return 函数就结束了
+              return;
+   	  	  }
+
+   	  	  var result;
+   	  	  if( inputValueNumber < 0 || inputValueNumber > 100 ){
+   	  	  	 //输入值不合法
+   	  	  	 result = "输入非法"
+   	  	  }else if( inputValueNumber < 60 ){
+   	  	  	 result = "不及格";
+   	  	  }else if( inputValueNumber >= 60 && inputValueNumber < 80){
+   	  	  	 result = "良好";
+   	  	  }else if ( inputValueNumber >= 80 ) {
+   	  	  	 result = "优秀";
+   	  	  } 
+
+          //通过id 找结果元素
+          var resultElement = document.getElementById('result');
+          //通过设置元素的innerHTML 来修改元素的内容
+          resultElement.innerHTML = result;
+   	  }
+   </script>
+
+</body>
+</html>

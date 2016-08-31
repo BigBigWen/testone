@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<input id="input1" type="text" name="" value="" placeholder="">
+
+	<select id="selectOpertor" name="" >
+		<option value="+">+</option>
+		<option value="-">-</option>
+		<option value="*">*</option>
+		<option value="">/</option>
+	</select>
+	<input id="input2" type="text" name="" value="" placeholder="">
+	<button id="button" type="button">=</button>
+
+	<input id="input3" type="text" name="" value="" placeholder="">
+
+	<script>
+		var input1Element = document.getElementById('input1');
+		var input2Element = document.getElementById('input2');
+		var buttonElement = document.getElementById('button');
+		var  selectElement = document.getElementById('selectOpertor');
+		
+		buttonElement.onclick = function(){
+			var input1Value = input1Element.value;
+			var input2Value = input2Element.value;
+
+			var op = selectElement.value;
+			switch (op) {
+				case '+':result = parseFloat(input1Value) + parseFloat(input2Value); break;
+				case '-': result = parseFloat(input1Value) - parseFloat(input2Value); break;
+				case '*':result = parseFloat(input1Value) * parseFloat(input2Value); break;
+				case '':result = parseFloat(input1Value) / parseFloat(input2Value); break;
+				default:
+					break;
+			}
+			var resultElement = document.getElementById('input3');
+			resultElement.value = result;
+		}
+	</script>
+</body>
+</html>

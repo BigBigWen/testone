@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<img src="images/img2222.png" alt="">
+	<img src="images/img2222.png" alt="">
+	<img src="images/img2222.png" alt="">
+	<img src="images/img2222.png" alt="">
+	<img src="images/img2222.png" alt="">
+	<img src="images/img2.png" alt="">
+
+	<script type="text/javascript">
+		var imgs=document.getElementsByTagName("img");
+		for(i=0;i<imgs.length;i++){
+			//onerror事件：当页面图片被损坏或者当页面图片资源还没有完全加载出来的时候显示出来图片
+			imgs[i].onerror=function(e){
+				var ev=e||event;
+				//ev.srcElement.src 可以用来设置页面已破坏图片位置的替换图片
+				ev.srcElement.src="images/img2.png";
+				console.log(ev.srcElement);
+			};
+		};
+	</script>
+
+</body>
+</html>

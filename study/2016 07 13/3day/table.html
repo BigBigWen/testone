@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>table</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<table border="1"><!-- border 边框厚度 -->
+		<caption>表格的标题</caption><!-- 不是必需的 -->
+		<thead><!-- 头部 -->
+			<tr><!-- 代表一行 -->
+				<th>标题1</th><!-- 代表一个cell -->
+				<th>标题2</th>
+				<th>标题3</th>
+			</tr>
+		</thead>
+		<tbody><!-- 内容 -->
+			<tr><!-- 只要布局一行就要tr -->
+				<td>cell1</td><!-- td代表一个单元格的内容 -->
+				<td>cell2</td><!-- td代表一个单元格的内容 -->
+				<td>cell3</td><!-- td代表一个单元格的内容 -->
+			</tr>
+			<tr>
+				<td>第二行cell1</td>
+				<td>第二行cell2</td>
+				<td>第二行cell3</td>
+			</tr>
+		</tbody>
+		<tfoot><!-- 尾部 -->
+			<tr>
+			<td>foot1</td>
+			<td>foot2</td>
+			<td>foot3</td>
+			</tr>
+		</tfoot>
+	</table><br><br>
+<!-- border边框厚度;
+bgcolor:背景颜色
+bordercolor:边框颜色
+cellpadding:cell的内容到边框的距离;
+ cellspacing cell和cell之间的距离
+ style="border-collapse: collapse" 合并单元格间距
+ align="center" 表格放在网页中间
+ style=""
+	<table border="2" bgcolor="#00CACA" bordercolor="red"  cellpadding="10px" cellspacing="2px" style="border-collapse: collapse" >
+		<tbody>
+			<tr>
+				<th>标题1</th>
+				<th>标题2</th>
+				<th>标题3</th>
+			</tr>
+			<tr>
+				<td>sell1</td>
+				<td>sell2</td>
+				<td>sell3</td>
+			</tr>
+			<tr>
+				<td>第二行sell1</td>
+				<td>第二行sell2</td>
+				<td>第二行sell3</td>
+			</tr>
+		</tbody>
+	</table>
+	<br><br><br>
+	<!-- 不规则表格的布局,被占了不管了,老老实实td下一个 -->
+	<table border="1">
+		<tr>
+			<td colspan="2" rowspan="1" headers="">位大</td>
+		</tr>
+		<tr>
+			<td colspan="1" rowspan="1" headers="">sell1</td>
+			<td colspan="1" rowspan="1" headers="">sell2</td>
+		</tr>
+	</table>
+	<br><br><br>
+	<table border="1" cellpadding="10px">
+		<tr>
+			<td colspan="1" rowspan="2" headers="">1</td>
+			<td colspan="" rowspan="" headers="">2</td>
+		</tr>
+		<tr>
+			<td colspan="" rowspan="" headers="">3</td>
+		</tr>
+	</table><br><br><br>
+	<table border="1" bordercolor=red  bgcolor="#ccc" style="border-collapse:collapse" cellpadding="0px" cellspacing="0px">
+		<caption>我的歌单</caption>
+		<thead>
+			<tr>
+				<th>歌手</th>
+				<th>歌名</th>
+			</tr>
+		</thead>
+		
+		<tr>
+			<td>薛之谦</td>
+			<td>认真的雪</td>
+		</tr>
+		<tr>
+			<td>许嵩</td>
+			<td>千百度</td>
+		</tr>
+		<tr>
+			<td  rowspan="3" >周杰伦</td>
+			<td>彩虹</td>
+		</tr>
+		<tr>
+			<td>青花瓷</td>
+		</tr>
+		<tr>
+			<td>阳光宅男</td>
+		</tr>
+		<tr>
+			<td colspan="2" >总计:3个歌手,5个歌曲</td>
+		</tr>
+	</table>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{margin: 0;padding: 0}
+		ul{margin: 100px auto;width: 200px;}
+		li{list-style: none;line-height: 30px;width: 200px;border: 1px solid #faa;}
+		.title{height: 30px;background-color: #fcc;}
+		.content{background-color: #faa;display: none;}
+		.content>p:hover{background-color: #ccf;}
+	</style>
+</head>
+<body>
+	<ul>
+		<li class="title">导航一</li>
+		<li class="content">
+			<p>哈哈嘿嘿</p>
+			<p>哈哈嘿嘿</p>
+			<p>哈哈嘿嘿</p>
+		</li>
+		<li class="title">导航2</li>
+		<li class="content">
+			<p>哈哈嘿嘿</p>
+			<p>哈哈嘿嘿</p>
+			<p>哈哈嘿嘿</p>
+		</li>
+		<li class="title">导航三</li>
+		<li class="content">
+			<p>哈哈嘿嘿</p>
+			<p>哈哈嘿嘿</p>
+			<p>哈哈嘿嘿</p>
+		</li>
+	</ul>
+	<script>
+		var titleList = document.getElementsByClassName('title');
+		var contentList =document.getElementsByClassName('content');
+		for( var i =0;i<titleList.length;i++){
+			titleList[i].index = i;
+			titleList[i].onclick = function(){
+				var index = this.index;
+				for( var j = 0;j<contentList.length; j++){
+					if(j == index){
+						if(contentList[j].style.display == 'block'){
+							contentList[j].style.display = 'none';
+						}else{contentList[j].style.display = 'block';}
+						
+					}else{
+						contentList[j].style.display = 'none';
+					}
+				}
+			}
+		}
+	</script>
+</body>
+</html>

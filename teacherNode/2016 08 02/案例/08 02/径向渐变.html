@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<!-- 径向渐变：是从一个指定的点，向四周进行渐变
+        shape ：可以是圆形  也可以是椭圆型
+	 -->
+	 <style>
+	 	*{margin: 0;padding: 0;}
+	 	.box{ width: 200px;height: 200px;margin: 10px auto;
+	 		/* 浏览器 前缀 省略*/
+            /*background: radial-gradient(yellow,red);*/
+
+	 	 }
+
+	 	 /* radial-gradient(position,shape size,渐变色1,渐变色2,....)*/
+	 	 /* position: 1: 坐标的像素值
+	 	              2：文字值  top left,top right ,top center,.....
+	 	              3: 百分比;
+	 	              4：不写，默认是中心点
+	 	 */
+	 	 /* 径向渐变 使用浏览器前缀 */
+	 	 .box1{ background: -webkit-radial-gradient(top left,yellow,green,red) }
+	 	 .box2{ background: -webkit-radial-gradient(0px 100px,ellipse,yellow,green,red) }
+
+	 	 /* shape: 向外扩散的渐变的形状 默认 为椭圆，
+            circle:以圆形的方式向外扩散;
+            ellipse:  以椭圆的方式向外渐变;
+	 	 */
+
+	 	 .box3{ width: 200px;height: 100px;background: -webkit-radial-gradient(ellipse,yellow,green,red) }
+
+         .box4{ width: 200px;height: 100px;background: -webkit-radial-gradient(circle,yellow,green,red) }
+
+        /* size :指定扩展的半径到哪里结束
+           closest-side: 渐变扩散到最近的边;
+           farthest-side: 渐变扩散到最远的边;
+           closest-corner：最近角
+           farthest-corner：最远角
+           cover == closest-side
+           container == farthest-corner;
+
+           剩余的颜色使用最后一个颜色填充
+         */
+        .box5{ background: -webkit-radial-gradient(130px 100px,circle closest-side,yellow,green,blue) }
+        .box6{ background: -webkit-radial-gradient(130px 100px,circle farthest-side,yellow,green,blue) }
+        .box7{ background: -webkit-radial-gradient(130px 100px,circle closest-corner,yellow,green,blue) }
+        .box8{ background: -webkit-radial-gradient(130px 100px,circle farthest-corner,yellow,green,blue) }
+
+        /* 非均匀分布的渐变 使用 颜色 加百分比,同线性渐变 */
+        .box9{ background: -webkit-radial-gradient(circle closest-side,yellow 0%,yellow 30% ,green 50% ,blue 80%);width: 200px;height: 100px; margin: 0 auto;}
+
+	 </style>
+</head>
+<body>
+	<div class="box"></div>
+	<div class="box box1"></div>
+	<div class="box box2"></div>
+	<div class="box box3"></div>
+	<div class="box box4"></div>
+	<div class="box box5"></div>
+	<div class="box box6"></div>
+	<div class="box box7"></div>
+	<div class="box box8"></div>
+	<div class="box9"></div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+	*{margin: 0 auto;padding: 0}
+
+	#ulId{width: 200px;}
+	ul li{width: 15px;height: 15px;list-style: none;float: left;}
+    ul li.star{background:  url(image/app_toolbar_sprite.png) -1px -100px no-repeat;}
+ 	</style>
+
+	
+</head>
+<body>
+	<ul id="ulId">
+		
+	</ul>
+	<script>
+		var ulElement = document.getElementById('ulId');
+		for( i = 0;i < 10;i++){
+			for( j = 0; j < 10;j++){
+				if ( j <= i) {
+					resultImg="<li class="star"></li>"
+				}else {}
+			}
+		}
+	</script>
+</body>
+</html>

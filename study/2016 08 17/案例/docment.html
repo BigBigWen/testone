@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>我的测试</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+<a href="#">a1</a>
+<a href="#">a2</a>
+<a href="#">a3</a>
+<a href="#">a4</a>
+<a href="#" name="">namea1</a>
+<a href="#" name="">namea2</a>
+<a href="#" name="">namea3</a>
+
+<img src="" alt="1">
+<img src="" alt="2">
+<img src="" alt="3">
+
+<form action="" method="get" accept-charset="utf-8">
+	
+	<input type="text" name="" value="" placeholder="">
+</form>
+<form action="" method="get" accept-charset="utf-8">
+	
+	<input type="text" name="" value="" placeholder="">
+</form>
+<form action="" method="get" accept-charset="utf-8">
+	
+	<input type="text" name="" value="" placeholder="">
+</form>
+
+
+<div class="tab">1</div>
+<div class="tab">2</div>
+<div class="tab">3</div>
+<div class="tab">4</div>
+<form action="" method="get" accept-charset="utf-8">
+	
+	<input type="text" name="radioName" value="" placeholder="">
+	<input type="text" name="radioName" value="" placeholder="">
+	<input type="text" name="radioName" value="" placeholder="">
+	<input type="text" name="radioName" value="" placeholder="">
+</form>
+	<script>
+		// doc 1 提供查询节点的入口 getElementByID() 通过id查找一个元素
+		                            //getElementsByTagName() 通过tag值返回Nodelist节点列表
+		                            //getElementByClassName()通过class名返回节点列表
+		                            //getElementByName() 通常使用在单选按钮上 根据节点的name属性来获取节点列表
+		    var radio = document.getElementsByName('radioName')
+		        console.log(radio)                    
+		    var allNode = document
+          // 通过选择器来获取节表列表 参数是选择器的名称
+          var firstTabElement = document.querySelector('.tab');
+          var allTabElement =  document.querySelectorAll(".tab");
+          console.log(firstTabElement);
+          console.log(allTabElement);
+        //doc 2 创建元素
+        var divNode = document.createElement('div');//通过creat创建元素类型的节点
+        //通过createTextElement来创建文本类型
+        var textNode = document.createTextNode('555');//传入的参数是节点的值
+        divNode.appendChild(textNode);//通过appendChild把元素节点添加到父节点divnode节点的末尾
+
+        //通过docment,body得到body节点
+        document.body.appendChild(divNode);
+
+        //doc 3 通过docment的属性,可以快速获取元素,元素的列表
+        //docment.title  获取文档节点的title
+        //docment.images   获取所有img标签
+        //docment.links     获取所有的a标签
+
+
+        //docment.forms  获取所有form标签
+        //docment.body    获取body标签
+        //docment.anchors   获取所有带name属性的a标签
+        //document.documentElement  获取文档的html标签
+
+        console.log(document.title);
+        console.log(document.head);
+        console.log(document.body);
+        console.log(document.links);
+        console.log(document.images);
+        console.log(document.forms);
+        console.log(document.anchors);
+        console.log(document.documentElement);
+
+
+
+
+
+
+	</script>
+</body>
+</html>

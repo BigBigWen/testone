@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+<a href="http://www.baidu.com">百度</a>
+	<script>
+		window.onload = function(e){
+			//当页面的所有资源加载完成 图片,脚本,css文件
+			console.log('window.onload');
+		}
+		window.onunload = function(e){
+			//当页面卸载掉,触发的事件
+			console.log('window.onunload');
+		}
+		//在页面卸载之前,beforeunload
+		//    利用该事件可以组织页面的离开
+		window.addEventListener('beforeunload',function(e){
+		//询问用户离开还是留下
+		//不能用prompt()提示
+		var message = '确定要离开吗?';
+		//把message赋值给event的returnValue
+		var ev = e||event;
+		ev.returnValue = message;
+		//把message返回
+		return message;
+	})
+		//当DOM树建立完成,系统触发一个DOMMcontentLoaded事件,该事件在window的onload之前
+		document.addEventListener('DOMContentLoaded',function(e){
+			console.log('DOM树建立完成,就可以对dom进行操作')
+		})
+		//在加载文档的过程中,如果想关注加载的过程,可以使用readystatechage,loading,complete(loaded)
+
+		//当手机屏幕旋转时,发生屏幕旋转的事件 orientationchange事件,该事件发生在window.orientationchange求获取手机旋转的方向
+		window.onload = function(){
+			window.addEventListener('orientationchage',function(){
+				//通过window的orentation获取手机的方向
+				var orientation  = window.orientation;
+				switch(orientation){
+					case 0:console.log('肖像模式');break;
+					case -90:console.log('屏幕左转90度');break;
+					case 90:console.log('屏幕右转90度');break;
+					case 180:console.log('肖像向下');break;
+					default:console.log('没有获取到信息');
+				}
+			})
+		}
+		
+
+	</script>
+</body>
+</html>

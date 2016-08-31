@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>式样操作</title>
+	<link rel="stylesheet" href="">
+	<style>
+	#mydiv{
+		width: 100px;
+		height: 100px ;
+		background-color: #ffc;
+	}
+		
+	</style>
+
+</head>
+<body>
+	<div id="mydiv" style="background-color: pink;border: 1px solid #faa"></div>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+
+	<button type="button">测试float</button>
+	<script>
+		var mydiv = document.getElementById('mydiv');
+		//1当使用style获取式样时,式样名必须使用驼峰命名法
+		console.log(mydiv.style.backgroundColor);
+		mydiv.style.backgroundColor = 'green';
+		//2float 在js中是保留字,不能直接使用ele.style.float
+		//需要使用时使用 cssFloat
+		var buttonEle = document.getElementsByTagName('button')[0];
+		buttonEle.onclick = function(){
+			var liEleList = document.querySelectorAll('ul>li')
+			for( var i = 0; i < liEleList.length;i++){
+				liEleList[i].style.cssFloat = 'left';
+			}
+		}
+		//3 style.cssText  可以获取行内式样的所有式样
+		console.log(mydiv.style.cssText)
+		//一次性设置多个式样
+		mydiv.style.cssText = 'background-color:pink;border:2px solid #faa';
+		//4 使用元素的style 只能控制行内式样
+		console.log(mydiv.style.width)
+
+
+
+
+	</script>
+</body>
+</html>

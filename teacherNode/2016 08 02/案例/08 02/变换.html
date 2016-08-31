@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<!-- 变换使用的是transform的属性
+	  2d 变换
+      可以对盒子进行平移，缩放，旋转，倾斜
+	 -->
+	 <style>
+	 	*{margin: 0;padding: 0;}
+
+	 	.box{width: 100px;height: 100px;background-color: red;margin: 20px auto;}
+	 	.box1{  
+	 		transition: all 1s linear;
+	 	}
+
+	 	.box1:hover{
+	 		/* translateX 沿着x 轴进行平移  
+                          正直向右
+                          负值向左
+               translateY 沿着Y 轴进行平移
+                          向下为正
+                          向上为负
+	 		*/
+	 		transform: translateX(-100px);
+	 	}
+
+	 	.box2{ transition: all 1s linear; }
+	 	.box2:hover{ transform: translateY(100px); }
+
+         /* 在x  和 y 方向上 同时平移*/
+	 	.box3{ transition: all 1s linear; }
+	 	.box3:hover{ transform: translate(100px,100px); }
+       /* 缩放 */
+       .box4{ transition: all 1s linear; }
+       /*scale(scalex,scaley)*/
+       .box4:hover{ transform: scale(2,2); }
+
+       /* 旋转 沿着 z 轴进行旋转
+          顺时针为正，逆时针为负
+       */
+       .box5{ transition: all 1s linear; }
+       .box5:hover{transform: rotate(45deg);}
+
+
+       /*倾斜 ，x 轴 倾斜  和 y 轴倾斜 */
+       .box6{ transition: all 1s linear;  }
+       .box6:hover{ transform: skewX(30deg); }
+
+       .box7{ transition: all 1s linear; }
+       .box7:hover{ transform: skewY(30deg); }
+
+       .box8{ transition: all 1s linear;  }
+       .box8:hover{ transform: skew(30deg,30deg); }
+
+       /* 对于非置换元素 span a 使用变换没有效果
+           inline-block block 元素 有效
+        */
+        span{ background-color: yellow;border: 1px solid black; display: inline-block;}
+       .span1{  }
+       .span1:hover{ transform: translate(100px,100px); }
+
+       .span2{  }
+       .span2:hover{ transform:scale(2,2); }
+
+       .span3{}
+       .span3:hover{ transform: rotate(45deg); }
+
+       .span4{}
+       .span4:hover{ transform: skewX(30deg); 
+       }
+
+
+       /* rotate 默认按照中心点进行旋转 */
+       .box9{width: 100px;height: 100px;background-color: red;margin: 10px auto;}
+       .box9:hover{
+            transform: rotate(45deg);
+            /*修改变换的起始位置*/
+            transform-origin: 0px 0px;
+       }
+
+	 </style>
+</head>
+<body>
+	<div class="box box1"></div>
+	<div class="box box2"></div>
+	<div class="box box3"></div>
+	<div class="box box4"></div>
+	<div class="box box5"></div>
+	<div class="box box6"></div>
+	<div class="box box7"></div>
+	<div class="box box8"></div>
+	<div class="box9"></div>
+	<!--  -->
+	<hr>
+	<span class="span1">span1</span>
+	<span class="span2">span2</span>
+	<span class="span3">span3</span>
+	<span class="span4">span4</span>
+</body>
+</html>

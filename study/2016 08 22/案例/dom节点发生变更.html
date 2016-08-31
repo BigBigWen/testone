@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+<button id="insert" type="button">插入</button>
+<button id="remove" type="button">删除</button>
+<ul id="ulId">
+	<li>111</li>
+	<li>222</li>
+	<li>333</li>
+</ul>
+
+	<script>
+		//DOWNodeInstert 一个节点插入到父节点中触发的事件
+		//DOMNodeRemoved一个节点被删除时发生的事件
+		//DOMNodeInsertTntoDocument 当一个节点插入父节点,在该节点和子节点上发生
+		//DOMNodeRemoveFromDocument  当一个节点移除,在该节点和子节点上发生
+		//DOMSubtreeModified   文档树发生变化
+		//
+
+		//插入一个节点,事件的触发次序
+		//自身上,DOMNodeInserted->在自身和自身的所有子元素->DOMNodeInsertedIntoDocument->DOMSubtreeModified,,其中DOMNodeInsertedIntoDocument不冒泡
+      var ulEle= document.getElementById('ulId');
+        var insert = document.getElementById('insert');
+        var remove = document.getElementById('remove')
+        insert.onclick = function(){
+        	var liEle = document.createElement('li');
+        	liEle.innerHTML += '插入的节点';
+        	var spanElement = document.createElement('span');
+        	spanElement.innerHTML = '1';
+        	liEle.appendChild(spanElement);
+        	//ulEle.innerHTML+='<li>新插入节点</li>'innerHtml不能准确定位
+
+        	//添加事件处理程序
+        	liEle.addEventListener('DOMNodeInserted', function(e){
+        		var e = e||event;
+        		console.log(this+e.type);
+        	});
+        	liEle.addEventListener('DOMNodeInsertedIntoDocument', function(e){
+        		var e = e||event;
+        		console.log(this+e.type);
+        	});
+        	spanElement.addEventListener('DOMNodeInserted', function(e){
+        		var e = e||event;
+        		console.log(this+e.type);
+        	});
+        	spanElement.addEventListener('DOMNodeInsertedIntoDocument', function(e){
+        		var e = e||event;
+        		console.log(this+e.type);
+        	});
+        	document.addEventListener('DOMSubtreeModified', function(e){
+        		var e = e||event;
+        		console.log(this+e.type);
+        	})
+        	var ulEle = document.getElementById('ulId');
+        	ulEle.appendChild(liEle);
+        }
+        //删除一个节点,发生的事件
+        //自身发生DOMNodeRemove->自身以及子元素上DOMNodeRemoveFromDocument(不冒泡)->DOMSubtreeModified
+        remove.onclick = function(){
+        	var lastElementChild = ulEle.lastElementChild;
+        	lastElementChild.addEventListener('DOMNodeRemoved', function(e){
+        		var e = e||event;
+        		//event属性中relateNode指向他的父节点
+        		console.log(this +e.type)
+        	});
+        	lastElementChild.addEventListener('DOMNodeRemovedFromDocument', function(e){
+        		var e = e||event;
+        		console.log(this+e.type)
+        	});
+        	lastElementChild.addEventListener('DOMSubtreeModified', function(e){
+        		var e = e||event;
+        		console.log(this+e.type)
+        	});
+        }
+	</script>
+</body>
+</html>

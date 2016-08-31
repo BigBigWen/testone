@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>改变皮肤</title>
+	<link id="linkId" rel="stylesheet" href="">
+	<!-- 通过修改link标签中的属性href的值,切换不同的css文件来实现皮肤的更换 -->
+</head>
+<body>
+	<button id="button1" type="button">换肤1</button>
+	<button id="button2" type="button">换肤2</button>
+
+
+	<script>
+		var button1Element = document.getElementById('button1');
+		var button2Element = document.getElementById('button2');
+
+		button1Element.onclick = function(){
+			var linkElement = document.getElementById('linkId')
+			linkElement.href = "css/style1.css";
+		}
+		button2Element.onclick = function(){
+			var linkElement = document.getElementById('linkId');
+			linkElement.href = "css/style2.css";
+		}
+	</script>
+</body>
+</html>

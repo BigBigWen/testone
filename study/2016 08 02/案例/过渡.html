@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>动画</title>
+	<link rel="stylesheet" href="">
+	<style>
+		/*
+		css3提供 transition 过渡动画
+		keyfram:关键帧动画;
+		*/
+		*{margin: 0px;padding: 0px;}
+		.box{width: 200px;height: 100px;
+			background: #000;margin: 10px auto;
+			transition:background-color 1s linear;
+		}
+		.box:hover{background-color: red;}
+		/*transition 是简写形式*/
+		/*transition-property:属性名称;  对哪个属性做动画
+		                      all;       针对所有变化的属性做动画
+		  transition-duration:过渡动画的持续时间;单位描述 5s=5秒 必须写 默认为0
+		  transition-delay:过渡动画延长多久后 开始 单位是s;
+		  transition-timing-function:控制动画期间时间的分配;
+		                             linear;动画是匀速进行的
+		                             ease;开始慢 然后开始加速,最后慢 默认值
+		                             ease-in;开始慢,然后越来越快
+		                             ease-out;开始快,然后减速
+		                             ease-in-out;开始结束慢,中间快
+		*/
+		.box1{
+			width: 100px;height: 100px;
+			background-color: pink;
+			margin: 5px auto;
+			transition-property: border-radius;
+			transition-duration: 1s;
+
+		}
+		.box1:hover{
+			border-radius: 50px;
+		}
+		/*对多个属性同时做变化*/
+		.box2{
+			width: 100px;height: 100px;
+			background-color: pink;
+			margin: 5px auto;
+			/*1 在property后跟多个属性
+			   2 在property后跟all*/
+			/*transition-property: border-radius background-color;*/
+			transition-property: all;
+			transition-duration: 1s;
+		}
+		.box2:hover{
+			border-radius: 50px;
+			background-color: red;
+		}
+		/*延时*/
+		.box3{
+			width: 100px;height: 100px;
+			background-color: pink;
+			margin: 5px auto;transition-property: all;
+			transition-duration: 1s;
+			-webkit-transition-delay: 2s;
+			-o-transition-delay: 2s;
+			transition-delay: 2s;
+		}
+		.box3:hover{
+			background-color: green;
+			border-radius: 50px;
+		}
+		.box4{
+			width: 100px;height: 100px;
+			background-color: pink;
+			margin: 5px auto;
+			transition-property: transform;
+			transition-duration: 5s;
+			transition-timing-function:linear; 
+		}
+		.box4:hover{
+			transform: translateX(200px);
+		}
+
+		.container{
+               position: relative;
+               width: 600px;
+               height: 100px;
+               border: 1px solid black;
+               margin: 0px auto;
+
+		}
+		.box5,.box6,.box7,.box8{
+			position: absolute;top: 0px;left: 0px;width: 100px;height: 100px;
+		}
+		.box5{
+			background-color: red;
+			transition-property: transform;
+			transition-duration: 5s;
+			transition-timing-function: linear;
+		}
+		.box6{
+			background-color: green;
+			transition-property: transform;
+			transition-duration: 5s;
+			transition-timing-function: ease-in;
+		}
+		.box7{
+			background-color: yellow;
+			transition-property: transform;
+			transition-duration: 5s;
+			transition-timing-function: ease-out;
+		}
+		.box8{
+			background-color: blue;
+			transition-property: transform;
+			transition-duration: 5s;
+			transition-timing-function:ease-in-out;
+		}
+		.box5:hover,.box6:hover,.box7:hover,.box8:hover{transform: translateX(500px;);}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<div class="box3"></div>
+	<div class="box4"></div>
+
+	<div class="container">
+		<div class="box5"></div>
+		<div class="box6"></div>
+		<div class="box7"></div>
+		<div class="box8"></div>
+	</div>
+</body>
+</html>

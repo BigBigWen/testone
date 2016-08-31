@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- 可以对数组使用函数施加影响 -->
+	<script type="text/javascript">
+	var array = [1,2,3,4,5];
+	//对数组中的每一项调用指定的函数
+	//every每一项都满足返回true,有一个不满足就返回false
+	//函数三个参数(系统自动传入):数组的值,值在数组的下标,数组本身
+	array.every(function(item,index,array){
+		return item > 2;
+	});
+	console.log(array)
+	//结果为false
+	//some:只要其中一项满足条件,表达式就返回true
+	//filter,返回一个数组,数组中的值,都是满足条件的
+	var array2 = array.filter(function(item,index,array){
+		return item >= 3;
+	});
+	document.write(array2);
+	//map,可以对原始数组中的每一项做运算,从而生成一个新的数组
+	var array3 = array.map(function(item,index,array){
+		return 2*item;
+	});
+	//对数组的每一项执行一个函数
+	array.forEach(function(item,index,array){
+		console.log(item);
+	});
+	</script>
+</body>
+</html>

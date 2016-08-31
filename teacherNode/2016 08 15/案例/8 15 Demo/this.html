@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<ul>
+		<li>111111</li>
+		<li>222222</li>
+		<li>333333</li>
+		<li>444444</li>
+		<li>555555</li>
+	</ul>
+
+    <button id="button1" type="button">求和</button>
+
+	<script>
+	    var a; 
+		var liElementList = document.getElementsByTagName('li');
+		//onmouseover : 当鼠标移动到元素上时，在该对象上触发mouseover，从而调用onmouseover指向的函数
+		for(var i = 0; i < liElementList.length;i++ ){
+			liElementList[i].onmouseover = function(){
+				//修改背景色
+                // liElementList[i].style.backgroundColor = 'red';
+                //this 指向 哪一个元素触发了 onmouseover,
+                this.style.backgroundColor = 'red';
+                console.log(this);
+			}
+
+            //onmouseout 当鼠标移出某个元素的时候，在该元素上出发mouseout的操作
+            liElementList[i].onmouseout = function(){
+            	//this 是哪个对象（元素）调用了onmouseout的操作
+            	this.style.backgroundColor = 'white';
+            }
+		}
+        
+		console.log(i);
+
+        //javascript 解析时，函数声明（定义）优先，以下执行ok
+		sum(1,1);
+		function sum(a,b){
+			return a+b;
+		}
+
+		var button1Element = document.getElementById('button1');
+        //onclick 要指向一个函数
+		// button1Element.onclick = sum(1,1);
+        
+        //这种情况下，无法传递参数
+		// button1Element.onclick = sum;
+
+        //如果onclick 事件，需要调用一个带参数的函数，必须使用匿名函数
+		button1Element.onclick = function(){
+			sum(1,1);
+		}
+
+	</script>
+</body>
+</html>

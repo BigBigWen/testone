@@ -1,0 +1,33 @@
+
+/*字符编码*/
+@charset "utf-8";
+
+/*可以使用@import 导入其他的式样表
+  如果使用@import导入的话一定要写在最上面
+*/
+/*@import "style2.css"*/
+
+/*语法同内部式样表 */
+body{
+	/*颜色的写法
+     单词  red  blue
+     十六进制的写法
+     #ffaabb 使用的是rgb色彩空间的值组和
+     rgb 色彩空间，使用red green blue 
+     每一个取值范围0~255            
+	*/
+	/*background-color: blue;*/
+
+	/*16进制写法*/
+	/*background-color: #ffaadd;  */
+
+     /*通过rgb（红，绿，蓝）*/
+	 /*background-color: rgb(255,100,20);  */
+
+	 /*通过rgba（）
+	 a: alpha通道，代表透明度  0 完全透明
+	                           1 完全不透明;
+	 */
+	 background-color: rgba(255,100,20,0.1);                      
+}
+

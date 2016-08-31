@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<button id="button1" type="button">全选</button>
+	<button id="button2" type="button">全不选</button>
+	<button id="button3" type="button">反选</button>
+
+	<br>
+
+	<input type="checkbox" name="" value="">
+	<input type="checkbox" name="" value="">
+	<input type="checkbox" name="" value="">
+	<input type="checkbox" name="" value="">
+	<input type="checkbox" name="" value="">
+	<input type="checkbox" name="" value="">
+
+    <script>
+        //当页面加载完成后，系统自动触发load事件，从而调用onload的方法
+    	window.onload = function(){
+           var button1Element = document.getElementById('button1');
+           var button2Element = document.getElementById('button2');
+           var button3Element = document.getElementById('button3');
+
+           //全选
+           button1Element.onclick = function(){
+           	  //通过标签列表获取元素,返回一个包含所有标签的数组
+           	  var inputList = document.getElementsByTagName('input');
+           	  console.log(inputList);
+           	  for( var i = 0; i < inputList.length; i++ ){
+           	  	//通过下标获取input的标签
+           	  	//修改input标签中checked属性，true 选中
+           	  	inputList[i].checked = true;
+           	  }
+           }
+
+           //不选
+           button2Element.onclick = function(){
+           	 var inputList = document.getElementsByTagName('input');
+           	 for( var i = 0; i < inputList.length; i++ ){
+                 inputList[i].checked = false;
+           	 }
+           }
+
+           //反选操作
+           button3Element.onclick = function(){
+           	  var inputList = document.getElementsByTagName('input');
+           	  for( var i = 0; i < inputList.length; i++ ){
+           	  	//把原有的值取反
+           	  	inputList[i].checked  = !inputList[i].checked;
+           	  }
+           }
+    	}
+    </script>
+
+
+</body>
+</html>

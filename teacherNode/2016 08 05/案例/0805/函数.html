@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<!-- 常量 变量  算数运算符 关系运算符 -->
+	<!-- 把多个语句放在一起，完成一项功能，可以定义一个函数，作用主要是完成一项功能 -->
+
+
+	<!--  -->
+	<script>
+	   console.log("1");
+	   // 定义一个函数的语法
+	   // function 函数名(参数1,参数2...)
+	   // {
+
+	   // }
+	   // funciton 关键字
+	   // 函数名的命名规则和变量名一致
+
+       //定义一个函数
+       //{...} 函数体
+       //定义一个函数，只定义，不调用，函数体不会被执行 
+	   function printHelloWorld(){
+	   	 console.log("3");
+	   	 console.log('Hello world');
+	   	 console.log("你好 世界");
+	   	 //.....
+	   }
+       console.log("2");
+
+	   //调用函数: 调用的方式，函数名(传参数)
+	   printHelloWorld();
+
+       // 写一个函数，求2个数的和
+	   function sum(first,second){
+	   	  // return 把结果返回到调用处
+	   	  return first + second;
+	   }
+
+	   var result = sum(1,1);
+	   console.log(result); 
+
+       //复用
+	   function sub(first,second){
+	      	// 程序碰到第一个return 函数体结束
+	   		return first - second;
+	   }
+
+	   result2 = sub(2,1);//1
+	   console.log(result2); //1
+       result2 = sub(4,2); // result2 = 2
+       console.log(result2);
+       result2 = sub(3,1); // result2 = 2
+       console.log(result2);
+
+      // 
+      // function sum(first,second)
+      var result3 = sum(1);
+      console.log(result3); //NaN
+      result3 = sum(1,2,3,4,5);
+      console.log(result3);   //3
+
+	</script>
+</body>
+</html>

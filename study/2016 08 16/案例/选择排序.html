@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		var a = [9,8,7,6,5,4,3,2,1];
+		function selectSort(array){
+			
+			for( var i = 0 ;i < array.length;i++ ){
+				var k=i;//让k是最小值的位置
+				for( var j = i ;j < array.length;j++){
+					//假设最小的是k
+					 k=i;
+					 if(array[k] > array[j]){
+					 	k = j;
+					 }
+				}
+				if(k != i){
+					//不一样交换位置
+					var t = array[i];
+					array[i] = array[k];
+					array[k]=t;
+
+				}
+			}
+
+		}
+		selectSort(a);
+		console.log(a); 
+	</script>
+</body>
+</html>

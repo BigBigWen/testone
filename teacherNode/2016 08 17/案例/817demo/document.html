@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>我的测试</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+    <div class="tab">111</div>
+    <div class="tab">222</div>
+    <div class="tab">333</div>
+    <div class="tab">444</div>
+    <!-- <div>555</div> -->
+    <a href="#" title="">a1</a>
+    <a href="#" title="">a2</a>
+    <a href="#" title="">a3</a>
+
+    <img src="" alt="1">
+    <img src="" alt="2">
+    <img src="" alt="3">
+
+    <form action="" method="get" accept-charset="utf-8">
+    	<input type="text" name="" value="" placeholder="">
+    </form>
+
+    <form action="" method="get" accept-charset="utf-8">
+    	<input type="text" name="" value="" placeholder="">
+    </form>
+
+    <form action="" method="get" accept-charset="utf-8">
+    	<input type="text" name="" value="" placeholder="">
+    </form>
+
+    <a href="" name="" title="">11</a>
+    <a href="" name="" title="">22</a>
+    <a href="" name="" title="">33</a>
+
+	<script>
+		//document 
+		//1:提供查询节点一个入口
+		//getElementById 通过id 查找一个元素
+		//getElementsByTagName  通过Tag值返回NodeList 节点列表
+		//getElementsByClassName 通过class名返回我的节点列表
+
+		var tabList = document.getElementsByClassName('tab');
+		console.log(tabList);
+      
+        //获取所有的元素节点
+		var allNodeList = document.getElementsByTagName('*');
+		console.log(allNodeList);
+
+		//通过选择器的方式，获取节点列表
+		//参数是选择器的名称
+		var firstTabElement =  document.querySelector('div.tab')
+		var allTabElement = document.querySelectorAll('div.tab');
+
+		console.log( firstTabElement );
+		console.log( allTabElement );
+
+
+		//2：创建元素
+		//通过createElement 创建元素类型的的节点
+		//传入的参数是tag 名
+		var divNode = document.createElement('div');
+
+		//通过createTextNode来创建文本节点类型
+		//传入的参数是节点的值
+		var textNode = document.createTextNode('555');
+
+        //通过appendChild 把元素节点添加到divNode节点的末尾
+		divNode.appendChild(textNode);
+        
+        //通过document.body得到body节点
+        document.body.appendChild(divNode);
+
+        //3:通过document的属性，可以快速获取元素，元素的列表
+        //document.title 获取文档节点的title
+        //document.images 获取所有的img标签
+        //document.links  获取所有的a 标签 
+        //document.forms  获取所有的form标签
+        //document.body   获取body标签
+        //document.head   获取head标签
+        //document.anchors  获取所有的带name 属性的 a 标签
+        //document.documentElement  获取的文档的html 标签
+
+        console.log( document.title );
+        console.log( document.head );
+        console.log( document.body )
+        console.log( document.links );
+        console.log( document.images );
+        console.log( document.forms );
+        console.log( document.anchors );
+        console.log( document.documentElement );
+
+	</script>
+</body>
+</html>

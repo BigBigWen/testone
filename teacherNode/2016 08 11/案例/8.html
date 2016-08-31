@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="findTxt" name="" value="" placeholder="">
+	<input type="text" id="replaceTxt" name="" value="" placeholder="">
+	<input type="button" id="btn" name="" value="替换">
+<div id="box">
+	1601是个大家庭。1601是个大家庭。1601是个大家庭。1601是个大家庭。1601是个大家庭。1601是个大家庭。1601是个大家庭。1601是个大家庭。1601是个大家庭。1601是个大家庭。
+</div>
+<script type="text/javascript">
+	var input1=document.getElementById("findTxt");
+	var input2=document.getElementById("replaceTxt");
+	var btn1=document.getElementById("btn");
+	var box=document.getElementById("box");
+
+	btn1.onclick=function(){
+		//var newstr=box.innerHTML.split('是');
+		//console.log(newstr);
+
+		var newstr1=box.innerHTML.split(input1.value).join(
+'<span style="background:#f00;">'+input2.value+'</span>');
+		box.innerHTML=newstr1;
+	};
+
+
+</script>
+
+
+
+
+
+</body>
+</html>

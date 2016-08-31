@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+    <button type="button">不使用文档片段</button>
+    <button type="button">用文档片段</button>
+    <ul id="ulId"></ul>
+	<script>
+		//文档片段节点，不存在与文档树种
+		//每当我们追加一个节点到文档树上时，浏览器就马上渲染，效率低下
+		//加到文档片段中的节点不会渲染，通常作为容器使用，当所有的节点准备好后，通过容器一次性添加到文档树上，从而提高效率
+        var ulElement = document.getElementById('ulId');
+        var buttonList = document.getElementsByTagName('button');
+        buttonList[0].onclick = function(){
+            var startDate = new Date();
+            var start = startDate.getTime();
+
+            for( var i = 0; i < 10000; i++ ){
+            	var liEle = document.createElement('li');
+            	liEle.appendChild(document.createTextNode(i));
+            	ulElement.appendChild(liEle);
+            }
+            
+            var endDate = new Date();
+            var end  = endDate.getTime();
+            alert( end - start );
+        }
+
+        buttonList[1].onclick = function(){
+           var startDate = new Date();
+           var start = startDate.getTime();
+
+            //创建文档片段节点
+            var docFragment = document.createDocumentFragment();
+
+            for( var i = 0; i < 10000; i++ ){
+            	var liEle = document.createElement('li');
+            	liEle.appendChild(document.createTextNode(i));
+            	docFragment.appendChild(liEle);
+            }
+
+            ulElement.appendChild(docFragment);
+            
+            var endDate = new Date();
+            var end  = endDate.getTime();
+            alert( end - start );
+        }
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body id="bodyId">
+	<script>
+		var bodyElement = document.getElementById('bodyId');
+		//把颜色数值凡在放在数组中
+        var colorArray = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'];
+        
+        //0 - 15 的随机数
+        var redIndex = Math.floor( Math.random()*16 );
+        var redColor = colorArray[redIndex];
+
+        var greenIndex =  Math.floor( Math.random()*16 );
+        var greenColor = colorArray[greenIndex];
+
+        var blueIndex =  Math.floor( Math.random()*16 );
+        var blueColor = colorArray[blueIndex];
+
+
+		bodyElement.style.backgroundColor = '#'+redColor + greenColor + blueColor;
+	</script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>下拉菜单</title>
+	<link rel="stylesheet" href="">
+	<style>
+	*{margin: 0;padding: 0}
+	.clear:after{content: '';height: 0px;display: block;clear: both;overflow: hidden;}
+	.clear{--ms-zoom: 1}
+     .box{background-color: #ccc;width: 960px;height: 30px;margin: 0 auto;}
+     .box>ul{float: left;width: 100px;margin-right: 10px;background-color: #ccc;}
+     .box>ul>li{list-style: none;text-align: center;line-height: 30px;}
+     .menu{border: 1px solid #aaa;display: none;}
+     .menu>a{text-decoration: none;display: block;color: black;}
+      .menu>a:hover{background-color: #fcc;color: red;}
+
+	
+	</style>
+	
+</head>
+<body>
+	<div class="box clear">
+		<ul>
+			<li class="title">我要买</li>
+			<li class="menu">
+				<a href="#" title="">发现宝贝</a>
+				<a href="#" title="">宝贝</a>
+				<a href="#" title="">发现宝贝</a>
+				<a href="#" title="">发现宝贝</a>
+			</li>
+		</ul>
+		<ul>
+			<li class="title">我的淘宝</li>
+			<li class="menu">
+				<a href="#" title="">哈哈哈</a>
+				<a href="#" title="">宝贝</a>
+				<a href="#" title="">发现宝贝</a>
+				<a href="#" title="">发现宝贝</a>
+			</li>
+		</ul>
+		<ul>
+			<li class="title">卖家中心</li>
+			<li class="menu">
+				<a href="#" title="">哈哈哈</a>
+				<a href="#" title="">宝贝</a>
+				<a href="#" title="">发现宝贝</a>
+				<a href="#" title="">发现宝贝</a>
+			</li>
+		</ul>
+		<ul>
+			<li class="title">联系客服</li>
+		</ul>
+		<ul>
+			<li class="title">收藏角</li>
+			<li class="menu">
+				<a href="#" title="">收藏的宝贝</a>
+				<a href="#" title="">收藏的店铺</a>
+				<a href="#" title="">热门收藏</a>
+			</li>
+		</ul>
+	</div>
+	<script>
+		var titleList = document.getElementsByClassName('title');
+
+		for( var i = 0 ;i < titleList.length;i++){
+			titleList[i].parentNode.onmouseover = function(){
+
+			//this.nextSibling.style.display = 'block';
+			this.lastElementChild.style.display = 'block';
+			}
+			titleList[i].parentNode.onmouseout = function(){
+				//this.nextSibling.style.display = 'none';
+				if(this.childElementCount >=2){
+				this.lastElementChild.style.display = 'none';
+				}
+			}
+			// var menuList = document.getElementsByClassName('menu');
+			// for( var j = 0 ;j < menuList.length;j++){
+			// 	menuList[j].onmouseover = function(){
+			// 		this.style.display = 'block';
+			// 	} 
+			// 		menuList[j].onmouseout = function(){
+			// 		this.style.display = 'none';
+			// 	} 
+			// }
+
+		}
+		
+
+	</script>
+</body>
+</html>

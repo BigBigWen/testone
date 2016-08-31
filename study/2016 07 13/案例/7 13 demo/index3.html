@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<form action="http://test.php" method="get" accept-charset="utf-8">
+	<!-- 通过button生成按钮 -->
+
+        <input type="text" name="" value="" placeholder="">
+
+		<button type="submit">提交按钮</button>
+		<button type="reset">重置按钮</button>
+		<button type="button">普通按钮</button>
+    <input type="image" name="" value="" placeholder="" src="images/15.jpg">
+
+<!-- 选择框 
+multiple  是否允许多选
+-->
+       <select name="">
+	       	<option value="1">苹果</option>
+	       	<option value="2">香蕉</option>
+	       	<option value="3">橘子</option>
+       </select>
+
+      <select name="" >
+      <!-- 通过optgroup对选项进行分组  label分组的标题-->
+      	<optgroup label="水果类">
+      		<option value="1">苹果</option>
+	       	<option value="2">香蕉</option>
+	       	<option value="3">橘子</option>
+      	</optgroup>
+      	<optgroup label="体育类">
+      		<option value="4">篮球</option>
+      		<option value="5">排球</option>
+      		<option value="6">足球</option>
+      	</optgroup>
+      </select><br>
+
+      <!-- 可以多行输入的文本输入区域 -->
+      <!-- rows 可以显示5行的数据
+           cols 可以显示字符的数据
+       -->
+      <textarea name="" cols="5" rows="5" ></textarea>
+
+       <input type="text" name="" value="" list="mylist" placeholder="">
+	</form>
+
+    <datalist id="mylist" ">
+    	<option value="苹果" ></option>
+    	<option value="香蕉"></option>
+    	<option value="橘子"></option>
+    </datalist>
+    
+    <!-- 上传文件,method 一定要写成post -->
+
+    <!-- enctype: application/x-www-urlencode 默认值
+                  multipart/form-data    专门负责提交文件 -->
+    <form action="http://test.php" method="post"   enctype="multipart/form-data" accept-charset="utf-8">
+    	<input type="file" name="" value="" placeholder="">
+    </form>
+
+
+<!-- form表单中的input特性 -->
+<hr>
+<form action="http://test.php" method="get" accept-charset="utf-8">
+<!-- min 最小值  max 最大值 step 步长 -->
+	<!-- <input type="number" name="" value="0" placeholder="" min="0" max="100" step="10">
+	<input type="range" name="" value="" placeholder="" min="0" max="100" step="10"> -->
+
+	<!-- 对于checkbox，radio，select 列表项没有选中时，不提交到服务器 -->
+    <label>1<input type="checkbox" name="checkboxname" value="1" checked=""></label>
+    <label>2<input type="checkbox" name="checkboxname" value="2"></label>
+    <label>3<input type="checkbox" name="checkboxname" value="3"></label>
+<!-- http://test.php/?
+http://test.php/?checkboxname=1&checkboxname=2&checkboxname=3 -->
+
+   <!-- 表单验证的功能 
+        required ：必填项目
+   -->
+   <input type="text" name="" value="" placeholder="" required="">
+   <!-- readonly 只读 -->
+   <input type="text" name="xyz" value="124" placeholder="" readonly="">
+
+   <!-- disabled 禁用 -->
+   <input type="text" name="" value="" placeholder="禁止使用" disabled="">
+
+   <!-- 输入字符进行限制  size 能显示的个数 maxlength 能输入的最大字符数-->
+   <input type="text" name="" value="" placeholder="" size="10" maxlength="10">
+
+   <!-- 自动获取输入焦点,autofocus  -->
+   <input type="text" name="" value="" placeholder="" autofocus>
+
+   <!-- 输入格式进行限制 -->
+   <input type="text" name="" value="" placeholder="请输入6个数字" pattern="[0-9]{6}">
+
+    <button type="submit">提交</button>
+</form>
+
+
+</body>
+</html>

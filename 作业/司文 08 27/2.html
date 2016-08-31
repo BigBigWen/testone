@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{margin: 0;padding: 0;}
+		ul{margin: 100px auto;width: 200px;}
+		ul>li{
+			width: 130px;height: 27px;
+			border: 1px solid #A5ACAC;
+			margin-bottom: 3px;
+			background: -webkit-linear-gradient( top,#EFF2F2,#C4CBCB);
+			list-style: none;
+
+		}
+		ul>li>span{margin-left: 50px;font-weight: normal;}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>导航一<span>&gt;&gt;</span></li>
+		<li>导航二<span>&gt;&gt;</span></li>
+		<li>导航三<span>&gt;&gt;</span></li>
+		<li>导航四<span>&gt;&gt;</span></li>
+		<li>导航五<span>&gt;&gt;</span></li>
+	</ul>
+	<script>
+		//onmouseover hight变成160px;onmouseout hight重新变回130
+		var liList = document.getElementsByTagName('li');
+		for( var i = 0;i < liList.length;i++){
+			liList[i].index = i;
+			liList[i].onmouseover = function(){
+				var index = this.index;
+				move(this,'160px');
+				this.style.fontWeight = 'bold';
+				
+			}
+			liList[i].onmouseout = function(){
+				move(this,'130px');
+				this.style.fontWeight = 'normal';
+				
+			}
+		}
+		function move(obj,endPos){
+			clearInterval(obj.timer);
+			//0.2s走一步,到endPos为止
+			obj.timer = setInterval(function(){
+				//获取当前width值 
+				var currentwidth =parseInt( getStyle(obj,'padding-left'));
+				var speed = (parseInt(endPos) - currentwidth)/3;
+				speed>0?Math.ceil(speed):Math.floor(speed);
+				obj.style.paddingLeft= parseInt(currentwidth+speed)+'px';
+				if(speed == endPos){
+					clearInterval(obj.timer);
+				}
+
+			},50)
+		}
+		function getStyle(obj,styleName){
+			if(obj.currentStyle){
+				return obj.currentStyle[styleName];
+			}else{
+				 return getComputedStyle(obj,null)[styleName];
+			}
+		}
+	</script>
+</body>
+</html>

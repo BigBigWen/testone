@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+	*{margin: 0px;padding: 0px;}
+	.div1
+	{
+		width: 200px;height: 200px;
+		background-color: red;
+		margin-bottom: 50px;
+	}
+	.div2
+	{
+		width: 100px;height: 100px;
+		margin-top: 30px;
+		background-color: #ccc;
+	}
+	.div3
+	{
+		width: 300px;
+		height: 300px;
+		background-color: #f00;
+	}
+	.div4
+	{
+		width: 200px;
+		height: 200px;
+		background-color: green;
+		border: 1px solid black;
+		padding-top: 40px;
+	}
+	.div4 .child{width: 100px;height: 100px;background-color: #ccc;/* margin: 40px; */}	
+	.div5{display: inline-block;width: 100px;height: 200px;background-color: #f00;margin-right: 40px;}
+	.div6{display: inline-block;width: 100px;height: 200px;background-color: #0f0;margin-left: 20px;}
+	.pclass span
+	{
+		color: red;
+		/*margin: 50px;左右有用,上下没用*/
+		padding: 50px;
+	}
+	</style>
+	
+</head>
+<body>
+	<!-- 当两个快级元素垂直布局时,他们的margin会合并成一个,取最大值合并 -->
+	<div class="div1"></div>
+	<div class="div2"></div>
+	<!-- 孩子的margin-top和父元素合并
+	解决:1;给父元素加边框
+	2;给父元素padding-top
+	3 使用浮动
+	4 通过定位 -->
+	<div class="div3"></div>
+	<div class="div4">
+		<div class="child"></div>
+	</div>
+	<hr>
+<!-- 水平方向的margin能不能合并  不合并-->
+<div class="div5"></div>
+<div class="div6"></div>
+<!-- 元素类型 
+inline:非置换型元素,span,a等,宽高由内容决定-->
+<p class="pclass">联发科服务科技为结尾联发科服务科技为结尾联发科服务科技为结尾联发科服务科技为结尾联发科服务科技为结尾联发科服务科技为结尾联发科服务科技为结尾联发科服务科技为结尾联发科服务科技为结尾联发科服务科技为结尾联发科服务科技为结尾联发科服务科技为结尾联发科服务科技为结尾联发科服务科技为结尾联发科服务科技为结尾联发科服务科技为结尾联发科服务科技为结尾联发科服务科技为结尾联发科服务科技为结尾
+<span>span元素</span>
+联发科服务科技为结尾联发科服务科技为结尾联发科服务科技为结尾联发科服务科技为结尾联发科服务科技为结尾联发科服务科技为结尾
+</p>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+
+	<!-- 外部式样表 -->
+	<link rel="stylesheet" href="test.css">
+
+	<!-- 内部式样 -->
+	<style type="text/css" media="screen">
+		/*选择器{ 属性名:属性值;...... }*/
+
+		/*元素选择器*/
+		p{
+			width: 100px;height: 100px;
+			background-color: red;
+		}
+
+		/*id 选择器*/
+		#myid{}
+
+		/*类选择器*/
+		.myclass{
+
+		}
+
+		/*后代选择器 祖先  子孙*/
+        div span{}
+
+        /*兄弟选择器,
+          首先使用div2 p+p p 后的一个兄弟
+        */
+        #div2 p+p{}
+        /* p 后一批兄弟 p*/
+        #div2 p~p{}
+
+        a:link{}
+        a:focus{}
+        a:hover{}
+        a:active}{}
+        /*a:visited{}*/
+
+        /*选择器的权重
+          行内式样 权重 1000
+          id             100
+          class           10
+          元素            1
+          *               0
+        */
+
+        /*元素类型   display:;
+            inline
+               可置换的  img input  textarea  (inline-block)
+               非可置换的  span a strong em i b 
+            inline-block
+            block  :块元素，单独占一行; div p form hr......
+            none：不显示
+        */
+
+       /* p{
+        	margin: 
+        	padding:;
+        	border:;
+        }*/
+
+
+	</style>
+</head>
+<body>
+<!-- 行内式样 -->
+	<p style="background-color: red;"></p>
+
+    
+    <span id="myid"></span>
+
+    <span class="myclass"></span>
+    <span class="myclass"></span>
+    <span class="myclass"></span>
+
+    <div>
+       <p>
+       	 <span></span>
+       </p>
+    </div>
+
+</body>
+</html>

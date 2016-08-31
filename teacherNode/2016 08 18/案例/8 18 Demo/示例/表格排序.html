@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		table{ border-collapse: collapse; width: 500px; }
+		img{ width: 50px;height: 50px; }
+		td{ text-align: center; }
+	</style>
+
+	<script>
+	   
+		window.onload = function(){
+
+			var array = document.querySelectorAll('tbody tr');
+			// var arrayTable = document.querySelectorAll('tbody tr'); 
+			var arrayTable = [];
+			for( var i = 0; i < array.length;i++ ){
+              arrayTable.push( array.item(i) );
+			}
+
+			var buttonList = document.getElementsByTagName('button');
+			buttonList[0].onclick = function(){
+                arrayTable = arrayTable.sort( function(a,b){
+                	return  a.children[0].innerHTML.localeCompare( b.children[0].innerHTML );
+                } );
+
+                rebuildTable(arrayTable);
+			}
+			buttonList[1].onclick = function(){
+				arrayTable = arrayTable.sort( function(a,b){
+                	return  a.children[1].innerHTML.localeCompare( b.children[1].innerHTML );
+                } );
+
+                rebuildTable(arrayTable);
+			}
+			buttonList[2].onclick = function(){
+				arrayTable = arrayTable.sort( function(a,b){
+	                	return  a.children[2].innerHTML.localeCompare( b.children[2].innerHTML );
+	               } );
+
+                rebuildTable(arrayTable);
+            }
+			buttonList[3].onclick = function(){
+				arrayTable = arrayTable.sort( function(a,b){
+		                	return  a.children[3].innerHTML.localeCompare( b.children[3].innerHTML );
+		           } );
+
+                rebuildTable(arrayTable);
+            }
+
+		}
+
+		function rebuildTable( array ){
+            var tableEle = document.getElementById('tableId');
+            tableEle.removeChild(tableEle.firstElementChild);
+
+            var tbody = document.createElement('tbody');
+            tableEle.appendChild(tbody);
+            for( var i = 0 ; i < array.length;i++ ){
+            	tbody.appendChild(array[i]);
+            }
+		}
+	</script>
+</head>
+<body>
+	<table border="1px" id="tableId">
+		<tbody>
+			<tr>
+				<td><button type="button">排序</button> </td>
+				<td><button type="button">排序</button> </td>
+				<td> <button type="button">排序</button> </td>
+				<td> <button type="button">排序</button> </td>
+				<td>&nbsp;</td>
+			</tr>
+
+			<tr>
+				<td>1</td>
+				<td>aaa</td>
+				<td>23</td>
+				<td>北京</td>
+				<td><img src="image/1.jpg" alt=""></td>
+			</tr>
+
+			<tr>
+				<td>2</td>
+				<td>bbb</td>
+				<td>46</td>
+				<td>广州</td>
+				<td><img src="image/2.jpg" alt=""></td>
+			</tr>
+
+			<tr>
+				<td>3</td>
+				<td>ccc</td>
+				<td>12</td>
+				<td>浙江</td>
+				<td><img src="image/3.jpg" alt=""></td>
+			</tr>
+
+			<tr>
+				<td>4</td>
+				<td>ddd</td>
+				<td>20</td>
+				<td>上海</td>
+				<td><img src="image/4.jpg" alt=""></td>
+			</tr>
+		</tbody>
+	</table>
+
+
+
+</body>
+</html>

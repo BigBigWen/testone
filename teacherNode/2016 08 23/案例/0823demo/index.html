@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		*{margin: 0;padding:0;}
+		.outbox{ width: 200px;height: 200px;border: 10px solid black;margin: 20px;padding: 30px; background-color: blue;position: relative;}
+
+		.innertBox{ width: 100px;height: 100px;border: 10px solid black;margin: 20px;padding: 30px;background-color: red; }
+	</style>
+</head>
+<body>
+	<div class="outbox">
+		<div class="innertBox">
+		</div>
+	</div>
+
+	<script>
+		var innertBox = document.getElementsByClassName('innertBox')[0];
+	
+	    //自己的边框的左侧 距离 offsetParent 边框的右侧,之间的距离
+	    //offsetParent,从自己的父容器查找，有大小且position 为 relateive 或 absolute 的容器
+		console.log(innertBox.offsetLeft);
+	</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<!-- <table>
+		<tbody>
+			<tr>
+				<td>data</td>
+			</tr>
+		</tbody>
+	</table> -->
+
+	<script>
+		//使用js 生成 5 行 5 列 table
+		var tableEle = document.createElement('table');
+		tableEle.border = '1px';
+		tableEle.width = '500px';
+
+		var tbodyEle = document.createElement('tbody');
+		tableEle.appendChild(tbodyEle);
+
+		for( var i = 0; i < 5; i++ ){
+			var trEle = document.createElement('tr');
+			for( var j = 0; j < 5;j++ ){
+               var tdEle = document.createElement('td');
+               tdEle.appendChild(document.createTextNode('row'+ i + '  col' + j));
+               trEle.appendChild(tdEle);
+			}
+			tbodyEle.appendChild(trEle);
+		}
+
+		document.body.appendChild(tableEle);
+	</script>
+</body>
+</html>

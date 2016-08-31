@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>简单爱心小日历</title>
+	<link rel="stylesheet" href="">
+	<style>
+	.box{border: 3px dashed pink;width: 400px;margin: 50px auto}
+	p{text-align: center;font-size: 16px;height: 40px;line-height: 40px;}
+	h3{text-align: center;}
+		
+	</style>
+	}
+	
+	
+</head>
+<body>
+	<div class="box">
+		<h3>开启美好一天</h3>
+		<p id="p1">年月</p>
+		<p id="p2">星期</p>
+		<p id="p3">几号</p>
+		<p id="p4">几点几分几秒</p>
+		
+	</div>
+	<script>
+		var date1 = new Date();
+		var YearMonth = document.getElementById('p1');
+		var Week = document.getElementById('p2');
+		var days = document.getElementById('p3');
+		var HoursMinuteSecond = document.getElementById('p4');
+		YearMonth.innerHTML = date1.getFullYear()+'年'+'---'+date1.getMonth()+'月';
+		Week.innerHTML = date1.getDate()+'日';
+		days.innerHTML ='星期' +date1.getDay();
+		HoursMinuteSecond.innerHTML = date1.getHours()+': '+date1.getMinutes()+': '+date1.getSeconds();
+
+
+	</script>
+</body>
+</html>

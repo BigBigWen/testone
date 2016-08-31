@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+	    *{margin: 0;padding: 0;list-style: none;}
+	    .clear:after{content: '';height: 0;display: block;clear: both;overflow: hidden;}
+	    .clear{--ms-zoom: 1;}
+		.container{margin: 100px auto;width: 970px;padding: 20px 10px;box-sizing: border-box;border: 1px solid black;}
+		.container>ul{float: left;margin-left: 10px;position: relative;width: 300px;height: 180px;overflow: hidden;}
+
+		.container>ul>li:last-child{
+			position: absolute;left: 0px;top: 140px;
+			width: 300px;height:180px;
+			background-color:rgba(51,50,50,0.5);line-height: 40px;color: white;
+			padding-left: 10px;box-sizing: border-box;
+			transition: all 0.5s;
+			 }
+
+	</style>
+</head>
+<body>
+	<div class="container clear">
+		<ul>
+			<li><img src="images/img1.jpg" alt=""></li>
+			<li>
+				<p>学会HTML5</p>
+				<p>哈哈哈哈哈,想多了,就算会了还是屌丝一个</p>
+			</li>
+	    </ul>
+	    <ul>
+			<li><img src="images/img2.jpg" alt=""></li>
+			<li>
+				<p>圆角水晶之作</p>
+				<p>乌拉拉乌拉拉噢啦噢啦哦</p>
+			</li>
+	    </ul>
+	    <ul>
+			<li><img src="images/img3.jpg" alt=""></li>
+			<li>
+				<p>装逼利器</p>
+				<p>解决此奥德加你才减肥空军从未冲破为对方触摸屏我发</p>
+			</li>
+	    </ul>
+	</div>
+	<script>
+		var ulList = document.getElementsByTagName('ul');
+		for(var i = 0; i < ulList.length;i++){
+			ulList[i].onmouseover = function(){
+			this.lastElementChild.style.top = '0';
+		    }
+		    ulList[i].onmouseout = function(){
+			this.lastElementChild.style.top = '140px';
+		    }
+
+
+
+		}
+		
+
+		
+	</script>
+</body>
+</html>

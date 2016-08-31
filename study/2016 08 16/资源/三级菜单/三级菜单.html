@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>三级菜单</title>
+	<link rel="stylesheet" href="">
+	<style>
+	*{margin: 0;padding: 0;}
+	.clear:after{height: 0px;content: '';display: block;clear: both;overflow: hidden;}
+	.clear{--ms-zoom: 1}
+	.left{float: left;}
+	.right{float: right;}
+	#menuBtn{font-size: 16px;width: 100px;margin-top: 10px;line-height: 30px;background-color: yellow;height: 30px;}
+	.center{position: relative;}
+	#menuList{position: absolute;top: 40px;left: 0px;display: none;}
+	#menuList>li{list-style: none;background-color: #fcc;line-height: 30px;}
+	#menuList>li:hover{background-color: #faa;}
+	.tab{position: absolute;top: 40px;left: 95px;background-color: #0f0;width: 200px;height: 200px;line-height: 200px;text-align: center;display: none;}
+
+	</style>
+	<script>
+		window.onload = function(){
+			var menuBtnElement = document.getElementById('menuBtn');
+			var menuListeElement = document.getElementById('menuList');
+
+			menuBtnElement.onmouseover = function(){
+				menuListeElement.style.display = 'block';
+			}
+			menuBtnElement.onmouseout = function(){
+				menuListeElement.style.display = 'none';
+			}
+			menuListeElement.onmouseover = function(){
+				menuListeElement.style.display = 'block';
+			}
+			menuListeElement.onmouseout = function(){
+				menuListeElement.style.display = "none"
+			}
+			//在ul元素子下查找  getElementById...不仅适用于docment,也适用于元素,从元素的后代中查找
+			var liElementList = menuListeElement.getElementsByTagName('li'); 
+			var tabElement = document.getElementsByClassName('tab');
+			for( var i = 0;i < liElementList.length;i++){
+				
+               tabElement[i].index = i;
+				//当选中某个li时 调用匿名函数
+				liElementList[i].onmouseover = function(){
+					//把右侧的相对应的div显示出来
+					var liIndex = this.index;
+					//遍历右边的div
+					for( var j = 0 ;j < tabElement.length;j++){
+						if( liIndex == j ){
+							//显示j对应的div
+							tabElement[j].style.display = 'block';
+						}else{
+							tabElement.style.display = 'none';
+						}
+					}
+				}
+
+				//当移出整个li时,隐藏tab
+				liElementList[i].onmouseout = function(){
+					for( var j = 0; j < tabElement.length;j++){
+						tabElement[i].style.display = 'none';
+					}
+				}
+
+			}
+			//处理右侧div的onmouseover
+			for( var i = 0;i < tabElement.length; i++){
+				liElementList[i].index = i;
+
+				tabElement[i].onmouseover = function(){
+//ul元素不要消失
+                    menuListeElement.style.display = 'block';
+                    //把自身的显示出来,把其他的隐藏
+                    this.style.display = 'block';
+				};
+				tabElement[i].onmouseout = function(){
+                    menuListeElement.style.display = 'none'
+                    this.style.display = 'none';
+				}
+				
+
+			}
+		}
+	</script>
+	
+</head>
+<body>
+	<div class="top">
+		<img src="img/top.png" alt="">
+	</div>
+<div class="center clear">
+	<div class="left">
+		<h2 id="menuBtn">全部商品分类</h2>
+		<ul id="menuList">
+			<li>电子书阅读器</li>
+			<li>平板电脑</li>
+			<li>智能家电</li>
+		</ul>
+
+		<div class="tab">hahahahaha</div>
+		<div class="tab">哈哈哈哈</div>
+		<div class="tab">呼呼呼呼</div>
+	</div>
+	<div class="right">
+		<img src="img/top2.png" alt="">
+	</div>
+
+</div>
+	<div class="banner">
+		<img src="img/banner.png" alt="">
+	</div>
+</body>
+</html>

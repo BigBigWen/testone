@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{margin: 0;padding: 0};
+		.clear:after{content: '';height: 0px;display: block;clear: both;}
+		.clear{--ms-zoom: 1;}
+		.box{width: 490px;margin: 100px auto;height: 170px;position: relative;overflow: hidden;}
+		.container{position: absolute;top: 0px;left: 0px;width: 4330px;height: 170px;}
+		.container>img{float: left;}
+		.indicator{position: absolute;bottom: 5px;right: 5px;}
+		.indicator>ul>li{float: left;list-style: none;width: 30px;height: 30px;background-color:rgba(0,0,0,0.5);margin-left: 5px;text-align: center;line-height: 30px;color:white;}
+		.indicator>ul>li.active{background-color: #f00;}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="container clear">
+			<img src="imgScroll/img1.gif" alt="">
+			<img src="imgScroll/img2.jpg" alt="">
+			<img src="imgScroll/img3.jpg" alt="">
+			<img src="imgScroll/img4.jpg" alt="">
+			<img src="imgScroll/img5.png" alt="">
+			<img src="imgScroll/img6.jpg" alt="">
+			<img src="imgScroll/img1.gif" alt="">
+		</div>
+		<div class="indicator">
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+			</ul>
+		</div>
+	</div>
+	<script>
+	        var currentShowIndex = 0;
+			var containerEle = document.getElementsByClassName('container')[0];
+			var outerTimer = setInterval(doMove,2000);
+			var innerTimer;
+
+		//获取某一个对象obj,属性名为styleName的属性值 
+		//E.g获取 containerEle.style.left
+         function getStyle(obj,styleName){
+             if(obj.currentStyle){
+             	return obj.currentStyle[styleName];
+             }else{
+             	return getComputedStyle(obj,null)[styleName];
+             }
+         }
+         //把下标为index的指示器高亮
+         function showActive(index){
+         	var liList = document.querySelectorAll('.indicator li');
+         	for( var i = 0; i < liList.length;i++){
+         		if( i == index){
+         			liList[i].className = 'active';
+         		}else{liList[i].className = '';}
+         	}
+
+         }
+         var liList = document.querySelectorAll('.indicator li');
+         liList[0].className="active";
+         for( var i = 0;i < liList.length;i++){
+         	liList[i].index = i;
+         	liList[i].onmouseover = function(){
+         		//停掉外部的定时器
+         		clearInterval(outerTimer);
+         		//高亮显示指示器
+         		showActive(this.index);
+         		//显示固定位置的图片
+         		containerEle.style.left = this.index *(-490)+'px';
+         	}
+         	liList[i].onmouseout = function(){
+         		currentShowIndex = this.index;
+         		doMove();
+
+         	}
+         }
+         function doMove(){
+				 currentShowIndex++;
+			//把传入的index对应的指示器高亮显示
+                showActive(currentShowIndex);
+
+				//containerEle.style.left =(parseInt(currentLeft) - 490)+'px';
+				//需要把containerEle慢慢的移动,就要使用定时器了
+				//把container的位置在0.03秒的时间,从当前的位置向做移动到490px;
+				clearInterval(innerTimer);
+				 //    var totalDistance = -490;
+					var speed = -10;
+					var currentMove = 0;
+				var innerTimer = setInterval(function(){
+					currentMove+=speed;
+					//获取当前值,每次移动490px;
+				var currentLeft = getStyle(containerEle,'left');
+					//设置container样式
+					containerEle.style.left =( parseInt(currentLeft)-10)+'px';
+                   //临界值的判断
+					if(currentMove == -490){
+						clearInterval(innerTimer);
+					    
+					if(currentShowIndex >= 6){
+						currentShowIndex = 0;
+						containerEle.style.left = '0px';
+						 liList[currentShowIndex].className="active";
+						}
+
+					}
+					//当动画结束后判断,当前显示的是不是最后一张
+					//如果是,重新复位					
+					
+				},30)
+			}
+	</script>
+</body>
+</html>

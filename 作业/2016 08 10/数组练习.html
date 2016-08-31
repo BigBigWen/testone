@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+
+	<script>
+		//数组练习
+		var array1 = [ 'a','b','c',1];
+		var array2 = new Array();
+		 array2[0] = 'i';
+		 array2[1] = 'love';
+		 array2[2] = '';
+		var array3 = new Array('a','b','c');
+		console.log(array1);
+		console.log(array2);
+		console.log(array3);
+		function printArray(array){
+			for( var i = 0; i < array.length; i++){
+				var arrayValue = array[i];
+				console.log(arrayValue);
+			}
+		}
+		printArray(array2);
+		var array4 = new Array(1,2);
+		array4.push(1);
+		printArray(array4);
+
+		var array5 = new Array('i','love');
+		printArray(array5);
+		array5.push('flower');
+		printArray(array5);
+
+		var array6 = new Array('增','加');
+		printArray(array6);
+		array6.push('后','值');
+		printArray(array6);
+		console.log('-----push----');
+		var array7 = new Array(1,8)
+		printArray(array7);
+		array7.push(2);
+		printArray(array7);
+		console.log('********')
+		var array8 = new Array('si');
+		printArray(array8);
+		console.log('-----')
+		array8.push('wen');
+		printArray(array8);
+		console.log('********');
+		var array9 = new Array('i','love','eat');
+		printArray(array9);
+		array9.pop();
+		printArray(array9);
+		console.log('******');
+		var array10 = new Array(1,2);
+		array10.pop();
+		printArray(array10);
+		console.log('******');
+		var array11 = new Array('i','love','eat');
+		array11.shift();
+		printArray(array11);
+		console.log('****************************************');
+		var array12 = new Array('love','eat');
+		array12.unshift('i','1');
+		printArray(array12);
+		console.log('**********************************');
+		var array13 = new Array('i','love');
+		var array14 = new Array('flower');
+		var array15 = array13.concat(array14);
+		printArray(array15);
+		console.log('*********************************************************');
+		var array16 = new Array('i','love','you');
+		array16.reverse();
+		printArray(array16);
+		console.log('***************************************');
+		var array18 = new Array(1,2,3);
+		console.log('*************');
+		var array19 = new Array(5,6,4);
+		array19.sort();
+		printArray(array19);
+		console.log('&&&&&&&&&&&&&');
+		var array20 = new Array(2,3,4);
+		array20.sort(function(a,b){
+			return a-b;
+		}) ;
+		printArray(array20);
+		var array21 = new Array(1,2,3);
+		console.log(array21);
+		var array22 = new Array(1,2,3);
+		console.log(array22.join('&'));
+		console.log('*******************************');
+		var array23 = new Array(1,2,3,4,5);
+		var array24 = array23.slice(0,2);
+		printArray(array24);
+		var array25 = array23.slice(-3,-1);
+		printArray(array25);
+		console.log('*********************');
+		var array26 = new Array(1,2,3,4,5);
+		array26.splice(2,0,'love');
+		printArray(array26);//1,2,love,3,4,5
+		array26.splice(2,1,'haha');
+		printArray(array26);
+		console.log('*************************');
+		
+
+
+
+
+
+
+	</script>
+</body>
+</html>

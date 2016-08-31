@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{margin: 0;padding: 0}
+		.box{position: absolute;bottom: 0px;right: 0;width:200px;height: 357px;overflow: hidden;}
+		.top{background:  url(4.png)  no-repeat;width: 200px;height: 312px;position: absolute;left: 200px;top: 312px;}
+		.bottom{
+			background:  url(1.png) no-repeat;width: 200px;height: 45px;
+			position: absolute;top: 312px;left: 200px;
+		}
+		button{background:  url(2.png)  no-repeat;bottom: 0;right: 0;width: 30px;height: 49px;position: absolute;}
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="top"></div>
+		<div class="bottom"></div>
+		<button type="button"></button>
+	</div>
+	<script>
+	var topEle = document.getElementsByClassName('top')[0];
+	var bottomEle = document.getElementsByClassName('bottom')[0];
+		var buttonEle = document.getElementsByTagName('button')[0];
+		buttonEle.onclick = function(){
+			//移动bottom的left到0
+			starMove (bottomEle,'left','0px',function(){
+				topEle.style.left = "0px";
+				//把top值移动到0
+				starMove(topEle,'top','0px',null);
+			})
+
+		}
+		//obj 哪个元素
+		//attribute哪个属性一定
+		//endValue 最终的值
+		//endFun  运动结束后调用的函数
+		function starMove(obj,attribute,endValue,endFun){
+			clearInterval(obj.timer);
+			obj.timer = setInterval(function(){
+				var currentValue = getStyle(obj,attribute);
+				var speed = (parseInt(endValue)-parseInt(currentValue))/6;
+				if(speed > 0){
+					speed = Math.ceil(speed);
+				}
+				if(speed<0){
+					speed = Math.floor(speed);
+				}
+				obj.style[attribute] = (parseInt(currentValue)+speed)+'px';
+				if(obj.style[attribute] == endValue){
+					//已经到达最终值
+					clearInterval(obj.timer);
+					//动画结束,调用传递过来的endFun
+					if(endFun){
+						//判断endfun,是否有合法的入口地址
+						//调用指定的结束处理函数
+						endFun();
+					}
+				}
+			},50)
+		}
+		function getStyle(obj,styleName){
+			if(obj.currentStyle){
+				return obj.currentStyle[styleName];
+			}else{
+				return getComputedStyle(obj,null)[styleName];
+			}
+		}
+
+
+		topEle.onclick = function(){
+			starMove(topEle,'top','357px',function(){
+
+				starMove(bottomEle,'left','200px',null);
+			});
+		}
+	</script>
+</body>
+</html>

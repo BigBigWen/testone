@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<!-- <video src="" autobuffer autoloop loop controls poster="/images/video.png"></video> -->
+
+<!-- 播放音频文件 
+    src: 音频文件的路径
+    preload:预加载
+    loop:自动循环播放
+    controls：提供播放的控件，开始停止按钮
+    muted：静音
+    autoplay:自动播放
+-->
+	<!-- <audio src="images/short.mp3" preload="" controls autoplay loop muted></audio> -->
+
+	<audio  preload loop controls>
+	<!-- source 列表提供浏览器支持的一个格式列表，浏览器从上到下查看，找到第一个支持的格式后就开始播放 -->
+		<source src="images/short.mp3" type="audio/mp3" media="">
+		<source src="images/short.ogg" type="audio/ogg" media="">
+
+		你的浏览器不支持音频播放
+	</audio>
+
+<!-- 视频播放 
+poster:在没有播放时显示的图片信息，提供预览界面
+设置autoplay 时poster 不使用
+-->
+	<video preload loop controls poster="images/1.jpg">
+		<source src="images/movie.mp4" type="video/mp4" media="">
+		<source src="images/movie.ogv" type="video/ogv" media="">
+		<source src="images/movie.webm" type="video/webm" media="">
+		你的浏览器不支持视频播放
+	</video>
+
+<!-- embed 
+    src: 播放的视频地址
+    allowFullScreen：是否允许全屏播放
+    quality：质量（画质）
+    width,heigh: 宽高
+    type:媒体类型
+ -->
+	<embed src="http://player.youku.com/player.php/sid/XMTYzOTM2MDEyOA==/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+
+	<!-- 浏览器兼容差，不推荐 -->
+	<!-- <object type="" data="http://player.youku.com/player.php/sid/XMTYzOTM2MDEyOA==/v.swf" width="290" height="450">
+		<param name="allowFullScreen" value="always">
+		
+	</object> -->
+</body>
+</html>

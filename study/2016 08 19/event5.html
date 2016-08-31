@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>捕获</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<ul id="box">
+		<li>111</li>
+		<li>22222222222222</li>
+	</ul>
+	<script>
+		var ulElement = document.getElementById('box');
+		var liList = document.getElementsByTagName('li');
+		//把一个事件绑定到元素上
+		   // 1 使用元素的onclick属性 = 函数   but不推荐
+		   // 2 先找到dom节点,然后再dom节点上安插事件处理函数 
+		      // but没有办法一个事件执行多个函数,后面安插的事件处理程序会把前面的覆盖掉
+		  //  3 使用监听器
+		        //type 代表事件的类型  字符串 类型 'onclick';
+		        //listener 事件处理函数
+		        //flag Boolean值 默认是false冒泡 , true 捕获;
+		        //addEventListener 可以对一个事件安插多个处理
+		        //li0.addEventListener( type,listener,flag)
+		        //执行的顺序是安插的顺序
+		      // liList[0].addEventListener('click',function(){console.log('1')},false);
+		      // liList[0].addEventListener('click',function(){console.log('2')},false);
+		      // ie 不支持.addEventListener,使用attachEvent
+
+		      //先捕获,然后当前点击的处理,再冒泡
+		  document.body.addEventListener('click',function(ev){
+		  	var e = ev || event;
+		  	
+		  	console.log(e.eventPhase);
+		  	console.log(e.target);
+		  },false);
+		   ulElement.addEventListener('click',function(ev){
+		  	var e = ev || event;
+		  	console.log(e.eventPhase);
+		  	console.log(e.target);
+		  },false);
+		   liList[0].addEventListener('click',function(ev){
+		  	var e = ev || event;
+		  	console.log(e.eventPhase);
+		  	console.log(e.target);
+		  },false);
+
+	</script>
+</body>
+</html>

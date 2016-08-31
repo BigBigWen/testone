@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+	*{margin: 0px;padding: 0px;}
+	.clear:after{content: "";height: 0px;clear: both;display: block;overflow: hidden;}
+	.clear{--ms-zoom: 1}
+	ul>li{float: left;width: 28px;height: 28px;background: url(images/star.gif) no-repeat;list-style: none;}
+		
+	</style>
+	
+</head>
+<body>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<script>
+	window.onload = function(){
+		var liElementList = document.getElementsByTagName('li');
+		var judgeArray = ['差评','一般差','一般','良好','五星好评']
+		for( var i = 0 ;i < liElementList.length;i++){
+			liElementList[i].index = i;
+			liElementList[i].onmouseover = function(){
+				var liIndex = this.index;
+				for( var j = 0;j < liElementList;j++){
+                    if( j <= liIndex){
+                    	//设置高亮
+                    	liElementList[j].style.background = 'url(images/star.gif) no-repeat 0 -28px';
+                    }else{
+                    	//设计灰色
+                    	liElementList[j].style.background = 'url(images/star.gif) no-repeat 0 0';
+
+                    }
+				}
+				
+				}
+				liElementList[i].onclick = function(){
+					var liIndex = this.index;
+					alert(judgeArray[liIndex]);
+			}
+
+		}
+	}
+	</script>
+</body>
+</html>

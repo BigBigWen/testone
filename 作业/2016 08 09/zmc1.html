@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<label>请输入数字<input id="input" type="text" name="" value=""></label>
+	<button id="button" type="button">开始判断</button>
+	<span id="result"></span>
+	<script>
+		var inputElement = document.getElementById('input');
+		var buttonElement = document.getElementById('button');
+		  buttonElement.onclick = function(){
+		  	var inputValue = parseInt(inputElement.value)
+		  	switch (inputValue) {
+		  		case 1:resultString="星期一";break;
+		  		case 2:resultString="星期二";break;
+		  		case 3:resultString="星期三";break;
+		  		case 4:resultString="星期四";break;
+		  		case 5:resultString="星期五";break;
+		  		case 6:resultString="星期六";break;
+		  		case 0:resultString="星期日";break;
+		  		default:resultString='输入错误'
+		  			break;
+		  	}
+		  	var resultElement = document.getElementById('result')
+		  	resultElement.innerHTML = resultString;
+		  }
+	
+	
+	</script>
+</body>
+</html>

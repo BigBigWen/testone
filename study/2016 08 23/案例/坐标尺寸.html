@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{margin: 0;padding: 0;}
+		.box{width: 100px;height: 100px;padding: 10px;margin: 10px;border: 10px solid #000;background-color: #faa;}
+	</style>
+</head>
+<body>
+<div class="box"></div>
+	<script>
+		//浏览器窗口距离屏幕的位置
+		console.log(window.screenLeft);
+		console.log(window.screenTop);
+		//获取视图区域的大小
+		var clientWidth = document.documentElement.clientWidth||document.body.clientWidth;
+		var clientHeight = document.documentElement.clientHeight||document.body.clientHeight;
+		console.log(clientHeight);
+		console.log(clientWidth);
+		//获取滚动偏移大小
+		var scrollLeft = document.documentElement.scrollLeft||document.body.scrollLeft;
+		var scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
+		console.log(scrollLeft);
+		console.log(scrollTop);
+		//获取整个文档区域的大小
+		var documentHeight = Math.max(document.documentElement.scrollHeight,document.documentElement.clientHeight);
+		var documentWidth = Math.max(document.documentElement.scrollWidth,document.documentElement.clientWidth);
+		console.log(documentHeight);
+		console.log(documentWidth);
+		//获取元素所占区域大小
+         var boxEle = document.getElementsByClassName('box')[0];
+          //包含border padding 内容(width和height) ,不包含margin
+          var offsetWidth = boxEle.offsetWidth;
+          var offsetHeight = boxEle.offsetHeight;
+
+          //获取元素可视区域大小
+          var eleClientWidth = boxEle.clientWidth;
+          var eleClientHeight = boxEle.clientHeight
+
+          //offsetLeft 自己边框距离父容器的padding
+          //offsetTop   自己边框上部距离父容器的padding  之间的距离 只读
+          boxEle.onclick = function(e){
+          	var ev =e||event;
+          	console.log(ev.clientX);距离视图的X坐标
+          	console.log(ev.clientY);距离视图的Y坐标
+
+          	console.log(ev.pageX);//文档左上角
+          	console.log(ev.pageY);
+
+          	console.log(ev.screenX);//屏幕左上角
+          	console.log(ev.screenY);
+
+          	console.log(ev.offsetX);//相对于当前元素的左上角
+          	console.log(ev.offsetY);
+          }
+
+	</script>
+</body>
+</html>

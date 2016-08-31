@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		function animal(name){
+			this.name = name;
+		}
+		animal.prototype.type = '动物';
+		//hasOwnProperty 返回bool
+//如果测试的属性是自身的,返回true;     如果测试的属性不存在,或是原型中的属性,返回false
+		//hasOwnProperty(property)
+		var a1 = new animal('a');
+		console.log(a1.hasOwnProperty('name'));//true
+		console.log(a1.hasOwnProperty('type'));//false
+//in 不仅判断自身的属性,还会判断原型中的属性
+		console.log('name' in a1);
+		console.log('type' in a1)
+//判断一个属性是否是原型中的属性
+		function isPrototypeProperty(object,name){
+			return !object.hasOwnProperty(name) && (name in object)
+		}
+		console.log(isPrototypeProperty(a1,'type'));
+		//获取一个对象的原型getPrototypeOf
+		console.log(Object.getPrototypeOf(a1)== animal.prototype) ;
+		//_proto_ 仅chorm浏览器支持
+
+
+		//instanceof 用来判断一个对象的类型,返回bool值,如果一个对象属于某一类,返回true; 否则false
+		console.log(a1 instanceof animal);
+		console.log(a1 instanceof Object);
+
+
+	</script>
+</body>
+</html>

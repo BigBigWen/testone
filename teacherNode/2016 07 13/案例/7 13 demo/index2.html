@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>form 表单学习2</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<!-- 分组概念 
+	把多个输入项分为一组
+	-->
+
+	<form action="index2_submit" method="get" accept-charset="utf-8">
+	<!-- fieldset 分组 -->
+		<fieldset>
+		<!-- 分组名称 -->
+			<legend>分组1</legend>
+			<label>用户名<input type="text" name="" value=""></label>
+			<br>
+			<label>年龄<input type="text" name="" value=""></label>
+		</fieldset>
+	</form>
+
+<form action="http://test.php" method="get" accept-charset="utf-8">
+	<fieldset>
+		<legend>input 类型</legend>
+		<p><label>text<input type="text" name="" value=""></label></p>
+		<p><label>password<input type="password" name="" value=""></label></p>
+		<p><label>checkbox<input type="checkbox" name="" value=""></label></p>
+		<p><label>radio<input type="radio" name="" value=""></label></p>
+<!-- 选中颜色 -->
+        <p><label>color<input type="color" name="" value=""></label></p>
+        <p><label>tel<input type="tel" name="" value=""></label></p>
+        <p><label>email<input type="email" name="" value=""></label></p>
+        <p><label>url<input type="url" name="" value=""></label></p>
+      
+        <p><label>number<input type="number" name="" value=""></label></p>
+        <p><label>range<input type="range" name="" value=""></label></p>
+        <p><label>search<input type="search" name="" value=""></label></p>
+
+        <!-- 日期 -->
+        <p><label>date<input type="date" name="" value=""></label></p>
+        <p><label>time<input type="time" name="" value=""></label></p>
+        <p><label>week<input type="week" name="" value=""></label></p>
+        <p><label>month<input type="month" name="" value=""></label></p>
+        <p><label><input type="datetime-local" name="" value="" placeholder=""></label></p>
+
+		<p><label>submit<input type="submit" name="" value="提交"></label></p>
+		<p><label>reset<input type="reset" name="" value="重置"></label></p>
+
+	    <!-- 普通按钮 -->
+	    <p><label><input type="button" name="" value="按钮"></label></p>
+
+<!-- 使用图片作为提交按钮,会产生提交行为,多了x和y参数，是鼠标在图片上点击的位置 -->
+	    <p><label><input type="image" name="" value="" src="images/1.jpg" width="50px"></label></p>
+	</fieldset>
+
+</form>
+
+
+
+</body>
+</html>

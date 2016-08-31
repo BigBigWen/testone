@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin: 0;padding: 0}
+		.content{margin: 0 auto;width: 1170px;}
+		.fixed{position: fixed;left: 0;top:0;}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div id="top">
+		<img src="images/box1.png" alt="">
+	</div>
+	<div class="content">
+		<img src="images/box2.png" alt="">
+		<img src="images/box3.png" alt="">
+		<img src="images/box4.png" alt="">
+		<img src="images/box5.png" alt="">
+		<img src="images/box6.png" alt="">
+		<img src="images/box7.png" alt="">
+		<img src="images/box8.png" alt="">
+		<img src="images/box9.png" alt="">
+	</div>
+	</div>
+	<script>
+		var win_top = document.getElementById('top');
+		window.onscroll = function(){
+			var scrollHeight = document.body.scrollTop||document.documentElement.scrollTop;
+			//获取滚动高度
+			console.log(scrollHeight);
+			var topHeight = parseInt(scrollHeight);
+			if(topHeight > 1100){
+				win_top.className='fixed';
+			}else{
+				win_top.className='';
+			}
+		}
+	</script>
+	<!-- <script>
+		window.onload = function(){
+         var box = document.getElementById('box');
+         document.onscroll = function(){
+         	var scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
+         	var clientHight = doc
+         }
+
+		}
+	</script> -->
+</body>
+</html>

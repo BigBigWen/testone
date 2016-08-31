@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>dom基础</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<!-- js ECMAscript(语法 ,关键字(保留字),系统函数)
+	   DOM操作,把一个html生成一个文档树,包含一系列节点,这个节点是和js程序交互的桥梁
+	           docment.write 
+	           docment.getelement....
+	   BOM :浏览器信息,window对象
+
+
+	   DOM:浏览器生成一个文档树 -->
+	   <ul class="clear">
+	   	<li>haha</li>
+	   </ul>
+	   <script>
+	   	//DOM 节点类型(nodeType) 节点名(nodeName) 节点值( nodeValue)(只对文本节点有用);
+
+	   	//文档节点
+	   	console.log(document.nodeName);
+	   	console.log(document.nodeType);
+	   	console.log(document.nodeValue);
+
+	   	//元素节点   注意大小写问题
+	   	var ulElement = document.getElementsByTagName('ul')[0];
+	   	console.log(ulElement.nodeName);
+	   	console.log(ulElement.nodeType);
+	   	console.log(ulElement.nodeValue);
+
+	   	//属性节点
+	   	var attrElement = ulElement.getAttributeNode('class');
+	   	console.log(attrElement.nodeType);
+	   	console.log(attrElement.nodeName);
+	   	console.log(attrElement.nodeValue);
+
+	   	//文本节点
+	   	var liElement = document.getElementsByTagName('li')[0];
+	   	var textnode = liElement.firstChild;
+
+	   	console.log(textnode.type);
+	   	console.log(textnode.name);
+	   	console.log(textnode.nodeValue);
+
+	   	//docment-fragment
+	   	var docFragment = document.createDocumentFragment();
+	   	console.log(docFragment.nodeName);
+	   	console.log(docFragment.nodeType);
+	   	console.log(docFragment.nodeValue);
+	   </script>
+</body>
+</html>

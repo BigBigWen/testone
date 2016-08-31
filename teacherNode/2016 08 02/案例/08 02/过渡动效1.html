@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{margin: 0px;padding: 0px;}
+        .box{ width: 400px;height: 400px;
+        	border:1px solid black;
+        	margin: 100px auto;
+        	overflow: hidden;
+        	position: relative;
+         }
+         .box>img{ width: 400px;height: 400px; }
+         .box>div{ width: 400px;height: 400px;
+                 position: absolute;top:400px;left: 0px;
+                 z-index: 1;
+                 /**/
+                 transition: all 2s linear;
+          }
+         
+         .box>div>h1{ text-align: center;color:yellow; }
+         .box>div>span{ font-size: 12px; }
+       
+         .box:hover>div{ top: 0px; }
+
+         /*.box>div:hover{ top:0px; }*/
+
+
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<img src="16.jpg">
+		<div>
+			<h1>图片说明</h1>
+			<span>测试图片说明文字测试图片说明文字测试图片说明文字测试图片说明文字测试图片说明文字测试图片说明文字测试图片说明文字测试图片说明文字测试图片说明文字测试图片说明文字测试图片说明文字测试图片说明文字测试图片说明文字测试图片说明文字测试图片说明文字测试图片说明文字测试图片说明文字</span>
+		</div>
+	</div>
+</body>
+</html>

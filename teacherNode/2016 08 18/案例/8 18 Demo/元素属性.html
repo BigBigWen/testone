@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<div id="mydiv" class="mytestClass"></div>
+
+	<!-- H5 支持自定义属性，自定义属性要求data- 
+	   jquery Mobile 
+	-->
+	<div id="mydiv2" data-id="dataid" data-test='datatest'></div>
+	<script>
+		//一个元素节点，操作属性
+		//getAttribute('属性名')            获取属性的值
+		//setAttribute('属性名',属性值)     设置属性的值
+		//removeAttribute()  删除某个属性
+
+       var divElement = document.getElementById('mydiv');
+       console.log(divElement.getAttribute('id'));
+       console.log(divElement.getAttributeNode('id'))
+       console.log(divElement.getAttribute('class'));
+
+       divElement.setAttribute('width','100px');
+       divElement.setAttribute('height','100px');
+
+       console.log(divElement.getAttribute('width'));
+       console.log(divElement.getAttribute('height'));
+
+       divElement.removeAttribute('width');
+       divElement.removeAttribute('height');
+
+       console.log(divElement.getAttribute('width'));
+       console.log(divElement.getAttribute('height'));
+
+    //自定义属性
+    var div2Element = document.getElementById('mydiv2');
+    console.log(div2Element.getAttribute('data-id'));
+    console.log(div2Element.getAttribute('data-test'));
+
+    //h5 提供更加方便的方式访问自定义属性
+    console.log( div2Element.dataset.id ) ;
+    console.log( div2Element.dataset.test );
+
+    div2Element.dataset.id = 'xxx';
+    div2Element.dataset.test = 'yyy';
+
+    //一个元素对象，可以通过attributes属性得到所有的属性节点
+    var attrList = div2Element.attributes;
+    for( var i = 0; i < attrList.length; i++ ){
+    	var attrNode = attrList[i];
+    	console.log(attrNode.nodeType);  //2
+    	console.log(attrNode.nodeName);  //属性名
+    	console.log(attrNode.nodeValue); //属性的值
+    }
+
+
+	</script>
+</body>
+</html>

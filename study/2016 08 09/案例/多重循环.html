@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>多重循环</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		/*多层循环中 while for do while 都可以相互嵌套
+		for(){
+	         for(){
+	
+	         }
+		}
+		*/
+		//对于有行又有列,通常用多重循环
+		//外部循环控制行,内部循环控制列
+		for( var i = 0; i <4 ;i++){
+			for( var j = 0; j < 5;j++){
+				document.writeln("*");
+			}
+			document.write("<br>")
+		}
+		//*
+		//**
+		//***
+		//****
+		for( var i = 0; i<4;i++){
+			for( var j = 0; j<4 ;j++){
+				if( j <= i){
+					document.writeln("*")
+				}
+				else document.write("&nbsp;")
+			}
+			document.writeln("<br>")
+		}
+// ****     
+// ***      
+// **       
+// *  
+        for( var i = 0; i<4; i++){
+        	for( var j = 0; j <4 ;j++){
+        		if ( j<4-i) {
+        			document.write("*");
+        		}else document.writeln("&nbsp;")
+        	}
+        	document.writeln("<br>")
+        }
+        for( var i = 0; i <4;i++){
+        	for(var j = 0 ;j<7;j++){
+        		if( j>=3-i && j<=3+i){
+        			document.writeln("*");
+        		}else document.write("&nbsp;");
+        	}
+        	document.write("<br>")
+        }
+        
+	</script>
+</body>
+</html>

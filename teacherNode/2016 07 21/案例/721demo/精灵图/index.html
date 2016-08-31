@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<!-- 把多张图片放在一起，从而避免多次不必要的http请求，提高网站的运行效率，精灵图
+     缺点：图片发生变化后，css都重新修正
+	 -->
+
+	 <style type="text/css" media="screen">
+	 	*{ margin: 0px;padding: 0px; }
+	 	#container{ width: 248px;margin: 0px auto; }
+        
+        #container ul li{ float: left; width: 62px;height: 22px; list-style: none;
+
+        	/*background:本身就包含了background-positon:0px 0px*/
+        	background: url(bg.gif) no-repeat;
+        	/*background-image: url(bg.gif);
+        	background-repeat: no-repeat;*/
+        	text-align: center;
+        }
+        #container ul li a{ text-decoration: none;font-size: 12px; color: red;}
+
+/*针对每一个li项，使用background-position 来指定图片显示的位置*/
+        #container ul .li1{ background-position:   0px  0px; }
+        #container ul .li2{ background-position: -62px  0px; }
+        #container ul .li3{ background-position: -124px 0px; }
+        #container ul .li4{ background-position: -186px 0px; }
+
+        #container ul .li1:hover{ background-position:0px    -22px;  } 
+        #container ul .li2:hover{ background-position:-62px  -22px; }
+        #container ul .li3:hover{ background-position:-124px -22px; }
+        #container ul .li4:hover{ background-position:-186px -22px; }
+
+	 </style>
+</head>
+<body>
+	<div id="container">
+		<ul>
+			<li class="li1"><a href="#">首页</a></li>
+			<li class="li2"><a href="#">新闻</a></li>
+			<li class="li3"><a href="#">科技</a></li>
+			<li class="li4"><a href="#">娱乐</a></li>
+		</ul>
+	</div>
+</body>
+</html>

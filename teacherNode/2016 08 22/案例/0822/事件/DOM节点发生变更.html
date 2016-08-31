@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+    <button type="button">插入节点</button>
+    <button type="button">删除节点</button>
+    <ul id='ulId'>
+    	<li>1111111</li>
+    	<li>2222222</li>
+    	<li>3333333</li>
+    </ul>
+
+	<script>
+		//DOMNodeInserted  一个节点插入到父节点中触发的事件
+
+		//DOMNodeRemoved   一个节点被删除时发生事件
+
+		//当一个节点插入父节点，在该节点和子节点上发生
+		//DOMNodeInsertedIntoDocument 
+
+		//当以一个节点移除，在该节点和子节点上发生
+		//DOMNodeRemovedFromDocument
+
+        //DOMSubtreeModified   文档树发生变化的事件
+
+
+        //插入一个节点，事件的触发次序
+        //自身上  DOMNodeInserted -> 在自身和自己的所有的子元素 DOMNodeInsertedIntoDocument -> DOMSubtreeModified
+        //其中  DOMNodeInsertedIntoDocument 不发生冒泡行为
+
+        var buttonList = document.getElementsByTagName('button');
+        buttonList[0].onclick = function(){
+           var liEle = document.createElement('li');
+           liEle.innerHTML = '插入的节点';
+
+           var spanElement = document.createElement('span');
+           spanElement.innerHTML = '1';
+           liEle.appendChild(spanElement);  
+
+           //添加事件处理程序
+           liEle.addEventListener('DOMNodeInserted', function(e){
+              console.log(this + e.type);
+           });
+           liEle.addEventListener('DOMNodeInsertedIntoDocument',function(e){
+               console.log(this + e.type);
+           });
+
+           spanElement.addEventListener('DOMNodeInsertedIntoDocument',function(e){
+               console.log(this + e.type);
+           });
+
+           document.addEventListener('DOMSubtreeModified',function(e){
+               console.log(this + e.type);
+           });
+
+           var ulEle = document.getElementById('ulId');
+           ulEle.appendChild(liEle);
+        }
+
+        //删除一个节点，发生的事件
+        //自身发生 DOMNodeRemoved ->自身以及子元素上DOMNodeRemovedFromDocument(不冒泡) -> DOMSubtreeModified 事件
+        buttonList[1].onclick = function(){
+        	var ulEle = document.getElementById('ulId');
+            var lastElementChild = ulEle.lastElementChild;
+            lastElementChild.addEventListener('DOMNodeRemoved',function(e){
+            	//event 属性中 relateNode 指向自己的父节点
+            	console.log(e.relatedNode);
+                console.log(this + e.type);
+                // e.returnValue = false;
+                // e.relatedNode.appendChild(this);
+            });
+
+            lastElementChild.addEventListener('DOMNodeRemovedFromDocument',function(e){
+                console.log(this + e.type); 
+                // e.relateNode.appendChild(this);	
+            });
+
+            document.addEventListener('DOMSubtreeModified',function(e){
+                console.log(this + e.type); 
+            });
+
+
+            ulEle.removeChild(lastElementChild);
+        }
+
+	</script>
+</body>
+</html>

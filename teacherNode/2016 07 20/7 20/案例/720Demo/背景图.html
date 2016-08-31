@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		.div1{
+			width: 300px;
+			height: 300px;
+			border: 50px solid rgba(0,0,0,0.5);
+			padding: 30px;
+			background-size: 50px 50px;
+			background-image: url(15.jpg);
+			/*指定第一个完整的图片从哪个地方开始平铺图片*/
+			/*background-origin: padding-box;*/
+			/*background-origin: border-box;*/
+			/*从内容的区域开始完整平铺图片*/
+			background-origin: content-box;
+            /*clip 剪切掉：只保留指定的区域，外部的统统不显示*/
+            /*content-box:只保留内容区域的*/
+            /*padding-box：保留padding 以及内部的区域，padding外部不显示*/
+            /*border-box:border 外部不显示*/
+            /*clip 不仅仅剪切背景图片，也剪切背景色*/
+			background-clip: content-box;
+			background-position: center center;
+			background-repeat: no-repeat;
+			/*当图片内容无法覆盖整个区域时，使用背景色进行填充*/
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="div1">
+		abc
+	</div>
+</body>
+</html>

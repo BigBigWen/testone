@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>弹性盒子wrap</title>
+	<link rel="stylesheet" href="">
+	<style>
+		div[class*='box']{width: 800px;margin: 10px auto;border: 1px solid #f00}
+
+		.box1>section{width: 100px;margin-right:10px;background-color: pink;}
+		.box1 .last{order: -1}
+		.box1 .first{order: 1}
+
+		.box1{display: flex;display: -webkit-flex;}
+
+		.box2{display: flex;display: -webkit-flex;}
+		/*子元素的总和小于父元素的宽,又想子元素铺满父级剩余宽度,用扩展来按比例扩展剩余宽度*/
+		.box2 .son1{width: 100px;background-color: #fcc;
+			flex-grow: 1}
+		.box2 .son2{width: 200px;background-color: #ccf;flex-grow: 2}
+		.box2 .son3{width: 300px;background-color: #cfc;flex-grow: 1}
+
+		.box3{display: flex;display: -webkit-flex;}
+		.box3 .son1{width: 500px;background-color: #fcc;flex-shrink:2 }
+		.box3 .son2{width: 500px;background-color: #ccf;flex-shrink:4 }
+		.box3 .son3{width: 500px;background-color: #cfc;flex-shrink:1 }
+
+		.box4{display: flex;display: -webkit-flex;}
+		.box4 .son1{width: 500px;background-color: #fcc;flex:  }
+		.box4 .son2{width: 500px;background-color: #ccf; }
+		.box4 .son3{width: 500px;background-color: #cfc; }
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<section class="first">1</section>
+		<section>2</section>
+		<section>3</section>
+		<section class="last">4</section>
+		
+	</div>
+	<div class="box2">
+		<section class="son1">1</section>
+		<section class="son2">2</section>
+		<section class="son3">3</section>
+	
+		
+	</div>
+	<div class="box3">
+		<section class="son1">1</section>
+		<section class="son2">2</section>
+		<section class="son3">3</section>
+	
+		
+	</div>
+	<div class="box4">
+		<section class="son1">1</section>
+		<section class="son2">2</section>
+		<section class="son3">3</section>
+	</div>
+	<div class="box5">
+		<section>1</section>
+		<section>2</section>
+		<section>3</section>
+		<section>4</section>
+		<section>5</section>
+		
+	</div>
+	
+</body>
+</html>

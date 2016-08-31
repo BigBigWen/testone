@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<!-- css3 提供的关键帧动画分2步骤
+      1：定义动画
+      2: 调用动画
+	 -->
+
+	 <style type="text/css" media="screen">
+	    *{margin: 0;padding: 0;}
+	 	.box{width: 100px;height: 100px;margin: 100px auto;background-color: red;}
+         
+         /*定义动画*/
+         /*根据不同的浏览器，需要加上不同的前缀*/
+         @-webkit-keyframes animtion1{
+
+         }
+         @-moz-keyframes animation1{
+
+         }
+         @-o-keyframes animtion1{
+
+         }
+
+         /* 把标准的写在最后面*/
+         @keyframes animtion1{
+         	0%{}
+         	100%{ border-radius: 50%; }
+         }
+    
+	 	.box:hover{
+	 		/* 调用动画 */
+           animation: animtion1 1s;
+	 	}   
+
+  
+        /* 百分比 跟时间关联一起 */
+	 	@keyframes animation2{
+	 		from{background-color: red;}  /* from = 0%*/
+            50%{ background-color: yellow; }
+	 		to{ background-color: black; }    /* to   = 100%*/
+	 	}
+
+	 	.box2{ width: 100px;height: 100px;border: 1px solid black;margin: 10px auto; }
+	 	.box2:hover{ animation: animation2 2s; }
+
+	 	@keyframes animation3{
+	 		0%{ background-color: red; border-radius: 0px;box-shadow: 0px 0px 10px black; }
+	 		50%{ background-color: yellow;border-radius:30px;
+	 		    box-shadow: 0px 0px 20px black;  }
+	 		100%{ background-color: green;border-radius: 50px;
+                box-shadow: 0px 0px 25px red;
+	 		 }
+	 	}
+
+	 	.box3{ width: 100px;height: 100px;margin: 10px auto;border: 1px solid black; }
+	 	.box3:hover{ animation:animation3 5s; }
+
+	 	/* animation 的属性 */
+	 	@keyframes animation4{
+	 		0%{ transform: translateX(0px); }
+	 		100%{ transform: translateX(200px); }
+	 	}
+
+        .box4{ width: 100px;height: 100px;margin: 10px auto;border: 1px solid black; 
+
+            /* 直接开始动画 */
+            animation-name: animation4;
+            animation-duration: 3s;
+            /*animation-iteration-count:3; 默认值为1*/
+            /*animation-iteration-count: infinite;*/
+            animation-iteration-count: infinite;
+            /*animation-direction:alternate;*/
+        }
+        
+        .box4:hover{
+        	/*暂停动画*/
+        	animation-play-state: paused;
+        }
+
+	 	/*.box4:hover{*/
+           /*animation-name: 后跟动画名称 也就是 @keyframes 后面的那个名称*/
+           /*animation-delay: 延迟*/
+           /*animation-timing-function: 运动曲线*/
+           /*animation-duration:  动画的持续时间*/
+           /*animation-iteration-count: 动画重复多少次 取值1~n
+            animation-iteration-count: infinite; 无限次重复
+            */
+            /*animation-play-state: 动画的播放状态 running 默认值  paused  暂停*/
+            /*animation-direction: 指定动画的方向，none 默认值
+              animation-direction: alternate; 往返
+            */
+
+         /*   animation-name: animation4;
+            animation-duration: 3s;
+            animation-iteration-count:3;
+	 	}*/
+
+	 </style>
+</head>
+<body>
+	<div class="box"></div>
+	<div class="box2"></div>
+	<div class="box3"></div>
+	<div class="box4"></div>
+</body>
+</html>

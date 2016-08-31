@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+	/* *选择器 命中所有元素 优先级0  通常是用在对所有元素进行重置时 */
+	*{margin:0px;padding: 0px;}
+		
+	/* 兄弟选择器    使用div1找到对应标签 后代p  +a  p标签后的兄弟*/
+	#div1 p+a{ background-color: red; color: yellow; }
+	/* 普通兄弟选择器 */
+	#div1 p~a{ background-color: red; color: blue; }
+	/* 伪类选择器 
+	link:未被点击
+	hover:鼠标悬停在元素上的式样
+	active:鼠标点击时
+	visited:访问过后*/
+	/*#div2 a:link{color: black;}
+	#div2 a:hover{color: red;}
+	#div2 a:active{color: green;}
+	#div2 a:visited{color: pink;}  由于网页缓存的原因,一旦点击就保持访问过的式样,
+		 */
+	</style>
+	<style type="text/css" media="screen">
+	#div2 ul li:link{background-color: lightgray;}
+	#div2 ul li:hover{background-color: red;}
+
+	</style>
+	}
+	
+	
+</head>
+<body>
+<div id="div1">
+	 <a href="#">亲兄弟</a>
+	 <p></p>
+	 <a href="#">亲兄弟</a>
+	 <a href="#">亲兄弟</a>
+	
+</div>
+	<div2 id="div2">
+	<
+<ul>
+	<li>项目1</li>
+	<li>项目2</li>
+	<li>项目3</li>
+	<li>项目4</li>
+	<li>项目5</li>
+</ul>
+		
+	</div2>
+</body>
+</html>

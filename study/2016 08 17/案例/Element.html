@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>元素节点</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+
+<div class="box">
+	<div class="tab">1</div>
+	<div class="tab">2</div>
+	<div class="tab">3</div>
+	<div class="tab">4</div>
+</div>
+<div class="tab">5</div>
+
+
+<div id="container" class="mytestclass class a b" title="mytesttitle"></div>
+	<script>
+		//1 查询后代元素
+		//getElemnetById
+		//getElementByTagName只查找后代元素中 tag值为指定值的,返回值是列表
+		//getElementByClassName 查找后代
+		var boxElement = document.getElementsByClassName('box')[0];
+		var tabElement1 = boxElement.getElementsByTagName('div');
+		var tabElement2 = boxElement.getElementsByClassName('tab');
+		console.log(tabElement1);
+		console.log(tabElement2);
+		var tabElement3 = boxElement.querySelector('.tab');
+		var tabElement4 = boxElement.querySelectorAll('.tab');
+		console.log(tabElement3);
+		console.log(tabElement4);
+
+		//2 提供便利的方法,查看其中的属性
+		//element.id  获取id
+		//element.title   获取title
+		//element.className   获取className,字符串中包含所有的classname;
+		//element.classList   获取 类似数组
+         var divElement = document.getElementById('container');
+         console.log(divElement.id);
+         console.log(divElement.title);
+         console.log(divElement.className);
+         console.log(divElement.classList);
+        /* //使用classname去掉中间的某一项
+         var classNameString = divElement.className;
+         var classNameArr = classNameString.split(' ');//如果多个空格,用正则表达式来切(/\s+/)
+         var pos = -1;
+         for( var i = 0 ; i < classNameArr.length;i++){
+         	if( classNameArr[i] == 'class' ){
+         		pos = i;
+         		break;
+         	}
+         }
+         //删除class
+         classNameArr.splice(pos, 1);
+         //得到新的classname
+         var newClassName = classNameArr.join(' ');
+         //赋值
+         divElement.className = newClassName;
+         console.log(divElement.className);*/
+         //remove 删除class
+         divElement.classList.remove('class');
+         console.log(divElement.className);
+         //add 添加class
+         divElement.classList.add('group');
+         console.log(divElement.className);
+         //toggle 没有指定的class,就添加
+         //         如果有,就删除
+         divElement.classList.toggle('c');
+
+         //contains 判断是否包含class,返回Boolean值
+        var result = divElement.classList.contains('class');
+         console.log(result);
+
+	</script>
+</body>
+</html>

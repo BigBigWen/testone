@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script type="text/javascript">
+		function Animal(name){
+			this.name = name;
+		}
+
+		Animal.prototype.type = '动物';
+
+        //hasOwnProperty 返回的是Boolean
+        //如果测试属性是自身的，返回true
+        //如果测试的属性不存在，或是原型中的属性，返回false
+		//hasOwnProperty(property)
+
+		var a1 = new Animal('a');
+	    console.log( a1.hasOwnProperty('name') ); //true
+	    console.log( a1.hasOwnProperty('type') ); //false
+	    a1.type = 'ssss';
+	    console.log( a1.hasOwnProperty('type') ); //false
+	    // delet a1.type;
+
+        //in 不仅判断自身的属性，还会判断原型中属性
+	    console.log( 'name' in a1);
+	    console.log('type' in a1);
+
+	    function isPrototypeProperty(object,name){
+	    	return !object.hasOwnProperty(name) && (name in object);
+	    }
+        
+        //判断一个属性是否是原型中的属性
+	    console.log(isPrototypeProperty(a1,'type'));//true
+
+	    //获取一个对象的原型,使用函数 getPrototypeOf 
+	    console.log( Object.getPrototypeOf(a1) == Animal.prototype ) ;
+
+        //__proto__ 进Chrome 支持，其他的浏览器不允许访问该属性
+	    // console.log( a1.__proto__ == Animal.prototype );
+  
+        //用来判断一个对象的类型，返回boolean 值，如果一个对象属于某一类，返回true,否则返回false
+	    console.log( a1 instanceof Animal ); //true
+	    console.log( a1 instanceof Object ); //true
+
+	</script>
+</body>
+</html>

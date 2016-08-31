@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>form 表单学习</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<!-- form 表单的作用是收集用户的信息，并提交到服务端 -->
+	<!-- action:表单提交的目的地，服务端的地址
+	  method：给服务器通讯时，使用HTTP的GET请求还是POST请求
+	    get: get请求方式
+	    post：post的请求方式
+	  accept-charset：指定服务端接收的字符集  
+	 -->
+	<form action="http://servertest.php" method="post"  accept-charset="utf-8">
+	<!-- input 根据指定不同的type，展示不同的形式 
+    name: 提交时的参数名
+    value：值,初始指定的值
+    placeholder:占位提示表中
+	-->
+		<label style="color: red;">用户名:<input   type="text" name="username" value="abc" placeholder="请输入你的名称"> </label>
+		密码:<input type="password" name="password" value="123" placeholder="请输入密码">
+
+		<!-- 提交按钮 -->
+		<input type="submit" name="" value="提交">
+	</form>
+
+
+	<hr >
+	<!-- 输入内容 -->
+	<form action="" method="get" accept-charset="utf-8">
+<!--  label标签用来说明输入框
+1：给输入框指定一个id属性
+2: 把label标签中的for写成id的值
+ -->
+		<label for="checkbox_input">篮球</label>
+		<!--复选框 
+		    type:checkbox
+		    默认选中 checked
+		-->
+		<input id="checkbox_input" type="checkbox" name="" value="" checked="">
+
+<!-- 把label和input结合起来 -->
+		<label for="checkbox_input2">排球<input id="checkbox_input2" type="checkbox" name="" value=""></label>
+		<label><input type="checkbox" name="" value="" checked="">草莓</label>
+		<label><input type="checkbox" name="" value="">蓝莓</label>
+		<label><input type="checkbox" name="" value="">苹果 </label>
+
+		<!-- 单选框 
+		   type: radio 单选按钮
+		   要把多个单选按钮做成一组，把他们的input中的name值设置成同一个
+		-->
+		<label>男<input type="radio" name="radioname" value="" checked=""></label>
+		<label>女<input type="radio" name="radioname" value=""></label>
+	</form>
+
+   <hr>
+   <form action="" method="get" accept-charset="utf-8">
+   	  <label>用户名<input type="text" name="" value="" placeholder="请输入用户名"></label>
+   	  <label>密码<input type="password" name="" value="" placeholder="输入密码"></label>
+   	  <input type="submit" name="" value="提交">
+   	  <input type="reset" name="" value="重置">
+
+   	  <!-- 输入的内容从列表中选择
+   	     input 的list属性：输入从外部列表获取
+   	     list 指定 外部datalist的id值
+   	   -->
+   	  <input type="text" list="mylist">
+   </form>
+<!-- datalist定义一个列表 -->
+   <datalist id="mylist">
+   <!-- 输入value值 -->
+	   	<option value="苹果1">苹果</option>
+	   	<option value="苹果2">苹果</option>
+	   	<option value="苹果3">苹果</option>
+	   	<option value="苹果4">苹果</option>
+   </datalist>
+<select name="" >
+   <optgroup label="shuiguolei">
+   	<option value="1">梨1</option>
+	<option value="2">梨2</option>
+	<option value="3">梨3</option>
+	<option value="4">梨4</option>
+   </optgroup>
+   <optgroup label="xianhualei">
+   	<option value="1">hua1</option>
+	<option value="2">hua2</option>
+	<option value="3">hua3</option>
+	<option value="4">hua4</option>
+   </optgroup>
+
+	
+	option
+</select>
+</body>
+</html>
+
+<!-- http://servertest.php/?username=abc&password=123 -->

@@ -1,0 +1,17 @@
+@charset "utf-8";
+body{
+	*{margin: 0px;padding: 0px;}
+	.box1,.box8{width: 100%; margin: auto;}
+	.box1{background:url(images/box1.png) no-repeat;}
+	.box8{width: 100% background:url(images/box8.png) no-repeat;margin: auto;}
+
+	.box2,.box3,.box4,.box5,.box6,.box7{ width: 1096px height:126px; margin: auto;}
+	.box2{background:url(images/box2.png)no-repeat;}
+	.box3{background:url(images/box3.png)no-repeat;}
+	.box4{background:url(images/box4.png) no-repeat;}
+	.box5{background:url(images/box5.png) no-repeat;}
+	.box6{background:url(images/box6.png) no-repeat;}
+	.box7{background:url(images/box7.png) no-repeat;}
+	
+}
+	

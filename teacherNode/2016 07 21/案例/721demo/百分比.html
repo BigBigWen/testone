@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+
+		*{ margin: 0px;padding: 0px; }
+		/*使用background-positon修改位置时，是在no-repeat时有效*/
+		div{ width: 300px;height: 300px; border: 1px solid black;
+             background-image: url(15.jpg);
+             background-repeat: no-repeat;
+
+             /*background: */
+             /* x 偏移  y 偏移 可以为负值,参考坐标容器的original */
+             /*background-position: -50px -50px;*/
+             /*background-position:top left;*/
+
+             /*百分比： x% y%  让容器的百分比位置和图片的百分比位置进行重合
+             
+             x 偏移 = ( 容器的宽度 - 图片的宽度 ) * x%
+             y 偏移 = ( 容器的高度 - 图片的高度)  * y%
+
+             0%,0%       左上角
+             100%  100%  右下角
+             50%   50%   中心位置 
+             */
+             background-position: 50% 50%;
+             background-color: lightgray;
+		 }
+		 
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

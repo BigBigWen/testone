@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<div id="reginfo">
+			ID ： <input type="text"/>
+			姓名： <input type="text"/>
+			电话:  <input type="text" />
+			<button onclick="add()">保存</button>
+	</div>
+
+	<table id="mytab" border="1">
+			<tr>
+				<th>ID</th>
+				<th>NAME</th>
+				<th>TEL</th>
+				<th>操作</th>
+			</tr>
+			<tr>
+				<td>30</td>
+				<td>张三</td>
+				<td>13542685569</td>
+				<td><a name="delete" href="#">删除</a></td>
+			</tr>
+			<tr>
+				<td>35</td>
+				<td>张三</td>
+				<td>13542685569</td>
+				<td><a name="delete" href="#">删除</a></td>
+			</tr>
+		</table>
+
+
+		<script>
+			function add(){
+				var regEle = document.getElementById('reginfo');
+				var _id = regEle.getElementsByTagName('input')[0].value;
+				var _name = regEle.getElementsByTagName('input')[1].value;
+				var _tel = regEle.getElementsByTagName('input')[2].value;
+
+				
+
+				var tableEle = document.getElementById('mytab');
+
+				var allTrList = document.getElementsByTagName('tr');
+                var tbody = tableEle.firstElementChild;
+                var rowCount = allTrList.length;
+
+				tbody.insertRow(rowCount);
+				tbody.rows[rowCount].index = rowCount;
+				
+				tbody.rows[rowCount].insertCell(0);
+				tbody.rows[rowCount].cells[0].innerHTML = _id;
+
+				tbody.rows[rowCount].insertCell(1);
+				tbody.rows[rowCount].cells[1].innerHTML = _name;
+
+				tbody.rows[rowCount].insertCell(2);
+				tbody.rows[rowCount].cells[2].innerHTML = _tel;
+
+				tbody.rows[rowCount].insertCell(3);
+				tbody.rows[rowCount].cells[3].innerHTML = '<a name="delete" href="#">删除</a>';
+				var aEle = tbody.rows[rowCount].cells[3].firstElementChild;
+				aEle.onclick = function(){
+					var tableEle = document.getElementById('mytab');
+					tableEle.deleteRow(this.parentNode.parentNode.index);
+				}
+			}
+
+		</script>
+</body>
+</html>

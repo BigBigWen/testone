@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{margin: 0;padding: 0;}
+		.iphone{
+			background:  url(images/iphone.jpg)  no-repeat;
+			width: 426px;height: 640px;
+			position: relative;
+			margin: 10px auto;
+		}
+		.lockArea{
+			position: absolute;left: 50%;bottom: 33px;
+			width: 358px;height: 62px;
+			margin-left: -180px;
+		}
+		.lock{
+			background:  url(images/unlock_btn.jpg)  no-repeat;
+			width: 93px;height: 62px;
+			position: absolute;top: 0;left: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="iphone">
+		<div class="lockArea">
+			<div class="lock"></div>
+		</div>
+	</div>
+	<script>
+		var lockElement = document.getElementsByClassName('lock')[0];
+		lockElement.onmousedown = function(e){
+			var ev = e||event;
+		    var offsetX = ev.offsetX;//鼠标相对于lock的偏移
+
+			//写在mousedown内确保先鼠标按下再可以移动
+
+			lockElement.onmousemove = function(e){
+				var ev= e||event;
+				var clientX = ev.clientX;
+				var areaEleoffsetleft = this.parentNode.offsetleft;//获取活动区域节点,距离自己父节点(iPhone)的距离
+				var iphoneEleoffsetLeft = this.parentNode.parentNode.offsetleft;
+				//计算lock的left值
+				var left = (clientX  - iphoneEleoffsetLeft-areaEleoffsetleft-offsetX);
+
+				//修正left
+				if(left<0){
+					left=0
+				}
+				//获取元素的宽高  offsetWidth  offsetHight
+				if(left>this.parentNode.offsetWidth - this.offsetWidth){
+					left = this.parentNode.offsetWidth - this.offsetWidth;
+				}
+				this.style.left = left+'px';
+			}
+		    lockElement.onmouseup = function(e){
+		    	this.ommousemove = null;
+		    	this.onmouseup = null;
+		    	//获取当前滑块的位置
+		    	if(this.offsetleft >this.parentNode.offsetWidth/2-this.offsetWidth){
+		    		//把滑块移动到最右边
+		    		var maxPosition = this.parentNode.offsetWidth - this.offsetWidth;
+		    		startMoveLeft(this,maxPosition)
+		    	}else{
+		    	     startMoveLeft(this,0)
+		    	}
+
+		    }
+		}
+		//移动left.产生动画
+		function startMoveLeft(obj,endPos){
+			clearInterval(obj,timer);
+			obj.timer = setInterval(function(){
+				var currentLeft = obj.offsetleft;
+				var speed = (endPos - currentLeft)/6;
+				obj.style.left = (currentLeft +speed )+'px';
+				if(obj.offsetleft == endPos){
+					clearInterval(obj,timer);
+					obj.style.left = endPos+'px';  
+				}
+			},30)
+		}
+		lockElement.onmouseup = function(e){
+			this.onmousemove = null;
+			this.onmouseup = null;
+		}
+
+	</script>
+</body>
+</html>

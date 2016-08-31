@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+	*{margin: 0;padding: 0;}
+	.clear:after{height: 0px;content: 0px;display: block;clear: both;overflow: hidden;}
+	.clear{--ms-zoom: 1}
+	ul{width: 750px;margin: 100px auto;}
+	ul>li{width: 150px;height:150px;float: left;background-repeat: no-repeat;background-position: center center;list-style: none;}
+		
+	</style>
+	
+	
+</head>
+<body>
+	<ul class="clear">
+		<li style="background-image:url(images/fengdahui_100.png)"></li>
+		<li style="background-image:url(images/huangquanneng_100.png)"></li>
+		<li style="background-image:url(images/lishengsheng_100.png)"></li>
+		<li style="background-image:url(images/qiuruihen_100.png)"></li>
+		<li style="background-image:url(images/whs_100.png)"></li>
+	</ul>
+	<script>
+		var liList = document.getElementsByTagName('li');
+		for( var i = 0 ; i < liList.length; i++){
+			liList[i].index = i;
+			var imgArray = ['fengdahui','huangquanneng','lishengsheng','qiuruihen','whs']
+
+			liList[i].onmouseover = function(){
+				var index=this.index;
+				this.style.backgroundImage = 'url(images/'+imgArray[index]+'_100_hover.png)';
+
+			};
+			liList[i].onmouseout = function(){
+				var index = this.index;
+				this.style.backgroundImage = 'url(images/'+imgArray[index]+'_100.png)';
+			};
+			liList[i].onclick = function(){
+				var index = this.index;
+				this.style.backgroundImage = 'url(images/'+imgArray[index]+'_140.png)';
+			};
+		}
+	</script>
+</body>
+</html>

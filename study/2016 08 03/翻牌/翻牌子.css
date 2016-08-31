@@ -1,0 +1,48 @@
+*{margin: 0px;padding: 0px;}
+.container{width: 1200px;height: 600px;border: 5px solid red;border-radius: 5px;background:  url(images/hougong.jpg) no-repeat;
+	/*增加景深*/
+	perspective: 800px;
+	text-align: center;
+
+}
+.container h1{color: orange;}
+/*图片 201 81*/
+.playcard{display: inline-block; width: 121px;height: 221px;position: relative;
+	transform-style: preserve-3d;
+	transition: all 1s;
+	margin-top: 20px;
+}
+.face{height: 201px;width: 81px;margin: 10px 20px;position: absolute;top: 0px;left: 0px;border-radius: 5px;}
+/*前面*/
+.face1{
+	background:  url(images/hougong1.jpg) ;
+	transform: translateZ(10px);
+}
+/*后面*/
+.face2{
+	background:  url(images/hougong1.jpg) ;
+	transform: translateZ(-10px);
+}
+/*左边*/
+.face3{background:  url(images/boot.jpg);width: 20px;height: 201px;
+	transform: rotateY(-90deg) translateZ(10px);
+}
+/*右边*/
+.face4{background:  url(images/boot.jpg) ;width: 20px;height: 201px;
+	transform: rotateY(90deg) translateZ(71px);
+}
+.playcard:hover{transform: rotateY(180deg);}
+.card2 .face1{background:url(images/hongong2.jpg) no-repeat;}
+.card2 .face2{background:url(images/hongong2.jpg) no-repeat;}
+
+.card3 .face1{background:url(images/hongong3.jpg) no-repeat;}
+.card3 .face2{background:url(images/hongong3.jpg) no-repeat;}
+
+.card4 .face1{background:url(images/hongong4.jpg) no-repeat;}
+.card4 .face2{background:url(images/hongong4.jpg) no-repeat;}
+
+.card5 .face1{background-image: url(images/hougong5.jpg);}
+.card5 .face2{background-image: url(images/hougong5.jpg);}
+
+.card6 .face1{background-image: url(images/hongong6.jpg);}
+.card6 .face2{background-image: url(images/hongong6.jpg);}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>左拍云第一次练习</title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{margin: 0;padding: 0}
+		.container{width: 800px;margin: 100px auto;box-sizing: border-box;border: 1px solid black;}
+		.container>img{margin: 20px;}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<img src="images/fengdahui_100.png" alt="">
+		<img src="images/huangquanneng_100.png" alt="">
+		<img src="images/lishengsheng_100.png" alt="">
+		<img src="images/qiuruihen_100.png" alt="">
+		<img src="images/whs_100.png" alt="">
+	</div>
+	<script>
+		var imgList = document.getElementsByTagName('img');
+		for( var i = 0;i < imgList.length;i++){
+			var imgArray =['images/fengdahui','images/huangquanneng','images/lishengsheng','images/qiuruihen','images/whs'];
+			imgList[i].index = i;
+			imgList[i].onmouseover = function(){
+				var index = this.index;
+				this.src=imgArray[index]+'_100_hover.png';
+			}
+			imgList[i].onclick = function(){
+				var index = this.index;
+				this.src = imgArray[index]+'_140.png';
+			}
+			imgList[i].onmouseout = function(){
+				var index =this.index;
+				this.src=imgArray[index]+'_100.png';
+			}
+		}
+	</script>
+</body>
+</html>

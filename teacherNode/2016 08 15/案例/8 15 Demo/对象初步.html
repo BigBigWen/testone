@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<!-- 对象：一个对象是类的实例，所谓类，具有相同属性或行为的一个抽象的概念，而对象是这个抽象概念下的一个具体的事物 -->
+
+   <script>
+   	// js 如何创建一个对象?
+   	//1:方式1,Object 所有类的基类
+   	var people1 = new Object();
+    
+    //设置对象的属性，所谓属性就是一个对象的特性
+    //访问一个对象属性的通过.语法
+   	people1.name = 'zhangsan';
+   	people1.age  = 20;
+   	people1.weight = 180;
+
+   	//设置对象的方法，就是设置对象的行为
+   	people1.eat = function(){
+   	   //  this 指向哪个对象，调用了该函数
+       this.weight += 10;
+   	}
+
+    people1.sayWeight = function(){
+    	console.log(this.weight);
+    }
+
+    //调用函数
+    people1.eat();
+    people1.sayWeight();
+
+    //对象通过[]方式访问属性,这里需要注意的是[]中写的是字符串
+    console.log(people1['name']);
+    console.log(people1['age']);
+
+    console.log(people1.name);
+    console.log(people1.age);
+
+    //使用[]访问对象的属性时，[]内可以是一个变量
+    var mytest = 'name';
+    console.log(people1[mytest]);
+
+    //一个属性可以通过赋值语句随时添加，随时可以通过delete删除
+    //删除一个属性的语法，使用delete 
+    delete people1.name;
+
+    //删除后属性们不能再访问
+    console.log(people1.name);
+
+   </script>
+</body>
+</html>

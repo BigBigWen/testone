@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>选择器式样</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+	*{margin: 0px;padding: 0px;}
+	p{height: 30px;line-height: 30px;border: 1px solid black;margin-bottom: 10px;}
+	p[person]{border: 1px solid pink;}
+	p[person="1"]{border: 1px solid blue;}
+	p[person^="text"]{border: 1px solid green;}
+	p[person$="y"]{border: 1px solid #ccc;}
+	p[person*="love"]{border: 1px solid #009;}
+	p[person~="big"]{border: 1px solid red;}
+	p[person|="it"]{border: 1px solid green;}
+	</style>
+
+</head>
+<body>
+	<p person="">测试文本</p>
+	<p person="1">测试文本</p>
+	<p person="textxkcljvkjvnlfkjidji">测试文本</p>
+	<p person="1jxjncifnxcidfmnvy">测试文本</p>
+	<p person="verysomuchloverealuocmofm">测试文本</p>
+	<p preson="big small midlle">好多字</p>
+	<p person="it-post">测试文本</p>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		span{ background-color: yellow; }
+		em{ display: none; }
+	</style>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<script>
+		var divElement = document.getElementById('mydiv');
+		//方式1: 使用innerHTML 插入内容，内容允许有标签
+		//标签自动转为元素
+		//innerHTML 适用于节点的内容比较复杂，可以一次性的插入很多节点
+		divElement.innerHTML = '<span>div测试内容<em>innerHTML</em></span>';
+
+        //把divElement 的 内部 的内容读取出来，包含内部的标签
+		console.log(divElement.innerHTML);
+
+		//2: 使用元素的textContent,原样输出，不考虑内部标签
+		// <  转意  &quot;   类似于空格  &nbsp;
+		// divElement.textContent = '<span>div测试内容innerHTML</span>';
+		//读取带有标签的文本时，忽略标签，只要文本
+		//比较适合文本节点，
+		console.log(divElement.textContent);
+
+		//3:使用innertText
+        //divElement.innerText = '<span>div测试内容<em>innerHTML</em></span>';
+
+        console.log(divElement.innerText);
+
+        //innerText 和 textContent区别： innerText 有兼容性问题 textContent 无
+        //innerText 无法读取隐藏的元素内容 textContent 可以
+
+        //4: 使用 document.createEelment or document.createTextNode
+        //  然后appendChild   执行效率低
+
+        
+        //outerHTML 包含自身的标签
+        console.log( divElement.outerHTML);
+
+	</script>
+</body>
+</html>

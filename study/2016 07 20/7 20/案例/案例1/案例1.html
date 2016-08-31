@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>案例一</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+	*{margin: 0px;padding: 0px}
+	.clearfix:after{content: "";display: block;clear: both;height: 0px;overflow: hidden;}
+	.clearfix{--ms-zoom: 1;}
+	#header
+	{
+		width: 800px;margin: 0 auto;
+		height: 53px;
+		background-image: url(../../素材/images/bj.jpg);
+		background-repeat: repeat-x;
+		border-bottom: 2px solid red;
+	}
+	#munu{float: left;width: 550px;}
+	#munu ul li
+	{
+		float: left;list-style: none;
+		line-height: 55px;height: 55px;/*垂直居中*/
+		margin: 0px 10px;/* 左右间隔 */
+	}
+	#munu ul li a
+	{
+		font-size: 18px;color: white;
+	    text-decoration: none;/*下划线*/
+	}
+	#search
+	{
+		float: right;width: 250px;
+		height: 55px;
+		line-height: 55px;
+	}
+	/* 图片输入框垂直居中 */
+	#search input{vertical-align: middle;background-image: url(../../素材/images/inbox.jpg);border: none;height: 30px;}
+	#search img{vertical-align: middle;}
+	#content{width: 600px;margin: 0px auto;}
+	#content #top{background-color: #0ff;height: 200px;}
+	#content #top ul li{
+		list-style: none;
+		line-height: 30px;
+		margin-left: 10px;
+	}
+	#content #top ul li .date{float: right;margin-right:10px;}
+	#content #bottom{background-color: #ff0;height: 50px;}
+		
+	</style>
+	
+	
+</head>
+<body>
+	<div id="header" class="clearfix">
+		<div id="munu">
+			<ul>
+				<li><a href="">home</a></li>
+				<li><a href="">about us</a></li>
+				<li><a href="">services</a></li>
+				<li><a href="">clients</a></li>
+				<li><a href="">protfolio</a></li>
+				<li><a href="">contact us</a></li>
+			</ul>
+		</div>
+		<div id="search">
+			<input type="text" name="" value="" placeholder="search out here">
+			<img src="../../素材/images/insub.jpg" alt="">
+		</div>
+	</div>
+	<!-- 内容区 -->
+	<div id="content">
+		<div id="top">
+			<ul>
+				<li>
+					<span>闻鸡起舞光曦透</span>
+					<span class="date">91~09</span>
+
+				</li>
+				<li>
+					<span>闻鸡起舞光曦透</span>
+					<span class="date">91~09</span>
+
+				</li>
+				<li>
+					<span>闻鸡起舞光曦透</span>
+					<span class="date">91~09</span>
+
+				</li>
+				<li>
+					<span>闻鸡起舞光曦透</span>
+					<span class="date">91~09</span>
+
+				</li>
+			</ul>
+		</div>
+		<div id="bottom"></div>
+	</div>
+</body>
+</html>

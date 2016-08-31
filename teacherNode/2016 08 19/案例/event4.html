@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<ul id="box">
+		<li>111</li>
+		<li>222</li>
+	</ul>
+
+	<script type="text/javascript">
+		var boxEle = document.getElementById('box');
+		var liList = box.getElementsByTagName('li');
+		liList[0].onclick = function(ev){
+           var e = ev || event;
+           //event.target  等于事件发生的对象
+
+           //this 和 e.currentTarget 相同，代表哪个对象在处理点击事件
+           console.log(e.target);
+           console.log(e.currentTarget);
+           console.log(this);
+           //e.eventPhase 代表事件处于哪个阶段
+           //1: 捕获阶段
+           //2: 点击元素的处理阶段
+           //3: 冒泡阶段
+           console.log(e.eventPhase);
+		}
+
+		boxEle.onclick = function(ev){
+           var e = ev || event;
+           console.log(e.target);
+           console.log(e.currentTarget);
+           console.log(this);
+           console.log(e.eventPhase);
+
+            if( e.stopPropagation){
+            	  e.stopPropagation();
+            }else{
+            	  e.cancelBubble = true;
+            }
+		}
+
+		document.body.onclick = function(ev){
+             var e = ev || event;
+           console.log(e.target);
+           console.log(e.currentTarget);
+           console.log(this);
+           console.log(e.eventPhase);
+		}
+	</script>
+</body>
+</html>

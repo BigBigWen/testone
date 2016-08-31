@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		function connectName(first,second){//面向window
+			return 'firstName : ' +this.first  +' secondName : '+ this.second;
+		}
+		var first = 'a';//first属于window
+		var second = 'b';//second属于window
+		console.log(window.first);
+		console.log(window.second);
+
+		var result = window.connectName();
+		console.log(result);
+
+		var p = {
+			first:'p_first',
+			second:'p_second'
+		}
+		//对于每一个定义的函数,都可以调用2个方法
+		//call apply
+
+		//第一个参数,指定connectName的作用域
+		//是p在调用connectName
+		var res =connectName.call(p);
+		console.log(res);
+
+		var res2 = connectName.apply(p);
+		
+		//connectName.apply(p);
+		
+	</script>
+</body>
+</html>

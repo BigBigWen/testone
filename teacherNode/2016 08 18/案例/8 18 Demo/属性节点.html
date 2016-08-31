@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<div id="mydiv"></div>
+
+	<script>
+		//属性节点，操作属性是通常使用元素的
+		//getAttribute setAttribute ,removeAttribute      
+ 
+
+		//getAttributeNode(属性名)  获取属性节点
+		//document.createAttribute  创建属性节点
+		//setAttributeNode          设置属性节点 
+
+		var divElement = document.getElementById('mydiv');
+		// Attr
+		var attrNode = divElement.getAttributeNode('id');
+		console.log(attrNode.value);
+		console.log(attrNode.nodeValue);
+
+		console.log( attrNode.name );
+		console.log( attrNode.nodeName );
+
+		//创建属性节点，然后设置上去
+		var alignAttrNode = document.createAttribute('align');
+		//设置属性节点的值
+		alignAttrNode.value = 'left';
+		//设置属性节点的到元素上
+		divElement.setAttributeNode(alignAttrNode);
+
+        //删除属性节点
+		divElement.removeAttributeNode(alignAttrNode);
+	</script>
+</body>
+</html>

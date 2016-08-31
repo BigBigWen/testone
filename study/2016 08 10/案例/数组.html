@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		//定义一个变量,用于存放一组值,数组相当于大的容器,依次存放输入的值,对于存放的值进行编号,从0开始,可以根据编号把值从数组中提取出来.
+		//定义一个数组,
+		var array1 = [ 'a','1','b']; //字面量方式
+		var array2 = new Array();//类的方式定义数组,内容为空
+		var array3 = new Array('q','1','d');//在定义数组的同时,写入数据
+		//遍历数组
+		console.log(array3[0]);//通过下标(从0开始,就是编号),提取数组的值
+		console.log(array3[100]);//超出容量,undefind
+		//数组的容量  array3.length;返回数组中有多少个元素;
+		array3.length;
+		console.log(array3.length);
+		function printArray(array){
+			for( var i = 0 ;i < array.length; i++){
+				var value = array[i];
+				console.log(value);
+			}
+
+
+		}
+		//数组的常用操作
+		//在数组末尾添加一个值
+		array3.push('e');
+		printArray(array3);
+		console.log('------------s--------')
+		//把数组最后一个值弹出并返回
+		var test1 = array3.pop();
+		printArray(array3);
+		//在数组头部删除一个元素
+		console.log('--------s------')
+		array3.shift();
+		printArray(array3);
+		//在数组头部添加元素
+		console.log('------s----');
+		array3.unshift('a','b');
+		printArray(array3);
+		//把两个数组拼接在一起
+		var array4 = ['1','2','3'];
+		var array5 = ['4','5','6'];
+		var array6 =  array4.concat(array5);
+		printArray(array4);
+		printArray(array5);
+		printArray(array6);
+		//concat返回拼接后的结果,要用一个新的数组承接
+		var array7 = ['0','1','2','3'];
+		array7 = array7.reverse();
+		printArray(array7);
+		//jion 把容器中的内容根据指定字符连接成一个字符串
+		var array8 = [ 'a','b','c','d'];
+		console.log(array8.join("和"));
+		//sort 排序,默认使用的升序,小的在前,大的在后
+		var array9 = ['9','7','8'];
+		array9 = array9.sort();
+		printArray(array9);
+		console.log('----------')
+		//sort 使用函数排序,>0升序
+		                  //<0降序
+		array9 = array9.sort(function(a,b){
+			return b-a;
+		})
+		printArray(array9);
+	//从一个数组的片段中,可以重新生成另外一个数组
+	var array13 = [1,2,3,4,5,6,7,8,9,];
+	//-------------0,1,2,3,4,
+	var array14 = array13.slice(1,4);//slice指定一个值,从哪个位置开始(从0开始),持续到数组结束  [start ,end)从start开始,包含start,到end结束,不包含end
+	printArray(array14);
+	//slice 如果参数指定为负值,从后面向前数个数   
+	//下课好好再看看
+	var array16 = array13.slice(-1,-3);
+	printArray(array16);
+	//splice  删除函数中的一部分,也可以把数值插入数组
+	//splice(where.many,插入的数据)
+	         //where从哪里开始删除
+	         //many 插入多少个
+	         //数据从where后开始插入
+	console.log('-------s------');
+	var array20 = [ 1,2,3,4,5,6];
+	array21 = array20.splice(2,2);
+	printArray(array21);//返回的是被删除的值
+	//插入
+	var array30 = [1,2,3,4,5,6];
+	var array31=array30.splice(2,0,'a','b');
+	printArray(array31);
+	//只制定一个参数,从指定位置
+
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+	    *{margin: 0;padding: 0;}
+		.box{ width: 200px;height: 100px;margin: 10px auto;
+			background: -webkit-linear-gradient(yellow,red);/*chrome safari*/
+			background: -moz-linear-gradient(yellow,red);/*firefox*/
+			 background: -o-linear-gradient(yellow,red);
+			 background:-ms-linear-gradient(yellow,red);
+
+			/* 标准写法*/
+			background: linear-gradient(yellow,red);
+		 }
+/* linear-gradient：线性渐变，沿着直线把颜色从一种过渡到另外一种，至少需要两种颜色*/
+
+/*linear-gradient(方向，颜色1，颜色2....)*/
+/* 默认的方向从上到下 
+   方向：文字  向某个边进行颜色渐变
+               to top,
+               to bottom
+               to left
+               to right
+
+               向某个角进行颜色渐变
+               to bottom left
+               to top right
+               ....
+*/
+    .box1{background:linear-gradient(to top,yellow,red);}
+    .box2{background:linear-gradient(to bottom right,yellow,red);}
+
+    /* 方向：可以是一个角度，该角度是渐变方向的角度,单位是deg */
+    .box3{background: linear-gradient(45deg,yellow,red)}
+
+    /* 渐变的颜色可以有多个 ,中间的过渡是平均过渡*/
+    .box4{ background: linear-gradient(to right,yellow,green,blue,red) }
+
+    /* 渐变的颜色，非均匀分布，需要颜色配合百分的形式 */
+    .box5{ background: linear-gradient(to right,yellow 0%,green 20%,blue 50%,red 100%) }
+
+    .box6{background: linear-gradient(to right,yellow 0%,green 10%,blue 20%,red 50%)}
+
+    .box7{background: linear-gradient(to right,yellow 0px,green 10px,blue 20px,red 50px)}
+
+    /* 渐变的颜色可以指定为透明色
+       rgba: alpha 通道  0  完全透明 1 完全不透明;
+     */
+    .box8{ background: linear-gradient(to right,rgba(255,0,0,0),rgba(255,0,0,1)) }
+
+    /* 重复线性渐变 
+       百分比的含义：渐变的开始位置
+    */
+    .box9{ background: repeating-linear-gradient(to right,yellow 50%,red 100%) }
+
+
+    .box10{ background: repeating-linear-gradient(green 0%,green 10%,white 10%,white 20%) }
+    
+
+
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<div class="box box1"></div>
+	<div class="box box2"></div>
+	<div class="box box3"></div>
+	<div class="box box4"></div>
+	<div class="box box5"></div>
+	<div class="box box6"></div>
+	<div class="box box7"></div>
+	<div class="box box8"></div>
+	<div class="box box9"></div>
+	<div class="box box10"></div>
+</body>
+
+</html>

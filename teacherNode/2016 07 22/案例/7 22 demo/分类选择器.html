@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style >
+		/*:nth-child(n) 如果不写前面的容器，那么按照容器是body
+		选中第n个孩子,n从1开始*/
+		#div1 :nth-child(2){ background-color: red; }
+
+		/* 选择div1 下的第一个孩子，如果该孩子是p标签命中*/
+		#div1 p:nth-child(1){ background-color: yellow; }
+       
+        /*:nth-child(3n)   
+          n 从 0 开始 1  4 7 10 ....
+        */
+		#div2 :nth-child(3n){ background-color: blue; }
+       
+        /*odd 奇数
+          even 偶数
+        */
+		#div3 :nth-child(odd){ background-color: pink; }
+		#div3 :nth-child(even){ background-color: green; }
+  
+        /* div4 下的第一个孩子*/
+        #div4 :first-child{ background-color: red; }
+
+        /*div4 下的最后一个孩子*/
+        #div4 :last-child{ background-color: blue; }
+        
+        /*div5 下只有一个孩子*/
+        #div5 :only-child{ background-color: orange; }
+
+        /* 选择div6下的倒数第二个孩子
+           和:nth-child 相反;
+        */
+        #div6 :nth-last-child(2){ background-color: yellow; }
+
+	</style>
+</head>
+<body>
+	<div id="div1">
+		<p>第一个元素</p>
+		<h1>第二元素</h1>
+		<span>第三个元素</span>
+	</div>
+
+	<div id="div2">
+		<p>第一个元素</p>
+		<span>第二个元素</span>
+		<p>第三个元素</p>
+		<span>第四个元素</span>
+		<p>第五个元素</p>
+		<span>第六个元素</span>
+		<p>第七个元素</p>
+		<span>第八个元素</span>
+		<p>第九个元素</p>
+		<span>第十个元素</span>
+		<p>第11个元素</p>
+		<span>第12个元素</span>
+	</div>
+
+	<div id="div3">
+		<p>1</p>
+		<p>2</p>
+		<p>3</p>
+		<p>4</p>
+		<p>5</p>
+		<p>6</p>
+	</div>
+
+	<div id="div4">
+		<span>1</span>
+		<span>2</span>
+		<span>3</span>
+		<span>4</span>
+	</div>
+
+	<div id="div5">
+		<span>1个span</span>
+	</div>
+
+	<div id="div6">
+		<span>1</span>
+		<span>2</span>
+		<span>3</span>
+		<span>4</span>
+		<span>5</span>
+		<span>6</span>
+	</div>
+</body>
+</html>

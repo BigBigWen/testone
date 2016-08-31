@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div id="position"></div>
+	<script type="text/javascript">
+	var div1=document.getElementById("position");
+	 // onmousemove是鼠标移动事件
+		document.onmousemove=function(ev){
+			ev=ev||event;
+			//ev.clientX 是获取鼠标在当前文档中的横轴坐标
+			//ev.clientY 是获取鼠标在当前文档中的纵轴坐标
+			div1.innerHTML="x坐标："+ev.clientX+"y坐标："+ev.clientY;
+		};
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		// function Animal(){}
+
+		// var myProtoObject = {
+  //           type:'指定原型对象中的动物',
+  //           sleep:function(){
+  //           	console.log('指定原型对象中的sleep')
+  //           }
+		// };
+        
+  //       //指定一个自定义的对象作为原型对象
+		// Animal.prototype = myProtoObject;
+		// Animal.prototype.constructor = Animal;
+
+		// var cat = new Animal();
+		// var dog = new Animal();
+
+		// cat.sleep();
+		// dog.sleep();
+
+		// console.log(Animal.prototype.constructor);
+
+        //////////////////////////////////////
+        //经典写法
+		function Animal(name){
+			//不共享的写入构造函数内
+           this.name = name;
+		}
+		//有共享的内容写在原型对象中
+		Animal.prototype = {
+			type:'动物',
+			sleep:function(){}
+			walk:function(){}
+		};
+
+		Animal.prototype.constructor = Animal;
+
+		var cat = new Animal('小猫');
+		var dog = new Animal('小狗');
+
+	</script>
+</body>
+</html>.

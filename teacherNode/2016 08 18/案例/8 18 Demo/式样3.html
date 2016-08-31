@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<!-- 当一个html 读取外部文件的内容是，可能面临跨域问题 -->
+	<style type="text/css" media="screen">
+		#mydiv{ width:100px; height: 100px;background-color: blue; }
+		div{ font-size: 12px; }
+	</style>
+
+	<style type="text/css" media="screen">
+		#mydiv{ border: 1px solid red; }
+		div{background-color: pink;}
+	</style>
+
+	<link rel="stylesheet" href="a.css">
+</head>
+<body>
+	<div id="mydiv"></div>
+
+	<script>
+		//读取内部式样 or 外部式样的 内容
+		//1:获取文档中搜友的式样表
+		var sheets = document.styleSheets;
+		console.log(sheets);
+		var firstSheet = sheets[0];
+        
+        //获取式样表中的规则列表
+        //ie 使用的rules
+        //其他 使用的是cssRules;
+		var rules = firstSheet.cssRules || firstSheet.rules;
+
+		//获取第一个规则
+		var firstRule = rules[0];
+
+		console.log(firstRule.selectorText); //选择器名
+
+		//以字符串的形式返回所有式样
+		console.log(firstRule.style.cssText);
+        
+        //获取的某个式样的值
+		console.log(firstRule.style.width);
+		console.log(firstRule.style.height);
+		console.log(firstRule.style.backgroundColor);
+
+		//设置值
+		firstRule.style.width = '200px';
+		firstRule.style.height = '200px';
+		firstRule.style.backgroundColor = 'yellow';
+
+        //添加规则，使用函数insertRule,调用这是某一个sheet
+        //ie 不支持  addRule('body','background-color:green',2)
+        firstSheet.insertRule('body{background-color:green}',2);
+
+        //删除由position 指定的规则 deleteRule(position) 
+        //ie 不支持  removeRule(2)
+        firstSheet.deleteRule(2);
+
+	</script>
+</body>
+</html>

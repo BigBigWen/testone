@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+	<script>
+		var ulEle = document.getElementsByTagName('ul')[0];
+		//得到所有孩子节点  除了Ie之外 会包含空白节点
+		//var allChild = ulEle.childNodes;
+		//console.log(allChild)
+
+		//children不包含空白节点
+		var allChild = ulEle.children;
+		console.log(allChild);
+//寻找第一个孩子,最后一个孩子		
+		//由于ulEle.firstChild 得到的是空白的文本节点
+		console.log(ulEle.firstChild == allChild[0]);//false
+		console.log(ulEle.lastChild == allChild[allChild.length-1]);//false
+		//使用firstElementChild来获取第一个非文本节点
+		console.log(ulEle.firstElementChild == allChild[0]);
+		console.log(ulEle.lastElementChild == allChild[allChild.length-1]);
+		//nextSibing 寻找下一个兄弟
+		console.log(ulEle.firstChild.nextSibling == allChild[0]);
+		console.log(ulEle.lastChild.previousSibling == allChild[allChild.length-1]);
+
+
+		//parentNode
+		var firstLi = document.getElementsByTagName('li')[0];
+		//验证父节点
+		console.log(firstLi.parentNode == ulEle);
+		//验证第一个节点的前一个节点,最后一个节点的后一个兄弟
+		console.log(ulEle.firstChild.previousSibling);
+		console.log(ulEle.lastChild.nextSiBing);
+		//.childElementCount包含多少元素节点
+
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+	#div{width: 400px;margin: 10px auto;border: 3px solid pink;}
+		
+	</style>
+	}
+</head>
+<body>
+	<div id="div"></div>
+	<input id="text" type="text" name="" value="" placeholder="">
+	<input id="btn" type="button" name="" value="提交">
+	<script>
+		var text = document.getElementById('text');
+		var btn = document.getElementById('btn');
+		var div = document.getElementById('div');
+		var color = ['#f00','00f','0f0','ccf'];
+		btn.onclick = function(){
+			var textValue = text.value;
+			//提交文字到div
+			//div.innerHTML += textValue;
+			var newstr = textValue.split('');//split里面是空,代表把当前字符隔开
+			//console.log(newstr)
+			for( var i =0;i<newstr.length;i++){
+				//newstr[i];
+				var str2 = '';
+				str2 += '<span style="background:'+color[i%4]+'">'+newstr[i]+'</span>';
+
+			}
+			div.innerHTML += str2;
+
+		}
+	</script>
+</body>
+</html>

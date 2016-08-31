@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{margin: 0;padding: 0;}
+		div[class*='box']{width:800px;margin:0 auto;border:1px solid #333;}
+		div[class*='box'] section:nth-child(1){background-color: pink;}
+		div[class*='box'] section:nth-child(2){background-color: green;}
+		div[class*='box'] section:nth-child(3){background-color: red;}
+		div[class*='box'] section:nth-child(4){background-color: blue;}
+		div[class*='box'] section:nth-child(5){background-color: skyblue;}
+		div[class*='box'] section:nth-child(6){background-color: #666;} 
+		/* box1 flex-start是justify-content的默认值 */
+		.box1{display: flex; display: -webkit-flex;
+			justify-content: flex-start;
+		}
+		.box1 section{width:100px; height:100px;}
+		/* box2 是列表的右对齐*/
+		.box2{display: flex; display: -webkit-flex;
+			justify-content: flex-end;
+		}
+		.box2 section{width:100px; height:100px;}
+		
+		
+		/* box3 是列表整体的居中*/
+		.box3{display: flex; display: -webkit-flex;
+			justify-content: center;
+		}
+		.box3 section{width:100px; height:100px;}
+
+		/* box4 两端对齐*/
+		.box4{display: flex; display: -webkit-flex;
+			justify-content: space-between; 
+			/* flex-flow: row wrap; */
+		}
+		.box4 section{width:100px; height:100px;}
+
+		/* box5 */
+		.box5{display: flex; display: -webkit-flex;
+			justify-content: space-around; 
+		}
+		.box5 section{width:100px; height:100px;}
+		
+		
+		
+		
+
+
+
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<section>1</section>
+		<section>2</section>
+		<section>3</section>
+		<section>4</section>
+		<section>5</section>
+		<section>6</section>
+		
+	</div>
+	<div class="box2">
+		<section>1</section>
+		<section>2</section>
+		<section>3</section>
+		<section>4</section>
+		<section>5</section>
+		<section>6</section>
+		
+	</div>
+	<div class="box3">
+		<section>1</section>
+		<section>2</section>
+		<section>3</section>
+		<section>4</section>
+		<section>5</section>
+		<section>6</section>
+	</div>
+	<div class="box4">
+		<section>1</section>
+		<section>2</section>
+		<section>3</section>
+		<section>4</section>
+		<section>5</section>
+		<section>6</section>
+		<section>2</section>
+		<section>3</section>
+		<section>4</section>
+	</div>
+	<div class="box5">
+		<section>1</section>
+		<section>2</section>
+		<section>3</section>
+		<section>4</section>
+		<section>5</section>
+		<section>6</section>
+	</div>
+	
+
+</body>
+</html>

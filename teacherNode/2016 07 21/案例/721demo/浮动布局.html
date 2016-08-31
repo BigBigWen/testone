@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		*{ margin: 0px;padding: 0px; }
+		#div1{ width: 300px;height: 250px;background-color: #ffdd11;float: left; }
+		#div2{ width: 40px;height: 10px;background-color: red;float: left; }
+	</style>
+</head>
+<body>
+	<input type="text" name="" placeholder="input1">
+	<div id="div1"></div>
+	<input type="text" name="" value="" placeholder="input2">
+	<!-- 一个浮动元素会被其他的浮动元素卡住 -->
+	<!-- 一个浮动元素的顶部不能超过前面的浮动元素的顶部 -->
+
+
+
+	<!--
+	   1：div + 浮动   浮动元素直接换行
+	   2：浮动 +　div  浮动覆盖div，div内容环绕浮动元素
+	   3: 浮动元素后 +　inline ,看剩余空间能否插入浮动元素，
+	       能  浮动（left，right），inline元素被推到后面
+	       否  换行
+	   4：浮动 +　浮动　：后面浮动元素的顶部不会超过前面浮动元素的顶部
+	   5: 浮动元素不能超出包含块
+	 -->
+	<div id="div2"></div>
+</body>
+</html>

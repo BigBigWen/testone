@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		var array = ['中','华','人','民','共','和','国','中','华','人','民','共','和','国'];
+
+		function removeRepeate( inputArray ){
+			//新建一个数组，存放最终的结果
+			var newArray = [];
+
+			for( var i = 0; i < inputArray.length; i++ ){
+				//查看是否在新数组中，
+				// if( isValueInArray(inputArray[i],newArray) == false ){
+				// 	//插入
+    //                 newArray.push(inputArray[i]);
+				// }
+
+				//判断一个值是否在数组中
+				//indexOf 查找一个值在数组中的位置，-1 是searchValue不存在数组中
+				if( newArray.indexOf(inputArray[i]) == -1 ){
+					newArray.push(inputArray[i]);
+				}
+
+			}
+
+			return newArray;
+		}
+
+
+		function isValueInArray(inputChar,inputArray){
+			for( var i = 0; i < inputArray.length; i++ ){
+				if( inputChar === inputArray[i] ){
+					return true;
+				}
+			}
+			return false;
+		}
+
+		array = removeRepeate(array);
+		console.log(array);
+	</script>
+</body>
+</html>

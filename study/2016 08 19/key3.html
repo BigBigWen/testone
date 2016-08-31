@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+	*{margin: 0;padding: 0}
+	    #div{width: 100px;height: 100px;background-color: #fcc;position: absolute;left: 0;top: 0;}
+
+		
+	</style>
+</head>
+<body>
+	<div id="div"></div>
+	<script>
+		var divElement1 = document.getElementById('div');
+		document.onkeydown = function(e){
+           var ev = e||event;
+           var keynum = ev.keyCode;
+           var X=0;
+           var Y=0;
+           switch (keynum) {
+           case 37:
+             X-=10;
+             divElement1.style.left = X-10+'px';
+           break;
+           case 38:
+               Y-=10;
+              divElement1.style.top = Y-10+'px';
+            break;
+           case 39:
+                X+=10;
+               divElement1.style.left = X+10+'px';
+           break;
+           case 40:
+               Y+=10;
+               divElement1.style.top = Y+10+'px';
+            break;
+           }
+		}
+	</script>
+</body>
+</html>

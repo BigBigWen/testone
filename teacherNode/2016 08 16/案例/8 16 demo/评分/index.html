@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		*{margin: 0;padding:0;}
+		.clear:after{ content: "";clear: both;display: block;overflow: hidden;height: 0; }
+		.clear{-ms-zoom:1;}
+		ul>li{ float: left;width: 28px;height: 28px;background: url(images/star.gif) no-repeat 0 0;list-style: none; }
+	</style>
+</head>
+<body>
+	<ul class="clear">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+
+	<script>
+		var liElementList = document.getElementsByTagName('li');
+		var judgeArray = ['差评','一般差','一般','良好','优评'];
+		for( var i = 0; i < liElementList.length;i++ ){
+
+			liElementList[i].index = i;
+
+			liElementList[i].onmouseover = function(){
+               var liIndex = this.index;
+               for( var j = 0; j < liElementList.length; j++ ){
+               	 if( j <= liIndex ){
+               	 	//设置高亮
+               	 	liElementList[j].style.background = 'url(images/star.gif) no-repeat 0 -28px';
+               	 }else{
+               	 	//设置灰色
+               	 	liElementList[j].style.background = 'url(images/star.gif) no-repeat 0 0';
+               	 }
+               }
+			}
+
+
+			//点击事件
+			liElementList[i].onclick = function(){
+				var liIndex = this.index;
+				alert(judgeArray[liIndex]);
+			}
+            
+            //移除灰色显示
+			liElementList[i].onmouseout = function(){
+				this.style.background = 'url(images/star.gif) no-repeat 0 0';
+			}
+		}
+
+	</script>
+</body>
+</html>

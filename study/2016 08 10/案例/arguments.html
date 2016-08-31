@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		function max(){
+			//调用函数时,传入的参数都存放在数组中
+			//arguments里面包含传入的所有的值
+			//for( var i = 0; i < arguments.length;i++){
+			//	console.log(arguments[i]);
+			//}
+			if (arguments.length >1 ) {
+				var maxValue= arguments[0];
+				for( var i = 1;i < arguments.length;i++){
+					maxValue = maxValue > arguments[i] ? maxValue :arguments[i];
+				}
+			}
+			return maxValue;
+
+		}
+		console.log(max(1,2,3));
+
+		function min(first,second){
+			var minValue = arguments[0];
+			for( var i = 1; i <arguments.length; i++){
+				minValue = minValue > arguments[i] ? arguments[i]:minValue;
+			}
+			return minValue;
+		}
+		console.log()
+		
+
+	</script>
+</body>
+</html>

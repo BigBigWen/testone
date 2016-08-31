@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+    <style>
+    	*{margin: 0;padding: 0;}
+    	div{ margin-bottom: 10px; }
+    	.box{
+            width: 200px;height: 200px;
+    		border:27px solid #000;
+    		/* border-image-source ：边框图片的url
+               border-image-slice:告诉图片如何切分，指定4个切分线的偏移;
+               border-image-width：（可选）指定图片边框的宽度
+               border-image-outset：（可选）通常为0
+               border-image-repeat: 指定除了边角之外的空白区域如何填充;
+    		*/
+    		/*border-image:;*/
+    		border-image-source:url(images/border2.png);
+    		/* 指定 边框图片如何划分*/
+    		border-image-slice: 27;
+            /*指定图片边框的宽度，通产和切分出来的边框一致*/
+            border-image-width: 27px;
+
+            /*指定空白区域如何填充
+              stretch:直接拉伸填充，导致图片变形，默认值;
+              repeat:根据切出来的图片大小直接重复，有可能截断一部分图;
+              round：调整切出来的图片的大小，适应图片能够完整平铺
+              space：不调整图片的大小，调整图片间的空隙，使图片能够完整平铺，不出现截断的情况
+            */
+            border-image-repeat: stretch;
+    	}
+
+    	.box2{ width: 200px;height: 200px;
+    		border:27px solid #000;
+            border-image:url(images/border2.png) 27 repeat;
+    	}
+
+    	.box3{ width: 200px;height: 200px;
+    		border:27px solid #000;
+            border-image:url(images/border2.png) 27 round;
+    	}
+
+    	.box4{ width: 200px;height: 200px;
+    		border:27px solid #000;
+            border-image:url(images/border2.png) 27 space;
+            /* 浏览器 前缀
+               webkit ：chrome  和 safari 
+               moz:火狐浏览器;
+               ms: ie;
+               o:opera;
+             */
+            /*-webkit-border-image-repeat:space;*/
+            
+    	}
+    </style>
+
+</head>
+<body>
+	<div class="box"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+</body>
+</html>

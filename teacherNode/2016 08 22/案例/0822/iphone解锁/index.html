@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		*{margin: 0;padding: 0;}
+		.box{ width: 400px;height: 50px;background-color: blue; margin: 10px auto;position: relative;}
+		.lock{ width: 50px;height: 50px;background-color: red; position: absolute;top:0px;left: 0px;}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="lock"></div>
+	</div>
+
+	<script>
+		window.onload = function(){
+			var box = document.getElementsByClassName('box')[0];
+			var lock = document.getElementsByClassName('lock')[0];
+
+			//坐标
+		    //元素的offsetLeft 元素距离父视图的左边距离
+		    //元素的offsetTop  元素距离父视图的上边距离  
+
+		    //lock.offsetLeft  指左边距离box有多远   0 
+		    //lock.offsetTop   值上边距离box有多远   0
+
+
+			//lock 的 onmousedown ,onmousemove ,onmouseup
+			lock.onmousedown = function(e){
+               var ev = e || window.event;
+               var offsetX = ev.offsetX; //c
+
+               //onmousemove只要鼠标在元素上有一定就会产生时间
+               //放在onmousedown之内，确保必须先有mousedown，然后才会mousemove 和 mouseup
+	            lock.onmousemove = function(e){
+	            	var ev = e || event;
+	            	var clientX = ev.clientX;  //a
+
+	            	//b
+	            	var boxOffsetLeft = this.parentNode.offsetLeft;
+                    
+                    //计算出移动多少
+	            	var left = clientX - boxOffsetLeft - offsetX;
+	            	this.style.left = left + 'px';
+	            }
+
+	            lock.onmouseup   = function(e){
+                    this.onmousemove = null;
+                    this.onmouseup = null;
+	            }
+
+               //event 中的坐标信息
+               //ev.clientX   //相对于视图区域，计算出的 x 和 Y坐标
+               //ev.clientY
+
+               //当文档没有滚动或不需要滚动时，ev.pageX == ev.clientX  ev.pageY == ev.clientY
+               //ev.pageX    //相对于文档区，就算出的x 和 y 坐标
+               //ev.pageY 
+
+
+               //ev.screenX  //以屏幕左上角为基准算出的 X 和 y 的坐标
+               //ev.screenY
+
+               //ev.offsetX  //鼠标点击位置，相对于元素X方向的偏移
+               //ev.offsetY  //鼠标点击位置，相对于元素Y方向的偏移
+               
+			}
+
+			
+
+		}
+	</script>
+</body>
+</html>

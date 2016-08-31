@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>文本节点</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<div id="mydiv">divtest</div>
+	<div id="mydiv2">mydiv2</div>
+	<script>
+		var divElement = document.getElementById('mydiv');
+		//得到第一个元素节点
+		//var textNode = divElement.firstElementChild;
+		//得到第一个文本节点
+		var textNode = divElement.firstChild;
+	//一 获取文本节点的值
+		//1 使用nodevalue
+		console.log(textNode.nodeValue);
+		//2 使用data
+		console.log(textNode.data);
+    // 二 操作文本节点
+        //appendData(text) 把内容追加到最后面
+        //daleteData(offset,count)   删除 offset偏移量  count 个数
+        //insertData( offset,text)    插入 
+        //replace(offset,count,newtext) 替换 offset偏移量  count个数  newtext新的字符串
+        textNode.appendData('xxxx');//divtestxxxx
+        textNode.deleteData(0,2);//vtestxxxx
+        textNode.insertData(0,'your');//yourvtestxxx
+        textNode.replaceData(4,5,'apple');//yourapplexxx
+    //三 文本节点序列化
+         var divElement2 = document.getElementById('mydiv2');
+         //追加两个文本节点
+         divElement2.appendChild(document.createTextNode('a'));
+         divElement2.appendChild(document.createTextNode('b'));
+         console.log(divElement2.childNodes);
+         //合并文本节点  序列化 normalize
+         divElement2.normalize();
+         console.log(divElement2.childNodes)
+
+
+
+
+
+	</script>
+</body>
+</html>

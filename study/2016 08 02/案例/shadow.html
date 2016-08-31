@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>shadow</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+	*{margin: 0px;padding: 0px;}
+		/*外阴影*/
+		/*可以对一个盒子指定多个外阴影 ,使用逗号隔开各个阴影,注意各个阴影的次序*/
+		.box{width: 100px;height: 100px;margin: 100px auto;background-color: white;border: 1px solid black;}
+		.box1{box-shadow: 0 0 2px 10px red,0px 0px 2px 20px green,0px 0px 2px 30px yellow;}
+		/*对一个盒子四周添加不同的阴影*/
+		.box2{box-shadow:0px -10px 2px 0px,10px 0px 2px 0px green,0px 10px 2px 0px yellow,-10px 0px 2px 0px blue;  }
+		/*内阴影inset*/
+		.box3{box-shadow: 0px 0px 0px 10px red inset;}
+
+		.box4{box-shadow: 10px 60px 0px 0px red inset}
+		/*给图片加上内阴影*/
+		.box5{
+			width: 200px;height: 200px;
+			overflow: hidden;
+			box-shadow: 0px 0px 5px 10px pink inset;
+			background:  url(../images/16.jpg) 0 0 no-repeat;
+		}
+		/*1 把图片设为背景
+		2 使用z-index调整显示优先级
+		3 使用伪元素*/
+		/*在容器最前面添加元素*/
+		.box6{width: 200px;height: 200px;
+			overflow: hidden;
+			position: relative;
+		}
+		.box6:before{
+			content: "";
+			display: block;
+			width: 100%;height: 100%;
+			position: absolute;top: 0px;left: 0px;
+			box-shadow: 0px 0px 5px 10px pink inset;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1 box"></div>
+	<div class="box2 box"></div>
+	<div class="box3 box">sdfe</div>
+	<div class="box4 box">sdfe</div>
+	<!-- 内阴影加图片 -->
+	<div class="box5 box"><!-- <img src="../images/16.jpg" alt=""> --></div>
+	<div class="box6 box"><img src="../images/16.jpg" alt=""></div>
+</body>
+</html>

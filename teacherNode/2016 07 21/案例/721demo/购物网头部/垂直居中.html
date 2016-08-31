@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+	   *{ margin: 0px;padding: 0px;border: 1px solid black; }
+	/* vertical-align  针对的是行内元素，对块级元素不起作用*/
+		#div1{ vertical-align: middle; border: 1px solid black;width: 200px;height: 200px; }
+
+	</style>
+</head>
+<body>
+<!--  -->
+	<div id="div1">
+		测试文办
+	</div>
+
+	<!-- vertical-align:指定行内框元素和行框的对齐方式，对block元素不起作用
+        行内框：一行中包含每一个元素的高度大小
+        行框：行框是所有一行中行内框最大的那个
+	 -->
+
+	 <p style="height:30px;line-height: 30px;"> 测试文本 <span>span 元素</span>  </p>
+
+
+	 <!-- 单行文本的垂直居中 -->
+	 <p style="height: 30px;line-height:30px;font-size: 16px">p元素内容</p>
+
+    <!-- line-height ：具有继承性，如果说父元素设置了line-height，子元素没有设置的情况下，自动继承父元素的行高 -->
+    <p style="height:60px;line-height:60px;"> <span style="vertical-align:middle;line-height:16px;">span元素</span> </p>
+
+</body>
+</html>

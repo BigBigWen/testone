@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<!-- base :指定url的基准
+	如果指定了base，所有的相对路径的参考基准就是base中的href
+	 -->
+	 <!-- C:\Users\Administrator\Desktop\7 12 demo\baseTest\ -->
+	<!-- <base href="baseTest\"> -->
+	<!-- <base href="D:\"> -->
+
+	<!-- 式样表 
+       设置式样，type：指定类型
+       media 媒体 screen 屏幕
+                  print  打印机
+                  all   
+	-->
+	<style type="text/css" media="screen">
+	/**/
+		body{ background-color: black; }
+	</style>
+	<style type="text/css" media="screen">
+	   body{background: }
+		
+	</style>
+
+    <!-- 执行javascript脚本 或者引用外部的js程序-->
+	<script>
+	    // 向html中写入信息
+		document.write("Hello world");
+	</script>
+
+<!-- 当你的浏览器不能支持js程序时显示 -->
+	<noscript>
+		你的浏览器不支持javascript
+	</noscript>
+
+	<!-- <script src="/javascripts/application.js" type="text/javascript" charset="utf-8" async defer></script> -->
+</head>
+<body>
+<!-- a 标签链接 -->
+<!-- 当没有指定全路径的情况下，就是相对路径
+     相对于当前的html文件所在的路径
+ -->
+ <!-- C:\Users\Administrator\Desktop\7 12 demo\baseTest  -->
+	<a href="index2.html">我的链接</a>
+	<!-- ./ 当前目录下 -->
+	<!-- <a href="./baseTest/"></a> -->
+	<!-- ../ 上一级目录 -->
+	<!-- <a href="../../../"></a> -->
+
+</body>
+</html>

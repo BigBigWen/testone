@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>163.com</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+	*{padding: 0px;margin: 0px;
+text-decoration: none;color: #000;
+
+font-size: 12px;
+	}
+     /* div{width: 800px;
+      	border:2px solid #9FB6CD; }*/
+	#nu1{
+		    height: 25px;
+	        background-color: #C1CDC1;
+	        border-top: 10px solid #00008B;
+	        padding: 10px;
+	         }
+	#nul2{
+		    height: 50px;
+	        background-color: #EED5D2;
+	        padding: 10px;
+	         }
+	#nul3{
+		    height: 100px;
+	        background-color: #CD6889;
+	        padding: 10px;
+	        background-position: left;
+	         }
+
+	 .box1{width: 300px;
+border: 1px solid #666;
+
+	 }
+		.box1>div{
+			padding:10px 0 10px 50px;
+		}
+		.box1of1{
+			background-position: 10px center;
+			background-repeat: no-repeat;
+			background-image: url(../素材/icon1.png);
+		}
+
+	</style>
+	
+</head>
+<body>
+<div class="box1">
+	 <div class="box1of1">
+	 	<a href="#">免费</a>
+	 	<a href="#">免费</a>
+	 	<a href="#">免费</a>
+	 	<a href="#">免费</a>
+	 	<a href="#">免费</a>
+	 	<a href="#">免费</a>
+	 </div>
+</div>
+
+
+
+
+	<div  id="nu1"><h2>网易产品</h2></div>
+	<div id="nul2">
+		<img src="../素材/icon1.png" alt="">&nbsp;&nbsp;&nbsp;免费邮 &nbsp;&nbsp;VIP邮箱 &nbsp;&nbsp;企业邮箱 &nbsp;&nbsp;邮箱大师 &nbsp;&nbsp;易信 
+	</div>
+	<div id="nul3"><img src="../素材/icon2.png" alt="">&nbsp;&nbsp;&nbsp;梦幻西游2 &nbsp;&nbsp;梦幻西游手游 &nbsp;&nbsp;新大话2 &nbsp;&nbsp;新大话3 &nbsp;&nbsp;魔兽世界 &nbsp;&nbsp;星际争霸II &nbsp;&nbsp;新倩女幽魂 &nbsp;&nbsp;武魂2 &nbsp;&nbsp;大话西游手游 &nbsp;&nbsp;乱斗西游 &nbsp;&nbsp;天下3 &nbsp;&nbsp;大唐无双 &nbsp;&nbsp;天谕 &nbsp;&nbsp;突击英雄 &nbsp;&nbsp;镇魔曲 &nbsp;&nbsp;炉石传说 &nbsp;&nbsp;UU加速 &nbsp;&nbsp;</div>
+</body>
+</html>

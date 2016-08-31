@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" name="" value="按钮1">
+	<input type="button" name="" value="按钮2">
+
+	<script type="text/javascript">
+		var inputs=document.getElementsByTagName("input");
+		//双击事件
+		inputs[0].ondblclick=function(){
+			console.log('您双击了按钮1');
+		};
+		//鼠标按下
+		inputs[1].onmousedown=function(){
+			console.log("按下");
+		};	
+		//鼠标松开
+		inputs[1].onmouseup=function(){
+			console.log("鼠标松开");
+		};
+		
+	</script>
+</body>
+</html>

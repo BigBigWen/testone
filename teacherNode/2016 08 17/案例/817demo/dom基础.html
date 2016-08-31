@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>abc</title>
+<!-- 	<script>
+		// js  ECMAScript (语法，关键字（保留字），系统函数)
+		// DOM 操作，把一个html 生成一个文档树，包含一系列节点，这个节点是和我们js程序交互的桥梁，
+		//document.write
+		//document.getElements....
+
+		//BOM ：浏览器的信息，window对象
+		//window.setTimeout window.setInterval
+		//screen,location
+
+      
+      //DOM:浏览器生成一个文档树
+	</script> -->
+</head>
+<body>
+   <ul class="clear">
+   	<li>test</li>
+   </ul>
+
+   <script type="text/javascript">
+   	//DOM 节点类型（nodeType）节点名(nodeName) 节点值(nodeValue)
+    // Node.DOCUMENT_TYPE_NODE == 9
+   	//文档节点      9         #document         null        
+
+    console.log(document.nodeType);
+   	console.log(document.nodeName);
+   	console.log(document.nodeValue);
+
+   	//元素节点     1         UL(大小写)       null  
+   	var ulElement = document.getElementsByTagName('ul')[0];
+   	console.log( ulElement.nodeType );
+   	console.log( ulElement.nodeName );
+   	console.log( ulElement.nodeValue);
+
+   	//属性节点     2        class             clear
+   	var attrElement = ulElement.getAttributeNode('class');
+   	console.log( attrElement.nodeType );
+   	console.log( attrElement.nodeName );
+   	console.log( attrElement.nodeValue);
+
+   	//文本节点    3         #text              test
+   	var liElement = document.getElementsByTagName('li')[0];
+   	var textNode = liElement.firstChild;
+
+   	console.log( textNode.nodeType );
+   	console.log( textNode.nodeName );
+   	console.log( textNode.nodeValue );
+
+    //document-fragment   11    #document-fragment    null
+    var docFragment = document.createDocumentFragment();
+    console.log( docFragment.nodeType );
+    console.log( docFragment.nodeName );
+    console.log( docFragment.nodeValue );
+   </script>
+</body>
+</html>

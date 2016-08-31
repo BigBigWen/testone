@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<!-- //当一个html读取外部文件的内容时,可能面临跨域问题 -->
+	<link rel="stylesheet" href="">
+	<style>
+	#mydiv{
+		width: 100px;
+		height: 100px;
+		background-color: blue;
+	}
+		
+	</style>
+
+</head>
+<body>
+	<div id="mydiv"></div>
+	<script>
+		//读取内部式样or外部式样时
+		//1  先获取文档中所有的式样表
+		var sheet  = document.styleSheet;
+		console.log(sheet);
+		//2 获取样式表中的规则列表
+		//IE使用的是rules
+		//其他使用的是cssRules
+		var rules = sheet.cssRules || sheet.rules;
+		//3获取第一个规则
+		var firstRules = rules[0];
+		console.log(firstRules.selectorText);//选择器名称
+		console.log(firstRules.style.cssText);//以字符串的形式 打印出所有式样
+		console.log(firstRules.style.width);//获取某个式样的值
+		console.log(firstRules.style.height);
+
+		//4设置值
+		firstRules.style.width='200px';
+		firstRules.style.height = '400px;'
+		//添加规则  insertRule 调用者是某一个sheet
+		//IE不支持 addRule('body','background-colod:#ccc',2);
+		sheet.insertRule('body{background-color:#ccc}',2);
+		//删除由position指定的规则 deleteRule(position)
+		//ie不支持 removeRule()
+
+
+	</script>
+</body>
+</html>

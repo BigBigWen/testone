@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<form id="form1" action="http://www.baidu.com" method="get" accept-charset="utf-8">
+	<input type="text" name="" value="" placeholder="" id="input1">
+	
+	<select name="" id="select1">
+		<option value="值1">111</option>
+		<option value="值2">222</option>
+		<option value="值3">333</option>
+	
+	</select>
+	<input type="text" name="" value="" placeholder="" id="input2">
+	<button type="submit" id="submitButton">提交</button>
+	<button type="reset" id="resetButton">重置</button>
+	</form>
+	<script>
+		var input1 = document.getElementById('input1');
+		//当文本域里面的文本被选中的时候
+		input1.onselect = function(){
+			alert(this.value);
+		}
+		var select1 = document.getElementById('select1');
+		select1.onchange = function(){
+			alert(this.value);
+		}
+		var input2 = document.getElementById('input2');
+		//当元素获取焦点时触发
+		input2.onfocus = function(){
+			this.style.backgroundColor='#faa';
+		}
+		
+		input2.onchange = function(){
+			this.style.backgroundColor='#ccc';
+		}
+		//失去焦点
+		input2.onblur = function(){
+			this.style.backgroundColor = '#000';
+		}
+		var submitButton = document.getElementById('submitButton');
+		var form1 = document.getElementById('form1');
+		form1.onsubmit = function(){
+			alert('正在提交');
+			//阻止提交
+			return false;
+		}
+		var resetButton = document.getElementById('resetButton');
+		form1.onreset = function(){
+			confirm('确认重置马');//是一个有返回值系统确认框  true确定,是默认值   false 取消
+		}
+	</script>
+</body>
+</html>

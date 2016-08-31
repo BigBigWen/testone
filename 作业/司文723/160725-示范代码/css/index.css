@@ -1,0 +1,105 @@
+@charset "utf-8";
+/* 重置 */
+*{margin: 0;padding: 0;font-size:12px; line-height: 24px;color:#333;}
+.clear:after{content:"";display: block;overflow: hidden; clear:both;}
+.clear{*zoom:1;}
+img{display:block;width: 100%; border:0 none;}
+input{border:0 none;}
+li{list-style:none;}
+a{text-decoration:none;}
+h1,h2,h3,h4,h5,h6{font-weight:normal;}
+
+
+/*正文*/
+body{background-color: #999;}
+.container{width: 852px;margin:0 auto; background-color: #fff;}
+.top{padding:20px 10px 20px 80px;}
+.top-logo{float: left;}
+.top-right{float: right;padding-top:26px;}
+.top-right *{float:left;}
+.top-right span{line-height: 24px;}
+.top-right .inputsearch{border:1px solid #666; width:200px; line-height: 22px;}
+.top-right .btn-search{ line-height: 24px; background: #1AE3DD;
+padding:0 10px; color:#fff; margin-left:5px;}
+.banner-inner{display: block;}
+.nav{background:  url("../images/nav-bg1.png") repeat-x;}
+.nav>li{float: left;}
+.nav>li>a{display: block;width:93px;line-height: 40px; color: #fff;
+text-align: center;background:url("../images/nav-bg2.png") right center no-repeat;}
+.nav>li:last-child>a{background:none;}
+.nav>li>a.current{background:url("../images/nav-bg3.png") repeat-x;
+color:#333;}
+.nav>li>a:hover{background:url("../images/nav-bg3.png") repeat-x;
+color:#333;}
+.main{margin:5px 3px 20px 3px;}
+.main-left{float: left;width: 215px;}
+.main-right{float:right; width:625px;}
+.main-left>div{border:1px solid #666;}
+h1[class*="main-left-title"]{line-height: 40px;font-size:16px;
+font-weight:bold; background-color:#333;color:lightgray;padding-left:60px;}
+.main-left-title1{background-image: url("../images/icon2.png");
+background-position:20px center; background-repeat:no-repeat;
+
+}
+.mb10{margin-bottom:10px;}
+.mb5{margin-bottom:5px;}
+.main-left-list1>li{background:url("../images/leftbar-bg.png") repeat-x;}
+.main-left-list1>li>a{display: block;border-top:1px dashed green;
+ line-height: 54px;padding-left:80px; 
+ background:url("../images/icon3.png") 15px center no-repeat;}
+ .main-left-textbox1{padding:40px 20px;border-top:1px dashed green;}
+ .main-rightof1,.main-rightof3{border:1px solid gray;}
+ .main-rightof1{padding:2px 8px 15px 8px; margin-bottom:5px;}
+.main-right-title{
+	background: url("../images/titlebottom-bg.png") left bottom repeat-x;
+	margin-bottom: 10px;
+}
+span[class*="main-right-title-txt"]{
+	float:left; padding-left:60px;line-height: 40px; font-size:16px;
+	color:gray;font-weight:bold;
+background-position:20px center;background-repeat: no-repeat;
+}
+.main-right-title-txt1{background-image:url('../images/icon4.png');}
+.main-right-title-txt2{background-image:url('../images/icon5.png');}
+.main-right-title-txt3{background-image:url('../images/icon6.png');}
+.main-right-moreicon{float:right;line-height: 40px;color:blue;
+background:  url("../images/more-icon.png") right center no-repeat;
+padding-right:12px; font-weight:bold;
+}
+.main-right-of1img{width:200px; float: left;margin:0 20px 20px 0;}
+.main-right-of1txt{text-align:justify;text-indent:24px;}
+.main-rightof2>div{width:310px; padding:0 10px 20px 10px;
+box-sizing:border-box; border:1px solid gray;
+}
+.main-rightof2left{float: left;}
+.main-rightof2right{float: right;}
+.main-right-of2list>li>a{float:left; width: 80%;
+	/* 如果要控制超出显示省略号 一定 要定义宽度，
+定义不被包裹，超出隐藏，缺一不可，
+最后一个：显示省略号，
+	 */
+overflow: hidden; line-height: 26px;
+white-space:nowrap;text-overflow:ellipsis;
+}
+.main-right-of2list>li>span{float:right; color:lightgray;}
+.main-right-of2list>li>a>span{margin-right:5px;}
+.main-rightof3{padding:0 8px 20px 8px;}
+.main-rightof3list>li{float:left; width: 130px;margin-right:29px;}
+.main-rightof3list>li:nth-child(4n){margin-right:0px;}
+.main-rightof3list>li>p{text-align:center;}
+.main-rightof3list>li>a{display: block;}
+.footer{background: darkgray url("../images/copyrightline-bg.png") left top repeat-x;
+padding:20px 40px 50px 40px;
+}
+.footer *{color:blue;}
+.footer-left{float: left; width: 600px;}
+.footer-right{float: right; width:152px;}
+.footer-left>a:after{content:"|";margin:0 5px;}
+.footer-left>a:first-child:before{content:"|";margin-right:5px;}
+
+
+
+
+
+
+

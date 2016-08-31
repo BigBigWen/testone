@@ -1,0 +1,156 @@
+@charset "utf-8";
+*{margin: 0px;padding: 0px;}
+/*visibility:hidden让内容不可见,但是会占据空间*/
+.clearfix:after{content: "";display: block;clear: both;height: 0px;}
+.clearfix{-ms-zoom:1;}
+a{text-decoration: none;color: black;}
+li{list-style: none;}
+h1,h2,h3,h4,h5,h6{font-size: 14px;}
+body{background-color: #bbb;}
+
+.course-middle{width: 1000px;margin: 0 auto;}
+
+/*头部式样*/
+.top{width: 100%;background-color: #aaa;}
+/*.top>.topbox{width: 1000px;margin: 0 auto;}*/
+.top>.topbox>.top-content{float: right;height: 30px;line-height: 30px;}
+
+.header{background-color: #fff;}
+/*中间线对齐
+.header>img{width: 60px;height: 60px;vertical-align: middle;}
+.header>.header-right{float: right;height: 60px;line-height: 60px;}
+.header>.header-right>img{width: 28px;height: 28px;vertical-align: middle;}
+.header>.header-right> span{vertical-align: middle;}*/
+/*浮动*/
+.header>img{width: 60px;height: 60px;float: left;}
+.header>.header-right{float: right;height: 60px;line-height: 60px;}
+.header>.header-right>img{vertical-align: middle;}
+.header>.header-right span{vertical-align: middle;}
+.header>.header-right span:last-child{color: red;font-size: 20px;}
+/*导航区*/
+.nav{background-color: gray;}
+.nav>ul>li
+    {
+    	float: left;
+    	height: 50px;line-height: 50px;
+    	font-weight: bold;
+    	margin: 0 20px;
+    }
+.nav>ul>li:first-child{margin-left: 50px;}
+.nav>ul>li>a:hover{color: red;}
+.nav>input
+    {
+    	float: right;
+    	margin-right: 10px;
+    	border: none;
+    	background: #fff url(../images/search.jpg) right center no-repeat;
+    	padding-right: 30px;
+    	line-height: 30px;
+    	margin-top: 10px;
+    }
+/*焦点图,图片使用绝对定位,父容器需要relative*/
+.banner{position: relative;height: 424px;}
+/*使用绝对定位把所有的图片定位在同一个位置,脱离文档流,需要设计高度*/
+.banner ul li img{position: absolute;top: 0;left: 0px}
+
+/*内容区域*/
+.content{margin-top: 10px;}
+.content-left,.content-center,.content-right
+        {
+        	border: 1px solid darkgray;
+        	float: left;
+        	padding: 0 10px;
+        	box-sizing: border-box;
+        }
+        /*共同的title式样*/
+ .content-title
+    {
+    	margin-bottom: 10px;
+    	border-bottom: 1px solid darkgray;
+    	height: 40px;line-height: 40px;
+    }
+.content-title span:nth-child(1){font-size: 20px;font-weight: bold;}
+.content-title span:nth-child(2){font-size: 12px;float: right;}
+.content-left
+        {
+        	width: 330px;
+        	background-color: #fff;
+        }
+.content-left>.content-content>.content-content-right
+        {
+        	float:right;width: 190px;
+        }
+.content-left>.content-content>.content-content-right p:nth-child(1)
+        {
+        	color: red;
+        	font-size: 12px;
+
+        }
+.content-left>.content-content>.content-content-right p:nth-child(2)
+        {
+        	color: black;
+        	font-size: 14px;
+        	margin: 16px 0px;
+        }
+.content-left>.content-content>.content-content-right p:nth-child(3)
+        {
+        	color: red;
+        	font-size: 12px;
+        }
+.content-left>ul{margin-top: 10px;}
+.content-left>ul>li
+        {
+        	font-size: 12px;
+        	line-height: 24px;
+        	list-style: none inside url(../images/list.jpg);
+        }
+.content-left>ul>li a:hover{color: red;text-decoration: underline;}
+.content-left>ul>li span{float: right;}
+.content-center
+        {
+        	width: 410px;
+        	margin: 0px 10px;
+        }
+ .content-center>.center-box{}
+ .content-center>.center-box>.center-box-right
+        {
+        	width: 210px;
+        	float: right;
+        }
+.content-center>.center-box>.center-box-right p:first-of-type
+         {color: red;font-size: 12px;}
+.content-center>.center-box>.center-box-right p:last-of-type
+        {
+        	font-size: 13px;
+        	margin-top: 10px;
+        }
+.content-right
+        {
+        	width: 240px;
+        }
+.content-right>img{width: 218px;margin-top: 10px;}
+.footer{width: 100%;background-color: #eee;}
+.footer>ul{padding-top: 20px;}
+
+.footer>ul>li
+       {
+       	float: left;width: 200px;text-align: center;
+       	background-image: url(../images/line.png);
+       	background-repeat: no-repeat;
+       	background-position: right center;
+       }
+ .footer>ul>li:last-child{background:none;}
+.footer>ul li h2
+        {
+        	font-size: 20px;
+        	line-height: 30px;
+        	font-weight: bold;
+        	margin-bottom: 10px;
+        }
+.footer>ul li p{line-height: 24px;font-size: 12px;}
+.footer>ul .QRcode
+        {
+        	width: 50px;height: 50px;
+        }
+.footer>ul .scanQR{margin: 20px 0;}
+.footer>ul li

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		function max( first,second ){
+			if( first > second ){
+				return first;
+			}else{
+				return second;
+			}
+		}
+
+		// ?:  
+		function max2(first,second){
+			return first > second ? first : second;
+		}
+
+		// 条件表达式1 ? 表达式2 ：表达式3；
+		// 执行的次序：
+		// 首先判断表达式1是否为真，为真  返回表达式2的值 
+		//                          为假  返回表达式3的值
+
+       var a = 10; var b = 20;
+       var c = a > b ? a : b;
+       console.log(c);//20
+
+	</script>
+</body>
+</html>

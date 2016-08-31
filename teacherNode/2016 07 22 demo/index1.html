@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+	    *{margin: 0px;padding: 0px;}
+	    /* 1:加边框
+           2：box-sizing:border-box; 需要显示指定宽高值
+	    */
+		#div1{ width: 100px;height: 100px;float: left;background-color: red; margin:5px; 
+
+			/* border-box: 是指width 和 height 所占区域的大小，包含边框，padding 和 内容*/
+
+            box-sizing: border-box;
+            /* content-box ：是指width 和 height 是内容的大小，默认值*/
+            /*box-sizing: content-box;*/
+		}
+		#div1:hover{ border: 10px solid blue; }
+	</style>
+</head>
+<body>
+	<div id="div1"></div>
+	<div id="div1"></div>
+	<div id="div1"></div>
+	<div id="div1"></div>
+    <div id="div1"></div>
+    <div id="div1"></div>
+    <div id="div1"></div>
+</body>
+</html>

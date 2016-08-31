@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>弹性盒子</title>
+	<link rel="stylesheet" href="">
+	<style>
+		div[class*='box']{width: 800px;margin: 0 auto;border: 1px solid #333;}
+		div[class*='box'] section:nth-child(1){background-color: pink;}
+		div[class*='box'] section:nth-child(2){background-color: red;}
+		div[class*='box'] section:nth-child(3){background-color: green;}
+		div[class*='box'] section:nth-child(4){background-color: blue;}
+		div[class*='box'] section:nth-child(5){background-color: yellow;}
+		div[class*='box'] section:nth-child(6){background-color: skyblue;}
+		.box1{display: flex;display: -webkit-flex;flex-direction:row;}
+		.box1>section{width: 100px;height: 100px;text-align: center;}
+		.box2{display: flex;display: -webkit-flex;flex-direction:row-reverse;}
+		.box2>section{width: 100px;height: 100px;text-align: center;}
+		.box3{display: flex;display: -webkit-flex;flex-direction:column;}
+		.box3>section{width: 100px;height: 100px;text-align: center;}
+		.box4{display: flex;display: -webkit-flex;flex-direction:column-reverse;}
+		.box4>section{width: 100px;height: 100px;text-align: center;}
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<section>1</section>
+		<section>2</section>
+		<section>3</section>
+		<section>4</section>
+		<section>5</section>
+		<section>6</section>
+	</div>
+	<div class="box2">
+		<section>1</section>
+		<section>2</section>
+		<section>3</section>
+		<section>4</section>
+		<section>5</section>
+		<section>6</section>
+	</div>
+	<div class="box3">
+		<section>1</section>
+		<section>2</section>
+		<section>3</section>
+		<section>4</section>
+		<section>5</section>
+		<section>6</section>
+	</div>
+	<div class="box4">
+		<section>1</section>
+		<section>2</section>
+		<section>3</section>
+		<section>4</section>
+		<section>5</section>
+		<section>6</section>
+	</div>
+	<div class="box5">
+		<section>1</section>
+		<section>2</section>
+		<section>3</section>
+		<section>4</section>
+		<section>5</section>
+		<section>6</section>
+	</div>
+</body>
+</html>

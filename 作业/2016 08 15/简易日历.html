@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>简易日历</title>
+	<link rel="stylesheet" href="">
+	<style>
+      *{margin: 0px;padding: 0px;}
+
+      body{background-color: #ccc;}
+      .container{margin: 100px auto;width: 250px;display: flex;flex-direction: row;flex-wrap: wrap;justify-content: space-around;background-color: #fcc;}
+      .month{width: 60px;height: 60px;text-align: center;list-style: none;background-color: #fac;margin: 10px;padding-top: 10px;box-sizing: border-box;}
+      .bottom{margin-bottom: 10px;border: 1px solid white;width: 90%;text-align: center;}
+      .active{background-color: #fff;color: red;}
+
+
+
+
+	</style>
+</head>
+<script>
+	window.onload = function(){
+		var liList = document.getElementsByClassName('month');
+		var bottomtitle = document.getElementById('bottomtitle');
+		var bottomcontent = document.getElementById('bottomcontent');
+		for( var i = 0 ; i < liList.length;i++){
+			var activeArray = ['hahahahahaha','enenenene','哈哈哈','科技成为','还是语文的','kdopekf','贺岁我的文档','我国的规定','为故意的','下一个产业','核心成员的','赤尾村'];
+			liList[i].index = i;
+			liList[i].onclick = function(){
+				var older = this.index;
+				var activeName = activeArray[older];
+				for( j = 0 ; j < liList.length; j++){
+					if(older==j){
+						liList[older].className = 'month active';
+						bottomtitle.innerHTML = (older+1)+'日活动';
+						bottomcontent.innerHTML = 'activeName';
+					}else{
+						liList[j].className = 'month';
+					}
+				}
+
+				
+			}
+
+		}
+		
+
+	}
+</script>
+<body>
+	<ul class="container">
+		<li class="month active">
+			<h2>1</h2>
+			<p>JNA</p>
+		</li>
+		<li class="month">
+			<h2>2</h2>
+			<p>JNA</p>
+		</li>
+		<li class="month">
+			<h2>3</h2>
+			<p>JNA</p>
+		</li>
+		<li class="month">
+			<h2>4</h2>
+			<p>JNA</p>
+		</li>
+		<li class="month">
+			<h2>5</h2>
+			<p>JNA</p>
+		</li>
+		<li class="month">
+			<h2>6</h2>
+			<p>JNA</p>
+		</li>
+		<li class="month">
+			<h2>7</h2>
+			<p>JNA</p>
+		</li>
+		<li class="month">
+			<h2>8</h2>
+			<p>JNA</p>
+		</li>
+		<li class="month">
+			<h2>9</h2>
+			<p>JNA</p>
+		</li>
+		<li class="month">
+			<h2>10</h2>
+			<p>JNA</p>
+		</li>
+		<li class="month">
+			<h2>11</h2>
+			<p>JNA</p>
+		</li>
+		<li class="month">
+			<h2>12</h2>
+			<p>JNA</p>
+		</li>
+		<div class="bottom">
+			<h2 id="bottomtitle">1月活动</h2>
+			<p id="bottomcontent">哈哈哈哈哈</p>
+		</div>
+	</ul>
+</body>
+</html>

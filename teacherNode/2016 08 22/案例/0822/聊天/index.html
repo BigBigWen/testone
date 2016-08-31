@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		*{ margin: 0;padding: 0; }
+		.clear:after{ content: "";clear: both;display: block;overflow: hidden;height: 0px; }
+		.clear{ -ms-zoom:1; }
+
+		.box{ width: 500px;height: 550px;border: 1px solid black;margin: 100px auto; padding: 10px;}
+		.chatContent{ height: 400px;width: 100%;border: 1px solid lightgray; margin-bottom: 10px;overflow: scroll;}
+        ul>li{ list-style: none;padding: 5px;border-radius: 5px;margin: 5px; max-width: 240px;word-break: break-all;clear: both;}
+        .left{ float: left; background-color: lightgray;}
+        .right{ float: right;background-color: green;}
+        textarea{ width: 100%;height: 100px; }
+        button{ width: 80px;height: 30px;float: right; }
+     
+	</style>
+</head>
+<body>
+	<div class="box clear">
+		<div class="chatContent">
+			<ul class="clear">
+				<li class="left">聊吧</li>
+				<!-- clear:both 让左右都不能出现浮动元素，
+				从而实现每个li单独一行的形式 -->
+				<!-- <div style="clear:both"></div> -->
+				<li class="left">你好</li>
+				<!-- <div style="clear:both"></div> -->
+				<li class="right">你怎么知道我好</li>
+				<!--  <div style="clear:both"></div> -->
+			</ul>
+		</div>
+		<textarea name=""></textarea>
+		<button type="button">发送</button>
+	</div>
+
+
+	<script>
+		var ulEle = document.querySelector('.chatContent>ul');
+		var textareaEle = document.getElementsByTagName('textarea')[0];
+		var buttonEle = document.getElementsByTagName('button')[0];
+        buttonEle.onclick = function(){
+        	var chatMessage = textareaEle.value;
+        	if( chatMessage.length > 0 ){
+        		var liEle = document.createElement('li');
+        		liEle.className = 'right';
+        		liEle.innerHTML = chatMessage;
+
+        		var splitEle = document.createElement('div');
+        		splitEle.style.clear = 'both';
+
+        		ulEle.appendChild(liEle);
+        		ulEle.appendChild(splitEle);
+
+        		textareaEle.value = '';
+                liEle.scrollIntoView();
+        	}else{
+        		alert("请先输入内容.")
+        	}
+        }
+
+	</script>
+</body>
+</html>

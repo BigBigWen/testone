@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		//1
+		var P1 = new Object();
+		var P2 = new Object();
+		P1.eat = function(){console.log('hello')}
+		P2.eat = function(){console.log('hello')}
+		console.log(P1.eat == P2.eat);//false
+//2字面量
+		var P3 = {
+			eat:function(){console.log('hello')}
+		}
+		var P4 = {
+			eat:function(){console.log('hello')}
+		}
+		console.log(P3.eat == P4.eat);//false
+		//工厂方式
+		function creatP(){
+			var o = new Object();
+			o.eat = function(){
+				console.log('haha');
+			}
+			return o
+		}
+		var p5 = creatP();
+		var  p6 = creatP();
+		console.log(p5.eat == p6.eat);//false;
+
+		//构造函数
+		function creatPFun(){
+			
+			this.name = name;
+			this.eat = function(){
+				console.log('haha');
+			}
+		}
+		var p7 = new creatPFun('a');
+		var p8 = new creatPFun('b');
+		console.log(p7.eat == p8.eat);//false
+		///////////////////////////////
+		//每一个构造函数,系统都会生成一个原型对象
+		//可以通过animal.prototype来访问,通过该构造函数创建的所有对象,都会包含一个指针_proto , 该指针指向生成的原型对象
+
+		//可以通过赋值语句给原型对象添加属性或者方法
+		//添加的所有的属性或方法,都会被后面创建的对象所共享
+		function animal(){
+			// this.type = '动物';
+			// this.sleep = function(){
+			// 	console.log('晚上睡觉');
+			// }
+		}
+		//通过构造函数的原型,设置的函数或属性,都会被他创建的对象所共享
+		animal.prototype.type = '动物';//原型里的属性只读
+		animal.prototype.sleep = function(){
+			console.log('晚上睡觉');
+		}
+
+		var cat = new animal();
+		var dog = new  animal();
+		//当一个对象调用属性或方法时,首先查看自己是否有该属性或者方法,首先查看自身是否有该属性,如有调用,若没有沿着_proto_指向的原型对象查找,如果有调用原型对象中的属性和方法.
+		console.log(cat.sleep == dog.sleep);//ture
+		console.log(cat.type);
+		console.log(dog.type);
+
+		//给一个对象的属性赋值,相当于给对象本身添加属性,可能屏蔽掉原型对象中的属性
+		cat.type = '猫科动物';
+		console.log(cat.type);
+		console.log(dog.type);
+		console.log(animal.prototype.constructor);//原型对象中的constructor指向构造函数本身
+
+	</script>
+</body>
+</html>

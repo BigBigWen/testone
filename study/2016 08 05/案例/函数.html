@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>函数</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+
+<script>
+console.log("1")
+	//<!-- 常量,变量.运算符 -->
+//<!-- 把多个语句放在一起完成一项功能,可以定义一个函数,主要功能是完成一项功能 -->
+//<!-- 定义一个函数的语法 -->
+     // function 函数名(参数1,参数2...)
+     // {
+
+      //}
+      //函数名的命名规则和变量名的起名规则一样
+      //定义一个函数
+	  function printHelloWorld(){
+	  	console.log("2")
+	  	//大括号内函数体
+	  	console.log("Hellow");
+	  	console.log("World");
+	  }
+	  //调用一个函数,只定义不调用,函数体不会被执行.
+	  console.log("3");
+	  printHelloWorld();
+	  //写一个参数求两个数的和,return把结果返到调用处,碰到第一个return认为函数体结束
+	  function sum(first,second){
+	    return	first+second;
+	  }
+	 var result1  = sum(2,3);
+	  console.log(result1);
+	  //调用方式 函数名(调用参数)
+	  console.log("3");
+	  function sub(one,two){
+	  	return one-two;
+
+	  }
+	  var result2 = sub(5,6);
+	  console.log(result2);
+	  var result2 = sub(6,5);
+	  console.log(result2);
+</script>
+
+
+</body>
+</html>

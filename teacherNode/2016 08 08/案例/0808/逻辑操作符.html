@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		// javascript 逻辑操作符有 3个 
+		//&& || !  与 或 非
+
+		// && 并且的意思
+		// || 或者的意思
+		// !  取反的意思
+
+		//if( 条件1 && 条件2 )   
+		// 当条件1 和 条件2 同时为 true ，整体表达式的值才为true 当其中一个为假，整体条件为假
+
+       var age = 18;
+       var sex = '女';
+       //首先判断第一个条件是否为真，如果为真再去判断第二个条件
+       //如果第一个条件为假，结果直接为假，不再判断第二个条件，条件短路
+       if( age == 18 && sex == '女'){
+       	    console.log("妙龄");
+       }
+
+
+      // if( 条件1 || 条件2 )
+      //当2个条件一个为真时，整体表达式就为真
+      //当2个表达式都为假的时候，整体表达式为假
+      //如果第一个条件为真，不再判断第二个条件，整体为真
+      //只有第一个条件为假时，再判断第二个条件，来决定整体表达式的值
+      
+      var age = 5;
+      if( age < 10 || age > 80 ){
+      	   console.log("保护人群");
+      }
+
+      // ! 取反，true -> false  ,false->true
+      var b1 = false;
+      if(!b1){
+      	 console.log('执行语句');
+      }
+
+      //模拟Boolean 类型的转换
+      // if( Boolean(123) )
+      if(!!123){ console.log("!!123");}
+      if(!!'abc'){ console.log("!!abc")}
+
+      // 算数运算  关系运算   逻辑运算符
+      // 运算符的优先级 算数运算符 > 关系运算符 > 逻辑运算符
+      // a + b > c + d    a + b   c + d  大于比较
+      // 总是可以通过 ()，修改他们的次序
+      // (3 + 5) * 4
+
+      //直接执行匿名函数,最外层的()代表整个匿名函数为一个整体
+      //最后一个()，代表执行一次函数调用
+      (function(first,second){
+      	console.log(first + second);
+      })();
+
+	</script>
+</body>
+</html>

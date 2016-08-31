@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+*{margin:0;padding:0;border:none;font-size:12px;font-family:"微软雅黑";list-style:none;}
+body{width:100%;height:auto;}
+.banner{width:1200px;height:500px;margin:0 auto;position:relative;overflow:hidden;}
+.piclist{width:6000px;height:500px;position:relative;left:0px;}
+.piclist ul li{float:left;width:1200px;height:500px;}
+.piclist ul li a img{width:1200px;height:500px;}
+.bannerbtn{width:1200px;height:50px;background-color:#939;position:absolute;z-index:10;top:450px;filter:alpha(opacity=50); /*IE滤镜，透明度50%*/-moz-opacity:0.5; /*Firefox私有，透明度50%*/opacity:0.5;/*其他，透明度50%*/}
+.bannerbtn ul{width:620px;height:42px;margin:4px auto;}
+.bannerbtn ul li{width:100px;height:42px;float:left;margin-left:20px;cursor:pointer;background-color:#fff;}
+.bannerbtn ul li img:hover{filter:alpha(opacity=50);-moz-opacity:0.5;opacity:0.5;}
+</style>
+<title>BannerChange</title>
+</head>
+<body>
+  <div class="wrap">
+   <div class="banner">
+      <div id="hyz_piclist" class="piclist" style="left:0px;">
+         <ul id="piclistul">
+            <li><a href="javascript:void(0);"><img src="http://e.picphotos.baidu.com/album/s%3D1100%3Bq%3D90/sign=f70d8410ceea15ce45eee40886300182/dcc451da81cb39db42cb8dc3d7160924ab183018.jpg" /></a></li>
+            <li><a href="javascript:void(0);"><img src="http://h.picphotos.baidu.com/album/s%3D1100%3Bq%3D90/sign=d20771f4f4deb48fff69a5dfc02f0158/8ad4b31c8701a18ba82bf9da992f07082938fe67.jpg" title="list2.jpg" /></a></li>
+            <li><a href="javascript:void(0);"><img src="http://d.picphotos.baidu.com/album/s%3D1100%3Bq%3D90/sign=15b34cfdd609b3deefbfe069fc8f57f0/63d9f2d3572c11dfea1154b6642762d0f603c267.jpg" title="list3.jpg" /></a></li>
+            <li><a href="javascript:void(0);"><img src="http://a.picphotos.baidu.com/album/s%3D1100%3Bq%3D90/sign=815df9325eee3d6d26c683ca73265653/fc1f4134970a304ef57f4a6fd6c8a786c8175cc2.jpg" title="list4.jpg" /></a></li>
+            <li><a href="javascript:void(0);"><img src="http://b.picphotos.baidu.com/album/s%3D1100%3Bq%3D90/sign=99eb0ea5bda1cd1101b676218922f38d/f31fbe096b63f6240a57d3968044ebf81a4ca319.jpg" title="list5.jpg" /></a></li>
+         </ul>
+      </div>
+         <div style="clear:both;"></div>
+         <div class="bannerbtn">
+             <ul id="bannerbtnul">
+               <li><img src="http://a.picphotos.baidu.com/album/s%3D1100%3Bq%3D90/sign=d4a2a2bbd51b0ef468e89c5fedf46aab/2934349b033b5bb5b98aca6b31d3d539b700bcc2.jpg" /></li>
+               <li><img src="http://g.picphotos.baidu.com/album/s%3D1100%3Bq%3D90/sign=9532b287484a20a4351e38c6a062a353/d0c8a786c9177f3eb12d169877cf3bc79f3d560e.jpg" /></li>
+               <li><img src="http://a.picphotos.baidu.com/album/s%3D1100%3Bq%3D90/sign=346f945efcedab64707249c1c70694b2/caef76094b36acafbebd7c697bd98d1000e99cc2.jpg" /></li>
+               <li><img src="http://a.picphotos.baidu.com/album/s%3D1100%3Bq%3D90/sign=64fc52b506e939015202893f4bdc6f96/b219ebc4b74543a99a03105919178a82b901140e.jpg" /></li>
+               <li><img src="http://b.picphotos.baidu.com/album/s%3D1100%3Bq%3D90/sign=25b65faf1ed8bc3ec20802cbb2bb9d6f/63d0f703918fa0ec41cd8e98219759ee3d6ddb19.jpg" /></li>
+             </ul>
+         </div>
+   </div>
+ </div>
+<script language="javascript">
+var hyz_a=-1200;//向左最终位置
+var hyz_e=-1200;//向右初始位置
+var hyz_b=0;//向左初始位置
+var hyz_d=0;//向右最终位置
+var hyz_dir;//动画状态
+var hyz_speed_b=0.1;//步进大小
+var hyz_speed_t=50;//步进速度
+var hyz_jiange=3000;//换图间隔
+var hyz_pic=document.getElementById("hyz_piclist");
+var hyz_pic_ul=document.getElementById("piclistul");
+var hyz_pic_li=hyz_pic_ul.getElementsByTagName("li");
+for(var i=0;i<hyz_pic_li.length;i++){
+	hyz_pic_li[i].index=i+1;
+	}
+var hyz_bannerbtn_ul=document.getElementById("bannerbtnul");
+var hyz_bannerbtn_li=hyz_bannerbtn_ul.getElementsByTagName("li");
+var hyz_setInt,hyz_setTim,hyz_setIntRl;
+	for(var i=0;i<hyz_bannerbtn_li.length;i++){
+		if(hyz_bannerbtn_li[i].attachEvent){
+			hyz_bannerbtn_li[i].index=i+1;
+			hyz_bannerbtn_li[i].attachEvent("onclick",clickChange);
+			}else{
+				hyz_bannerbtn_li[i].index=i+1;
+				hyz_bannerbtn_li[i].addEventListener("click",clickChange);
+				}
+		}
+hyz_setTim=setTimeout("hyzTimeOut();",hyz_jiange);
+function autoChangeLR(){
+	clearTimeout(hyz_setTim);
+	var hyz_c=Math.floor(hyz_speed_b*(hyz_a-hyz_b));
+	hyz_b=hyz_b+hyz_c;
+	hyz_pic.style.left=hyz_b+'px';
+	hyz_dir=1;
+	if(hyz_b==-1200){	
+		clearInterval(hyz_setInt);
+		hyz_setInt=0;
+		var hyz_first_li=hyz_pic_li[0];
+		hyz_clone_li=hyz_first_li.cloneNode(true);
+		hyz_clone_li.index=hyz_first_li.index;
+		hyz_pic_ul.removeChild(hyz_first_li);
+		hyz_pic_ul.appendChild(hyz_clone_li);
+		hyz_pic.style.left='0px';
+		hyz_b=0;
+		autoPaiXu(hyz_pic_li[0].index);
+		hyz_setTim=setTimeout("hyzTimeOut();",hyz_jiange);
+		}
+	}
+function autoPaiXu(n){
+	var hyz1,hyz2,hyz3,hyz4;
+	switch(n){
+		case 1:
+		hyz1=BianLi(2);
+		hyz2=BianLi(3);
+		hyz3=BianLi(4);
+		hyz4=BianLi(5);
+		TianJia(hyz1,hyz2,hyz3,hyz4);
+		break;
+		case 2:
+		hyz1=BianLi(3);
+		hyz2=BianLi(4);
+		hyz3=BianLi(5);
+		hyz4=BianLi(1);
+		TianJia(hyz1,hyz2,hyz3,hyz4);
+		break;
+		case 3:
+		hyz1=BianLi(4);
+		hyz2=BianLi(5);
+		hyz3=BianLi(1);
+		hyz4=BianLi(2);
+		TianJia(hyz1,hyz2,hyz3,hyz4);
+		break;
+		case 4:
+		hyz1=BianLi(5);
+		hyz2=BianLi(1);
+		hyz3=BianLi(2);
+		hyz4=BianLi(3);
+		TianJia(hyz1,hyz2,hyz3,hyz4);
+		break;
+		case 5:
+		break;
+		default:
+		break;
+		}
+	}
+function TianJia(lia,lib,lic,lid){
+	hyz_pic_ul.appendChild(lia);
+	hyz_pic_ul.appendChild(lib);
+	hyz_pic_ul.appendChild(lic);
+	hyz_pic_ul.appendChild(lid);
+	}
+function BianLi(n){
+	for(var i=0;i<hyz_pic_li.length;i++){
+		if(hyz_pic_li[i].index==n){
+			var clone_li=hyz_pic_li[i].cloneNode(true);
+			clone_li.index=hyz_pic_li[i].index;
+			hyz_pic_ul.removeChild(hyz_pic_li[i]);
+			return clone_li;
+			break;
+			}
+		}
+	}
+function autoChangeRL(){
+	var hyz_f=Math.ceil(hyz_speed_b*(hyz_d-hyz_e));
+	hyz_e=hyz_e+hyz_f;
+	hyz_dir=-1;
+	//alert(hyz_f);
+	hyz_pic.style.left=hyz_e+'px';
+	if(hyz_e==0){
+		clearInterval(hyz_setIntRl);
+		hyz_e=-1200;
+		autoPaiXu(hyz_pic_li[0].index);
+		hyz_setTim=setTimeout("hyzTimeOut();",hyz_jiange);
+		}
+	}
+function hyzTimeOut(){
+	//clearInterval(hyz_setTim);
+	hyz_setInt=setInterval("autoChangeLR();",hyz_speed_t);
+	}
+function clickChange(){
+	clearInterval(hyz_setInt);
+	clearTimeout(hyz_setTim);
+	clearInterval(hyz_setIntRl);
+	var index_a=this.index;
+	var index_b=hyz_pic_li[0].index;
+	var btn_li_now,btn_li_now_clone;
+	if(index_a<index_b){
+		hyz_b=0;
+	    hyz_e=-1200;
+		for(var i=0;i<hyz_pic_li.length;i++){
+            if(hyz_pic_li[i].index==index_a){
+				btn_li_now=hyz_pic_li[i];
+				}
+			}
+		btn_li_now_clone=btn_li_now.cloneNode(true);
+		btn_li_now_clone.index=btn_li_now.index;
+		hyz_pic_ul.insertBefore(btn_li_now_clone,hyz_pic_li[0]);
+		hyz_pic_ul.removeChild(btn_li_now);
+		hyz_pic.style.left='-1200px';
+		hyz_setIntRl=setInterval("autoChangeRL();",hyz_speed_t);
+		}else if(index_a>index_b){
+			hyz_b=0;
+	        hyz_e=-1200;
+			for(var i=0;i<hyz_pic_li.length;i++){
+				if(hyz_pic_li[i].index==index_a){
+				    btn_li_now=hyz_pic_li[i];
+				}
+				}
+		    btn_li_now_clone=btn_li_now.cloneNode(true);
+		    btn_li_now_clone.index=btn_li_now.index;
+		    hyz_pic_ul.insertBefore(btn_li_now_clone,hyz_pic_li[1]);
+		    hyz_pic_ul.removeChild(btn_li_now);
+			hyz_setInt=setInterval("autoChangeLR();",hyz_speed_t);
+			}else{
+				hyz_b=parseInt(hyz_pic.style.left);
+	            hyz_e=parseInt(hyz_pic.style.left);
+				hyz_pic.style.left='0px';
+				if(hyz_dir==1){
+					hyz_setIntRl=setInterval("autoChangeRL();",hyz_speed_t);
+				   }else if(hyz_dir==-1){
+					   hyz_setTim=setTimeout("hyzTimeOut();",hyz_jiange);
+					   }else{
+						   hyz_setTim=setTimeout("hyzTimeOut();",hyz_jiange);
+						   }
+				}
+}
+	
+ </script>
+</body>
+</html>

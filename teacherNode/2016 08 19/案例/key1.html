@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*document.onkeydown=function(){
+			console.log('按键按下');
+		};
+		document.onkeyup=function(){
+			console.log("按键弹起");
+		};
+		document.onkeypress=function(){
+			console.log("按键长按");
+		};
+*/
+document.onkeydown=function(e){
+	var ev=e||event;
+	//ev.keyCode 返回的是 按下键的acsii的10进制的值
+	console.log(ev.keyCode);
+	console.log(String.fromCharCode(ev.keyCode));
+};
+
+
+
+
+
+
+	</script>
+</body>
+</html>

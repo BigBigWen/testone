@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>switch</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		//switch case 开关语句
+		// switch(变量名){
+		// 	case'常量一':语句1;break;
+		// 	case'常量二':语句2;break;
+		// 	case'常量三':语句3;break;
+		// 	......
+		// 	defalut:  语句;
+		// }
+		//执行次序:
+		//1 拿变量的值跟下面的常量进行对比
+		//2 找到相等的常量后,开始执行常量后面的语句,执行到遇到第一个break,如果一直没有break,则执行到整体结束
+		// var arg = 'b';
+		// switch(arg){
+		// 	case 'a':console.log( '语句a');break;
+		// 	case 'b':console.log( '语句b');break;
+		// 	case 'a':console.log( '语句a');break;
+		// 	defalut:console.log('其他');
+
+		// }
+		//一定要注意switch case 的级联效应,没有break会一直执行下去
+		// var arg = 'a';
+		// switch(arg){
+		// 	case 'a':console.log( '语句a');//break;
+		// 	case 'b':console.log( '语句b');break;
+		// 	case 'a':console.log( '语句a');break;
+		// 	defalut:console.log('其他');
+		// }
+		//多个case共享同一个语句
+		var arg = 'a';
+		switch(arg){
+			case 'a':
+			case 'b':
+			case 'a':
+			console.log( '语句a');break;
+			case 'b':
+			console.log( '语句b');break;
+			case 'a':
+			console.log( '语句a');break;
+			defalut:console.log('其他');
+		}
+	</script>
+</body>
+</html>

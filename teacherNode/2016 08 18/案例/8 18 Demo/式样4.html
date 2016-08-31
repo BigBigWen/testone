@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style id="mystyle" type="text/css" media="screen">
+		#mydiv{ width:100px; height: 100px;background-color: blue; }
+		div{ font-size: 12px; }
+	</style>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<script>
+	    //使用sheet 快速获取式样表，只对style 元素 和 link 元素有效
+		var styleElement = document.getElementById('mystyle');
+		//其他的浏览器使用的sheet
+		//ie 使用的是 styleSheet
+
+		var sheet = styleElement.sheet || styleElement.styleSheet;
+		var rules = sheet.cssRules || sheet.rules;
+		var firstRule = rules[0];
+		console.log(firstRule.selectorText);
+		console.log(firstRule.style.cssText);
+		console.log(firstRule.style.width);
+		console.log(firstRule.style.height);
+		console.log(firstRule.style.backgroundColor);
+
+		//设置式样 略
+	</script>
+</body>
+</html>

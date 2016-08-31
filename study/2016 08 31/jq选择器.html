@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script src="jQuery/jquery-1.11.3.js"></script>
+	<script>
+	//整个dom树创建完成  DOMContentLoaded
+		$(function(){
+         //选择器:命中元素
+         $('#id') //id选择器
+         $('.className')//类选择器
+         $('tagName')//标签选择器
+         $('*')//选中所有元素
+         $('#id','.class','selector') //分组选择器
+
+         //后代选择器
+         $('祖先 后代')
+         $('parent>child') //孩子选择器,不包含子孙节点
+         $('prev+next') 自己的下一个兄弟
+         $('prev~sibling') 自己的后面的所有的兄弟
+         $('prev').nextAll();
+         $('prev').prev();亲一个紧邻的兄弟
+         $('prev').prevAll() //前面所有兄弟
+
+         //过滤选择器
+         $('ul li:first')  $('ul li').first()
+         $('ul li:not(selector)'); 不满足指定的选择器的所有ul li 
+         $('ul li:even') 偶数 0 2 4...
+         $('ul li:odd') 奇数1 3 5 ...
+         $('ul li:eq(index)');0 1 2 3 4...
+         $('ul li').eq(index);
+
+         $('ul li:gt(index)');//>index 从0开始
+         $('ul li:lt(index)');//<index
+         $(':header');//选取网页中的h1 h2 h3 h4..
+
+         $('li:animated')//正在执行动画中的元素 不常用
+         $('li').is(':animated'); 判断一个元素是否在动画中
+         $(':focus') 获取焦点元素
+
+         //内容过滤选择器
+          $('ul li:container(text)')//选中含有文本内容的
+         $('ul li:eq(0)').is(':contains("text")');
+         $('li:empty') 选中空的标签 即不包含子元素,也不包含文本,空格也不行
+         if( $('ul li:eq(0)').is(':empty') )
+         $('ul li:has(selector)')//如果li中的某一子元素满足selector,该li被命中
+         $('ul li').has('selector');
+         $('li:parent') 命中包含子元素或文本元素的li
+
+
+         //属性选择器 和css3中的属性选择器一致
+
+         $('ul li[attribute]')   有attribute属性
+         $('ul li[attribute=value]') attribute属性等于value
+         $('ul li[attribute!=value]') attribute属性不等于value
+         $('ul li[attribute^=value]') attribute属性 以value开头
+         $('ul li[attribute$=value]') attribute属性 以value结尾
+         $('ul li[attribute*=value]') attribute属性 包含value字符串
+         $('ul li[attribute|=value]')  attribute的属性为attribute或attribute-开头
+         $('ul li[attribute~value]')  attribute的属性为空格分隔的多组值,其中一个是value
+
+
+         //子元素过滤选择器
+         $('ul li:eq(index)')选中第index个li index从0开始
+
+         $('ul>li:nth-child(index)')//从1开始 第index个孩子,并且为li
+         /
+         $('ul li:nth-child(even)')//从1开始,选择偶数的孩子
+         $('ul li:nth-child(odd)')//从1开始,选择奇数的孩子
+         $('ul li:nth-child(3n+1)') //n从0开始
+
+         //表单选择器 是根据input元素的type类型来选择
+         //表单对象属性
+         $(':enable')
+
+         //checkbox radio命中选择的元素
+         $(':checked')
+         //select 空间,命中选中的potion
+         $(':selected')
+
+         //可见性,元素正常显示 display block none
+         $(':visible')
+         if($())
+         $(':hidden')
+
+
+
+ 
+
+
+
+
+
+
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{margin: 0px;padding: 0px;}
+        #ulId{ width: 200px;margin: 0 auto; }
+        ul li{ width: 15px;height: 15px;list-style: none; float: left;}
+        ul li.star{ background: url(app_toolbar_sprite.png) no-repeat -1px -100px; } 
+	</style>
+</head>
+<body>
+	<ul id="ulId">	
+	</ul>
+
+	<script>
+		var ulElement = document.getElementById("ulId");
+		var resultString = "";
+
+		for( var i = 0; i < 10; i++ )
+        {
+        	for( var j = 0 ;j < 10;j++){
+        		if( j < 10 - i){
+        			//输出*
+        			resultString += '<li class="star"></li>'
+        		}else{
+        			resultString += '<li></li>'
+        		}
+        	}
+        	resultString += "<br>";
+        }
+
+        ulElement.innerHTML = resultString;
+
+        //换行
+        resultString += "<br>";
+        for( var i = 0; i < 10; i++)
+        {
+        	for(var j = 0; j < 10; j++ ){
+               if( j >= i )
+               {
+               	resultString += "<li class='star'></li>"
+               }else{
+               	resultString += "<li></li>"
+               }
+        	}
+        	resultString += "<br>";
+        }
+
+        ulElement.innerHTML = resultString;
+
+        resultString += "<br>";
+        for( var i = 0; i < 10;i++ ){
+        	for( var j = 0; j < 10;j++ ){
+        		if( j >= 9-i ){
+        			resultString += "<li class='star'></li>";
+        		}else{
+               		resultString += "<li></li>"
+               }
+        	}
+        	resultString += "<br>"
+        }
+        ulElement.innerHTML = resultString;
+
+        resultString += "<br>";
+        for( var i = 0; i < 10; i++ ){
+        	for( var j = 0; j < 10; j++ ){
+               if( j <= i){
+               		resultString += "<li class='star'></li>";
+               }else{
+               		resultString += "<li></li>"
+               }
+        	}
+            resultString += "<br>";
+        }
+
+        ulElement.innerHTML = resultString;
+
+       resultString += "<br>";
+
+       // 倒三角
+       for( var i = 0 ;i < 6;i++ ){
+       	for( var j = 0; j < 11;j++ ){
+            if( j >= i && j <= 10 - i){
+            	resultString += "<li class='star'></li>";
+            }else{
+            	resultString += "<li></li>";
+            }
+       	}
+       	resultString += "<br>";
+      }
+
+      ulElement.innerHTML = resultString;
+      resultString += "<br>";
+      
+      //正三角
+      for( var i = 0 ; i < 6; i++ ){
+      	for( var j = 0; j < 11;j++ ){
+           if( j >= 5-i && j <= 5+i ){
+           	    resultString += "<li class='star'></li>";
+           }else{
+            	resultString += "<li></li>";
+            }
+      	}
+      	resultString += "<br>";
+      }
+
+      ulElement.innerHTML = resultString;
+
+	</script>
+</body>
+</html>

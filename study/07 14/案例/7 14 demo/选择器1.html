@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+
+	<style type="text/css" media="screen">
+		/*选择器
+         1：标签选择器
+         2: id 选择器
+         3: 类选择器;
+		*/
+
+      /*  div{}
+		p{}*/
+
+		/*id 选择器 以# 开始 跟上id属性值 */
+		#mydiv{
+           width: 100px;
+           height: 100px;
+           background-color: rgba(255,0,0,0.5);
+           border: 10px solid yellow;
+		}
+
+/* 类选择器 ，. 加上class 属性的值*/
+		.myclass{
+            width: 100px;
+            height: 100px;
+            border: 1px solid blue;
+            background-color: red;
+		}
+
+		/* 组选择器,以,分割的选择器 */
+		.class1,.class2{
+			background-color: blue;
+		}
+
+		.class1{
+			width: 100px;
+			height: 100px;
+		}
+
+		.class2{
+			width: 200px;
+			height: 200px;
+		}
+      
+      /*后代选择器,祖先  空格 后代*/
+      /*p span{
+         border:1px solid red;
+      }*/
+       
+       /*父子选择器 语法： 父亲>儿子*/
+       p>span{
+         border: 2px solid yellow;
+       }
+	</style>
+</head>
+<body>
+	<div id="mydiv">
+		 <p>this is test</p>
+	</div>
+
+<!-- div.myclass 然后 ctrl + e -->
+	<div class="myclass"></div>
+	<p class="myclass"></p>
+
+	<!--  -->
+	<div class="class1">
+		
+	</div>
+
+	<div class="class2">
+		
+	</div>
+
+<!-- p 标签是span的父标签 -->
+	<p>
+	    this  is  test  
+	    <span>ok
+           <span>内部span</span>
+	    </span> 
+	 </p>
+
+	<p>这是一个测试 <span>ok</span> </p>
+
+</body>
+</html>

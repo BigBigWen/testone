@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>比大小</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<label>比大小 请输入第一个数:<input id="input1" type="text" name="" value=""></label>
+	<label>请输入第二个数<input id="input2" type="text" name="" value=""></label>
+	
+	<button id="compare"  type="button">开始比较</button>
+	<span id="result"></span>
+	<script>
+		var input1Element = document.getElementById("input1");
+		var input2Element = document.getElementById("input2");
+		var compareElement = document.getElementById("compare");
+		compareElement.onclick = function(){
+			var input1Value = input1Element.value;
+			var input2Value = input2Element.value;
+			var input1Number = parseFloat(input1Value);
+			var input2Number = parseFloat(input2Value);
+			if (input1Number > input2Number  ) {
+				result="第一个数大";
+			}
+			else if (input1Number < input2Number ) {
+				result = "第二个数大";
+			}else if (input1Number == input2Number) {
+				result = '相等'
+			}
+			else{result = '输入错误'};
+			var resultElement = document.getElementById("result");
+
+			resultElement.innerHTML = result;
+
+
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{margin: 0;padding: 0;}
+		.box{width: 200px;height: 357px;position: absolute;bottom: 0;right: 0;overflow: hidden;}
+		.top{position: absolute;top: 312px;left: 200px;width: 200px;height: 312px;background:  url(4.png) no-repeat;}
+		.bottom{position: absolute;top: 312px;left: 200px;width: 200px;height: 45px;background:  url(1.png)  no-repeat;}
+		button{position: absolute;bottom: 0;right: 0;height: 45px;width: 30px;background:  url(2.png)  no-repeat;}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="top"></div>
+		<div class="bottom"></div>
+		<button type="button"></button>
+	</div>
+	<script>
+		var topEle = document.getElementsByClassName('top')[0];
+		var bottomEle = document.getElementsByClassName('bottom')[0];
+		var buttonEle = document.getElementsByTagName('button')[0];
+
+		buttonEle.onclick = function(){
+			startMove(bottomEle,'left','0px',function(){
+				topEle.style.left = '0px';
+				startMove(topEle,'top','0px',null)
+			})
+		}
+		function startMove(obj,attributeName,endValue,endFun){
+			clearInterval(obj.timer);
+			obj.timer = setInterval(function(){
+				var currentValue = getStyle(obj,attributeName);
+				var speed = (parseInt(endValue) - parseInt(currentValue))/6;
+				if(speed > 0){
+					speed = Math.ceil(speed);
+				}
+				if(speed < 0){
+					speed = Math.floor(speed);
+				}
+				obj.style[attributeName] = (parseInt(currentValue)+speed)+'px';
+				if(obj.style[attributeName] == endValue){
+					clearInterval(obj.timer);
+					if(endFun){
+					return endFun();
+					}
+				}
+				
+
+			},50)
+		}
+		function getStyle(obj,styleName){
+			if(obj.currentStyle){
+				return obj.currentStyle[styleName];
+			}else{
+				return getComputedStyle(obj,null)[styleName]
+			}
+
+		}
+		topEle.onclick = function(){
+			startMove(topEle,'top','312px',function(){
+				topEle.style.left = '200px';
+				startMove(bottomEle,'left','200px',null)
+			})
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+//可以打开默认的路径
+{ "keys": ["f12"], "command": "side_bar_files_open_with",
+"args": {
+"paths": [],
+"application": "D:\\360Chrome\\Chrome\\Application\\360chrome.exe",
+"extensions":".*" //any file with extension
+} },
+{ "keys": ["ctrl+f12"], "command": "side_bar_files_open_with",
+"args": {
+"paths": [],
+"application": "D:\\firefox.exe",
+"extensions":".html" //any file with extension
+} },

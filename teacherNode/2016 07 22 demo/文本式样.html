@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<!--
+	   font-family:指定字体名称
+	   font-size:指定字体的大小
+	   font-weight:字体粗细
+	   font-style: 字体的式样，正常 or 斜体
+       text-align: 字体的对齐方式
+       text-transform:指定字体大小写
+       text-decoration:指定字体描述，下划线，删除线等
+       text-indent:首行缩进
+       letter-spacing:字母之间的间距
+       word-spacing:单词之间的间距，中文无效
+       white-space:空白的处理
+       direction：方向
+      
+       @font-face 使用网络字体
+	 -->
+	 <style type="text/css" media="screen">
+	 	*{margin:0;padding: 0;}
+        p{
+        	height: 30px;border: 1px solid black;
+        }
+
+
+        /*使用网络字体的语法
+         1：定义网络字体i
+        */
+        @font-face{
+        	/*给字体指定一个名称*/
+        	font-family: "MyTest";
+        	/*url 网络字体文件的路径*/
+        	src:url('http://titan/listings/MyFont.woff');
+        	font-style: normal;
+        	font-weight: normal;
+        }
+
+	 </style>
+</head>
+<body>
+<!-- 使用网络字体时，用font-family: 字体名称 -->
+    <p style="font-family:MyTest">This is test</p>
+
+	<!-- font-family：字体名，字体名，
+	    浏览器从前到后查看第一个支持的字体，使用第一个支持的字体
+	 -->
+	<p style="font-family:"微软雅黑",serif>这是我的测试文本，this is a test</p>
+	<!-- font-size:字体的大小 
+	    length: 16px
+	            1em    1em = 16px;
+
+	    xx-small  x-small mediu x-large xx-large  字体从小到大
+        
+        smaller:  比父亲的字体小点
+        larger:   比父亲的字体大点
+
+        百分比：　使用父亲的字体大小 乘以　百分比　　计算出字体
+	-->
+	<p style="font-size:16px;">这是测试文本</p>
+	<p style="font-size:2em">2倍的大小</p>
+	<p style="font-size:12px"> 测试 <span style="font-size:200%">文本</span> </p>
+
+<!-- font-weight: 
+     normal：字体
+     bold,bolder 粗体
+     100-900  :400 正常字体 600 粗体
+ -->
+	<p style="font-weight:normal; ">font-weight:normal</p>
+	<p style="font-weight:bolder; ">font-weight:bolder;</p>
+	<p style="font-weight:400; ">font-weight:400;</p>
+	<p style="font-weight:600; ">font-weight:600;</p>
+
+	<!-- font-style:
+	  normal：正常  
+     italic:  斜体
+     oblique: 倾斜
+	-->
+	<p style="font-style:normal">font-style:normal</p>
+	<p style="font-style:italic">font-style:italic</p>
+	<p style="font-style:oblique">font-style:oblique</p>
+
+	<!-- text-align：设置字体的对齐方式
+	     left:靠左对齐
+	     center:居中对齐
+	     right:靠右对齐
+	     justify：两端对齐
+
+	     text-align:对行内元素有效
+	     text-align:具有继承性，如果说父元素设置的text-align,子元素自动继承这一属性，不要继承的值需要自己重写
+	 -->
+	<p style="width: 300px;height: 200px; text-align:left">There are lots kind of fruit,There are lots kind of fruit,There are lots kind of fruit,There are lots kind of fruit,There are lots kind of fruit,There are lots kind of fruit,There are lots kind of fruit,There are lots kind of fruit,There are lots kind of fruit,</p>
+
+	<p style="width: 300px;height: 200px; text-align:center">There are lots kind of fruit,There are lots kind of fruit,There are lots kind of fruit,There are lots kind of fruit,There are lots kind of fruit,There are lots kind of fruit,There are lots kind of fruit,There are lots kind of fruit,There are lots kind of fruit,</p>
+
+	<p style="width: 300px;height: 200px; text-align:right">There are lots kind of fruit,There are lots kind of fruit,There are lots kind of fruit,There are lots kind of fruit,There are lots kind of fruit,There are lots kind of fruit,There are lots kind of fruit,There are lots kind of fruit,There are lots kind of fruit,</p>
+
+	<p style="width: 300px;height: 200px; text-align:justify">There are lots kind of fruit,There are lots kind of fruit,There are lots kind of fruit,There are lots kind of fruit,There are lots kind of fruit,There are lots kind of fruit,There are lots kind of fruit,There are lots kind of fruit,There are lots kind of fruit,</p>
+
+
+	<p style="width:300px;height:300px; text-align:center">
+		<img src="15.jpg" alt="">
+	</p>
+
+	<!-- text-transform：让字体大小写 
+       lowercase:  全部小写
+       uppercase： 全部大写
+       capitalize：每个单词的首字母大写
+	-->
+	<p style="text-transform:lowercase;">THERE ARE LOTS KIND OF FRUIT</p>
+	<p style="text-transform:uppercase;">there are lots kind of fruit</p>
+	<p style="text-transform:capitalize;font-size: 32px;background-color: blue;color:red">there are lots kind of fruit</p>
+
+<!-- text-indent
+    length:32px;
+    百分比:相对于父容器的宽度 *　百分比　
+ -->
+	<p style="text-indent: 32px;width: 200px;height: 200px;">这是我的测试文本，this is test，这是我的测试文本，this is test，这是我的测试文本，this is test，这是我的测试文本，this is test，这是我的测试文本，this is test</p>
+
+	<p style="text-indent: 50%;width: 200px;height: 200px;">这是我的测试文本，this is test，这是我的测试文本，this is test，这是我的测试文本，this is test，这是我的测试文本，this is test，这是我的测试文本，this is test</p>
+
+	<!-- text-decoration:
+         none: 没有装饰线
+         underline:下划线
+         overline：在顶部画线
+         line-through:删除线
+	 -->
+	 <p style="text-decoration:none">This is test</p>
+	 <p style="text-decoration:underline">This is test</p>
+	 <p style="text-decoration:overline">This is test</p>
+	 <p style="text-decoration:line-through">This is test</p>
+	 <!-- letter-spacing : -->
+	 <p style="letter-spacing: 10px;">中文测试字体 this is test</p>
+	 <!-- word-spacing： -->
+	 <p style="word-spacing: 32px;">中文 this is test</p>
+
+	 <!-- direction -->
+	 <p style="direction:ltr">this is test</p>
+	 <p style="direction:rtl">this is test</p>
+	 <bdo dir="rtl">this is test</bdo>
+
+	 <!-- white-space -->
+	 <!-- auto:
+	      空白字符压缩，一行输出满后自动换行
+	      nowrap:空白压缩，一直输出直到遇到br才换行
+	      pre-line:压缩空白字符，保留换行符号
+	      pre-wrap：空白字符不压缩，一行输出满后自动换行  
+	      pre:pre  既保留空白字符，又不自动换行
+	  -->
+	 <p style="white-space:auto;width:300px;height:200px;">This             is           a              test,This             is           a              test,This             is           a              test,This             is           a              test,This             is           a              test,This             is           a              test,This             is           a              test,This             is           a              test</p>
+	 <p style="white-space:nowrap;;width:300px;height:200px;">This             is           a              test,This             is           a              test,This             is           a              test,This             is           a              test,This             is           a              test,This             is           a              test,This             is           a              test,This             is           a              test</p>
+	 <p style="white-space:pre-line;width:300px;height:200px;">This  is at testThis  is at testThis  is at testThis  is at testThis  is at testThis  is at testThis  is at testThis  is at testThis  is at testThis  is at testThis  is at testThis  is at testThis  is at test</p>
+	 <p style="white-space:pre-wrap;width:300px;height:200px;">This             is           a              test,This             is           a              test,This             is           a              test,This             is           a              test,This             is           a              test,This             is           a              test,This             is           a              test,This             is           a              test</p>
+
+	 <p style="white-space:pre;width:300px;height:200px;">This             is           a              test,This             is           a              test,This             is           a              test,This             is           a              test,This             is           a              test,This             is           a              test,This             is           a              test,This             is           a              test</p>
+
+</body>
+</html>

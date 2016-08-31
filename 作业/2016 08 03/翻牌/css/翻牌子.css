@@ -1,0 +1,47 @@
+*{margin: 0px;padding: 0px;}
+.container
+     {
+     	width: 1200px;height: 610px;
+     	margin: 0 auto;
+     	border: 10px solid #cfc;
+     	border-radius: 10%;
+     	background:  url(../images/hougong.jpg) 0 0 no-repeat;
+     	text-align: center;
+     	perspective: 1000px;
+     }
+.container>h1{color: yellowgreen;}
+.card{
+	width: 100px;height: 201px;
+	position: relative;display: inline-block;
+     margin-top: 20px ;
+     margin-left: 50px;
+	transform-style: preserve-3d;
+	transition: all 2s;
+	
+}
+.face{position: absolute;top:0px;left:0px;border-radius: 5px;}
+/*左边*/
+.face3{background-image: url(../images/boot.jpg);transform: translateX(-10px) rotateY(-90deg);width: 20px;height: 201px;}
+/*右边*/
+.face4{background-image: url(../images/boot.jpg);transform:translateX(90px) rotateY(90deg) ;width: 20px;height: 201px;}
+.card:hover{transform: rotateY(360deg);}
+
+.card1>.face1{background-image: url(../images/chunzi.jpg);-webkit-background-size: 100px 201px;
+background-size: 100px 201px;transform: translateZ(10px);width: 100px;height: 201px;}
+.card1>.face2{background-image: url(../images/chun.jpg);-webkit-background-size: 100px 201px;
+background-size: 100px 201px;transform: translateZ(-10px);width: 100px;height: 201px;}
+
+.card2>.face1{background-image: url(../images/xiazi.jpg);-webkit-background-size: 100px 201px;
+background-size: 100px 201px;transform: translateZ(10px);width: 100px;height: 201px;}
+.card2>.face2{background-image: url(../images/xiazi.jpg);-webkit-background-size: 100px 201px;
+background-size: 100px 201px;transform: translateZ(-10px);width: 100px;height: 201px;}
+
+.card3>.face1{background-image: url(../images/qiuzi.jpg);-webkit-background-size: 100px 201px;
+background-size: 100px 201px;transform: translateZ(10px);width: 100px;height: 201px;}
+.card3>.face2{background-image: url(../images/qiutian.jpg);-webkit-background-size: 100px 201px;
+background-size: 100px 201px;transform: translateZ(-10px);width: 100px;height: 201px;}
+
+.card4>.face1{background-image: url(../images/dongzi.jpg);-webkit-background-size: 100px 201px;
+background-size: 100px 201px;transform: translateZ(10px);width: 100px;height: 201px;}
+.card4>.face2{background-image: url(../images/dongtian.jpg);-webkit-background-size: 100px 201px;
+background-size: 100px 201px;transform: translateZ(-10px);width: 100px;height: 201px;}

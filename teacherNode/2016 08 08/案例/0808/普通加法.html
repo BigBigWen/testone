@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<input id="input1" type="text" name="" value="" placeholder="">
+	<span>+</span>
+	<input id="input2" type="text" name="" value="" placeholder="">
+	<button id="myButton" type="">=</button>
+	<input id="result" type="text" name="" value="" placeholder="">
+	<script>
+		var input1Element = document.getElementById('input1');
+		var input2Element = document.getElementById('input2');
+		var buttonElement = document.getElementById('myButton');
+		buttonElement.onclick = function(){
+			// 当按钮点击时，自动调用onclick方法，程序走到匿名函数的函数体中
+			// 通过input元素的value 值可以获取输入的内容，注意：内容以字符串的形式提供
+			var firstInput = input1Element.value;
+			var secondInput = input2Element.value;
+ 
+			// 把字符串类型转换为数值类型
+			var firstInputNumber = parseFloat(firstInput);
+			var secondInputNumber = parseFloat(secondInput);
+
+			var result = firstInputNumber + secondInputNumber;
+			// 把结果跟新到结果的输入框上
+			var resultElement = document.getElementById('result');
+
+			//通过给input元素的value进行赋值
+			resultElement.value = result;
+		}
+	</script>
+</body>
+</html>

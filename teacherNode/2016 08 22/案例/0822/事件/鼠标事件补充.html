@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		*{margin:0;padding: 0;}
+        #box{ width: 100px;height: 100px;background-color: blue; }
+        #innerBox{ width: 50px;height: 50px;background-color: red; }
+	</style>
+</head>
+<body>
+    <div id="box">
+      <div id="innerBox"></div>
+    </div>
+	<script>
+		//鼠标事件：mouserover mouseout  click dbclick mousedown mouseup
+		//mousemove mouseenter mouseleave
+
+		//1：点击操作触发的事件顺序 mousedown -> mouseup -> click ->dblclick
+		//如果只有mousedown 没有mouseup不会触发click 事件
+        // var divEelement = document.getElementById('box');
+        // divEelement.addEventListener('click',function(e){
+        // 	var ev = e || window.event;
+        // 	//type 指事件的类型
+        // 	console.log(ev.type)
+        // });
+        // divEelement.addEventListener('mousedown',function(e){
+        // 	var ev = e || window.event;
+        // 	//type 指事件的类型
+        // 	console.log(ev.type)
+        // })
+        // divEelement.addEventListener('mouseup',function(e){
+        // 	var ev = e || window.event;
+        // 	//type 指事件的类型
+        // 	console.log(ev.type)
+        // })
+        // divEelement.addEventListener('dblclick',function(e){
+        // 	var ev = e || window.event;
+        // 	//type 指事件的类型
+        // 	console.log(ev.type)
+        // })
+
+
+        //2:---------- mouseover 和 mouseout -------
+        //当从父视图移动到子视图上时，父视图会先发生mouseout的操作
+        //然后是子视图的mouseover 操作，接着冒泡
+        // var outElement = document.getElementById('box');
+        // var innerElement = document.getElementById('innerBox');
+
+
+        // outElement.onmouseover = function(e){
+        //    var e = e || event;
+        //    console.log('outElement' + e.type);
+        // }
+
+        // outElement.onmouseout = function(e) {
+        //    var e = e || event;
+        //    console.log('outElement' + e.type);  
+        // }
+
+        // innerElement.onmouseover = function(e){
+        //    var e = e || event;
+        //    console.log('innerElement' + e.type);
+        // }
+
+        // innerElement.onmouseout = function(e) {
+        // 	var e = e || event;
+        //    console.log('innerElement' + e.type);  
+        // }
+
+
+        //3:------mouseenter 和 mouseleave -----
+        // mouseenter 事件和mouseleave事件，不会发生冒泡的行为
+        var outElement = document.getElementById('box');
+        var innerElement = document.getElementById('innerBox');
+
+
+        outElement.onmouseenter = function(e){
+           var e = e || event;
+           //eventPhase 1  捕获  2 处理中  3  冒泡
+           console.log('outElement.onmouseenter' + e.eventPhase);
+        }
+        outElement.onmouseleave = function(e) {
+           var e = e || event;
+           console.log('outElement.onmouseleave' + e.eventPhase);	 
+        }
+
+        innerElement.onmouseenter = function(e){
+           var e = e || event;
+           console.log('innerElement.onmouseenter' + e.eventPhase );
+        }
+
+        innerElement.onmouseleave = function(e) {
+           var e = e || event;	
+           console.log('innerElement.onmouseleave' + e.eventPhase); 
+        }
+	</script>
+</body>
+</html>

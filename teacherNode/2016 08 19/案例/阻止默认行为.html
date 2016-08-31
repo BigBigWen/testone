@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<a href="http://www.baidu.com">百度</a>
+
+	<script>
+		var aElement = document.getElementsByTagName('a')[0];
+		aElement.onclick = function( ev ){
+			var e = ev || window.event;
+
+			//阻止系统默认行为
+			//e.preventDefault();
+			alert('不要去百度');
+
+			//return false 也能达到阻止默认行为的目的，但是有兼容性问题（firefox）
+			//return false;
+		}
+
+        aElement.onclick = function(ev){
+        	console.log(this);
+        	// var element = this;
+            window.myfun(element);
+        }
+
+
+        //全局的函数属于window
+		// function myfun(element)
+		function myfun()
+		{
+			console.log(this);
+		}
+  //       var x = 10;
+  //       window.x;
+		// window.myfun();
+	</script>
+</body>
+</html>

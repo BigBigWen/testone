@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>圆角</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+	*{margin: 0px;padding: 0px;}
+		.box{width: 200px;height: 200px;
+			background-color: red;
+			margin-bottom: 10px;
+		     }
+		 /*设置一个值.指定x,y都是50
+		 设置圆角的顺序:从左上角开始,顺时针
+		 设置一个值,4个角都使用相同的角度*/
+		.box1{border-radius: 50px;}
+		/*设置两个值
+		对角关系,左上角和右下角 50px
+		右上角和左下角 100;*/
+		.box2{border-radius:50px 100px;}
+		/*设置三个值时
+		第一个左上角
+		第二个对角线 右上角和左下角
+		第三个右下角*/
+		.box3{border-radius:50px 100px 70px;}
+		/*设置四个值.顺时针顺序*/
+		.box4{border-radius: 50px 70px 80px 100px;}
+		/*x/y 设置x方向的偏移 y方向的偏移*/
+		.box5{border-radius: 50px/100px;}
+		/* x1 x2 x3 x4/y1 y2 y3 y4
+		/之前的是x方向的偏移,/之后的都是y方向的偏移,还是顺时针方向*/
+		.box6{border-radius:50px 60px 80px 90px/100px 50px 100px 50px;}
+		/*只设置一个角*/
+		.box7{border-top-left-radius: 50px 100px;
+			border-top-right-radius: ;
+			border-bottom-left-radius:;
+			border-bottom-right-radius:50px 100px;
+		}
+		/*可以把数值改成百分比
+		x偏移 宽*百分比
+		y偏移 高*百分比*/
+		.box8{border-radius: 50%}
+		.box9{ 
+			/*border-top-left-radius: 100px 100px;
+			border-top-right-radius: 100px 100px;*/
+			border-radius: 100px 100px 0 0/100px 100px 0 0;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="box box1"></div>
+	<div class="box box2"></div>
+	<div class="box box3"></div>
+	<div class="box box4"></div>
+	<div class="box box5"></div>
+	<div class="box box6"></div>
+	<div class="box box7"></div>
+	<div class="box box8"></div>
+	<div class=" box9" style="width: 200px;height: 100px;background-color: red;"></div>
+</body>
+</html>

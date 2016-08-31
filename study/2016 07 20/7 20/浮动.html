@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+	*{margin: 0px;padding: 0px;}
+	img{float:left;}
+	.div1{ width: 280px;height: 100px;background-color: #f00; float: left;}
+	.div2{ width: 300px;height: 100px;background-color: #0f0; }
+	.container{width: 500px;height: 500px;border: 1px solid black;}
+	.container span{float: left; color: red;width: 100px;height: 100px; }
+
+		
+	</style>
+</head>
+<body>
+<!-- 1  文档流,文档中的文档,从上到下,从左到右布局,布局中的元素成为文档流中的元素
+float(浮动)他是为了解决文字环绕问题 -->
+<!-- 2  当一个元素一旦变成浮动之后,脱离原来的文档流,让自己尽可能的靠右或者靠左,自己原来的位置被后续的元素进行填充(块级元素).如果发生重叠,浮动元素覆盖后续元素,但是内容会环绕在浮动元素周围 -->
+
+<p>文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+	<img src="素材/15.jpg" width="50px" height="50px" alt="">文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+</p>
+<hr>
+<div class="div1"></div>
+<div class="div2">
+	快级元素内容快级元素内容快级元素内容快级元素内容快级元素内容快级元素元
+</div>
+<!-- 2  对于非置换标签元素 span进行浮动,自动具有inline-block -->
+<div class="container">
+	<p>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+		<span>span元素</span>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+	</p>
+</div>
+<hr>
+<!-- 3  浮动布局 -->
+
+
+</body>
+</html>

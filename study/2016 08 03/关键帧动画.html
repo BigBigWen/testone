@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		/*css3 提供的关键帧动画分2步骤
+		1 定义动画 根据不同的浏览器加上不同的前缀,把标准的写在最后面
+		2 调用动画
+		*/
+		*{margin: 0px;padding: 0px}
+		.box{width: 100px;height: 100px;margin: 100px auto;background-color: pink;}
+		/*定义动画*/
+		@-webkit-keyframes animation1{}
+		@keyframes animation1{
+			0%{}
+			100%{ border-radius: 50%;}
+		} 
+		.box:hover{
+			animation: animation1 1s;
+		}
+		.box2{width: 100px;height: 100px;border: 40px solid #000;margin: 10px auto;border-image: url(images/background4.jpg) 40 repeat;animation:animation2 5s infinite;}
+		.box2.span{font-size: 20px;color: white; animation: animation2 5s;text-align: center;transform: scale(3);}
+		
+		@keyframes animation2{
+			/*百分比和时间关联在一起*/
+			from{background-color: pink;color: red}
+			50%{background-color: red;border-radius: 40%;transform: rotate(45deg);color:black;}
+			to{background-color: yellow;transform: scale(2);color: green}
+		}
+		/*animation的属性*/
+		@keyframes animation3{
+			0%{background-color: red;border-radius: 0px;}
+			
+			100%{background-color: green;border-radius: 50px;transform: translateX(100px);}
+		} 
+		.box3{width: 100px;height: 100px;border: 1px solid #000;margin: 10px auto;
+		animation:animation3 5s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+		-webkit-animation-timing-function: circle;
+		-o-animation-timing-function: circle;
+		animation-timing-function: circle;
+	}
+		
+			/*animation-name:后跟动画名称,也就是@kryframes后定义的名称;
+			animation-timing-functio:运动曲线
+			animation-duraction;动画持续时间
+			animation-iteration-count:infinite无限次重复;
+			animation-play-state:动画播放状态 默认值runing  暂停paused;
+			animation-direction:指定动画的方向 none默认值;
+			                                   alternate往返
+
+			*/
+	
+	</style>
+</head>
+<body>
+	<div class="box"> </div>
+	<div class="box2">
+	<span>小翠花</span>
+	 </div>
+	<div class="box3"> </div>
+</body>
+</html>

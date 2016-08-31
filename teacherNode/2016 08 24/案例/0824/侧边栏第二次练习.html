@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>侧边栏练习第二次</title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{margin: 0;padding: 0}
+		div{width:100px;height: 100px;background-color: red;position: absolute;right: 0;top:0;}
+	</style>
+</head>
+<body style="position:relative;height:2000px;">
+	<div></div>
+	<script>
+	//加载完出现居中的默认值
+	var divEle = document.getElementsByTagName('div')[0];
+	window.onload= function(){
+		//默认下的left和top
+		var clientHeight= document.documentElement.clientHeight||document.body.clientHeight;
+		var top =parseInt( (clientHeight-divEle.offsetHeight)/2 );
+		divEle.style.top = top+'px';
+		//窗体大小改变或者滚动时也要把div最终的高改到默认值
+	 window.onresize = window.onscroll= function(){
+	 	var scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
+		var endTop = scrollTop + top;
+		startMove(divEle,endTop);
+	}
+	}
+	
+	function startMove(obj,endPos){
+		clearInterval(obj.timer);
+		
+		//0.2s一步
+		obj.timer = setInterval(function(){
+			var currentTop = obj.offsetTop;
+		    var speed = 0;
+			speed = parseInt((endPos - currentTop)/5);
+			if(speed>0){
+				return Math.ceil(speed);
+			}
+			if(speed<0){
+				return Math.floor(speed);
+			}
+			endPos = parseInt(currentTop+speed)+'px';
+			if(speed == endPos){
+				clearInterval(obj.timer);
+			}
+
+		},20)
+	}
+		
+	</script>
+
+	
+</body>
+</html>

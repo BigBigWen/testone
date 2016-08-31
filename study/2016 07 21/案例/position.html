@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+<!-- 定位:设置元素的位子,对元素位置进行微调或参照基准变更. -->
+<style type="text/css" media="screen">
+	/*position:
+	static;默认,按照文档流的布局,布局到哪里是哪里
+	relateive;相对定位,通过top left right bottom对元素本身所在的位置进行微调.relative不会脱离文档流,原有位置不会被侵占,相对于static状态下 他的位置.top bottom leftright相对于原来个边的位置
+	absolute;
+	fixed*/
+	*{margin: 0px;padding: 0px;}
+	#box{width: 300px;height: 200px;border: 1px solid black;}
+	input{position: relative;top: 50px; left 10px;}
+	/*对于发生的覆盖可以用z-index的属性来调整次序,z-index值越大,层次越高,覆盖比他z-index低的元素*/
+	#box2{width: 500px;height: 500px;background-color: #ccc;}
+	#content{width: 400px;height: 400px;background-color: #f00;position: relative;}
+	#child1{width: 300px;height: 100px;background-color: yellow;position: relative;z-index: 400}
+	#child2{width: 330px;height: 102px;background-color: blue;position: absolute;top: 20px;z-index: 2}
+	#box3{width: 60px;height: 200px;position: fixed;top: 50px;right: 10px;background-color: #fcc;}
+</style>
+</head>
+<body>
+	<div id="box">
+		这是此时就每次而访问看撒付款看到发热空间访问韩说得对地方 是否收到让他让他 让他人员  解决还没内幕好苦unmanned看国看着像这是此时就每次而访问看撒付款看到发热空间访问韩国看着像
+		<input type="text" name="" value="" placeholder="">
+		你凑人中考模拟手机费走进大佛而无法苦命的大胆开放块豆腐这是此时就每次而访问看撒付款看到发热空间访问韩国看着像
+	</div>
+	<div id="box2">
+		<div id="content">
+			<div id="child1"></div>
+			<div id="child2"></div>
+		</div>
+	</div>
+	<div id="box3">滚动不动</div>
+</body>
+</html>

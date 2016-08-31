@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+<!-- enctpye:
+     application/x-www-urlencode    默认值
+     multipart/form-data           提交文件
+ -->
+	<form action="form_submit" method="get" accept-charset="utf-8" enctype="">
+
+	<!-- for 写上input的 id值 -->
+	    <label for="abc">input的说明</label>
+
+	    <!-- name ：作为提交时的参数名
+	         value：初始值，
+	         placeholder：提示用户输入
+	     -->
+	     <!-- type 输入的类型，type值的不同，输入控件的表现形式 -->
+
+	     <!-- type 
+	      text password checkbox radio
+	      email url serach number range date color time ....
+	       -->
+
+	    <!-- maxlength 输入的最大长度 -->
+		<input id="abc" type="text" name="" value="" placeholder="" size="" maxlength="">
+
+		<!-- min max step -->
+		<input type="number" name="" value="" placeholder="" min="" max="" step="">
+
+        <!-- pattern 正则表达式 -->
+		<input type="text" name="" value="" placeholder="" readonly=""  disabled="" required="" autofocus="" pattern="">
+
+
+		<!-- <label><input type="text/submit/hidden/button/etc" name="" value=""></label> -->
+
+	</form>
+</body>
+</html>

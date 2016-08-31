@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+	   /**{margin: 0px;padding: 0px;}*/
+	   #div1 ul li{
+           /*list-style-type:  列表默认式样*/
+           /*list-style-position: 标识在内部还是外部*/
+           /*list-style-image: 指定图片作为标识*/
+           /*list-style: type position image*/
+
+           /* disc :实心圆
+              circle:空心圆;
+              square:黑色正方形块;
+              decimal:数字;
+              lower-alpha:小写阿尔法;
+              lower-roman: 罗马字符;
+              upper-alpha:大写的阿尔法;
+              upper-roman:大写罗马;
+              none:没有标识;
+           */
+           /*list-style-type: upper-roman;*/
+           list-style-type: upper-alpha;
+		}
+
+		#div2 ul li{
+			list-style-type: square;
+			/*inside 内部
+			  outside 外部
+			*/
+			list-style-position: inside;
+			background-color: lightgray;
+		}
+
+		#div3 ul li{
+			list-style-type: square;
+			/*inside 内部
+			  outside 外部
+			*/
+			list-style-position: outside;
+			background-color: lightgray;
+			/*margin-left: 20px;*/
+		}
+
+		#div4 ul li{
+			/*使用一张图片做为标识*/
+			list-style-image: url(background8.png);
+			list-style-position: inside;
+		}
+
+		#div5 ul li{
+			/* 如果图片有效是使用图片，否则使用type指定的类型*/
+			list-style:circle inside url(background8.png);
+		}
+	</style>
+</head>
+<body>
+	<div id="div1">
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+	</div>
+
+	<div id="div2">
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+	</div>
+
+	<div id="div3">
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+	</div>
+
+	<div id="div4">
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+	</div>
+
+
+	<div id="div5">
+		<ul>
+			<li>11</li>
+			<li>22</li>
+			<li>33</li>
+			<li>44</li>
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<input id='input1' type="text" name="" value="" placeholder="">
+	<button id='button1' type="button">求整数的位数</button>
+	<span id="digitNumber"></span>
+	<button id='button2' type="button">整数逆序</button>
+	<span id="reverseResult"></span>
+
+	<script>
+		var inputElement = document.getElementById('input1');
+		var button1Ele = document.getElementById('button1');
+		var button2Ele = document.getElementById('button2');
+
+		button1Ele.onclick = function(){
+           var inputValue = inputElement.value;
+           document.getElementById('digitNumber').innerHTML =  inputValue.length;
+		}
+
+		button2Ele.onclick = function(){
+          var inputValue = inputElement.value;
+          // document.getElementById('reverseResult').innerHTML =   inputValue.reverse();
+          var array = inputValue.split('');
+          array = array.reverse();
+          document.getElementById('reverseResult').innerHTML = array.join('');
+		}
+
+
+	</script>
+</body>
+</html>

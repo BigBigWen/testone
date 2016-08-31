@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>iphone解锁</title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{margin: 0;padding: 0}
+		#box{
+			width: 400px;height: 50px;
+			background-color: #faa;
+			margin: 10px auto;
+			position: relative;
+		}
+		#lock{width: 50px;height: 50px;background-color: #fcc;position: absolute;top: 0;left: 0;}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div id="lock"></div>
+	</div>
+	<script>
+		window.onload = function(){
+			var box = document.getElementById('box');
+			var lock = document.getElementById('lock');
+			//lock的onmousedown,onmousemove,onmouseup
+			//坐标
+				//元素的offsetlet,元素距离父亲的左边框多少
+				//offsettop  元素距离父视图的上边距离
+
+
+			lock.onmousedown = function(e){
+				var ev =e||event;
+				var offsetX = ev.offsetX;
+				// //event中的坐标信息
+				// ev.clientX;//相对于整个视图区域,计算x,y坐标
+				// ev.clientY;
+				// //当文档不需要滚动时 ev.clientX == ev.pageX
+
+				// ev.pageX;//相对于文档区计算出x,y
+				// ev.pageY;
+
+				// ev.screenX;//以屏幕左上角为基准算出x.y
+				// ev.screenY;
+
+				//ev.offsetX;//鼠标点击位置,相对于元素左上角x方向的偏移
+				//ev.offsetY;//鼠标点击时,相对于元素y方向的偏移
+//放在onmousedown内,确保先mousedown再mousemove和mouseup
+			lock.onmousemove = function(e){
+				var ev = e||event;
+				var clientX = ev.clientX;
+				var boxOffsetLeft = this.parentNode.offsetLeft;
+				var left = clientX - boxOffsetLeft -offsetX;
+				this.style.left = left+'px';//计算出移动多少
+
+			}
+			lock.onmouseup = function(e){}
+               
+			}
+			//onmousemove只要鼠标在元素上有移动就会产生事件
+			
+		}
+	</script>
+</body>
+</html>

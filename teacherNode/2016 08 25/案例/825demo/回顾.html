@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		//1: {key:valeu,key:value} JSON
+		var p1 = new Object();
+		p1.name = 'xx';
+		delete p1.name;
+
+		p1.name;
+		p1['name'];
+		var name = 'name';
+		p1[name];
+
+		//getComputedStyle(obj,null)[styleName];
+
+		// p1.eat = function(){xxxxx}
+		// p1.eat();
+
+       //2: 字面量
+       var p2 = {
+       	   name:'xxxx',
+       	   eat:function(){ console.log('xxxx')},
+
+       };
+
+       //{"name":"xxxxx","age":24,}   JSON
+
+       //3:工厂方法
+       function createP(){
+       	 var o = new Object();
+         o.name ='xxx';
+         o.eat = function(){};
+
+       	 return o;
+       }
+
+       //4:构造函数
+       function CreateP2(name,age){
+       	//没有显示的创建对象
+       	this.name = name;
+       	this.age = age;
+
+        //没有返回值
+       }
+
+
+       //使用的方式
+       var p3 = new CreateP2('a',30);
+       var p4 = new CreateP2('b',20);
+
+      //每一个函数都是一个对象
+      //每一个函数，都可以通过函数名调用 call,apply
+      
+      function sum( a, b){
+      	console.log(this);
+      	return a + b;
+      }
+      //所有的全局变量和全局函数都做为window 属性 或 函数
+      sum(1,1);    //2  
+      window.sum(1,1); //2
+
+      //call第一个参数，指明哪个对象调用sum
+      //也可以说是 sum 中的 this 指想第一个参数
+      sum.call(this,1,1);
+      sum.call(window,1,1);
+
+      var p6 = { name:'p6' };
+      sum.call(p6,1,1);
+
+      //apply 使用和 call 一样，只不过参数传递的方式以数组的方式传递进去
+      sum.apply(p6,[2,2]);
+
+	</script>
+</body>
+</html>

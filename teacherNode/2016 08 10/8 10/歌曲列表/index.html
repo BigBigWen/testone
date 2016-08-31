@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{margin: 0;padding: 0;}
+		.container{ width: 200px;border: 1px solid black;margin: 100px auto;background: url(images/down_list_h2_bg.gif) repeat-x; }
+        .container>h2{ font-size: 14px;height: 25px;line-height: 25px;text-align: center;font-weight: bolder; }
+        .container>ul>li{ list-style: none;line-height: 30px; }
+        .container>ul>li:hover{ background-color: gray; }
+        .container>ul>li>a{ color:black; text-decoration: none; font-size: 12px; }
+
+        /*定义2个类，一个设置箭头向上，一个箭头乡下*/
+        .up{background:url(images/up.gif) no-repeat 180px center;}
+        .down{ background: url(images/down.gif) no-repeat 180px center; }
+
+	</style>
+</head>
+<body>
+	<div class="container">
+	    <!-- 练习如何修改一个标签的class -->
+		<h2 class="up">播放列表</h2>
+		<ul>
+			<li><a href="#">玩爱之徒-蔡依林</a></li>
+			<li><a href="#">玩爱之徒-蔡依林</a></li>
+			<li><a href="#">玩爱之徒-蔡依林</a></li>
+			<li><a href="#">玩爱之徒-蔡依林</a></li>
+			<li><a href="#">玩爱之徒-蔡依林</a></li>
+			<li><a href="#">玩爱之徒-蔡依林</a></li>
+		</ul>
+	</div>
+
+    <script>
+    	window.onload = function(){
+    		//返回一个数组，数组中只包含一个元素
+            // var h2List = document.getElementsByTagName('h2');
+            // var h2Element = h2List[0];
+
+    		var h2Element = document.getElementsByTagName('h2')[0];
+    		h2Element.onclick = function(){
+    			var ulElement = document.getElementsByTagName('ul')[0];
+    			if( ulElement.style.display == 'none' ){
+    				//显示ul列表
+                    ulElement.style.display = 'block';
+
+    				//修改h2的class
+                    h2Element.className = 'up';
+    			}else{
+    				//隐藏ul列表
+    				ulElement.style.display = 'none';
+
+    				//修改h2的class
+    				h2Element.className = 'down';
+    			}
+    		}
+    	}
+    </script>
+
+
+
+</body>
+</html>

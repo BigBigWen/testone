@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{margin: 0;padding: 0}
+		.small{width: 200px;height: 200px;border: 1px solid black;position: relative;display: inline-block;margin-left: 50PX;}
+		.small>img{width: 200px;height: 200px;}
+		.indicator{width: 50px;height: 50px;border: 1px solid black;background-color: rgba(0,0,0,.3);position: absolute;top: 0;left: 0;}
+		.big{width: 200px;height: 200px;overflow: hidden;display: inline-block;margin-left: 50px;position: relative;}
+		.big>img{position: absolute;}
+	</style>
+</head>
+<body>
+	<div class="small">
+	<img src="images/small.jpg" alt="">
+		<div class="indicator"></div>
+	</div>
+	<div class="big">
+		<img src="images/big.jpg" alt="">
+	</div>
+	<script>
+	var small = document.getElementsByClassName('small')[0];
+	var indicator = document.getElementsByClassName('indicator')[0];
+	var bigImg = document.querySelectorAll('.big>img')[0];
+	small.onmousemove = function(e){
+		//indicator的移动
+		var ev = e||window.event;
+		var indicator_left = ev.clientX - small.offsetLeft - indicator.offsetWidth/2;
+		var indicator_top = ev.clientY - small.offsetTop - indicator.offsetHeight/2;
+		//限制
+		if(indicator_left<0){indicator_left = 0}
+		if(indicator_left > small.offsetWidth - indicator.offsetWidth)
+			{indicator_left = small.offsetWidth-indicator.offsetWidth;}
+	    if(indicator_top < 0){indicator_top = 0;}
+	    if(indicator_top > small.offsetHeight - indicator.offsetHeight)
+	    	{indicator_top =small.offsetWidth - indicator.offsetHeight;}
+	    indicator.style.left = indicator_left + 'px';
+		indicator.style.top =indicator_top+'px';
+		//bigImg的移动
+		var bigImg_left = -(indicator_left*bigImg.offsetWidth)/small.offsetWidth;
+		var bigImg_top = -(indicator_top*bigImg.offsetHeight)/small.offsetHeight;
+		bigImg.style.left = bigImg_left+'px';
+		bigImg.style.top = bigImg_top+'px';
+	}
+	</script>
+</body>
+</html>

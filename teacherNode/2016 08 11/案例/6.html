@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var date1=new Date();
+		console.log(date1);
+		//getDate()，返回一月中的几号 1-31
+		console.log(date1.getDate());  //11
+		// 返回当前月份：0-11
+		console.log(date1.getMonth()+1); //7
+        //获取当前的年份
+		console.log(date1.getFullYear());  //2016
+
+		//获取当前的小时 0-23
+		console.log(date1.getHours());   //14
+		//获取当前的分钟 0-59
+		console.log(date1.getMinutes());  //
+		//获取当前的秒数  0-59
+		console.log(date1.getSeconds());  
+		//获取当前的毫秒数 0-999
+		console.log(date1.getMilliseconds());
+
+
+		//获取当前的星期数 0-6
+		console.log(date1.getDay());
+
+		//返回从1970年到现在的毫秒数
+		console.log(date1.getTime());  //
+
+
+		/*------------------设置时间-----------*/
+		// 
+		date1.setDate(9);		
+		console.log(date1.getDate());
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

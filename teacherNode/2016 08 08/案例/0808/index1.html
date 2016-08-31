@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		#divTest{ width: 100px;height: 100px;display: none;border: 1px solid black; }
+	</style>
+</head>
+<body>
+	<button id="button1" type="button">显示</button>
+	<button id="button2" type="button">变宽</button>
+	<button id="button3" type="button">变高</button>
+	<button id="button4" type="button">修改背景色</button>
+
+	<div id="divTest">	
+	</div>
+
+	<script>
+		var button1Element = document.getElementById("button1");
+		var button2Element = document.getElementById("button2");
+		var button3Element = document.getElementById("button3");
+		var button4Element = document.getElementById("button4");
+        
+        // 不要加（），加（）等于函数调用
+		button1Element.onclick = show;
+		button2Element.onclick = makeWidth;
+		button3Element.onclick = makeHeight;
+		button4Element.onclick = changeBackground;
+
+
+		function show(){
+          var divTestElement = document.getElementById("divTest");
+          divTestElement.style.display = 'block';
+		}
+		function makeWidth(){
+          var divTestElement = document.getElementById("divTest");
+          divTestElement.style.width = '200px';
+		}
+		function makeHeight(){
+		  var divTestElement = document.getElementById("divTest");
+          divTestElement.style.backgroundColor = 'yellow';
+		}
+		function changeBackground(){
+          var divTestElement = document.getElementById("divTest");
+          divTestElement.style.backgroundColor = 'red';
+		}
+	</script>
+</body>
+</html>

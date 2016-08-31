@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<!-- 
+      :hover
+      :focus
+      :before
+      :after
+      
+       input 相关的几个伪类选择器
+      :checked   // checkbox radio
+
+      :enabled    //
+      :disabled
+      ::selection //设置选中时的式样
+      :read-write //读写时的式样
+      :read-only  //只读时的式样
+	 -->
+	 <!--  -->
+	 <style type="text/css" media="screen">
+	 	input:enabled{
+	 		/*可用时*/
+	 		/*outline: 1px solid black;*/
+	 		background-color: yellow;
+	 		/*border: 10px solid black;*/
+	 	}
+	 	input:focus{
+	 		/*获取焦点时的式样*/
+	 		/*border: 任何元素都可以有border
+              outline：经常和输出控件一起使用，起到提示作用
+
+              outline:不占元素的空间，只是在外层画边框提示，有可能覆盖其他元素的;
+	 		*/
+	 		outline: 1px solid red;
+	 	}
+	 	input:disabled{
+	 		/*不可用时的式样*/
+	 		background-color: lightgray;
+	 	}
+ 
+       /* 设置选中文本的式样 */
+       p::selection{
+       	 color: red;
+       	 background-color: yellow;
+       }
+
+   
+      input:read-write{
+      	background-color: green;
+      }
+
+      input:read-only{
+      	background-color: gray;
+      }
+
+	 </style>
+</head>
+<body>
+	<p>
+	    <input type="text" name="" value="" placeholder="" >
+		<input type="tel" name="" value="" placeholder="" disabled="">
+	</p>
+
+	<p style="border:1px solid black;">这是我的测试文本这是我的测试文本</p>
+
+	<p>
+		<input type="text" name="" value="" placeholder="">
+		<input type="text" name="" value="" placeholder="" readonly="">
+	</p>
+</body>
+</html>

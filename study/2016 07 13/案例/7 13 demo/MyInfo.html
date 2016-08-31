@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+	.red{color: red;}
+	</style>
+	
+</head>
+<body>
+	<h2>个人资料</h2>
+	<form action="" method="post" enctype="multipart/form-data" accept-charset="utf-8" style="background-color: green;">
+	<!-- 修改头像 -->
+		<div>
+			<h5>修改头像</h5>
+			<p>快速上传</p>
+			<input type="file" name="" value="" placeholder="">
+			<span>(未绑定微信)</span>
+			<p>本地上传</p>
+			<input type="file" name="" value="" placeholder="">
+			<span>(未绑定微信)</span>
+		</div>
+		<!-- 修改联系方式 -->
+		<div >
+			<h5>修改练习方式</h5>
+			<p>手机:去填写手机并认证</p>
+			<p>
+				<label>座机<input type="text" name="" value=""></label>
+			</p>
+
+			<p>
+				<span class="red">*</span>电子邮件：去填写邮件并认证
+			</p>
+			<label>企业qq号<input type="text" name="" value=""></label>
+		</div>
+		<!-- 修改资料 -->
+		<div>
+			<h5>修改资料</h5>
+			<p>用户名: <b>云璐</b> </p>
+			<span class="red">*</span>真实姓名：
+			<input type="text" name="" value="" placeholder="">验证身份增加使用
+			<br>
+			<span class="red">*</span>性别:
+			<label><input type="radio" name="sexname" value="">男</label>
+			<label><input type="radio" name="sexname" value="">女</label>
+			<br>
+			<!--  -->
+			<span class="red">*</span>年龄：
+			<select name="">
+				<option value="1981">1981</option>
+				<option value="1982">1982</option>
+				<option value="1983">1983</option>
+				<option value="1984">1984</option>
+				<option value="1985">1985</option>
+			</select>
+			<span>年</span>
+			<select name="">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
+            <span>月</span>
+            <br>
+            <!-- 我的生活圈 -->
+            <span class="red">*</span>我的生活圈
+            <select name="">
+            	<option value="小区1">小区1</option>
+            	<option value="小区2">小区2</option>
+            	<option value="小区3">小区3</option>
+            	<option value="小区4">小区4</option>
+            	<option value="小区5">小区5</option>
+            </select>
+            <input type="text" name="" value="" placeholder="">
+            <span>区</span>
+
+            <br>
+            <!-- 个性签名 -->
+            <p>
+            	<span>个性签名</span>
+            	<textarea name="" cols="20" rows="3"></textarea>
+            	(128字符以内)
+            </p>
+            
+		</div>
+
+		<button type="submit">完成修改</button>
+	</form>
+</body>
+</html>

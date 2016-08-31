@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+	    *{margin: 0;padding: 0;}
+		/*:nth-of-type(n);
+           查找div1 下的第二个p元素
+		*/
+		/* 查找第二孩子，如果第二孩子是p命中*/
+		#div1 p:nth-child(2){ background-color: blue; }
+
+        /*查找div1下的第二个p*/
+		#div1 p:nth-of-type(2){ background-color: red; }
+
+		/*查找div2下的倒着数第二p元素*/
+		#div2 p:nth-last-of-type(2){ background-color: green; }
+        
+        /*div3下只有一个孩子，如果是p命中，不是p不命中*/
+        #div3 p:only-child{ background-color: yellow; }
+
+        /*div3 下只有一个p元素，但是可以有其他的非p元素*/
+		#div3 p:only-of-type{ background-color: pink; }
+        
+        /* 命中div4 下的第一个p元素*/
+		#div4 p:first-of-type{ background-color: darkgray; }
+
+		/* 命中div4 下的最后一个p 元素*/
+		#div4 p:last-of-type{ background-color: lightgray; }
+
+	</style>
+</head>
+<body>
+	<div id="div1">
+		<h1>第一个元素</h1>
+		<p>第二个元素</p>
+		<span>第三个元素</span>
+		<p>第四个元素</p>
+	</div>
+
+	<div id="div2">
+		<h1>1</h1>
+		<h1>1</h1>
+		<span>3</span>
+		<p>4</p>
+		<span>5</span>
+		<p>6</p>
+	</div>
+
+	<div id="div3">
+		<p>first p</p>
+		<span>span1</span>
+		<span>span2</span>
+		<!-- <p>second p</p> -->
+		<!-- <p>second p</p> -->
+	</div>
+
+	<div id="div4">
+		<span>1</span>
+		<p>2</p>
+		<h1>3</h1>
+		<span>4</span>
+		<p>5</p>
+		<span>6</span>
+	</div>
+</body>
+</html>

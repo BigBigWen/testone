@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>垂直居中</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		*{margin: 0px;padding: 0px;}
+		p{margin-bottom: 10px;}
+	</style>
+</head>
+<body>
+	<!-- line-height:一行的高度 -->
+	<!-- height:整个元素的高度 -->
+	<!-- line-height:
+	1 normal 1.2字体高度,各个浏览器不统一
+	2 length 50px 显示指定高度
+	3  百分比 or em 行高等于字体大小*百分比
+	4   数字 (没有单位) 缩放比例,子元素根据自己的字体大小来计算行高 -->
+	<!--1 line-height具有继承性,父元素的line-height会被子元素继承 -->
+	<p style="line-height: 30px;border: 1px solid #f00;">p元素<span>span元素</span></p>
+    <!-- 2 字体大小超过行高,文字可能会叠加在一起 -->
+    <p style="line-height: 20px;border:1px solid black; ">p元素 
+    <span style="font-size: 30px;">span元素</span> <br>
+    <span style="font-size: 30px;">span元素</span>
+    </p>
+    <!-- 3 使用缩放比例指定行高时,每个子元素的行高根据自己的字体来计算 -->
+    <p style="line-height: 1;font-size: 20px;border:1px solid red;">p元素
+    <!-- 当设置缩放比例时,span的行高等于缩放比例*自己字体的大小 40px -->
+        <span style="font-size:40px;">span元素</span><br>
+        <span style="font-size:40px;">span元素</span>
+    </p>
+    <!-- 4 line-height指定为百分比,子元素继承父容器计算后的值 -->
+    <p style="line-height: 200%;font-size: 20px;border:1px solid black;">p元素
+         <!-- span的行高 继承自20px*200%=40px -->
+    	<span style="font-size:18px">span元素</span>
+    </p>
+<!-- img 或者line-block默认基线对齐 没有内容时,基线默认为底部;当有文字时,使用内部文字的基线作为自己的基线,和外部的基线进行对齐 -->
+    <p style="line-height: 60px;border:1px solid red;font-size: 40px; ">xyz
+       <span style="display: inline-block;border:1px solid black;width: 50px;height: 50px"></span>
+    </p>
+
+    <p style="line-height: 60px;border:1px solid red;font-size: 40px; ">xyz
+       <span style="display: inline-block;border:1px solid black;width: 50px;height: 50px">xyz</span>
+    </p>
+    <!-- 文字居中 
+    由于绝对中间位置和中线位置不在一条线上,导致middle 近似垂直居中.-->
+    <p style="line-height: 40px;height: 40px;border: 1px solid black;font-size: 30px;">xyz
+        <span style="vertical-align:middle;font-size: 30px;">xyzspan元素</span>
+    </p>
+    <!-- 解决办法 文字没高度font-size设置成0,所有的线都在一起 -->
+    <p style="line-height: 40px;height: 40px;border: 1px solid black;font-size: 0px;">xyz
+    <!-- 对span重设字体大小,这时候span元素的位置才是绝对的居中 -->
+        <span style="vertical-align: middle;font-size: 30px;">xyzspan元素</span>
+    </p>
+
+    <p style="line-height: 60px;">p元素xyz <span style="vertical-align:-20px;">xyzspan元素</span></p>
+
+</body>
+</html>

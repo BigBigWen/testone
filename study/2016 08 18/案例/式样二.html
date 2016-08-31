@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+	#mydiv{
+		width: 100px;
+		height: 100px;
+		background-color: blue;
+	}
+		
+	</style>
+
+</head>
+<body>
+	<div id="mydiv" style="background-color: pink;border: 1px solid #faa"></div>
+	<script>
+		//js提供一个函数,可以获取一个元素最终的式样
+		//getComputedStyle(element,伪类:after)  参数一:元素   参数二:伪类  一般如果没有就写null    返回的是式样列表
+		//IE不支持这个函数,提供了类似的功能 element.currentStyle
+
+		//获取某个元素的式样值
+		function getEleStyleValue(element,styleName){
+			if( element.currentScript){
+				return element.currentScript[styleName];
+			}else{
+				return getComputedStyle(element,null)[styleName];
+			}
+		}
+		var divElement = document.getElementById('mydiv');
+		var widthValue = getEleStyleValue(divElement,'width');
+		console.log(widthValue);
+		var bgc = getEleStyleValue(divElement,'background-color');
+		console.log(bgc);
+
+		//修改值    *通过getComputedStyle获取的值是只读的
+		//getComputedStyle(divElement,null)['background-color'] = 'yellow'; x
+		//
+
+	</script>
+</body>
+</html>

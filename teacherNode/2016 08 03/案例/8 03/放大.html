@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{margin: 0;padding: 0;}
+		.container{ width: 400px;height: 600px;background-color: black;margin: 100px auto;position: relative; }
+		.circle1,.circle2,.circle3{ width: 200px;height: 200px;position: absolute;left: 100px;top:200px;border: 1px solid #fff;border-radius: 100px; }
+		.circle3{ color:white;text-align: center;line-height: 200px; z-index: 2;}
+
+		@keyframes animation1{
+			0%{ transform: scale(1,1);opacity: 1; }
+			100%{ transform: scale(1.8,1.8);opacity: 0; }
+		}
+
+		@keyframes animation2{
+			0%{ transform: scale(1,1);opacity: 1; }
+			100%{ transform: scale(1.2,1.2);opacity: 0; }
+		}
+
+        /*~  选择自己后面的兄弟*/
+		.circle3:hover~.circle1{
+            animation-name: animation1;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+		}
+
+		.circle3:hover~.circle2{
+			animation-name: animation2;
+			animation-duration: 2s;
+			animation-iteration-count: infinite;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="circle3">search</div>
+		<div class="circle1"></div>
+		<div class="circle2"></div>
+	</div>
+</body>
+</html>

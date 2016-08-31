@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		var num=[10,20,21,33,45,9,19,22,100,104,111,123,8];
+
+		var array = [10,5];
+		//默认的排序，按照字符排序，先把数组中的内容转成字符串，然后比较
+		array = array.sort();
+		//10  5
+		console.log(array);
+
+		//自己写排序规则，在sort 中传入排序函数
+		num = num.sort( function(a,b){
+			//根据 返回值 决定 a b 的次序
+			if( a < b){
+				return 1;  // b 在 a 前
+			}else if( a > b){
+				return -1; 
+			}else{
+				return 0;
+			}
+		} );
+
+       console.log(num[1]);
+
+	</script>
+</body>
+</html>

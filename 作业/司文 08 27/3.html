@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{margin: 0;padding: 0}
+		.clear:after{content: '';height: 0px;display: block;clear: both;}
+		.container{width: 1366px;height: 360px;margin: 100px auto;position: relative;}
+		.imgbox{width:6830px ;height: 360px;position: absolute;top: 0px;left: 0px;}
+		.imgbox>img{width:1366px;float: left;}
+		.indicator{position: absolute;bottom: 15px;left: 100px;}
+		.indicator>span{
+			display: block;
+			width: 20px;height: 20px;
+			background-color: blue;
+			float: left;
+		}
+		.indicator>li{
+			list-style: none;
+			float: left;
+			width: 20px;height: 20px;
+			border-radius: 50%;
+			background-color: #8FD9F5;
+			margin: 0 10px;
+		}
+		.indicator>li.active{background-color: #f00;}
+	</style>
+</head>
+<body>
+
+<div class="container">
+	<div class="imgbox">
+		<img src="images/banner1.jpg" alt="">
+		<img src="images/banner2.jpg" alt="">
+		<img src="images/banner3.jpg" alt="">
+		<img src="images/banner4.jpg" alt="">
+	</div>
+		<ul class="indicator clear" > 
+		    <span><</span>
+			<li class="active"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<span>></span>
+		</ul>
+</div>
+<script>
+	var imgBox = document.getElementsByClassName('imgbox')[0];
+	var left = 0;
+	var countIndex = 0
+	var liList = document.querySelectorAll('.indicator>li');
+	var imgChangetimer = setInterval(imgChange,2000);
+	function imgChange(){
+		var eachmovetimer = setInterval(eachmove,200)
+		//获取当前left,让left每次加1366;
+		countIndex++;
+		var currentLeft =parseInt( getStyle(imgBox,'left'));
+	     left=currentLeft-1366;
+		imgBox.style.left = left+'px';
+		correntLi(countIndex);
+		//一轮结束重新开始
+		if (countIndex >= 4){
+			countIndex = 0;
+			imgBox.style.left = '0px';
+			correntLi(0);
+		}
+	}
+	function
+	function getStyle(obj,styleName){
+		if(obj.currentStyle){
+			return obj.currentStyle[styleName];
+		}else{
+			return getComputedStyle(obj,null)[styleName];
+		}
+	}
+	function correntLi(index){
+		for( var i =0;i <liList.length;i++){
+			if(i==index){
+				liList[i].className = 'active';
+			}else{
+				liList[i].className = '';
+			}
+		}
+	}
+	
+	for(var i = 0;i<liList.length;i++){
+		liList[i].index = i;
+		liList[i].onmouseover = function(){
+			clearInterval(imgChangetimer);
+			countIndex = this.index;
+			imgBox.style.left = -1366*this.index+'px';
+			correntLi(this.index);
+		}
+		liList[i].onmouseout = function(){
+			imgChangetimer = setInterval(imgChange,2000)
+		}
+	}
+
+
+
+</script>
+
+</body>
+</html>

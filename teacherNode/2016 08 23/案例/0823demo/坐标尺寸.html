@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		*{ margin:0px;padding: 0px; }
+		#box{ width: 100px;height: 100px;border: 10px solid black;padding: 10px;margin:10px; background-color: red;}
+	</style>
+</head>
+<body style="height:2000px;border:1px solid black;">
+
+    <div id="box"></div>
+	<script>
+		//浏览器窗口 距离屏幕的位置
+		console.log(window.screenLeft);
+		console.log(window.screenTop);
+
+		//获取视图区域大小
+		var clientWidth = document.documentElement.clientWidth || document.body.clientWidth;
+		var clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
+
+		console.log(clientWidth);
+		console.log(clientHeight);	
+
+		//获取滚动偏移的大小
+		
+
+		document.onscroll = function(){
+			var scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
+			var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+			console.log(scrollLeft);
+			console.log(scrollTop);
+		}
+
+
+		//获取整个文档区域的大小
+		var documetHeight = Math.max(document.documentElement.scrollHeight,document.documentElement.clientHeight);
+		var documentWidth = Math.max(document.documentElement.scrollWidth,document.documentElement.clientWidth);
+
+		console.log(documetHeight);
+		console.log(documentWidth);
+
+
+		//获取元素所占区域大小
+		var boxElement = document.getElementById('box');
+        
+        //向自己的父元素查找，直到第一个有大小的元素
+        // 且position设置为relative or absolte 直到 body
+		//boxElement.offsetParent  
+        
+        //包含border padding 内容（width 和 height），不包含margin
+		var offsetWidth = boxElement.offsetWidth;
+		var offsetHeight = boxElement.offsetHeight;
+
+		console.log(offsetWidth);
+		console.log(offsetHeight);
+
+
+       //获取元素可视区域的大小
+       //不包含margin，不包含border，包含padding 内容
+       var elementClientWidth = boxElement.clientWidth;
+       var elementClientHeight = boxElement.clientHeight;
+
+       console.log(elementClientWidth);
+	   console.log(elementClientHeight);
+
+
+       //offsetLeft 自己的边框左边距离offsetParent的边框右侧 之间距离   
+       //offsetTop  自己的边框上册距离offsetParent的边框下侧 之间距离
+ 
+       boxElement.onclick = function(e){
+       	  var ev = e || event;
+       	  console.log(e.clientX); //距离视图的X坐标
+       	  console.log(e.clientY); //距离视图的Y坐标
+
+       	  console.log( e.pageX );
+       	  console.log( e.pageY );
+
+       	  console.log( e.screenX );
+       	  console.log( e.screenY );
+
+       	  console.log( e.offsetX );
+       	  console.log( e.offsetY );
+       }
+
+
+
+	</script>
+</body>
+</html>

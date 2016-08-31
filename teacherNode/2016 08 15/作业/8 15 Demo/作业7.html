@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		var str = '     abc    123     ';
+		// console.log(str.trim());
+
+		//对于字符串可以像数组一样操作，通过下标来取
+		var start = 0;
+		for( var i = 0; i < str.length; i++ ){
+			if( str[i] == ' '){
+				start++;
+			}else{
+				//找到第一个非空格时，跳出循环
+				break;
+			}
+		}
+
+        var end = str.length;
+        for( var i = str.length-1; i >= 0; i-- ){
+        	if( str[i] == ' '){
+        		end--;
+        	}else{
+        		//找到非空格，跳出循环
+        		break;
+        	}
+        }
+ 
+        // [start,end)         
+        var resultStr = str.substring(start,end);
+        console.log(resultStr);
+
+
+
+
+	</script>
+</body>
+</html>

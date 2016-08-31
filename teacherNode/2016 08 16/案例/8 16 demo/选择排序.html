@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		var a = [3,4,6,2,5,7,1];
+
+		function selectSort( array ){
+          for( var i = 0; i < array.length; i++ ){
+
+             //key 是最小值的位置，数组下标
+             var k = i;
+          	 for( var j = i; j < array.length; j++ ){
+          	 	if( array[k] > array[j] ){
+          	 		k = j;
+          	 	}
+          	 }
+          	 //for 结束 k 指向最小的位置
+             //k 目前的位置 和 最初位置是否一样
+          	 if( k != i ){
+                //不一样交换位置
+                var t = array[i];
+                array[i] = array[k];
+                array[k] = t;
+          	 } 
+          }
+		}
+
+		selectSort( a )
+
+		console.log(a);
+	</script>
+</body>
+</html>

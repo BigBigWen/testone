@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+   <script>
+   	  //js 提供一个操作符号 in ，可以判断一个属性，是否包含在一个对象内
+   	  var p = {
+   	  	name:'testName',
+   	  	age:30,
+   	  	weight:100,
+   	  	eat:function(){
+   	  		console.log('吃');
+   	  	}
+   	  }
+      //返回boolean 值，true 存在该属性  false 没有该属性
+   	  console.log('name' in p);  //true
+   	  console.log('test' in p);  //false
+
+   	  //in 作用，与for 一起使用 遍历一个对象所有的属性
+   	  for( var prop in p ){
+   	  	console.log(prop);
+   	  	console.log(p[prop]);
+   	  }
+
+   	  
+
+   </script>
+</body>
+</html>

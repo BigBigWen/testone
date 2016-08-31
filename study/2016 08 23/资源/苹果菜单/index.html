@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{margin: 0px;padding: 0px;}
+		.box{width: 100%;position: absolute;bottom: 0px;left: 0px;text-align: center;background-color: #fcc;}
+		.box>img{width: 64px;}
+	</style>
+</head>
+<body>
+	<div class="box"> 
+		<img src="images/1.png" alt="">
+		<img src="images/2.png" alt="">
+		<img src="images/3.png" alt="">
+		<img src="images/4.png" alt="">
+		<img src="images/5.png" alt="">
+	</div>
+<script>
+	document.onmousemove = function(e){
+		var ev = e||event;
+		var maxDistance = 200;
+		var imgList = document.getElementsByTagName('img');
+		//当前鼠标位置点
+		var clientX = ev.clientX;
+		var clientY = ev.clientY;
+		for( var i = 0;i< imgList.length;i++){
+            var centerX = imgList[i].offsetLeft + imgList[i].offsetWidth/2;
+            var centerY = imgList[i].parentNode.offsetTop + imgList[i].offsetHeight/2;
+            //计算当前的鼠标点距离中心点的距离
+            var distance =Math.sqrt( Math.pow(centerX-clientX,2)
+            	+Math.pow(centerY-clientY,2));
+            //取两者中的最小值
+            distance = Math.min(distance,maxDistance);
+            //求图片应该放大多少
+            var scaleSize = (maxDistance - distance)/maxDistance*64;
+            //计算实际大小
+            imgList[i].style.width = (scaleSize+64)+'px';
+		}
+	}
+</script>
+</body>
+</html>

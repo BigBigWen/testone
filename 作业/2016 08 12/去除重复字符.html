@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>去除重复字符</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<!-- <script>
+		var testArray = ['中','华','人','民','共','和','国','中','华','人','民','共','和','国'];
+		testArray.splice(7, 7);
+		console.log(testArray);
+	</script> -->
+	<!-- indexof 查找一个值在数组中的位置,-1是searchvalue不存在数组中 -->
+	<!-- <script>
+	   function isValue(array1,array2){
+         	for( var i = 0 ;i <= array2.length;i++){
+          		if ( array2[i] === array1 ) {
+         			return true;
+          		}
+         	}
+        	return false;
+         }
+
+	    var testArray = ['中','华','人','民','共','和','国','中','华','人','民','共','和','国'];
+        var newarray = [];
+        for( var i = 0;i < testArray.length;i++ ){
+        	if ( isValue(testArray[i],newarray) == false) {
+        		
+        			newarray.push(testArray[i]);
+        		}
+        		
+        	}
+        	  console.log(newarray)
+ 
+      
+	</script> -->
+	<script>
+		 var testArray = ['中','华','人','民','共','和','国','中','华','人','民','共','和','国'];
+        var newarray = [];
+        for( var i = 0; i < testArray.length; i++){
+        	if( newarray.indexOf( testArray[i] ) == -1 ){
+        		newarray.push(testArray[i]);
+        	}
+        }
+        console.log(newarray);
+	</script>
+</body>
+</html>

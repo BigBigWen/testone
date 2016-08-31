@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		function Animal(){
+		}
+        
+        //先创建的对象原型指针还是指向系统创建原型对象
+        var cat = new Animal();
+        var dog = new Animal();
+
+        Animal.prototype = {
+        	sleep:function(){
+        		console.log('睡眠');
+        	}
+        }
+
+        var cat2 = new Animal();
+
+        cat.sleep(); //error
+        dog.sleep();// error
+
+        cat2.sleep; //ok
+
+	</script>
+</body>
+</html>

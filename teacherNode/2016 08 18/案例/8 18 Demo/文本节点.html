@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<div id="mydiv">mydiv</div>
+	<div id="mydiv2"></div>
+	<script>
+		var divElement = document.getElementById('mydiv');
+		//得到第一个元素节点
+		// var textNode = divElement.firstElementChild;
+
+		var textNode = divElement.firstChild;
+		//1:获取文本节点的值
+		//使用nodeVale
+		console.log(textNode.nodeValue);
+
+		//使用data
+		console.log(textNode.data);
+
+		//2：操作文本节点
+        //appendData(text)         把内容追加到最后面
+
+        //deleteData(offset,count) 删除  offset 偏移量  count 个数
+
+        //插入  offset 偏移量  text 插入的内容
+        //insertData(offset,text)  
+
+        //替换 offset 偏移量 count 个数  newtext 新的字符串
+        //replaceData(offset,count,newtext) 
+        
+        //mydiv
+        //在末尾插入xxx   mydivxxx
+        textNode.appendData('xxx');
+
+        //删除前2个字符    divxxx
+        textNode.deleteData(0,2);
+       
+        //在最开始插入your  yourdivxxx
+        textNode.insertData(0,'your');
+
+        //从第7个开始使用新内容替换3个字符  yourdivyyy
+        textNode.replaceData(7,3,'yyy');
+
+        //3:文本节点的序列化
+        var div2Element = document.getElementById('mydiv2');
+        //追加2个文本节点
+        div2Element.appendChild(document.createTextNode('a'));
+        div2Element.appendChild(document.createTextNode('b'));
+
+        console.log(div2Element.childNodes);
+        //normalize,合并文本节点，序列化
+        div2Element.normalize();
+        console.log(div2Element.childNodes);
+    
+	</script>
+</body>
+</html>

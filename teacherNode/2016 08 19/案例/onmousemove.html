@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#box{width: 100px;height: 100px;background-color: #f00; position: absolute; top:0; left:0;}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<script type="text/javascript">
+	var box=document.getElementById("box");
+	//鼠标在页面上移动的时候
+		document.onmousemove=function(e){
+			var ev=e||event;
+			
+			box.style.top=ev.clientY+"px";
+			box.style.left=ev.clientX+"px";
+		};
+	</script>
+</body>
+</html>

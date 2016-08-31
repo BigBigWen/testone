@@ -1,0 +1,98 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>三级菜单</title>
+	<link rel="stylesheet" href="">
+	<style>
+	*{margin: 0;padding: 0;}
+	.nav>.left{position: relative;float: left;width: 150px;}
+	.nav>.right{float: right;}
+	.nav>.left>h2{background-color: #f12;font-size: 16px;line-height: 30px;margin-top: 10px;width: 150px;text-align: center;}
+	.nav>.left>ul{position: absolute;left: 0;top: 40px;background-color: #fcc;display: none;}
+	.nav>.left ul li{list-style: none;width: 150px;text-align: center;line-height: 30px;}
+	.nav>.left ul li:hover{background-color: #faa;}
+	.nav>.left>.third{position: absolute;top: 10px;left: 150px;width: 150px;height: 160px;text-align: center;background-color: green;line-height: 160px;display: none;}
+	</style>
+
+</head>
+<body>
+	<div class="container">
+		<div class="top">
+			<img src="images/top.png" alt="">
+		</div>
+		<div class="nav clear">
+			<div class="left">
+				<h2 id="lefttitle">全部商品分类</h2>
+				<ul id="second">
+					<li>家具</li>
+					<li>数码产品</li>
+					<li>平板电脑</li>
+				</ul>
+				<div class="third">1111111</div>
+				<div class="third">2222222</div>
+				<div class="third">3333333</div>
+			</div>
+			<div class="right">
+				<img src="images/top2.png" alt="">
+			</div>
+		</div>
+		<div class="banner">
+			<img src="images/banner.png" alt="">
+		</div>
+	</div>
+	<script>
+		var first = document.getElementById('lefttitle');
+		var second = document.getElementById('second')
+		var secondLi = document.getElementsByTagName('li');
+		var thirdList = document.getElementsByClassName('third');
+
+		// console.log(thirdList);
+
+         first.onmouseover = function(){
+         	second.style.display = 'block';
+         }
+         first.onmouseout = function(){
+         	second.style.display = 'none';
+         }
+         second.onmouseover = function(){
+         	second.style.display = 'block';
+         }
+         second.onmouseout = function(){
+         	second.style.display = 'none';
+         }
+         for( var i= 0; i <secondLi.length;i++){
+         	secondLi[i].older = i;
+         	secondLi[i].onmouseover = function(){
+         		console.log(this.older);
+         		 for(j = 0;j <thirdList.length;j++){
+         			var older = this.older;
+         			if(j==older){
+         			thirdList[j].style.display='block';
+         			}else{
+         				thirdList[j].style.display='none'
+         				}
+
+         		// thirdList[this.older].style.display="block";
+
+         		 }
+         	}
+         	secondLi[i].onmouseout = function(){
+         		for( var j = 0;j<thirdList.length;j++){
+         			thirdList[j].display='none';
+         		}
+         	}
+         }
+         for( var i=0;i<thirdList.length;i++ ){
+         	thirdList[i].onmouseover = function(){
+         		this.style.display = 'block';
+         		second.style.display = 'block';
+         	}
+         	thirdList[i].onmouseout = function(){
+         		this.style.display = 'none';
+         		second.style.display = 'none';
+         }
+	</script>
+</body>
+</html>

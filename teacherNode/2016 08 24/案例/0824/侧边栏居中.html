@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		*{ margin: 0;padding: 0; }
+		#mydiv{ width: 100px;height: 100px;background-color: blue;position: absolute; }
+		body{ height: 2000px; }
+	</style>
+</head>
+<body>
+	<div id="mydiv"></div>
+
+	<script>
+
+	    var divElement = document.getElementById('mydiv');
+		window.onload = function(){
+			//left 和 top  
+			var clientWidth = document.documentElement.clientWidth || document.body.clientWidth;
+			var clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
+
+			var selfWidth = divElement.offsetWidth;
+			var selfHeight = divElement.offsetHeight;
+
+			var left = clientWidth - selfWidth;
+			var top = (clientHeight - selfHeight)/2;
+
+			divElement.style.left = left + 'px';
+			divElement.style.top = top + 'px';
+	
+
+        //设置resize（窗体大小发生变化） scroll 是文档内容发生滚动
+        //设置事件处理程序
+		window.onresize = document.onscroll = function(){
+           var clientWidth = document.documentElement.clientWidth || document.body.clientWidth;
+           var selfWidth = divElement.offsetWidth;
+           var left = clientWidth - selfWidth;
+           divElement.style.left = left + 'px';
+
+           //1:获取滚出去的scrollTop
+           var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+           //获取视图区的高度
+           var clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
+
+           //自身的高度
+           var selfHeight = divElement.offsetHeight;
+
+           //应该在的位置
+           var endTop = scrollTop + (clientHeight-selfHeight)/2;
+           
+           //计算应该在的位置
+           // divElement.style.top = top + 'px'; 
+
+           //使用动画，从现在位置，调整到应该在的位置
+           startMoveTop(divElement,parseInt(endTop));
+		}
+
+        function startMoveTop(obj,endPosition){
+        	//从当前位置滚动到endPosition 位置
+        	clearInterval(obj.timer);
+        	obj.timer = setInterval(function(){
+        		//获取当前的位置
+        	    var currentTop = obj.offsetTop;
+        	    var speed = (parseInt(endPosition) - parseInt(currentTop))/5;
+        	    speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+        	    obj.style.top = ( currentTop + speed ) + 'px';
+        	    if( parseInt(obj.style.top) == parseInt(endPosition) ){
+        	    	clearInterval(obj.timer);
+        	    }
+        	},20);
+        }
+  }
+
+
+	</script>
+</body>
+</html>

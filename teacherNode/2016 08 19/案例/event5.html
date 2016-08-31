@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<ul id="box">
+		<!-- <li onclick="alert('hello world')">111</li> -->
+		<li>111</li>
+		<li>222</li>
+	</ul>
+
+	<script>
+		// 把一个事件绑定到元素上，有哪些方式
+		//1:使用元素的onclick 属性 = 函数   不推荐
+		//2:先找到dom节点，然后在dom节点上安插事件处理函数
+		// var ulElement = document.getElementById('box');
+		// ulElement.onclick = function(ev){
+          
+		// }
+        // 这种方式没有办法一个事件执行多个函数，后面安插的时间处理程序会把前面的覆盖掉
+		// ulElement.onclick = function(){
+
+		// }
+
+		//3：使用监听器
+		var ulElement = document.getElementById('box');
+		var li0 = ulElement.getElementsByTagName('li')[0];
+		//type 代表事件的类型  字符串 类型  'click'
+		//listener 事件处理函数
+		//flag Boolean值 默认是false 冒泡，true 捕获
+		//addEventListener 可以对一个事件安插多个处理
+		// li0.addEventListener(type, listener,flag)
+
+		//执行的顺序是安插的顺序
+		// li0.addEventListener('click',function(){ console.log('1')},false);
+		// li0.addEventListener('click',function(){console.log('2')},false);
+
+		//IE 不支持 addEventListener ，使用 attachEvent
+		//ie 在事件上需要加on
+		//li0.attachEvent('onclick',function(){});
+        
+        //先捕获，然后当前点击节点的处理，后然后冒泡
+		document.body.addEventListener('click',function(ev){
+			var e = ev || window.event;
+			console.log(e.eventPhase);
+			console.log(e.target);
+		},true);
+
+		document.body.addEventListener('click',function(ev){
+			var e = ev || window.event;
+			console.log(e.eventPhase);
+			console.log(e.target);
+		},false);
+
+		ulElement.addEventListener('click',function(ev){
+			var e = ev || window.event;
+			console.log(e.eventPhase);
+			console.log(e.target);
+		},true);
+
+		ulElement.addEventListener('click',function(ev){
+			var e = ev || window.event;
+			console.log(e.eventPhase);
+			console.log(e.target);
+		},false);
+
+		li0.addEventListener('click',function(ev){
+			var e = ev || window.event;
+			console.log(e.eventPhase);
+			console.log(e.target);
+		},true);
+
+		li0.addEventListener('click',function(ev){
+			var e = ev || window.event;
+			console.log(e.eventPhase);
+			console.log(e.target);
+		},false);
+
+
+
+
+	</script>
+</body>
+</html>

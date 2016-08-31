@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<div>
+		<label>姓名:<input id="input1" type="text" name="" value=""></label>
+	</div>
+	<br><br>
+	<div>
+		<label>密码 <input  id="input2" type="password" name="" value=""></label>
+	</div>
+	<br>
+	<input type="button" id="input3" name="" value="登录">
+	<script>
+		var iText = document.getElementById('input1');
+		var iPSW = document.getElementById('input2');
+		var iBTN = document.getElementById('input3');
+
+		iBTN.onclick = function () {
+			var iTextValue = iText.value;
+			var iPSWValue = iPSW.value;
+			if(iTextValue.length <7 || iPSWValue <9){
+                 alert('输入格式有误');
+			} else{
+				alert('登录成功!');
+			}
+		}
+ 	</script>
+</body>
+</html>

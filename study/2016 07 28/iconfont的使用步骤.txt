@@ -1,0 +1,26 @@
+1.先去iconfont.cn登录，然后搜索所需要的图标。
+2.加入到购物车。
+3.将购物车中的图标存储为一个新项目，起为项目的名字。
+4.找到图标管理导航，找到对应的项目，下载至本地。
+
+
+5.将iconfont字体文件放置到项目font目录下。
+6.
+
+第一步：定义font-face字体
+@font-face {font-family: 'iconfont';
+    src: url('iconfont.eot'); /* IE9*/
+    src: url('iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('iconfont.woff') format('woff'), /* chrome、firefox */
+    url('iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+第二步：设置iconfont的样式
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;}
+第三步：挑选相应图标并获取字体编码，应用于页面
+<i class="iconfont">&#x33;</i>

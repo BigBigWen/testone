@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{margin: 0;padding: 0;}
+        div{ 
+        	width: 200px;height: 200px;border: 1px solid black; margin: 10px auto;position: relative;
+
+        	/*保留自己的子元素的3d特性*/
+            transform-style: preserve-3d;
+            /*perspective : none  
+              perspective: 眼睛离屏幕的距离;一旦设置了景深，就会模拟真实世界中的近大远小
+            */
+            perspective: 200px;
+         }
+
+         div img{
+         	width: 100px;height: 100px;
+            position: absolute;
+			left:50%;
+			top:50%;
+			margin-left:-50px;
+			margin-top: -50px; 
+			transition: all 2s;
+		}
+
+		.box1 img:hover{
+			/* x 和 y 方向上 和 2d 没有区别*/
+			transform: translateX(-100px);
+		}
+
+		.box2 img:hover{
+			/* x 和 y 方向上 和 2d 没有区别*/
+			transform: translateY(-100px);
+		}
+
+        .box3 img:hover{
+			/* x 和 y 方向上 和 2d 没有区别*/
+			transform: translateZ(-100px);
+		}
+       
+	</style>
+</head>
+<body>
+	<div class="box1">
+	   <img src="images/1.jpg" alt="">
+	</div>
+
+	<div class="box2">
+	   <img src="images/1.jpg" alt="">
+	</div>
+
+	<div class="box3">
+	   <img src="images/1.jpg" alt="">
+	</div>
+</body>
+</html>

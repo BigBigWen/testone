@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{margin: 0;padding: 0;}
+		.outbox{
+			width: 200px;height: 200px;
+			border: 10px solid black;
+			margin: 20px;padding: 30px;
+			background-color: #ccf;
+		}
+		.innerbox{
+			width: 100px;height: 100px;
+			border: 10px solid black;margin: 20px;padding: 30px;background-color: #faa;
+		}
+	</style>
+</head>
+<body>
+	<div class="outbox">
+		<div class="innerbox"></div>
+	</div>
+	<script>
+		var innerbox = document.getElementsByClassName('innerbox')[0];
+		console.log(innerbox.offsetLeft);//自己的边框左侧 距离 offsetparent边框右侧之间的距离
+		//offsetParent,从自己的父容器查找,有大小且position为relative  or absolate的容器
+
+		//offset
+
+	</script>
+</body>
+</html>

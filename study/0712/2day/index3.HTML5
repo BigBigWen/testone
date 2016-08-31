@@ -1,0 +1,37 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	base:指定URL的基准,如果指定了base,所有的相对路径都会参考href
+	<<base href="2day/" target="_blank, _self, _parent, _top">>
+	<<base href="../1day/" target="_blank, _self, _parent, _top">>
+	<style type="text/css" media="screen">/*type指定类型*/
+		
+	</style>
+</head>
+<body>
+<a href="../1day/index2.html" >奥啦啦</a>
+	
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+	<!-- <meta http-equiv="refresh"  content="3,url=http://www.baidu.com"> -->
+	<title>课后练习专用</title>
+	<link rel="stylesheet" href="">
+	<base href="../2day/" target="_blank,">
+	<style type="text/css" media="screen">	
+	</style>
+
+</head>
+<body>
+	<a href="素材/1.jpg">小清新哦</a>
+	<script>试试看有没有小清新洋气</script>
+</body>
+</html>

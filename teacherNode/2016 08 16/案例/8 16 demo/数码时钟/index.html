@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+	*{margin: 0;padding: 0;}
+		body{ background-color: black; color:white; font-size: 60px;}
+	}
+	</style>
+</head>
+<body>
+	<img src="img/0.png" alt="">
+	<img src="img/0.png" alt="">
+    :
+    <img src="img/0.png" alt="">
+    <img src="img/0.png" alt="">
+    :
+    <img src="img/0.png" alt="">
+    <img src="img/0.png" alt="">
+
+    <script type="text/javascript">
+    	setInterval(function(){
+    		var date = new Date();
+
+    		var hour = date.getHours();
+    		var minues = date.getMinutes();
+    		var second = date.getSeconds();
+
+    		var timeString = formatString(hour) + formatString(minues) + formatString(second);
+
+    		var imgList = document.getElementsByTagName('img');
+    		//便利遍历字符串
+    		//122535
+    		for( var i = 0; i < timeString.length; i++ ){
+    			var time = timeString[i];
+    			var number = parseInt(time);
+
+    			imgList[i].src = 'img/' + number + '.png';
+    		}
+
+    	},1000);
+
+    	 
+    </script>
+</body>
+</html>

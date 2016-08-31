@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		// 变量的作用域是变量起作用的地方
+		//全局作用域：变量在任何一个地方都可以使用
+		//局部作用域：变量只在某个地方起作用
+
+		//全局作用域：在任何函数外部定义的变量
+		var globalVar = 5;
+
+		function myfun1(){
+			//ok   5
+			console.log(globalVar);
+
+            //函数内没有使用var 定义的变量也是全局的。外部也是可以访问的
+			globalVar2 = 100;
+		}  
+
+		myfun1();
+
+		console.log(globalVar2);
+
+		//------------------------------------------
+
+		function myfun2(){
+			// 在函数内部使用var 定义的变量，他的作用域在函数内部，外部不能访问
+           var localTest1 = 15;
+		}
+
+		myfun2();
+
+		// console.log(localTest1);
+		//---------------------------------------------
+		//函数的参数只能在函数内部访问，类似与函数内部定义的变量
+		function myfunc3(firstArg,secondArg){
+			//参数在函数内部可以访问
+			return firstArg + secondArg;
+		}
+
+		myfunc3(100,200);
+
+		// console.log(firstArg);
+		// console.log(secondArg);
+		//---------------------------------------------
+
+		function myfunc4(){
+			var test1 = 10;
+			{
+				console.log(test1);
+				var test2 = 100;
+				console.log(test2);
+			}
+			console.log(test2);
+		}
+
+		myfunc4();
+
+	</script>
+</body>
+</html>

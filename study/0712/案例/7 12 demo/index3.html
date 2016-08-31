@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>基础标签的练习</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+<!-- 代表一个段落，中间的空白字符都会压缩为一个空格 -->
+	<p>
+	<!-- br标签代表断行 -->
+		我是一个p标签                   abc<br>
+		我是一个p标签                   abc<br>
+		我是一个p标签   abc我是一个p标签                abc
+	</p>
+
+	<p>
+		for(var i = 0; i < 10; i++){
+		console.log("hello world");
+		}
+	</p>
+    <!-- pre 保留格式，空白字符保留 -->
+	<pre>
+	<!-- code 代表代码片段 -->
+		<code>
+		for(var i = 0; i < 10; i++){
+		   console.log("hello world");
+		}
+		</code>
+	</pre>
+
+	<p>普通字符<b>加粗字符</b></p>
+	<!-- strong 标签代表内容重要 -->
+	<p>普通内容 <strong>重要内容</strong> </p>
+
+     <!-- 科技术语，自己的见解 -->
+	<p>正常显示<i>斜体表示</i></p>
+	<!-- em 强调的内容，以斜体方式呈现 -->
+	<p>不强调的内容 <em>强调的内容</em> </p>
+
+	<p>
+		<em>我</em>喜欢  <b>c 语言</b> 和 <b>js语言</b> 他们都是 <i>程序设计语言</i> 
+	</p>
+ <!-- 删除标签 -->
+    <!-- <del></del> -->
+    <!-- 插入标签 -->
+    <ins>哈哈哈下划线</ins>
+
+    <p> <del>I sea the see</del> <ins>I see the sea</ins></p>
+
+    <!-- 缩略语标签 -->
+    <p><abbr title="中华人民共和国">ZHRMGHG</abbr></p>
+     
+    <!-- mark 使用黄色标注内容 -->
+    <p>我喜欢体育运用，譬如 <mark>铅球</mark></p>
+
+   <!-- q 代表引用，cite属性代表 应用的来源 ，使用"" -->
+    <q cite="http://www.baidu.com">医疗事故</q>
+
+<!-- 没有语义的通用标签，使用它可以形成一个内容区域 
+     单独占一行，前后都要有换行
+-->
+    <div>
+    	<p>div中的p</p>
+    	<p>div中的p</p>
+    	<p>div中的p</p>
+    </div>
+<!-- span 没有特殊语义的通用标签，行内标签和其他的元素共享一行 -->
+    <span></span>
+
+<!-- h 代表标题，单独占一行 -->
+    <h1>标题1</h1> 
+    <h2>标题2</h2>
+    <h3>标题3</h3>
+    <h4>标题4</h4> 
+    <h5>标题5</h5>
+    <h6>标题6</h6>
+
+   <!-- hr分割线   -->
+   <hr>
+
+   <span>体育</span>
+   <span>娱乐</span>
+   <span>学习</span>
+
+   <div>
+   	  交友
+   </div>
+
+   <span>吃火锅</span>
+
+<!-- 下标 -->
+   <p> 2 <sub>2</sub> </p>
+ <!-- 上标 -->
+   <p> 2 <sup>2</sup> </p>
+
+   <!-- 指定展示方向 -->
+   <!-- dir direction 方向ltr left to right
+     rtl  right to left
+    -->
+   <bdo dir="ltr">河南省郑州市金水区</bdo>
+   <br>
+   <bdo dir="rtl">河南省郑州市金水区</bdo>
+   
+   <!-- wbr 单词换行时机，告诉浏览器可以在wbr处进行换行 -->
+   <!-- <wbr> -->
+   <p> 如果想学好Ajax, 如果想学好Ajax, 如果想学好Ajax，你必须了解XML<wbr>Http<wbr>Request对象的使用</p>
+
+</body>
+</html>

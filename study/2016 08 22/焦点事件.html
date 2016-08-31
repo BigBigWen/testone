@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+<input type="text" id="input" name="" value="" placeholder="">
+	<script>
+		//focus 当控件获取输入焦点时,发生的事件
+		//blur   当控件失去焦点时,发生的事件
+		var inputElement = document.getElementById('input');
+		inputElement.addEventListener('focus',function(e){
+			console.log(e.type);
+		});
+		inputElement.addEventListener('blur',function(e){
+			console.log(e.type);
+		});
+		//focusin 当控件获取焦点时发生      不会冒泡
+		//focusout  当控件失去焦点时发生     不会冒泡
+		var inputElement = document.getElementById('input');
+		inputElement.addEventListener('focusin',function(e){
+			console.log(e.type);
+		});
+		inputElement.addEventListener('focusout',function(e){
+			console.log(e.type);
+		});
+		
+	</script>
+</body>
+</html>

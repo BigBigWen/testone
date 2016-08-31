@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{margin: 0;padding: 0}
+		.small{border: 1px solid black;position: relative;width: 200px;height: 200px;float: left;}
+		.small>img{width: 200px;height: 200px;}
+		.indicator{
+			position: absolute;top: 0;left: 0;
+			width: 50px;height: 50px;
+			border: 1px solid red;
+			background-color: rgba(0,0,0,.2);
+		}
+		.big{width: 200px;height: 200px;border: 1px solid black;overflow: hidden;position: relative;float: left;margin-left: 50px;}
+		.big>img{position: absolute;top:0px;left: 0px;}
+	</style>
+</head>
+<body>
+	<div class="small">
+		<img src="images/small.jpg" alt="">
+		<div class="indicator"></div>
+	</div>
+	<div class="big">
+		<img id="bigimg" src="images/big.jpg" alt="">
+	</div>
+	<script>
+		var smallEle = document.getElementsByClassName('small')[0];
+		var indicator = document.getElementsByClassName('indicator')[0];
+		var bigimg = document.getElementById('bigimg');
+		var bigEle = document.getElementsByClassName('big')[0];
+		smallEle.onmousemove = function(e){
+			//计算出指示框的left和top的位置
+			var ev = e||window.event;
+			var left = ev.clientX - smallEle.offsetLeft-indicator.offsetWidth/2;
+			var top = ev.clientY - smallEle.offsetTop-indicator.offsetHeight/2;
+			
+			//限制leftheight
+			if(left<0){left  = 0}
+			if(left　> smallEle.offsetWidth - indicator.offsetWidth){
+				left = smallEle.offsetWidth - indicator.offsetWidth
+			}
+			if(top<0){top  = 0;}
+			if(top　> smallEle.offsetHeight - indicator.offsetHeight)
+				{top = smallEle.offsetHeight - indicator.offsetHeight;}
+
+			indicator.style.left = left+'px';
+			indicator.style.top = top+'px';
+			//计算x方向上的百分比
+			var smallTotalDistance = smallEle.offsetWidth - indicator.offsetWidth;
+			var bigTotalDistance = bigimg.offsetWidth - bigEle.offsetWidth;
+
+			var percentX = left/smallTotalDistance;
+			//注意鼠标移动方向和图片移动方向相反;
+			var bigMoveX = -percentX*bigTotalDistance;
+			bigimg.style.left = bigMoveX+'px';
+			//y方向百分比
+			var smallTotalDistance = smallEle.offsetHeight - indicator.offsetHeight;
+			var bigTotalDistance = bigimg.offsetHeight - bigEle.offsetHeight;
+			var percentY = top/smallTotalDistance;
+			var bigMoveY = -percentY*bigTotalDistance;
+			bigimg.style.top = bigMoveY+'px';
+
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		*{ margin: 0;padding: 0; }
+		.clear:after{ content: "";clear: both;display: block;overflow: hidden;height: 0; }
+		.clear{-ms-zoom:1;}
+
+        .container{ width:490px;height: 170px; margin: 50px auto; 
+                    position: relative;
+         }
+        
+        .imageList>img{ position: absolute;top:0;left: 0; }
+        .indicator { position: absolute;bottom: 0;right: 0;}
+        .indicator li { float: left; width: 40px;height: 40px;text-align: center;line-height: 40px;background-color: rgba(100,100,100,0.5);margin-left: 2px;list-style: none; }
+        .indicator .active{ background-color:red;color:white; }
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="imageList">
+			<img src="images/img1.jpg" alt="">
+			<img src="images/img2.jpg" alt="">
+			<img src="images/img3.jpg" alt="">
+			<img src="images/img4.jpg" alt="">
+			<img src="images/img5.jpg" alt="">
+			<img src="images/img6.jpg" alt="">
+		</div>
+
+		<div class="indicator" style="z-index: 2">
+			<ul class="clear">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+			</ul>
+		</div>
+	</div>
+
+	<script>
+	    //得到图片列表
+        var imageElementList = document.getElementsByTagName('img');
+        //得到指示符的列表
+        var indactorElementList = document.getElementsByTagName('li');
+
+	    //生成一个定时器
+		var timer = setInterval(runloop,1000);
+		//指示当前显示的是第几个
+        var showIndex = 0;
+
+		function runloop () {
+			 //高亮显示图片
+		     activeItem(showIndex);
+
+		     //体现轮播
+		     showIndex++;
+		     if( showIndex == 6){
+		     	showIndex = 0;
+		     }
+		}
+
+        //高亮显示第i张图片
+		function activeItem(itemIndex){
+          for( var i = 0; i < imageElementList.length; i++ ){
+          	if( itemIndex == i){
+                //需要高亮显示的，一是图片 而是 指示符
+                // imageElementList[i].style.display = 'block';
+                imageElementList[i].style.zIndex = '1';
+                indactorElementList[i].className = 'active';
+          	}else{
+               //其他的图片不显示，其他的指示符 灰色显示
+               // imageElementList[i].style.display = 'none';
+               imageElementList[i].style.zIndex = '0';
+               indactorElementList[i].className = '';
+          	}
+          }
+		}
+ 
+		//鼠标移动上去和移开
+		for( var i = 0; i < indactorElementList.length;i++ ){
+
+            indactorElementList[i].index = i;
+
+			indactorElementList[i].onmouseover = function(){
+               //停掉定时器
+               //timer 是 setInterVal的返回值
+               clearInterval(timer);
+               //显示当前对应的图片，并高亮指示器
+               activeItem(this.index);
+			}
+
+			indactorElementList[i].onmouseout  = function(){
+			   //重新更新开始显示的index
+			   showIndex = this.index;
+               //生成定时器
+               timer = setInterval(runloop,1000);
+			}
+		}
+	</script>
+</body>
+</html>

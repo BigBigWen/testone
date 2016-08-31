@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		var date1 = new Date();
+		console.log(date1);
+		console.log(date1.getDate());//返回一月中的几号 1~31
+		console.log(date1.getMonth()+1);//几月 0~11 +1是中国人民的月
+		console.log(date1.getFullYear());//获取当前的年份
+		//getDay()周几
+
+		console.log(date1.getHours());//获取当前的小时
+		console.log(date1.getMinutes());//获取当前的分钟
+		console.log(date1.getSeconds());//获取当前的秒数
+
+		console.log(date1.getTime());//返回从1970年到现在的毫秒数
+		console.log(date1.getMilliseconds());//获取当前的秒豪数
+		/*----------设置时间----------------------*/
+		date1.setDate(9);
+		console.log(date1.getDate());
+
+	</script>
+</body>
+</html>

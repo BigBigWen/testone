@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+	    *{margin: 0;padding: 0;}
+		/* 外阴影如何实现 
+          1：使用指定的颜色生成一个和盒子一样大小的区域，并把这个区域放在盒子下面
+          2：根据指定的x 偏移和 y 偏移 移动阴影盒子，x 正值 向右 y 正值 向下
+
+          3：使用spread 指定的值来扩展阴影的大小
+
+          4：使用模糊半径来进行加工阴影盒子
+		*/
+
+		/* 可以给一个盒子指定多个外阴影 */
+		.box{ width: 100px;height: 100px;margin: 100px auto; background-color: black;}
+		/*使用逗号隔开各个阴影盒子,注意存放的次序*/
+		.box1{ box-shadow: 0px 0px 2px 10px red,0px 0px 2px 20px blue,0px 0px 2px 40px green; }
+
+        /* 对一个盒子四周添加不同的阴影 */
+        .box2{ box-shadow: 0px -10px 2px 0px red,10px 0px 2px 0px green,0px 10px 2px 0px red,-10px 0px 2px 0px yellow; }
+
+        /* 内阴影:使用 inset; */
+        /*inset 向内扩展*/
+        .box3{ box-shadow: 0px 0px 10px 10px red inset; }
+
+        /* 偏移值 */
+        /* 实现步骤 
+         1：使用指定的颜色生成阴影盒子，并放在原始盒子上面
+         2: 使用偏移 (x,y) 生成内阴影;
+         3：使用spread 来进一步向内扩展阴影
+         4：使用模糊值向内模糊化
+        */
+        .box4{ box-shadow:inset -10px -10px 0px 0px red ; color:#fff;}
+
+        /*给图片加上内阴影*/
+        .box5{
+        	width: 200px;height: 200px;
+        	margin: 0 auto;
+        	overflow: hidden;
+        	box-shadow: 0px 0px 5px 10px black inset;
+        	/*background: url(16.jpg) no-repeat;*/
+        }
+
+        .box5>img{
+        	position: relative;
+        	z-index: -1;
+        }
+
+        /* 使用伪元素 来给图片增加内阴影 */
+
+        .box6{ width: 200px;height: 200px;
+        	margin: 0 auto;
+        	overflow: hidden; 
+        	/* */
+        	position: relative;
+        }
+
+        /* 子容器最前面添加元素*/
+        .box6:before{
+            content: "";
+            display: block;
+            width: 100%;height: 100%;
+            position: absolute;top: 0px;left: 0px;
+            box-shadow: 0px 0px 10px 10px black inset;
+        }
+
+
+	</style>
+</head>
+<body>
+	<div class="box box1"></div>
+	<div class="box box2"></div>
+	<div class="box box3"></div>
+	<div class="box box4">4</div>
+
+	<div class="box5">
+		<img src="16.jpg">
+	</div>
+
+	<div class="box6">
+		<img src="16.jpg">
+	</div>
+</body>
+</html>

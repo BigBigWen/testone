@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		// var box = prompt('你几岁了');
+		// if(1){
+		// 	//变量会把用户的直返回回来
+		// 	console.log(box);
+		// }
+		// document.onkeydown = function(){
+		// 	console.log('按键按下');
+		// }
+		// document.onkeyup = function(){
+		// 	console.log('按键弹起');
+		// }
+		// document.onkeypress = function(){
+		// 	console.log('按键长安')
+		// }
+		document.onkeydown = function(e){
+			var ev = e||event;
+			//keyCode 返回的是按下键的acsii的十进制值
+			console.log(ev.keyCode);
+			console.log(String.fromCharCode(ev.keyCode));
+		}
+
+		
+	</script>
+</body>
+</html>

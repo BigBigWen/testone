@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>列表标签学习</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+<!-- ul 代表无序列表,li代表列表项,单独一行 -->
+
+<ul >
+	<li> <a href="#">链接</a></li>
+	<li> <a href="#">链接</a></li>
+	<li> <a href="#">链接</a></li>
+	<li> <a href="#">链接</a></li>
+			
+	</ul>	
+	<ul type="square">
+		<li>项目1</li>
+		<li>项目2</li>
+		<li>项目3</li>
+	</ul>
+	<ul type="list-style-type:none">
+		<li>第1个</li>
+		<li>第2个</li>
+		<li>第3个</li>
+	</ul>
+	<!-- li中嵌套ul -->
+	<ui>
+		<li>生活类
+			<ul type="circle">
+				<li>第1小时</li>
+				<li>第2小时</li>
+			</ul>
+		</li>
+		<li>工作类
+		<ul >
+			<li>第1小时</li>
+			<li>第2小时</li>
+			<li>第3小时</li>
+		</ul>
+		</li>
+	</ui>
+	<!-- ol有序列表 ,li单独占一行
+	type指定列表序号的标识1,a,A,i,I;
+	start数字从哪个序号开始;
+	reverst倒序排列-->
+	<ol>
+		<li>有序列表项目1</li>
+		<li>有序列表项目2</li>
+		<li>有序列表项目3</li>
+	</ol>
+	<ol type="1">
+		<li>项目1</li>
+		<li>项目2</li>
+		<li>项目3</li>
+		<li>项目4</li>
+	</ol>
+	<ol type="a" start="3">
+		<li>项目1</li>
+		<li>项目2</li>
+		<li>项目3</li>
+		<li>项目4</li>
+	</ol>
+	<ol type="A">
+		<li>项目1</li>
+		<li>项目2</li>
+		<li>项目3</li>
+		<li>项目4</li>
+	</ol>
+	<ol type="i">
+		<li>项目1</li>
+		<li>项目2</li>
+		<li>项目3</li>
+		<li>项目4</li>
+	</ol>
+	<ol type="I">
+		<li>项目1</li>
+		<li>项目2</li>
+		<li>项目3</li>
+		<li>项目4</li>
+	</ol>
+	<ul>
+		<li>第1天 <ol>
+			<li>第1小时</li>
+			<li>第2小时</li>
+			<li>第3小时</li>
+		</ol></li>
+		<li>第2天</li>
+		<li>第3天</li>
+	</ul>
+
+
+</body>
+</html>

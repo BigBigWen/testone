@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>阻止默认行为</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<a href="http://www.baidu.com">百度一下吧</a>
+
+	<script>
+		var aElement = document.getElementsByTagName('a')[0];
+		aElement.onclick = function(ev){
+			haha();
+			var e = ev || event;
+			//阻止系统默认的行为
+			e.preventDefault();
+            
+			alert('不要去百度');
+
+			//return false;
+			//也能达到阻止默认行为的目的,但是有兼容性问题
+		}
+		function haha(){
+			console.log(this);
+		}
+		//haha();//全局的函数属于window
+
+	</script>
+</body>
+</html>

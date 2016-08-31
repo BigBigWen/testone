@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>index1</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<button id="show" type="button">显示</button>
+	<button id="red" type="button">变红</button>
+	<button id="yellow" type="button">变黄</button>
+	<button id="blue" type="button">变蓝</button>
+	<div id="mytest" style="width: 100px;height: 100px;border: 1px solid black;display: none"></div>
+	<script>
+		 var showElement = document.getElementById("show");
+		 var redElement = document.getElementById("red");
+		 var yellowElement = document.getElementById("yellow");
+		 var blueElement = document.getElementById("blue");
+
+
+		 showElement.onclick = function(){
+			var mytestElement = document.getElementById("mytest");
+			mytestElement.style.display = 'block';
+		}
+		redElement.onclick = function(){
+			var mytestElement = document.getElementById("mytest");
+			mytestElement.style.backgroundColor = "red";
+		}
+		yellowElement.onclick = function(){
+			var mytestElement = document.getElementById("mytest");
+			mytestElement.style.backgroundColor = "yellow";
+		}
+		blueElement.onclick = function(){
+			var mytestElement = document.getElementById("mytest");
+			mytestElement.style.backgroundColor = "blue";
+		}
+
+
+
+	</script>
+</body>
+</html>

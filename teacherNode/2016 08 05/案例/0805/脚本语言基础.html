@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<!-- javescript 是嵌入网页内一个脚本语言
+        包含三部分
+         ECMAScript 的解释 (javascript 语法)
+         DOM :文档对象模型( 把网页以对象的方式做成一棵树，方便js操作)
+         BOM：（浏览器对象模型，通过他可以获取浏览器的信息或屏幕信息）
+	 -->
+	 <!-- 1： 如何在网页中写javascript标准 -->
+     <!--  js 代码必须写在 script 标签之内 -->
+     <!-- src：引入的外部的javascript文件 -->
+     <!-- type：文件的类型 ，不写默认也是 "text/javascript"-->
+     <!-- charset：js 文件的编码方式 utf-8 -->
+     <!-- async：当js文件是从网络下载时，异步下载 -->
+     <!-- defer ：js 代码的执行要等到 文档对象解析完成后进行-->
+	<!--  <script src="/javascripts/application.js" type="text/javascript" charset="utf-8" async defer>
+	 	
+      // 注释
+      //js代码区
+	 </script> -->
+
+	 <!-- 引入外部的js 脚本 -->
+	 <!-- 直接执行first.js中代码 -->
+	 <!-- defer 的脚本中不要有立即执行的代码
+	      譬如:document.write -->
+	 <!-- <script src="first.js" async defer></script> -->
+	 
+	 <script src="first.js">
+	 // 一旦使用了外部的js文件，内部的代码忽略
+	 	document.write("xxxxyyyzzzz");
+	 </script>
+
+	
+</head>
+<body>
+
+	<p id="myPid">p标签</p>
+	 <!-- 由于script代码碰到就执行，js代码放到 body的最后面 -->
+	<!--  <script>
+      //向html 文档中写入 文本 
+	 document.write("hello word");
+	 </script> -->
+</body>
+</html

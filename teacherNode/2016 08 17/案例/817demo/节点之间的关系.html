@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+
+	<script type="text/javascript">
+		var ulEle = document.getElementsByTagName('ul')[0];
+		//得到所有的孩子节点，除IE之外会包含空白节点
+		//var allChild = ulEle.childNodes;
+
+		//children和childNodes 一样，区别在于不包含空白节点
+		var allChild = ulEle.children;
+
+		//false 由于  ulEle.firstChild 空白的文本节点
+        console.log( ulEle.firstChild == allChild[0] );
+
+        //false 
+        console.log( ulEle.lastChild  == allChild[allChild.length -1] );
+
+        //firstElementChild 得到第一个元素节点
+        console.log( ulEle.firstElementChild ==  allChild[0]);
+
+        //最后一个元素节点
+        console.log( ulEle.lastElementChild == allChild[allChild.length -1]);
+
+        //nextSibling 找下一个兄弟节点
+        console.log( ulEle.firstChild.nextSibling == allChild[0] ) ;
+
+        //previousSibling 找前一个节点
+        console.log( ulEle.lastChild.previousSibling == allChild[allChild.length-1]);
+
+        //parentNode
+        var firstLiElement = document.getElementsByTagName('li')[0];
+        //验证父节点
+        console.log( firstLiElement.parentNode == ulEle );
+       
+       //null 只一个对象为空对象
+       console.log( ulEle.firstChild.previousSibling );
+       console.log( ulEle.lastChild.nextSibling );
+
+       
+		
+	
+	</script>
+</body>
+</html>

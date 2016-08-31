@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	
+	<script>
+		// js 的 输出
+		//1
+		// document.write("输出1");
+
+		// 2:
+		// alert("警告框");
+
+		//3:在控制台输出
+		// console.log("在控制台输出");
+
+		// 常量：值不发生改变的 就是常量 1  2
+		// 变量: 值会随着程序的运行可能发生改变
+		// var 变量名;
+ 
+        // 取变量名的规则
+        //1: 以字母 或 $ 或_ 开头，注意不能以数字开头
+        //2: 不能使用关键字 （保留字）
+        //3: 见文知意
+        //4: 变量名中不要出现其他特殊字符 譬如 -  or .
+        //5: 变量名大小写敏感
+        //6: 多个单词描述同一个变量，使用驼峰命名法，
+
+        var myMessageCount;
+
+        //给变量赋值
+        myMessageCount = 5;
+
+        // 可以给变量重新赋值
+        myMessageCount = 200;
+
+        // 变量的类型 ,根据赋值的不同变量类型也不同
+        // javascript 中的变量类型
+
+        //1:undefined   :只定义了变量，但是没有赋值
+        var message1;  
+        // 在控制台输出变量的类型
+        console.log(typeof message1);
+
+        //2:Boolean    :给定变量的取值只能是 true  false
+        var message2 = true;
+        console.log(typeof message2);
+
+        //3:Number 类型  数值类型
+        var message3 = 10.5;
+        console.log(typeof message3);
+
+        //4:String  字符串类型,字符串是用""  or '' 包括起来
+        var message4 = "123456";
+        console.log(typeof message4);
+
+        //5:Object  对象 类型 一个对象 or null
+        var message5 = new Object;
+        console.log(typeof message5);
+
+        //6:function 函数类型
+        function myfun(){}
+        console.log(typeof myfun);
+
+
+//         var myMsg1 = 'abc';
+//         var myMsg2 = 10;
+// // abc10
+//         var myMsg3 = myMsg1 + myMsg2;
+//         console.log(myMsg3);
+
+//  类型转换分2中，隐式转换 或 显示转换
+ 
+ // 转成Boolean 
+ //1: number    非0   -> true    0  转成 false
+ //2: string    非空  -> true    空 转成 false
+ //3: undefinded  -> false
+ //4  Object    的值 null  转成 false  其他转成true
+
+console.log('-------Boolean 类型转换 S-----');
+
+// Boolean(value) -> 把value 转成 Boolean
+console.log( Boolean(10) );
+console.log( Boolean(0) );
+
+console.log( Boolean("") );
+console.log( Boolean("abc") );
+
+var mytest;
+console.log( Boolean(mytest) );
+
+console.log( Boolean(null) );
+
+console.log('-------Boolean 类型转换 E-----');
+        
+
+// 字符串 转成 数值类型
+var myString1 = "123";
+
+// Number(myString1)    
+
+//如果是字符串，遵循以下规则：
+// 如果字符串中只包含数字，则将其转换为十进制（忽略前导0）
+// 如果字符串中包含有效的浮点格式，将其转换为浮点数值（忽略前导0）
+// 如果是空字符串，将其转换为0
+// 如果字符串中包含非以上格式，则将其转换为NaN 
+
+
+// parseInt(myString1)   
+
+// 忽略字符串前面的空格，直至找到第一个非空字符
+// 如果第一个字符不是数字符号或者负号，返回NaN
+// 如果第一个字符是数字，则继续解析直至字符串解析完毕或者遇到一个非数字符号为止
+// 如果上步解析的结果以0开头，则将其当作八进制来解析；如果以0x开头，则将其当作十六进制来解析
+// 如果指定radix参数，则以radix为基数进行解析
+
+// parseFloat(myString1)      
+
+var myString2 = "123abc";
+var myNumber1 = Number(myString2);   //NaN  :not a number
+var myNumber2 = parseInt(myString2); // 123 
+
+console.log(myNumber1);
+console.log(myNumber2);
+
+
+// 数值类型转成字符串
+//String(数值) ->把数值直接转成字符串
+//toString() 来把数值转换为字符串
+
+var myNumberTest1 = 10;
+console.log(String(myNumberTest1)); //"10"
+// console.log(myNumberTest1.toString());
+
+//如何判读一个变量是否为数值
+console.log(isNaN(NaN)); //true
+
+console.log(5/0);//正无穷  Infinite
+console.log(-5/9);//负无穷 -Infinite
+
+
+// 可以使用运算符 把变量 组合成语句
+// 算数运算符  关系运算符  逻辑运算符   位运算符
+// + - * /  % ++ -- += -= *= /= %=
+
+var first = 10;
+var second = 20;
+
+var third = first + second;   // 语句以;结尾的表达式
+console.log(third);
+
+//% 求余数的运算符
+var result1 = 14 % 5; //
+console.log(result1); //4
+
+//++ :自增运算符，把自己的值加1
+var a1 = 5;
+a1++;
+console.log(a1);
+++a1;
+
+// 当参与运算时，a++  和  ++ a 不一样
+//a++   :先参与运算，然后把自己的值加1
+//++a   :先把自己的值加1 ，然后参与运算
+var a = 3;
+var b = a++;  //b = 3    a = 4
+var c = ++a; //a = 5    c = 5
+
+var m = 4;
+var n = ++m + ++m + m++; //17
+//       5  +  6  + 6
+//   m = 7
+console.log(n);
+
+//b-- 和 --b  和 ++　性质一样
+
+//+= -= *= /= %=
+var k = 10;
+k += 5;  //k = k + 5;  先用k的值和5 进行运算 然后把结果重新赋值给k
+k -= 5; // k = k - 5;
+k *= 5; // k = k*5;
+k /= 5; // k = k/5; 
+console.log(k);
+
+
+// +  号运算符中当有一个操作数是字符串时，就变成了字符串拼接
+var str1 = "hello";
+var str2 = "world"
+var str3 = str1 + str2 ;//"helloworld"
+var str4 = 10 + "abc"; //"10abc"
+
+//关系运算符:求2个操作数的关系，返回Boolean true false
+// >  <  >= <= == != === !===
+console.log( 3 > 2); //true
+console.log( 3 <= 3); //<=  小于 or 等于   true
+console.log( 3 < 3);//false
+
+//字符串进行比较
+console.log("23" < "134");//字符串比较是比较的字符的编码值，逐位比较，前面相同，看长度
+
+console.log(10 == "10");//true ,先转换（字符串转成数值后） 然后比较
+
+console.log(10 === "10");//只比较，但是进行转换，false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

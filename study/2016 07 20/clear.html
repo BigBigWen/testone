@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>清除浮动</title>
+	<link rel="stylesheet" href="">
+	<!-- clear:清除浮动
+	left:不允许自身的左边有浮动元素
+	right;不允许自身的右边有浮动元素
+	both;两边都不允许有浮动 -->
+	<style type="text/css" media="screen">
+	*{margin: 0px;padding: 0px;}
+	.div1{width: 200px;height: 100px;background-color: #ccc;float: left;clear: right;}/*只在布局自身的时候起作用*/
+	.div2{width: 200px;height: 100px;background-color: #f55;float: left;}
+		
+	</style>
+	
+</head>
+<body>
+	<div class="div1"></div>
+	<div class="div2"></div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<!-- 使用link 链接外部的css文件 -->
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		#mydiv{
+			width: 100px;
+			height: 100px;
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+     <!-- 行内式样 -->
+    <div id="mydiv" style="background-color: red;border:1px solid black;"></div>
+  
+
+    <ul>
+    	<li>1</li>
+    	<li>2</li>
+    	<li>3</li>
+    	<li>4</li>
+    	<li>5</li>
+    </ul>
+
+    <button type="button">测试float</button>
+
+	<script>
+		var myDivElement = document.getElementById('mydiv');
+
+		//1:当有使用style 获取式样时，式样名必须使用驼峰命名法
+		//console.log(myDivElement.style.backgroundColor);
+		//myDivElement.style.backgroundColor = 'green';
+
+		//2:float 在js中是保留字，不能直接使用 ele.style.float
+		//需要使用时使用 cssFloat
+		// var buttonElement = document.getElementsByTagName('button')[0];
+		// buttonElement.onclick = function(){
+		// 	var liElementList = document.querySelectorAll('ul>li');
+		// 	for( var i = 0; i < liElementList.length; i++ ){
+		// 		liElementList[i].style.cssFloat = 'left';
+		// 	}
+		// }
+
+       //3: style.cssText 可以获取行内式样的所有的式样
+       console.log( myDivElement.style.cssText );
+       //一次性设置多个式样
+       myDivElement.style.cssText = 'background-color:yellow;border:2px solid black;';
+
+       //4: 元素的style 只能控制 行内式样
+       console.log(myDivElement.style.width);
+	</script>
+</body>
+</html>

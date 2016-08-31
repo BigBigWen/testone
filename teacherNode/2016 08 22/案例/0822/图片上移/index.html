@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		*{ margin: 0;padding: 0; }
+		.box{ width: 950px;margin: 100px auto; }
+		.box>div { width: 300px;height: 170px; float: left;margin-right: 10px;position: relative;overflow: hidden;}
+		.mask{ position: absolute;top:140px;left: 0px;width: 300px;height: 170px; background-color: rgba(0,0,0,0.5);color:white;font-size: 13px;/*transition: all 1s;*/}
+		/*.box>div:hover>.mask{ top:0px; }*/
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="conten1">
+			<img src="images/1.jpg" alt="">
+			<div class="mask">
+				这是我们的说明文字1
+			</div>
+		</div>
+		<div class="conten2">
+			<img src="images/2.jpg" alt="">
+			<div class="mask">
+				这是我们的说明文字2
+			</div>
+		</div>
+		<div class="conten3">
+			<img src="images/3.jpg" alt="">
+			<div class="mask">
+				这是我们的说明文字3
+			</div>
+		</div>
+	</div>
+
+	<script>
+		window.onload = function(){
+			var contentElements = document.querySelectorAll('div[class^="conten"]');
+			for( var i = 0; i < contentElements.length;i++ ){
+				contentElements[i].onmouseover = function(){
+                 var maskElement = this.getElementsByClassName('mask')[0];
+                 startMoveTop(maskElement,'0px');
+				}
+
+				contentElements[i].onmouseout = function(){
+					 var maskElement = this.getElementsByClassName('mask')[0];
+					 startMoveTop(maskElement,'140px');
+				}
+			}
+
+			function startMoveTop(obj,endPos){
+              //1:获取obj的top的位置
+              var currentTop = getStyleValue(obj,'top');
+
+              //2：判断当前的top值和endPos的关系，决定向上走还是向下走
+              var speed = 0;
+              if( parseInt(currentTop) > parseInt(endPos) ){
+              	//向上走
+              	speed = -10;
+              }else{
+              	speed = 10;
+              }
+
+              //清除定时器
+              clearInterval(obj.timer);
+              obj.timer = setInterval(function(){
+              	//获取一次当前值
+              	var top = getStyleValue(obj,'top');
+              	
+              	//修改top位置
+              	obj.style.top = (parseInt(top) + speed) + 'px';
+              	//判断当前的位置，有没有超出最终的位置
+                if( speed < 0 ){
+                    //向上走
+                	if( parseInt(obj.style.top) <= parseInt(endPos) ){
+                       clearInterval(obj.timer);
+                       obj.style.top = endPos;
+                	}
+                }else{
+                    //向下走
+                    if( parseInt(obj.style.top) >= parseInt(endPos)){
+                    	clearInterval(obj.timer);
+                    	obj.style.top = endPos;
+                    }
+                }
+              },30);
+  
+
+			}
+            
+            //获取式样中的某个属性
+            //getStyleValue(mask,'top' )
+			function getStyleValue( obj, styleName ){
+                if( obj.currentStyle ){
+                	return obj.currentStyle[styleName];
+                }else{
+                	return getComputedStyle(obj,null)[styleName];
+                }
+			}
+		}
+	</script>
+</body>
+</html>

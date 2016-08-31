@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<img src="" name="1" alt="1">
+	<img src="" name="2" alt="2">
+	<img src="" name="3" alt="3">
+	<img src="" name="4" alt="4">
+	<script>
+		var imgList = document.getElementsByTagName('img');
+		//nodelist 类似于数组,可以通过下标访问,可以通过lenght得到列表的长度
+		//访问列表中的内容,还可以通过item函数进行
+		for( var i = 0; i < imgList.length;i++){
+			var imgElement = imgList.item(i);
+			console.log(imgElement);
+		}
+
+		//namedItem
+		var imgElement1 = imgList.namedItem('1');
+		var imgElement3 = imgList.namedItem('3');
+		console.log(imgElement1);
+		console.log(imgElement3);
+
+        //使用[]快速访问列表中的某一项,容易下标弄混
+        //var imgElement11 = imgList['mytest']
+	</script>
+</body>
+</html>

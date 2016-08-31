@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		 var num = [10,20,21,33,45,22,100,104,111,123,8];
+		 // var evenArray =  num.filter(function(item,index,array){ return item % 2 == 0; })
+		 
+		 //写一个函数，最大的偶数和最小的奇数之和
+		 function sumOfEvenOdd(array){
+		 	//1:找出最大的偶数
+            var maxEven = maxEvenInArray(array)  
+		 	//2:最小的奇数
+            var minOdd  = minOddInArray(array);
+		 	//3:返回之和
+		 	return maxEven + minOdd;
+		 }
+
+		 function maxEvenInArray(array){
+		 	//赋值 Number.MIN_VALUE 数值中的最小值
+            var maxEven = Number.MIN_VALUE; 
+            for( var i = 0; i < array.length; i++ ){
+            	if( array[i] % 2 == 0 ){
+            		if( maxEven < array[i] ){
+            			maxEven = array[i];
+            		}
+            	}
+            }
+            return maxEven;
+		 }
+
+		 function minOddInArray(array){
+		 	//数值中的最大值
+            var minOdd = Number.MAX_VALUE;
+            for( var i = 0; i < array.length; i++ ){
+                 if( array[i] % 2 != 0){
+                 	if( minOdd > array[i] ){
+                         minOdd = array[i];
+                 	}
+                 }
+            }
+            return minOdd;
+		 }
+
+
+    console.log(sumOfEvenOdd(num));
+	</script>
+</body>
+</html>

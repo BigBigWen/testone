@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		*{margin: 0;padding: 0;}
+		.clear:after{ content: "";clear: both; display: block;overflow: hidden;height: 0;}
+		.box{ width: 500px; height: 150px;border: 1px solid black;position: relative;margin: 100px auto;}
+		.title{ background-color: orange;width: 500px; }
+		.title>a{ text-decoration: none;color:black; background-color: orange;float:left;width: 50px;height: 30px;line-height: 30px;text-align: 30px;}
+		.content1,.content2,.content3{
+			position: absolute;left: 0px;top:40px;display: none;
+		}
+		.title .active{ background-color: white; }
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="title clear">
+			<a class="active" href="">第一组</a>
+			<a href="">第二组</a>
+			<a href="">第三组</a>	
+		</div>
+
+		<div class="content1" style="display:block">
+			<img src="images/0.jpg" alt="">
+			<img src="images/2.jpg" alt="">
+			<img src="images/6.jpg" alt="">
+		</div>
+		<div class="content2">
+			<img src="images/7.jpg" alt="">
+			<img src="images/8.jpg" alt="">
+			<img src="images/11.jpg" alt="">
+		</div>
+		<div class="content3">
+			<img src="images/12.jpg" alt="">
+			<img src="images/14.jpg" alt="">
+			<img src="images/16.jpg" alt="">
+		</div>
+	</div>
+
+	<script>
+		window.onload = function(){
+			var aList = document.querySelectorAll('.title>a');
+			var contentList = document.querySelectorAll('div[class^="content"]');
+			for( var i = 0; i < aList.length;i++ ){
+				aList[i].index = i;
+				aList[i].onmouseover = function(){
+                   // var index = this.index;
+                   for( var j = 0; j < aList.length;j++ ){
+                   	  if( j == this.index ){
+                         aList[this.index].className = 'active';
+                         contentList[this.index].style.display = 'block';
+                   	  }else{
+                         aList[j].className = '';
+                         contentList[j].style.display = 'none';
+                   	  }
+                   }
+				}
+			}
+		}
+	</script>
+</body>
+</html>

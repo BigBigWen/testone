@@ -1,0 +1,45 @@
+[
+    {"id": "side-bar-files-open-with",
+        "children":
+        [
+            //默认是谷歌
+           {
+                "caption": "chrome",
+                "id": "side-bar-files-open-with-firefox",
+
+                "command": "side_bar_files_open_with",
+                "args": {
+                            "paths": [],
+                            "application": "D:\\360Chrome\\Chrome\\Application\\360chrome.exe",
+                            "extensions":".html" //any file with extension
+                        }
+            },
+
+            {"caption":"-"},
+            //次要是火狐
+             {
+                "caption": "firefox",
+                "id": "side-bar-files-open-with-chrome",
+
+                "command": "side_bar_files_open_with",
+                "args": {
+                            "paths": [],
+                            "application": "D:\\firefox.exe",
+                            "extensions":".html" //any file with extension
+                        }
+            },
+            //次要是IE
+            {
+                "caption": "IE",
+                "id": "side-bar-files-open-with-IE",
+
+                "command": "side_bar_files_open_with",
+                "args": {
+                            "paths": [],
+                            "application": "C:\\Program Files\\Internet Explorer\\iexplore.exe",
+                            "extensions":".html" //any file with extension
+                        }
+            }
+        ]
+    }
+]

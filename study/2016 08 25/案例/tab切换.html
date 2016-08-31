@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{margin: 0;padding: 0}
+		#tab1>div,#tab2>div,#tab3>div{
+			width: 300px;height: 100px;border: 1px solid black;
+			display: none;
+		}
+		#tab1,#tab2,#tab3{margin-bottom: 50px;}
+	</style>
+</head>
+<body>
+	<div id="tab1">
+		<button type="button">教育</button>
+		<button type="button">科技</button>
+		<button type="button">体育</button>
+		<button type="button">娱乐</button>
+	
+	    <div style="display:block">教育内容</div>
+	    <div>科技内容</div>
+	    <div>体育内容</div>
+	    <div>娱乐内容</div>
+    </div>
+    <div id="tab2">
+		<button type="button">教育</button>
+		<button type="button">科技</button>
+		<button type="button">体育</button>
+		<button type="button">娱乐</button>
+	
+	    <div style="display:block">教育内容</div>
+	    <div>科技内容</div>
+	    <div>体育内容</div>
+	    <div>娱乐内容</div>
+    </div>
+    <div id="tab3">
+		<button type="button">教育</button>
+		<button type="button">科技</button>
+		<button type="button">体育</button>
+		<button type="button">娱乐</button>
+	
+	    <div style="display:block">教育内容</div>
+	    <div>科技内容</div>
+	    <div>体育内容</div>
+	    <div>娱乐内容</div>
+    </div>
+  
+
+<script>
+	window.onload = function(){
+		function Tab(elementId){
+			var divEle = document.getElementById(elementId);
+			this.buttonList = divEle.getElementsByTagName('button');
+			this.contentList = divEle.getElementsByTagName('div');
+			var _that = this;// .在外部 创建一个变量指向当前创建的对象
+			for( var i = 0; i < this.buttonList.length;i++){
+				this.buttonList[i].index = i;
+				this.buttonList[i].onclick = function(){
+					//onclick内的函数指向this.buttonList[index]
+					var index = this.index;
+					//把当前的显示,其余隐藏
+					for( var j = 0; j < _that.contentList.length;j++){
+						if(j==index){
+							_that.contentList[index].style.display='block';
+						}else{
+							_that.contentList[j].style.display = 'none';
+						}
+					}
+					
+
+				}
+			}
+		}
+		var  tab1Ele = new Tab('tab1'); 
+		var  tab2Ele = new Tab('tab2'); 
+		var  tab3Ele = new Tab('tab3'); 
+	}
+</script>
+</body>
+</html>

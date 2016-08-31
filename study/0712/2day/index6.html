@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>表单的学习</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+    <!-- form 表单的作用是收集用户的信息,并提交到服务器
+    action:表单所要提交的目的地,就是服务端地址
+    :跟服务器通信时是用get还是用post
+    accept-charset指定服务端接受的字符集
+    name:提交时的名字
+    value:值,初始指定的值
+    placeholder:占位提示标志
+    submit:提交按钮
+    http://servertest.php/?username=ABC&password=123 -->
+   <!--  <form action="http://servertest.php" method="post" accept-charset="utf-8">
+   	<p>用户名:<input type="text" name="username" value="ABC" placeholder="请输入你的名陈"></p>
+   	<p>密码:<input type="password" name="password" value="123" placeholder="请输入密码"></p>
+   	<input type="submit" name="" value="提交" >
+   
+   </form> -->
+   <form action="http://servertest.php" method="get" accept-charset="utf-8">
+   <p>用户名:<input type="text" name="username" value="123" placeholder="请输入用户名"></p>
+   <p>密码:<input type="password" name="password" value="abc" placeholder="请输入密码"></p>
+   <input type="submit" name="" value="登录">
+
+   	
+
+   	
+   </form>
+	<hr>
+	<!-- 输入内容 复选框
+		<form action="" method="get" accept-charset="utf-8">
+	       <label for="checkbox_input">篮球</label>lable用来说明输入框
+	       1:给输入框指定一个id属性
+	       2:吧lable中的for写成id的值
+	       <input id="checkbox_input" type="checkbox" name="" value="" checked="">
+	       <label for="checkbox_input2">排球<input id="checkbox_input2" type="checkbox" name="" value=""></label>
+	        把label和input结合起来 -->
+	 <label for="checkbox-input">草莓<input id="checkbox-input"  type="checkbox" name="" value=""></label>
+	 <label for="checkbox-input1">杨桃<input id="checkbox-input1" type="checkbox" name="" value=""></label>
+
+       <!-- 单选框 
+       type:radio单选按钮
+       要把多个单选按钮做成一组,打他们input中的name值设置成同一个-->
+       <label>男<input type="radio" name="radio_name" value="女"></label>
+       <label>女<input type="radio" name="radio_name" value="女"></label>
+
+       	
+		
+	</form>
+	<hr>
+	<form action="" method="get" accept-charset="utf-8">
+		<label>用户名<input type="text" name="" value="" placeholder="请输入用户名"></label><br>
+		<label>密码<input type="password" name="" value="" placeholder="输入密码"></label>
+		<input type="submit" name="" value="提交" ">
+		<input type="reset" name="" value="重置">
+		</form>
+
+		<!-- 输入的内容从列表中选择 -->
+		<input type="text"   list="mylist">
+
+
+	
+	
+	<datalist id="mylist">
+		<option value="pig1"> </option>
+		<option value="pig2"> </option>
+		<option value="pig3"> </option>
+		<option value="pig4"> </option>
+		<option value="pig5"> </option>
+	</datalist>
+</body>
+</html>

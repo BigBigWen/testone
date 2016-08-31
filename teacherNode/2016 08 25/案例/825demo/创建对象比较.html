@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		//1: new Object();
+		var p1 = new Object();
+		//p1
+		p1.eat = function(){ console.log('hello');}
+
+		var p2 = new Object();
+		//p2 
+		p2.eat = function(){ console.log('hello');}
+
+		console.log(p1.eat == p2.eat);
+
+
+		//
+		var p3 = {
+			eat:function(){}
+		} 
+		var p4 = {
+			eat:function(){}
+		}
+		console.log(p3.eat == p4.eat); //false
+
+		//3工厂方法
+		function createP(){
+			var o = new Object();
+			o.eat = function(){}
+			return o;
+		} 
+
+		var p5 = createP();
+		var p6 = createP();
+		console.log(p5.eat == p6.eat);//false
+
+		//4:构造函数
+		function CreatePFun(name,age){
+			this.name = name;
+			this.age = age;
+			this.eat = function(){
+				console.log('aaa');
+			}
+		}
+
+		var p7 = new CreatePFun('a',1);
+		var p8 = new CreatePFun('b',2);
+		console.log(p7.eat == p8.eat); //fasle
+
+
+		////////////////////////////////////////
+		//每一个构造函数，系统都会生成一个原型对象
+		//可以通过 Animal.prototype 访问
+		//通过该构造函数创建的所有对象都会包含指针_proto_
+		//该指针指向生成的原型对象
+
+		function Animal(){
+			// this.type = '动物';
+			// this.sleep = function(){
+			// 	console.log('动物需要睡眠');
+			// }
+		}
+
+        //通过构造函数的原型，设置的函数或属性，都会被他创建的对象所共享
+
+        //可以通过赋值语句给原型对象，添加属性或方法
+        //添加的所有的属性或方法，都会别后面创建的对象所共享
+		Animal.prototype.type = '动物';
+		Animal.prototype.sleep = function(){
+			console.log('动物需要睡眠');
+		}
+
+		var cat = new Animal();
+		var dog = new Animal();
+         
+        //当一个对象调用属性或方法时，首先查看自身是否有该属性或方法，如果有调用自身的属性或方法，如果没有沿着_proto_指向的原型对象查找，如果有调用原型对象中的属性和方法
+        console.log(cat.type);
+        console.log(dog.type);
+		console.log(cat.sleep == dog.sleep);
+   
+        //給一个对象属性赋值，相当于给对象本身添加属性，可能屏蔽掉原型对性中的属性
+		cat.type = '猫科动物';
+		console.log(cat.type);// 猫科动物
+		console.log(dog.type);// 动物
+
+        //原型对象中的constructor 指向的是构造函数本身
+		console.log(Animal.prototype.constructor);
+
+	</script>
+</body>
+</html>

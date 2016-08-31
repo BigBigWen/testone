@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body id="body">
+	<!-- <script>
+		var arr = new Array('0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f');
+		var str ='';
+		var body1 = document.getElementById('body');
+		for(i = 0 ;i < 6;i++){
+			str += arr[Math.floor(Math.random()*15)];
+		}
+		console.log(str);
+		body1.style.background = '#'+str;
+		
+	</script> -->
+	<!-- <script>
+	function getcolor(){
+		    var color = "";
+			var arrColor = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'];
+			for( var i = 0 ;i < 2;i++){
+
+				 color += arrColor[Math.floor(Math.random()*16)];
+			}
+			return color;
+		}
+		var body = document.getElementById('body');
+		var redColor = getcolor();
+		var blueColor = getcolor();
+		var yellowColor = getcolor();
+	    body.style.backgroundColor = '#'+redColor+blueColor+yellowColor;
+	</script> -->
+	<script>
+		
+		var num1 = Math.floor(Math.random()*256);
+		var num2 = Math.floor(Math.random()*256);
+		var num3 = Math.floor(Math.random()*256);
+		body.style.backgroundColor = 'rgb('+num1+','+num2+','+num3+')';
+
+		
+	</script>
+</body>
+</html>

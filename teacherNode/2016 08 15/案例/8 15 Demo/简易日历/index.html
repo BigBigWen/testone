@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		*{margin: 0;padding: 0;}
+		body{ font-family: arial;}
+		.container{ width: 250px;margin: 100px auto; background-color: #ccc;padding-bottom: 10px;}
+		.flexBox{ display: flex;flex-direction: row;flex-wrap: wrap;width: 100%; justify-content: space-around;}
+		.month{ width: 60px;height: 60px;margin: 10px;background-color: darkgray;text-align: center;}
+		.month>h2{ padding-top: 5px; }
+
+		.actionInfo{ margin:10px;border: 1px solid white; }
+
+		.active{ background-color: white;color:red; }
+	</style>
+</head>
+<body>
+	<div class="container">
+	    <!-- 月份 -->
+		<div class="flexBox">
+			<div class="month active">
+				<h2>1</h2>
+				<p>JAN</p>
+			</div>
+			<div class="month">
+				<h2>2</h2>
+				<p>FEB</p>
+			</div>
+			<div class="month">
+				<h2>3</h2>
+				<p>MAR</p>
+			</div>
+			<div class="month">
+				<h2>4</h2>
+				<p>ARP</p>
+			</div>
+			<div class="month">
+				<h2>5</h2>
+				<p>MAY</p>
+			</div>
+			<div class="month">
+				<h2>6</h2>
+				<p>JUN</p>
+			</div>
+			<div class="month">
+				<h2>7</h2>
+				<p>JUL</p>
+			</div>
+			<div class="month">
+				<h2>8</h2>
+				<p>AUG</p>
+			</div>
+			<div class="month">
+				<h2>9</h2>
+				<p>SEP</p>
+			</div>
+			<div class="month">
+				<h2>10</h2>
+				<p>OCT</p>
+			</div>
+			<div class="month">
+				<h2>11</h2>
+				<p>NOV</p>
+			</div>
+			<div class="month">
+				<h2>12</h2>
+				<p>DEC</p>
+			</div>
+		</div>
+
+     <!-- 活动详情 -->
+     <div class="actionInfo">
+     	<h2 id="actionTitle">1 月活动</h2>
+     	<p id="actionMessage">快过年了，大家可以商量着去哪玩吧</p>
+     </div>
+	</div>
+
+
+	<script type="text/javascript">
+		window.onload = function(){
+			var messageArray = ['1月份活动：1111111',
+								 '2月份活动：2222222',
+								 '3月份活动：3333',
+								 '4月份活动：4444444',
+								 '5月份活动：5555555',
+								 '6月份活动：6666666',
+								 '7月份活动：777777',
+								 '8月份活动：8888888',
+								 '9月份活动：9999999',
+								 '10月份活动：10101010',
+								 '11月份活动：11 11 11',
+								 '12月份活动：12 12 12',
+								];
+          
+         //通过class 选择元素,返回类似数组的对象，把class属性中包含month的提取出来
+         var monthList = document.getElementsByClassName('month');
+         for( var i = 0; i < monthList.length;i++ ){
+         	 //给每一个月份的对象，添加属性，次序属性
+             monthList[i].index = i;
+
+             monthList[i].onclick = function(){
+             	//1: 修改式样：自己的高亮，其他的默认
+             	for( var j = 0; j < monthList.length;j++ ){
+             		if( j == this.index ){
+             			//高亮
+             			//className 重写所有的class值
+             			this.className = 'month active';
+             		}else{
+                       //默认
+                       monthList[j].className = 'month';
+             		}
+             	}
+
+             	//2:展示信息,获取元素在数组中的次序
+             	var index = this.index;
+             	var message = messageArray[index];
+
+             	var titleElement = document.getElementById('actionTitle');
+             	titleElement.innerHTML = (index+1) + '月活动';
+
+             	var actionElement = document.getElementById('actionMessage');
+             	actionElement.innerHTML = message;
+             }
+         }
+
+		}
+	</script>
+</body>
+</html>

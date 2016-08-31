@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>变换</title>
+	<link rel="stylesheet" href="">
+	<style>
+	*{margin: 0;padding: 0;}
+		/*变换使用的是transform的属性
+		2d变换
+		可以对盒子进行平移 缩放 旋转 倾斜*/
+		.box{width: 100px;height: 100px;
+			background-color: red;margin: 20px auto;}
+		.box1{transition: all 1s linear;}
+		.box1:hover{
+			/*transform: translateX() 沿着x轴进行平移,正直向右,负值向左
+			              translateY  沿着Y轴进行平移,向下为正,向上为负
+			              ;*/
+			transform: translateX(-100px);
+		}
+		.box2{transition: all 1s linear;}
+		.box2:hover{transform: translateY(-100px);}
+		/*在x y方向同时平移*/
+		.box3{transition: all 1s linear;}
+		.box3:hover{transform: translate(100px,100px);}
+		/*缩放*/
+		.box4{transition: all 1s linear;}
+		.box4:hover{transform: scale(0.5,0.5);}
+	/*旋转 沿z轴进行旋转,顺时针为正,逆时针为负
+	默认按照中心点进行旋
+	*/
+	/*transform-origin:0px 0px 修改变换的起始位置*/
+         .box5{transition: all 1s linear;}
+         .box5:hover{transform: rotate(45deg);}
+         /*倾斜 x轴 y轴进行倾斜
+         x 逆时针为正
+         Y顺时针为正*/
+         .box6{transition: all 1s linear;}
+         .box6:hover{transform: skewX(60deg);}
+         .box7{transition: all 1s linear;}
+         .box7:hover{transform: skewY(60deg);}
+         /*对于非置换元素的变换*/
+         span{border: 1px solid red;background-color: pink;display:block;margin-bottom: 50px;width: 100px;}
+	     .span1{transition: all 1s linear;}
+	     .span1:hover{transform: translateX(50px);}
+	      .span2{}
+	     .span2:hover{transform: scale(2,2);}
+	</style>
+</head>
+<body>
+	<div class="box box1"></div>
+	<div class="box box2"></div>
+	<div class="box box3"></div>
+	<div class="box box4"></div>
+	<div class="box box5"></div>
+	<div class="box box6"></div>
+	<div class="box box7"></div>
+	<div>
+		<span class="span1">span1</span>
+	    <span class="span2">span2</span>
+	</div>
+</body>
+</html>

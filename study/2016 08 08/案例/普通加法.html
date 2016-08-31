@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>普通加法</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<input id="input1" type="text" name="" value="" placeholder="">
+	<span>+</span>
+	<input id="input2" type="text" name="" value="" placeholder="">
+	<button id="mybuttonElement" type="button">=</button>
+	<input id="result" type="text" name="" value="" placeholder="">
+	<script>
+		var input1Element = document.getElementById('input1');
+		var input2Element = document.getElementById('input2');
+
+		
+		mybuttonElement.onclick=function(){
+			//当点击按钮时,自动调用onclick方法,程序走到匿名函数函数体中
+			//通过input元素的value值.可获取输入的内容.注内容以string提供
+			var firstinput = input1Element.value;
+			var secondinput = input2Element.value;
+			//把字符串转成数值
+			var firstinputNumber = parseFloat(firstinput);
+			var secondinputNumber = parseFloat(secondinput);
+
+			var result =firstinputNumber + secondinputNumber;
+			//把结果更新到结果的输入框
+			var resultElement = document.getElementById('result')
+			resultElement.value = result;
+		}
+
+		
+	</script>
+</body>
+</html>

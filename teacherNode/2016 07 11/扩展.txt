@@ -1,0 +1,12 @@
+相关网站：
+1.sublime：
+  注册码：http://blog.sina.com.cn/s/blog_68e267e10102v76h.html
+  相关快捷键：
+  http://www.sheyilin.cn/2015/05/sublime_text_3_tiao_jiao_ni_de_si_ren_li_qi_1/
+  http://www.jianshu.com/p/5905f927d01b
+  
+  
+2.emmet：
+  http://www.jianshu.com/p/54e5033808fd
+  http://docs.emmet.io/cheat-sheet/ （emmet语法大全）
+

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>函数的使用</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		//能够实现特定功能的代码块
+		//函数分为系统函数和自定义函数
+		//定义函数 functin 函数名( 型参1 ,形参2){
+		//	函数体
+		//}
+		// 判断三个数中最大的一个并返回
+		function max (first,second,third){
+			var maxValue = first;
+			if (first < second) {
+				maxValue = second;
+			}
+			if (maxValue < third) {
+				maxValue = third;
+			}
+			return maxValue;
+		}
+		function max1(first,second,third){
+			var maxValue = first > second ? first:second;
+			return maxValue = maxValue > third ? maxValue : third;
+		}
+		//调用函数
+		document.write(max(1,2,3));
+		document.write(max1(4,5,6));
+		var max2 = max1(2,4,5);
+		console.log(max( 1,2,3));
+		console.log(max1(4,5,6));
+		//没有return,没有返回值,不能调用
+		//函数可以在哪些地方使用
+		//1  ----- 函数之间是平等的,函数可以在另外一个函数的内部调用;
+		//三个数的最大值已经出来了,求四个数的最大值
+		function max3(first,second,third,fourth){
+			//先求出前三个的最大值,跟第四个值比较
+			var maxValue = max(first,second,third);
+		   return maxValue = maxValue > fourth ? maxValue: fourth;
+		}
+		document.write('<br>');
+		document.write(max3(1,2,3,9));
+		//2 ----函数作为参数传递
+		function printArgument(input,a){   //函数功能:打印参数;
+			console.log(input,a);
+		} ;
+		function myFun(printer,str){
+			printer(str);
+		}
+		myFun(printArgument,"teststring");
+		//一个函数调用自身,递归
+		//functin f(){
+		//	f()
+		//}
+		//	求 n!= n*(n-1)*(n-2)*...1;
+		//1的值固定为一
+		//求5!
+		//递归调用适用范围:当一个问题可以比他小一个级别的问题通过简单的运算得到,而且最小级别的值是确定的,这时可以用递归.
+		function factorial(n){
+			if (n==1) {
+				return 1;//出口
+			}
+			return n*factorial(n - 1);
+		}
+		factorial(5);
+		//有五个人,第5个比第四个大2岁,第四个比第三个大2岁..第一个20岁;
+		//递归注意,1要有出口,最小级别的固定值.2 从整体上关注本层的功能即可
+		function age(n){
+			if (n==1) {
+				return 20;
+			}
+			return age(n-1)+2;
+		}
+		console.log(age(5));
+		//斐波那揳
+		function fei(n){
+			if (n==1 || n==2) {
+				return 1;
+		
+			return n+fei(n-1);
+		}
+		console.log( fei(5) )
+		//4 函数作为返回值
+
+
+
+
+
+	</script>
+</body>
+</html>

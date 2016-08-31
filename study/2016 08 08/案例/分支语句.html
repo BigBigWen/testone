@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>分支语句</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		//计算机程序的结构3大类
+		//顺序执行,从上到下,定义一个函数不会直接执行,当调用函数时,程序走到函数体去执行,函数结束后,返回调用处
+
+		//分支结构:使用条件判断,true or false
+		//if条件语句
+		//switch 开关语句
+		//
+
+		//循环语句:一段代码会执行多次
+		//while    do...while    for
+		//------------------------------------------------------------------------------
+		//if(condition){ condition:条件语句,true or false
+		//	staement      条件为真执行,条件为假不执行
+		//}
+		var count=30;
+		if (count>10) {
+			console.log('count的值大于10')
+		}
+		//if else相结合
+		//if(condition){    
+		//	staement1
+		//}
+		//else{
+		//	staement2
+		//}
+		var test1 = 15;
+		if ( test1 % 2 == 0) {
+			console.log('输入的是偶数');
+		}
+		else{
+			console.log('输入的是基数');
+		}
+		//if  else if ... else if  else
+		//else不是必须的,其他都不成立时执行的语句
+		//执行第一个条件满足的语句,后面直接跳过
+		//if (condition1) {
+		//	staement1
+		//}
+		//else if (condition2) {
+		//	staement2
+		//}
+		//else if (condition3) {
+		//	staement3;
+		//	
+		//}
+		//else{
+		//	//当前面所有的条件都不成立时,执行else里面的语句
+		//	staement4
+		//}
+		var age =30;
+		if (age<10) {
+			console.log('儿童');
+		}
+		else if (age>10&&age<20) {
+			console.log('青少年')
+		}
+		else if(age>20&&age<30){
+			console.log('青年')
+		}
+		else if(age<50){
+			console.log('中年')
+		}
+		else{console.log('老年')}
+		//多个if放在一起,只要满足条件都执行
+	//if(condotion1){
+	//	staement1
+	//}
+	//if(condition2)语句二
+	//if(condition3)语句三
+	var age = 40;
+	if (age>10) {console.log('大于10')}
+	if (age>20) {console.log('大于20')}
+	if (age>30) {console.log('大于30')}
+	if (age>40) {console.log('大于40')}
+		else{console.log('其他年龄')}//else和最近的if进行配对
+	</script>
+</body>
+</html>

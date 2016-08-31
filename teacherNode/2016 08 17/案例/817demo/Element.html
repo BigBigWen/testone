@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+
+    <div class="box">
+    	<div class="tab">1</div>
+    	<div class="tab">2</div>
+    	<div class="tab">3</div>
+    	<div class="tab">4</div>
+    </div>
+
+    <div class="tab">5</div>
+    <div class="tab">6</div>
+    <div class="tab">7</div>
+
+
+    <div id="container" class="mytestclass user group" title="mytesttitle"></div>
+
+    <!-- <div id="container" class="mytestclass group" title="mytesttitle"></div> -->
+
+	<script>
+		//1:查询后代的元素
+		//getElementById
+		//getElementsByTagName   只查找 后代元素中tag值为指定的值
+		//getElementsByClassName 查找后代
+
+		// var boxElement = document.getElementsByClassName('box')[0];
+		// var tabList1 = boxElement.getElementsByTagName('div');
+		// var tabList2 = boxElement.getElementsByClassName('tab');
+
+		// console.log(tabList1);
+		// console.log(tabList2);
+
+		// var tabList3 = boxElement.querySelector('.tab');
+		// var tabList4 = boxElement.querySelectorAll('.tab');
+		// console.log(tabList3);
+		// console.log(tabList4);
+
+
+		//2:提供便利的方法，查看其中的属性
+		//element.id    获取id的值
+		//element.title  获取title的值
+		//element.className  字符串中包含所有指定的class
+		//element.classList  类似数组
+
+       var divElement = document.getElementById('container');
+       console.log(divElement.id);
+       console.log(divElement.title);
+       console.log(divElement.className);
+       console.log(divElement.classList);
+
+　　　　/*
+       //使用className 去掉中间的某一项
+       var classNameString = divElement.className;
+       // / pattern \s 代表空表字符  +　代表一个或多个/ 
+       var classNameArray = classNameString.split(/\s+/);
+
+       //查找user在数组中的位置
+       var pos = -1;
+       for( var i = 0; i < classNameArray.length; i++ ){
+       	if( classNameArray[i] == 'user' ){
+       		pos = i;
+       		break;
+       	}
+       }
+
+       //删除user 所在的项目
+       classNameArray.splice(pos, 1);
+
+       //得到新的className
+       var newClassName = classNameArray.join(' ');
+
+       //赋值
+       divElement.className = newClassName;
+      */
+      //remove 删除一个class 
+      divElement.classList.remove('user');
+
+      //add 添加一个class
+      divElement.classList.add('addedClass');
+
+      //toggle 没有指定的class 就添加
+      //如果有指定class 就删除
+      divElement.classList.toggle('xyzClass');
+     
+      //contains 判断是否包含group，返回Boolean 值
+      console.log( divElement.classList.contains('group') ) ; 
+	</script>
+</body>
+</html>

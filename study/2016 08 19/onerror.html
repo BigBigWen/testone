@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<img src="img/img2.png1" alt="">
+	<img src="img/img2.png1" alt="">
+	<img src="img/img2.png1" alt="">
+	<img src="img/img2.png1" alt="">
+	<img src="img/img2.png1" alt="">
+	<script>
+		var imgList = document.getElementsByTagName('img');
+		for( i = 0 ;i < imgList.length;i++){
+			//onerror当图片页面被损坏或者当页面图片资源还没有完全加载出来时显示出来的图片
+			imgList[i].onerror = function(e){
+                     var ev = e||event;
+                     //ev.srcElement可以用来设置
+                     ev.srcElement.src='img/img2.png';
+                     console.log(ev.srcElement)
+			}
+		}
+	</script>
+</body>
+</html>

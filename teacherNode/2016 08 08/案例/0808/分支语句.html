@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		// 计算机程序的结构 3 大类
+		// 顺序执行，从上到下，定义一个函数不会直接执行，当调用函数时，程序走到函数体中去执行，函数结束后，返回到调用处
+
+
+		//分支结构: 使用条件判断，true or false
+		// if 条件语句
+		// switch 开关语句
+
+		//循环执行:一段代码会执行多次
+		//while     do...while   for
+
+		//-------------------------------------------------------
+		// if (condition) {   condition:条件语句 ，true or false
+		// 	 statement        在条件为真的情况下，执行
+		                      // 条件为假不执行
+		// }
+
+		var count = 10;
+		if( count > 0 ){
+			console.log("count 的值 大于 0");
+		}
+
+		// if else 相结合
+		// else 语句只能和 if 相结合进行使用，else 不能单独使用
+
+		// if (condition) {    条件语句  true or false 
+		// 	// statement1      条件为真时执行       
+		// } else {
+		// 	// statement2      条件为假时执行
+		// }
+
+		var test1 = 15;
+		if ( test1 % 2 == 0 ) {
+			console.log("输入的值为偶数");
+		} else {
+			console.log("输入的值为奇数");
+		}
+
+        // if  else if ...else if  else
+        // else 不是必须的，其他条件都不成立时，执行的语句
+        // 执行第一个条件满足的语句，后面直接跳过
+     
+        // if(condition1){
+        //    statement1
+        // }else if(condition2){
+        //    statement2
+        // }else if(condition3){
+        //    statement3
+        // }
+        // ......
+        // else{
+        	   //请前面所有的条件都不成里时，执行else中的语句
+        //    statement4
+        // }
+
+        // var age = 31;
+        // if( age < 10 ){
+        //     console.log("儿童");
+        // }else if( age > 10 && age < 20){
+        //     console.log("青少年");
+        // }else if( age > 20 && age < 30 ){
+        // 	console.log("青年");
+        // }else if( age < 50 ){
+        // 	console.log("中年");
+        // }else{
+        // 	console.log("其他年段");
+        // }
+
+        //只执行第一个满足条件的语句，其他条件直接跳过
+        // var age = 40;
+        // if( age > 10 ){
+        // 	console.log("年龄大于10");
+        // }else if( age > 20){
+        // 	console.log("年龄大于20");
+        // }else if( age > 30){
+        // 	console.log("年龄大于30");
+        // }else if( age > 40){
+        // 	console.log("年龄大于40");
+        // }else{
+        // 	console.log("其他年龄");
+        // }
+
+        // 多个if语句放在一起，只要条件成立就会执行
+        // if(condition1) 语句1
+        // if(condition2) 语句2  
+        // if(condition3) 语句3 
+
+        //else 语句和其最近的if语句配对
+
+        var age = 40;
+        if( age > 10 ){ console.log("大于10"); }
+        if( age > 20 ){ console.log("大于20"); }
+        if( age > 30 ){ console.log("大于30");}
+        if( age > 40 ){ console.log("大于40");}
+        else{
+           console.log("其他年龄");
+        }
+
+	</script>
+</body>
+</html>

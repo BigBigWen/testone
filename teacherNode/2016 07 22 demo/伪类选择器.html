@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+	/* 在一个元素的前面插入内容*/
+		a:before{
+          content: "请点击 ";
+		}
+	/*在一个元素后面插入内容*/
+		a:after{
+           content: "!";
+		}
+       /*命中p中的第一行*/
+		p:first-line{
+            color:red;
+		}
+       /* 命中p 中的 第一个字符，中文一个汉字*/
+		p:first-letter{
+			color:green;
+		}
+     
+     /* 当checkbox 选中时，radio 选中时式样*/
+     input:checked + span{ color:red; }
+
+     /*not 选择器：当条件不成立的时候命中
+       :not(选择器);
+     */
+     /*当a的href属性包含baidu字符时名中*/
+     a[href*="baidu"]{ background-color:blue;  }
+
+     /*不包含baidu字符串时命中*/
+     a:not([href*="baidu"]){ background-color: red; }
+	</style>
+</head>
+<body>
+	<a href="">链接</a>
+
+	<p style="width: 200px;border:1px solid black;">this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test this is test </p>
+
+	<input type="checkbox" name="" value="" placeholder="">
+	<span>点击后改变颜色</span>
+	<br>
+
+    <a href="http://baidu.com">百度</a>
+
+     <a href="http://test.com">test</a>
+
+</body>
+</html>

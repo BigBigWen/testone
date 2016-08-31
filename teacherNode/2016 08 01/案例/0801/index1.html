@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>line-height</title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{margin: 0;padding: 0;}
+		p{margin-bottom: 10px;}
+
+	</style>
+</head>
+<body>
+	<!-- line-height 指行高  ，指定一行的高度
+         height 整个元素的告诉
+	 -->
+	 <!-- line-height: normal  1.2*字体高度 ，各个浏览器不统一
+	                   length  50px  显示指定高度
+	                   百分比 or em  行高等于字体的大小 * 百分比
+	                   数字 （没有单位） 缩放比例，子元素根据自己的字体大小来计算行高
+	  -->
+	  <!-- 1：line-heigh 有继承性，父容器设置的line-height会被子元素继承 -->
+      <p style="line-height:30px;border: 1px solid black;"> p元素 <span>span元素</span> </p>
+      <!-- 2:当字体大小超过行高 ，文字可能会叠加 -->
+      <p style="line-height:20px;border: 1px solid black"> p 元素 
+      	<span style="font-size: 40px;">span元素</span>
+      	<br>
+      	<span style="font-size: 40px;">span元素</span>
+      </p>
+
+<!-- 3:使用缩放比例指定行高时，每个子元素的行高根据自己的字体来计算 -->
+<p style="line-height:1;font-size:20px;border: 1px solid black;">p 元素
+<!-- 当设定缩放比例时，span元素的行高 等于缩放比例 乘以自己的字体大小 40px -->
+	<span style="font-size:40px">span 元素</span>
+	<br>
+	<span style="font-size:40px">span 元素</span>
+</p>
+
+<!-- 3:line-heigh指定为百分比，子元素继承父容器计算后的值 -->
+<p style="line-height:200%;font-size:20px">
+<!--  span 的行高 继承自 20px * 200% = 40px -->
+	<span style="font-size:18px;"></span>
+</p>
+
+<!-- img 或 inline block 元素内没有内容，默认是基线对齐的 ，inline-block元素基线默认为底部-->
+<p style="line-height:60px;border: 1px solid black;font-size:40px">xyz <span style="display: inline-block;border: 1px solid red;width: 50px;height:50px;"></span> </p>
+
+<!-- inline-block元素，当里面有文字时，使用内部文字的基线，作为自己的基线，和外部的基线进行对齐 -->
+<p style="line-height:60px;border: 1px solid black;font-size:40px">xyz <span style="display: inline-block;border: 1px solid red;width: 50px;height:50px;">xyz</span> </p>
+
+
+<!-- 文字居中 
+  由于绝对中间位置和 中线位置不一样，导致middle，近似垂直居中
+  解决办法：font-size设置为0，所有的线都在一起
+--> 
+<p style="line-height:40px;border: 1px solid black;font-size:0px">xyz 
+<!--  对span 元素 重设字体大小,span元素的位置绝对居中 -->
+     <span style="font-size: 30px; vertical-align: middle">xyz</span>
+ </p>
+
+<!--
+ vertical-align: middle  对齐中线
+ vertical-align: top     自己行内框的顶部对齐行框的顶部
+ vertical-algin:bottom   自己行内框的底部对齐行框的底部
+
+ vertical-aligin:数字    是参考基线，正值在基线上方，负值在基线下方
+ -->
+
+ <p style="line-height:60px;">p 元素  <span style="vertical-align:-20px">span 元素</span></p>
+
+<!-- 容器在没有设置height的情况下，他的高度等于line-heigh 之和 -->
+ <p style="line-height:60px;font-size:0;">xyz  <span style="vertical-align:middle;font-size:16px">span</span></p>
+
+</body>
+</html>

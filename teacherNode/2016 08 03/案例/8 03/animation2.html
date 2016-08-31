@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		.box{
+			width: 100px;height: 100px;background-color: green;
+		}
+		.box:hover{
+			/*animation-fill-mode: none 
+			                       forwards
+			                       backwards
+			                       both
+			默认值 为none  
+            none：动画结束后立即回到初始状态
+            forwards ：动画结束后维持动画的结束状态
+            backwards: 在有delay的情况下，立即使用第一帧的数据;
+            both： backwar 和 forward的结合
+			*/
+			animation-name:myanimation;
+			animation-duration: 2s;
+			/*animation-fill-mode: forwards;*/
+			animation-delay: 10s;
+			/*animation-fill-mode: backwards;*/
+			animation-fill-mode: both;
+		}
+
+        /* 定义动画 */
+        @keyframes myanimation{
+        	0%{ background-color: red; }
+        	100%{ background-color: black; }
+        }
+
+	</style>
+	
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>

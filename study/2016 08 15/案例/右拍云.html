@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+	*{margin: 0px;padding: 0px;}
+	.clear:after{height: 0px;content: '';clear: both;display: block;overflow: hidden;}
+	.clear{-ms-zoom:1;}
+	ul>li{float: left;background-position: center center;background-repeat: no-repeat;
+		list-style: none;width: 140px;height: 140px;}	
+	</style>
+	
+</head>
+<body>
+	<ul class="clear">
+		<li style="background-image: url(../images/i/fengdahui_100.png)"></li>
+		<li style="background-image: url(../images/i/huangquanneng_100.png)"></li>
+		<li style="background-image: url(../images/i/lishengsheng_100.png)"></li>
+		<li style="background-image: url(../images/i/qiuruihen_100.png)"></li>
+		<li style="background-image: url(../images/i/whs_100.png)"></li>
+	</ul>
+
+	<script>
+		var imgArr = ['fengdahui','huangquanneng','lishengsheng','qiuruihen','whs'];
+		var liElement = document.getElementsByTagName('li');
+		for( var i = 0 ; i < liElement.length; i++){
+			//数组中保存的是li对象
+			//给每一个li对象赋值一个次序属性
+			liElement[i].order = i;//
+
+			liElement[i].onmouseover = function(){
+				//1 求出this在列表中的次序
+                // var index = liElement.indexOf(this);
+                //var imageName = imgArr[index];
+                //2
+                var index = this.order;
+                var imageName = imgArr[index];
+				this.style.backgroundImage = 'url(../images/i/'+imageName+'_100_hover.png)';
+			}
+			liElement[i].onmouseout = function(){
+				var index = this.order;
+				var imageName = imgArr[index];
+				this.style.backgroundImage = 'url(../images/i/'+imageName+'_100.png)';
+			}
+			liElement[i].onclick = function(){
+				var index = this.order;
+				var imageName = imgArr[index];
+				this.style.backgroundImage = 'url(../images/i/'+imageName+'_140.png)';
+			}
+		}
+	</script>
+</body>
+</html>

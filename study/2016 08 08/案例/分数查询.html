@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>分数</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<label>请输入分数<input id="inputScore" type="text" name="" value=""></label>
+	<button id="button" type="">查询</button>
+	<!-- 不及格,及格,良好,优秀,输入不合法 -->
+	<span id="result"></span>
+	<script>
+		var inputElement = document.getElementById('inputScore');
+		var button =document.getElementById('button');
+
+		button.onclick = function(){
+			var inputValue = inputElement.value;
+			var inputValueNumber = parseFloat(inputValue);
+			if( inputValueNumber < 0 || inputValueNumber > 100 ){
+				result="输入非法";
+			}else if ( inputValueNumber < 60 ) {
+				result="不及格";
+			}else if ( inputValueNumber >= 60 && inputValueNumber < 80 ) {
+				result="良好";
+			}else if ( inputValueNumber >= 80 ) {
+				result="优秀";
+			}
+			//通过id找结果元素
+			var resultElement = document.getElementById('result');
+			//通过设置元素的innerHTML,来修改元素内容
+			 resultElement.innerHTML = result;
+
+		}
+	</script>
+</body>
+</html>

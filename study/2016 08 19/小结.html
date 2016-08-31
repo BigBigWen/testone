@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<!--  -->
+	<script>
+		window.onload = function(){
+			//事件对象的兼容
+			var ev = e||event;
+			//target(普通浏览器) 和srcElement(IE) 是相等的,只是为了ie兼容
+			ev.target||ev.srcElement
+			//阻止冒泡
+			ev.stopPropagation||ev.cancelBulle;
+			//阻止元素的默认事件
+			return false;
+			e.preventDefault();//比较常用
+			e.returnValue = false;//阻止IE的默认事件
+			//滚动条距离左,上的距离,判断滚动条的位置
+		}
+	</script>
+</body>
+</html>

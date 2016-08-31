@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script type="text/javascript">
+		// 可以对数组，使用函数，施加影响
+		//every()   filter()  map() some() forEarch()
+
+		var array = [1,2,3,4,5];
+        //对数组中的每一项，调用指定的函数
+        //every 每一项都满足条件 返回true
+        //有一个不满足，返回false
+        //函数有三个参数，系统自动帮我们传入
+        //参数1：数组中的值
+        //参数2：值在数组中的下标
+        //参数3：数组本身
+		array.every( function(item,index,array){
+           return item > 2;
+		} ); //结果 false
+
+		//some 和 every 对应，some 只要其中一项满足条件，表达式就返true
+		array.some( function(item,index,array){
+            return item > 2;
+		} ); //结果为true
+
+        //filter , 返回一个数组，数组中的值，都是满足条件的
+        var array2 = array.filter( function(item,index,array){
+        	// 指定一个条件
+        	return item >= 3;
+        } ) ;
+        console.log(array2);
+
+        //map,可以对原始数组中的每一项做运算，从而生成一个新的数组
+        var array3 = array.map( function(item,index,array){
+        	return 2*item;
+        } );//2 4 6 8 10
+        console.log(array3);
+
+        //对数组中的每一项，执行一个函数
+        array.forEach( function(item,index,array){
+        	console.log(item);
+        } );
+
+
+
+
+	</script>
+</body>
+</html>

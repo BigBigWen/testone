@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>元素的值</title>
+	<link rel="stylesheet" href="">
+	<style>
+	span{background-color: #fcc;}
+		
+	</style>
+
+</head>
+<body>
+	<div id="mydiv">aaa</div>
+	<script>
+		var divElement = document.getElementById('mydiv');
+	//方式一 使用innterHTML 插入内容,内容允许有标签 标签自动转换为元素
+		//innerHTML适用于节点内容比较复杂,可以一次性插入很多节点
+		divElement.innerHTML='<span>div测试内容innerHTML</span>';
+		console.log(divElement.innerHTML)//把divElement的内部的内容读取出来,包含内部标签
+	//方式二 使用元素的textContent
+		//原样输出,不考虑内部标签
+		//读取带有标签的文本时,忽略标签,只要文本
+		//  < 转意 &quot
+		divElement.textContent = '<span>div测试内容innerHTML</span>';
+		console.log(divElement.textContent);
+	//方式三 使用innerHTML
+		//divElement.innerText='<span>div测试内容innerHTML</span>';
+		console.log(divElement.innerText);
+
+		//innerText 和textContent 区别
+		//innerText有兼容性问题,并且无法读取隐藏的元素内容
+	//方式四
+	   //使用docment.creatElement or docment.creatTextNode
+	   //然后appendChild 执行效率低
+       //outerHTML包含自己本身
+	   console.log(divElement.outerHTML);
+	   
+	</script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>购物网站头部</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		*{margin: 0px;padding: 0px;}
+		.clearfix:after{content: "";display: block;clear: both;height: 0px;}
+		.clearfix{--ms-zoom: 1;}
+		#nav{width: 1200px;margin: 20px auto;background-color:#fcc;}
+		#nav .left{float: left;}
+		 #nav .left ul li
+		{
+			float: left;
+			width: 64px;
+			text-align: center;
+			list-style: none;
+		    line-height: 35px;
+		    margin: 0px 20px;
+		    position: relative;
+		}
+		 #nav .left ul li:hover{background-color: red;}
+		 /* 使用绝对定位,父级元素先设置 */
+		 #nav .left ul li .hot
+		 {
+		 	background-image: url(../素材/icon1.png);
+		 	background-repeat: no-repeat;
+		 	width: 27px;
+		 	height: 14px;
+		 	position: absolute;
+		 	top: -5px;
+		 	right: -10px;
+		 }
+		 #nav .left ul li a{
+			color: white;
+			font-size: 14px;
+			font-weight: bolder;
+			text-decoration: none;
+		}  
+		#nav .left ul li .seperrate
+		{
+			width: 1px;
+			background-color: yellow;
+			position:absolute;top: 10px;bottom: 5px;right: 0px;/*没有高度时,设置top bottom自动计算*/
+		}
+		#nav .right{float: right;}
+		#nav .right a
+		{
+			
+			text-decoration: none;
+			color: white;
+			font-size: 14px;
+			font-weight: bolder;
+		
+		}
+		 #nav .right img{vertical-align: middle;}	/*居中对齐*/
+		 
+
+
+	</style>
+</head>
+<body>
+	<div id="nav" class="clearfix">
+		<div class="left">
+			<ul>
+				<li>
+					<a href="#">首页</a>
+					<i class="seperrate"></i>
+				</li>
+				<li><a href="#">品牌团</a><i class="seperrate"></i></li>
+				<li>
+					<a href="#">优品汇</a>
+					<span class="hot"></span>
+					<i class="seperrate"></i>
+				</li>
+				<li>
+					<a href="#">包邮9块9</a>
+					<i class="seperrate"></i>
+				</li>
+				<li>
+					<a href="#">20元封顶</a>
+					<i class="seperrate"></i>
+				</li>
+				<li>
+					<a href="#">特卖商城</a>
+					<i class="seperrate"></i>
+					</li>
+				<li>
+					<a href="#">积分商城</a>
+					<i class="seperrate"></i>
+				</li>
+			</ul>
+		</div>
+		<div class="right">
+			<a href="#">精选广告</a>
+			<img src="../素材/signin-icon1.gif" alt="">
+		</div>
+	</div>
+</body>
+</html>
