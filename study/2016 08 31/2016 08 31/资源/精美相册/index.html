@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script src="../../jQuery/jquery-1.11.3.js"></script>
+	<style>
+		*{margin: 0;padding: 0;}
+		body{background:  url(bg.jpg);overflow: hidden}
+		.box{width: 760px;margin: 50px auto;}
+		.box span{
+			background-color: white;
+			padding: 5px;
+			width: 230px;height: 172px;
+			margin: 5px 5px 5px 0;
+			box-shadow: 0px 0px 20px #fff;
+			display: inline-block;
+		}
+		.box>span>img{width: 230px;height: 170px}
+		.showImage{width: 100%;height: 100%;position: absolute;top: 0;left: 0;display: none;}
+		.mask{
+			position: absolute;top: 0;left: 0;
+			opacity: 0.3;width: 100%;height: 100%;
+			background-color: #000;
+		}
+		.imgList{
+			position: absolute;
+			top:50%;margin-top: -225px;
+			left: 50%;margin-left: -325px;
+			width: 650px;height: 450px;
+		}
+		.imgList>img{width: 650px;height: 450px;position: absolute;}
+		.prev,.next{
+			position: absolute;
+			width: 50px;height: 80px;
+			border-radius: 10px;
+			background-color: #000;
+			box-shadow: 0px 0px 20px #fff;
+			top:50%;margin-top: -40px;
+			color:white;
+			text-align: center;line-height: 80px;
+			font-size: 20px;
+		}
+		.prev{left: 100px;}
+		.next{right: 100px;}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<span><img src="main/1.jpg" alt=""></span>
+		<span><img src="main/2.jpg" alt=""></span>
+		<span><img src="main/3.jpg" alt=""></span>
+		<span><img src="main/4.jpg" alt=""></span>
+		<span><img src="main/5.jpg" alt=""></span>
+		<span><img src="main/6.jpg" alt=""></span>
+		<span><img src="main/7.jpg" alt=""></span>
+		<span><img src="main/8.jpg" alt=""></span>
+		<span><img src="main/9.jpg" alt=""></span>
+	</div>
+	<!-- 遮罩层 -->
+	<div class="showImage">
+	<!-- 半透明遮罩 -->
+		<div class="mask"></div>
+		<!-- 图片列表 -->
+		<div class="imgList">
+			<img src="show/0/1.jpg" alt="">
+			<img src="show/0/2.jpg" alt="">
+			<img src="show/0/3.jpg" alt="">
+			<img src="show/0/4.jpg" alt="">
+			<img src="show/0/5.jpg" alt="">
+		</div>
+		<!-- 前进 后退按钮 -->
+		<div class="prev">&lt;</div>
+		<div class="next">&gt;</div>
+	</div>
+	<script>
+		$(function(){
+			$('.box>span').click(function(e){
+				//修改图片展示列表
+				//1获取点击span的次序
+				var $index = $(this).index();
+				//2 获取展示图片的列表
+				var $showList = $('.imgList>img');
+				//3遍历每一个img元素,修改src属性
+				for(var i = 0;i <=5 ;i++){
+					$showList.eq(i-1).attr('src','show/'+$index+'/'+i+'.jpg');
+				}
+				$('.showImage').fadeIn('slow');
+			});
+			$('.showImage').click(function(){
+				$(this).fadeOut('slow');
+			});
+			//前一个背景
+			$('.prev').click(function(e){
+				//阻止冒泡
+				e.stopPropagation();
+				//处理快速点击的bug
+			$('.imgList img:first').animate({'left':'-100%'},1000,function(){
+				//把当前的元素追加到
+				$('.imgList').append($(this));
+				$(this).animate({'left':'0px'},1000);
+			});
+			$('.imgList').animate({'left':'60%'},1000);
+			$('.imgList').animate({'left':'50%'},1000);
+				
+			 });
+				
+			//后一个背景
+			$('.next').click(function(e){
+				//阻止冒泡
+				e.stopPropagation();
+				$('.imgList img:last').animate({'left':'100%'},1000,function(){
+					//把当前的元素放到最底部,插在最前面
+					$('.imgList').prepend($(this));
+					$(this).animate({'left':'0px'},1000);
+				});
+				//整体面板左移
+				$('.imgList')
+				.animate({'left':'40%'},1000)
+				.animate({'left':'50%'},1000);
+			});
+		});
+	</script>
+</body>
+</html>

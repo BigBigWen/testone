@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script src="jQuery/jquery-1.11.3.js"></script>
+</head>
+<body>
+     <button id="start" type="button">start</button>
+     <button id="stop" type="button">stop</button>
+	<div style="width: 100px;height: 100px;background-color: pink;border: 1px solid red">
+	</div>
+
+	<script>
+		//jquery 提供的动画函数
+
+		//speed 持续时间 单位是毫秒1000=1s  ;
+		        //也可以是字符串形式 fast 0.2s; normal 0.4s   ;   slow 0.6s
+		//callback  动画结束调用的函数
+		//toggle 中的boolean true显示   false隐藏
+
+		//show 或hide 的原理:修改宽高和透明度 
+		//show( speed,callback) 显示  
+		//hide( speed,callback)  隐藏
+		//toggle(speed,callback,boolear) 会判断对象的状态 如果隐藏则显示,如果显示则隐藏
+		// $('div').click(function(e){
+		// 	$(this).hide('fast',function(){
+		// 		$(this).show(2000);
+		// 	})
+		// });
+
+		//slideUp slidDown通过修改高度来实现动画
+		//slidUp(speed,cb);
+		//slidDown(speed,cb);
+		//slidToggle();//根据状态产生动画 如果拉开就合上,如果合上就拉开
+		// $('div').click(function(e){
+		// 	$(this).slideUp('slow',function(){
+		// 		$(this).slideDown('slow');
+		// 	})
+		// });
+
+		//fadeIn 和fadeOut 通过修改opacity(透明度)来产生渐隐动画
+		//fadeIn(spped,cb); 淡入
+		//fadeOut(spped,cb); 淡出
+		//fadeToggle()根据状态来反向执行
+		//fadeTo(speed,opacity,callback) 把元素同动画设置到一定的透明度
+
+		// $('div').click(function(e){
+		// 	$(this).fadeOut(1000,function(){
+		// 		$(this).fadeIn(2000)
+		// 	})
+		// });
+		// $('div').hover(function(){
+		// 	$(this).fadeTo(2000,0.3)
+		// });
+
+		//自定义动画 animate
+		//animate(param,speed,cb)
+		//参数一:对哪些属性做动画,可以多个,如果多个属性,动画同时执行
+		// $('div').animate(
+		// 	{'width':'200px','height':'200px'},2000,function(){alert('动画完成')}
+		// 	);
+
+		//在现在宽度的基础上再增加100px +=  -=
+		//两个动画级联时,根据顺序,依次执行,第一个执行完毕后第二个执行
+	//	$('div').animate({'width':'+=100px'},2000).animate({'height':'+=100px'});
+		//对一个元素执行多个动画,动画队列的概念
+		//$('div').animate({'width':'+=100px'},2000);
+		//$('div').animate({'height':'+=100px'},2000);
+
+		//对一个元素执行多个动画,动画队列中存放添加的动画,从头到尾依次执行
+		//.delay()延迟多久后执行动画
+		//$('div').delay(3000).animate({'width':'+=200px'},2000);
+         
+         //stop(clearQueue,gotoEnd)
+         //clearQueue 是否清除队列  true false
+         //gotoEnd 是否立即跳转到当前动画的最终状态
+		$('#start').click(function(e){
+			$('div').animate({'height':'200px'},2000);
+			$('div').animate({'width':'200px'},2000)
+			$('div').animate({'width':'100px'},2000)
+			$('div').animate({'height':'100px'},2000)
+		});
+		$('#stop').click(function(e){
+			$('div').stop(true,false);
+		});
+
+
+
+	</script>
+</body>
+</html>

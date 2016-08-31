@@ -1,0 +1,72 @@
+jQuery 选择器
+
+		// 基本选择器
+		#id                     ->  $('#id')
+		.className
+		element
+		*
+		selector1,selector2,selector3,...selectorN
+
+
+		//后代选择器
+		$('ancestor descendant')
+        $('parent>chilid')
+        $('prev+next')    ->$('prev').next() 
+                            $('el').prev(); $('el').prevAll  $('el').siblings()
+        $('prev~sibling') ->$('prev').nextAll() 
+
+        //过滤选择器
+        $('li:first')  ->$('li').first()
+        $('li:last')   ->$('li').last()
+        $('li:not(selector)')
+        $('li:even')
+        $('li:odd')
+        $('li:eq(index)') ->$('li').eq(index)
+        $('li:gt(index)')
+        $('li:lt(index)')
+        $(":header")   //选取网页中的h1,h2,h3....
+        $('li:animated')//正在执行动画的元素   $('li').is(':animated') 判断一个元素是否正在动画中
+        $('li:focus')   //
+
+
+        //内容过滤的选取器
+        $('li:contains(text)') //选择含有文本内容的  $('li').is(':contains(text)') 是否包含文本内容
+        $('li:empty') 空元素
+        $('li:has(selector)') -> $('li').has('selector'); 选取包含选择器匹配元素的元素
+        $('div:parent')  //匹配含有子元素或文本元素的div节点
+
+        //属性选择器
+        $('li[attribute]')
+        $('li[attribute=value]')
+        $('li[attribute^=value]')
+        $('li[attribute$=value]')
+        $('li[attribute*=value]')
+        $('li[attribute!=value]')
+
+        //子元素过滤选择器
+        $('ul>li:nth-child(index)')
+        $('ul>li:nth-child(even)')
+        $('ul>li:nth-child(odd)')
+        $('ul>li:nth-child(3n+1)') //n 从 0 开始
+
+        //表单选择器
+        $(':input')  //input textarea  select button 等元素
+        $(':text')
+        $(':password')
+        $(':radio')
+        $(':checkbox')
+        $(':submit')
+        $(':reset')
+        $(':button')
+        $(':file')
+        
+
+        //表单对象属性
+        $(':enabled')
+        $(':disabled')
+        $(':checked')
+        $(':selected')
+
+        //可见性
+        $(":visible")
+        $(':hidden')   

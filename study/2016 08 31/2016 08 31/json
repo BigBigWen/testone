@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		//js方式定义对象
+	var people = {name:'xxx',age:20,eat:function(){}};
+	//json格式:json主要是为了描述数据,所以没有函数概念,也没有变量的概念
+	//json中的数据都是key value的结构,注意key一定要用双引号"",value可以是数值
+	//花括号结尾没有分号,因为他不是语句
+	//value取值 可以是字符串,可以是数字,不支持undifine,支持none,也可以是数组,也可以是其他对象
+	// {
+	// 	"name":"zhangsan",
+	// 	"age":34,
+	// 	"friend":['a','s','s'],
+	// 	"book":{"book":"css","name":"test"}
+	// }
+
+
+  /*  //[]代表数组,{}代表对象,他们之间可以相互嵌套
+    [
+       "book1":{},
+       "book2":{},
+       "book3":{}
+    ]
+  */
+
+
+	  //json和js对象之间的转换
+	  var book={
+	  	name:"书名",
+	  	number:100,
+	  	author:["作者1","作者2","作者3"],
+	  	year:2015
+	  };
+	  //json 全局对象来完成json和js对象之间的转换
+	  var  jsonText = JSON.stringify(book);
+	  console.log(jsonText);
+
+	  //把json字符串,转成js对象 book2是新生成的对象和book没啥关系
+	  var book2 = JSON.parse(jsonText);
+	  console.log(book2.name);
+
+	  //转换的时候进行控制
+	  //对象转换为字符串时 参数一:传入的对象   参数二:控制对象   参数三:控制缩进,格式化转换后的字符串 4代表缩进4个空格
+	  var jsonText2 = JSON.stringify(book,function(key,value){
+	  	switch(key){
+	  		case 'name':return '西游记';
+	  		case 'author':return value.join('-');
+	  		default:return value;
+	  	}
+	  },4)
+	  console.log(jsonText2);
+
+	  //把字符串转换成js对象
+	  //也是使用控制函数来控制转换的过程
+	  var book3=JSON.parse(jsonText,function(key,value){
+	  	switch(key){
+	  		case 'year':
+	  		      var date = new Date();
+	  		      return date.getFullYear();
+	  		default:
+	  		      return value;
+	  	}
+	  });
+	  console.log(book3.year);
+
+
+
+	</script>
+</body>
+</html>
