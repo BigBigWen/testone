@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script src="js/jquery-1.11.3.js"></script>
+	<style>
+		*{margin: 0;padding: 0;}
+		.container{width: 100%;height: 100%}
+		.box{width: 100%;height: 70%; position:relative;}
+		img{position: absolute;width: 100%;height: 100%}
+		.bg{display: none;width: 100%;height: 100%}
+		.con{left: -100%;position: absolute;width: 100%;height: 100%}
+		.text{top:-100%;position: absolute;width: 100%;height: 100%}
+		ul{position: absolute;left:1%; }
+		li{
+			list-style: none;
+			margin: 10px;
+			width: 20px;height: 20px;
+			border: 1px solid black;
+			background: #fcc;
+		}
+		.active{background: #faa;}
+	</style>
+</head>
+<body>
+<!-- 布局写的太冗余,一点也不简洁  -->
+	<div class="container">
+		<div class="box">
+			<img class="bg" src="images/bg1.jpg" alt="">
+			<img class="con" src="images/con1.png" alt="">
+			<img class="text" src="images/text1.png" alt="">
+		</div>
+		<div class="box">
+			<img class="bg" src="images/bg2.jpg" alt="">
+			<img class="con" src="images/con2.png" alt="">
+			<img class="text" src="images/text2.png" alt="">
+		</div>
+		<div class="box">
+			<img class="bg" src="images/bg3.jpg" alt="">
+			<img class="con" src="images/con3.png" alt="">
+			<img class="text" src="images/text3.png" alt="">
+		</div>
+		<div class="box">
+			<img class="bg" src="images/bg4.jpg" alt="">
+			<img class="con" src="images/con4.png" alt="">
+			<img class="text" src="images/text4.png" alt="">
+		</div>
+		<div class="box">
+			<img class="bg" src="images/bg5.jpg" alt="">
+			<img class="con" src="images/con5.png" alt="">
+			<img class="text" src="images/text5.png" alt="">
+		</div>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<script>
+		$(function(e){
+           $('div.box').eq(0)
+           .find('.bg').fadeIn(200)
+           .find('.con').delay(200).animate({'left':'100%'},300)
+           .find('.text').delay(500).animate({'top':'100%'});
+		});
+	</script>
+</body>
+</html>

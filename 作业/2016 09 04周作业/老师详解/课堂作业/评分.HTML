@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="styles/reset.css">
+	<style>
+	  .fn-clear:after {
+		    visibility: hidden;
+		    display: block;
+		    font-size: 0;
+		    content: " ";
+		    clear: both;
+		    height: 0
+		}
+		.fn-clear {zoom:1}
+
+		.box{
+			margin: 100px auto;
+			width: 100px;
+			position: relative;
+		}
+		.box ul{
+			list-style: none;
+			
+		}
+		.box li{
+			float: left;
+			width: 16px;
+			height: 16px;
+			cursor: pointer;
+			
+		}
+		.start{
+			position: absolute;left: 0px;top: 0px;
+			width: 80px;height: 16px;
+			z-index: -1;
+			background:  url(images/star-matrix.gif) 0px 0px no-repeat;
+		}
+		.start.hover0{
+			background-position: 0px -96px;
+		}
+	    .start.hover1{
+			background-position: 0px -112px;
+		}
+		.start.hover2{
+			background-position: 0px -128px;
+		}
+		.start.hover3{
+			background-position: 0px -144px;
+		}
+		.start.hover4{
+			background-position: 0px -160px;
+		} 
+		.start.click0{
+			background-position: 0px -96px;
+		}
+		.start.click1{
+			background-position: 0px -112px;
+		}
+		.start.click2{
+			background-position: 0px -128px;
+		}
+		.start.click3{
+			background-position: 0px -144px;
+		}
+		.start.click4{
+			background-position: 0px -160px;
+		} 
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul class="fn-clear">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<div class="start  hover0"></div>
+	</div>
+	<script src="jquery-3.1.0.min.js"></script>
+	<script>
+		$(function(){
+			$(".box li").mouseover(function(e){
+                var index = $(this).index();
+                $('.start').addClass('hover'+index);
+			}).mouseout(function(e){
+				var index= $(this).index();
+				$('.start').removeClass('hover'+index);
+			}).click(function(e){
+				 var index = $(this).index();
+
+                $('.start').attr('class','start').addClass('click'+index);
+			});
+		})
+	</script>
+</body>
+</html>

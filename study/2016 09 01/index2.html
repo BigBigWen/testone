@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		var xhr = null;
+		if(window.XMLHttpRequest){
+			xhr = new XMLHttpRequest();
+		}else{
+			xhr =new ActionXObject('Microsoft.XMLHTTP');
+		}
+		//onload此时的状态已经是请求发送成功,后端已经进行了响应 readyState==4
+		xhr.onload = function(){
+			if( xhr.status==200 ){
+				console.log('responseText: '+xhr.responseText);
+				//返回xml文本格式,现在用的不多
+				console.log('responseXML: '+xhr.responseXML);
+				//如果传输的数据格式要求xml时候,从这个字段取值 没有的时候 为null
+			}
+		};
+		// xhr.onreadystatechange = function(){
+		// 	if( xhr.readyState == 4 ){
+		// 		if( xhr.status == 200 ){
+		// 			console.log(xhr.responseText);
+		// 		}
+		// 	}
+		// }
+		xhr.open('get','http://10.48.0.41:3000/User/getUserInfoByGet?id=1601&name=yinguit',true);
+		xhr.send(null);
+		//get可以走缓存 post不能
+		
+
+	</script>
+</body>
+</html>

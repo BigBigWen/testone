@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script src="../lib/common.js"></script>
+</head>
+<body>
+	<script>
+		//get() 以get方式请求接口
+		//post()  以post方式请求接口
+		//ajax()   请求接口,可以指定请求方式
+		//getScript()  获取js脚本
+
+		//(url,data,callback(),dataType) 接口地址 入参 执行成功后要做的事情  第四个参数可以不写,自动判断转换
+		$.get(
+				'http://10.48.0.41:3000/User/getImgSlide',
+				{id:'1601','name':'yinguit'},
+				//callback(res,status,xhr) 
+				          //res 后端返回数据
+				          //status jquery对状态码解析后的字符串success error等
+				          //xhr 发起网络请求的原生对象
+				function(res,status,xhr){
+					debugger;
+					console.log(res)
+				}
+			);
+		$.post(
+			    'http://10.48.0.41:3000/User/getImgSlide',
+			    {id:'1601','name':'yinguit'},
+			    function(res,status,xhr){
+			    	console.log(res);
+			    }
+			);
+		//$.post() 与 $.get() 两者用法基本一致,两者对原生的get和post进行封装
+
+	</script>
+</body>
+</html>

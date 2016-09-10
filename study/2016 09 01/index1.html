@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		//ajax  核心技术 XMLHttpRequest
+		//var xhr = new XMLHttpRequest();//基本上所有浏览器对象都兼容
+		//var xhr2 = new ActionXObject('Microsoft.XMLHTTP');//兼容IE5/IE6
+
+
+//---------完整对象初始化------------------------
+		var xhr = null;
+		//判断xmlhttpRequest对象是否存在
+		if(window.XMLHttpRequest){
+			xhr = new XMLHttpRequest();
+		}else{
+			xhr = new ActionXObject('Microsoft.XMLHTTP')
+		}
+		//监听网络请求,如果状态发生变化,调用函数
+		//.onreadystatechange 属性 发生变化 
+		//   0  new XMLHttpRequest()
+		//   1  xhr.open();预备状态
+		//   2  xhr.send();发送
+		//   3  网络传输中....
+		//   4  前端与后端的网络请求已结束,可以处理前端的业务逻辑
+		xhr.onreadystatechange = function(){
+			//判断状态值为4的时候,网络传输已经结束
+			if( xhr.readyState == 4 ){
+               //state 网络请求状态码
+               //200-299 网络请求是成功状态
+               //300-399 重定向,地址发生变动
+               //400-499 资源错误 E:404
+               //500-599 服务器出错误,直接找后端处理
+               if( xhr.status == 200){//请求码等于200,表示请求接口成功
+               	console.log(xhr.responseText);//response返回的响应文本
+
+               }
+			}
+		}
+		//(type , url, async) asnyc异步 true
+		xhr.open('POST','http://10.48.0.41:3000/User/getUserInfo',true);
+		//get 于 post 的区别
+		/*
+		    post请求 open('post','完整的接口地址','异步调用(可不写,默认true)');
+		    xhr.open('post','http://10.48.0.41:3000/User/getUserInfo',true);
+		    xhr.send('传递的参数为序列化的数据格式')
+		    xhr.send('id=9527&name=zhang')
+		*/
+		/*
+		    get请求
+            xhr.open('get','http://10.48.0.41:3000/User/getUserInfo?id=9527&name=zhang',true);
+            xhr.send(null);发送的内容为空,null必须填写
+		*/
+		/*
+		    get请求把参数以明文的方式写在url里面,安全性最低
+
+		    get请求支持jsonp的方式解决跨域问题,post不支持
+
+		    get请求把参数拼接在url里面,所以相对来说,传输的数据有限,如果传参量大的话,会失败,需要用post()请求
+
+		    get请求可以走浏览器缓存,post不能 statue304
+		    /
+		    get请求转码
+		    encodeURI("中国") 转码
+		    encodeURI(encodeURI("中国")); 解码
+		    encodeURIComponent("中国")
+		*/
+        
+        //设置网络请求信息,告诉后端,传输的数据格式
+        xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+        //默认json{"id":"9527"}
+		xhr.send("id=0001");
+		//xhr.abort();把当前的网络强求强制取消
+		//传输文本类型
+		//json xml text html script
+		decodeURI(encodedURI)
+	</script>
+</body>
+</html>

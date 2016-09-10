@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script src="../lib/common.js"></script>
+</head>
+<body>
+<!-- 表单提交 action=接口地址   method=调用接口的方式
+     表单提交后会刷新当前页面,前端无法依靠脚本得到后端返回的信息,不建议使用此方法
+-->
+	<form>
+		<input name="id" value="1601">
+		<input name="name" value="yinguit">
+		<!-- button标签没有指定type时,默认submit类型 -->
+		<button id="button" type="button">点击提交</button>
+		
+	</form>
+	<script>
+		$(function(){
+			$('#button').click(function(){
+				$.ajax({
+					url:"http://10.48.0.41:3000/User/getImgSlide",
+					type:"get",
+					data:$('form').serialize(),//序列化
+					success:function(res){
+						
+					},
+				})
+			})
+		});
+
+/*		//深层复制
+		var data2 = data;
+		var data2 = $.extend(true,{},data);
+
+		var a = b = c = {}
+		var a = {},b = {},c = {}
+*/
+	</script>
+</body>
+</html>

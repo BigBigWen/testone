@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{margin: 0;padding: 0;}
+		ul{margin: 50px auto}
+		ul li{list-style: none;width: 150px;height: 30px;position: relative;background:  url(images/bg.gif);padding-left: 6px;padding-right: 6px;}
+		li a{display: inline-block;width: 100px;height: 30px;text-decoration: none;color: #666;}
+		span{position: absolute;top: 8px;right: 10px;background:  url(images/ico.gif) no-repeat;width: 8px;height: 8px;}
+	</style>
+</head>
+<body>
+	<ul>
+		<li><a href="#">首页</a><span></span></li>
+		<li><a href="#">首页</a><span></span></li>
+		<li><a href="#">首页</a><span></span></li>
+		<li><a href="#">首页</a><span></span></li>
+		<li><a href="#">首页</a><span></span></li>
+	</ul>
+	<!-- <script>
+		window.onload = function(){
+			var liList = document.getElementsByTagName('li');
+			for(var i = 0; i < liList.length; i++){
+				liList[i].index=i;
+				liList[i].onmouseover = function(){
+                   //当前over的元素padding加大
+                   for(var j = 0;j < liList.length; j++ ){
+                   	if ( j==this.index ) {
+                   		// liList[j].style.paddingLeft = '30px';
+                   		// liList[j].style.paddingRight = '30px';
+                   		startMove(liList[j],{paddingLeft:'30px',paddingRight:'30px'})
+                   	}else{
+                   		// this.style.paddingLeft = '6px';
+                   		// this.style.paddingRight = '6px'
+                   		startMove(liList[j],{paddingLeft:'6px',paddingRight:'6px'})
+                   	}
+                   }
+				}
+				liList[i].onmouseout = function(){
+					// this.style.paddingLeft = '6px';
+     //               	this.style.paddingRight = '6px';
+                  startMove(liList[j],{paddingLeft:'6px',paddingRight:'6px'})
+                   	}
+				}
+				function startMove(obj,resultObject){
+					clearInterval(obj.timer);
+					//遍历一个对象拿到所有属性
+					for(var name in resultObject){//in 遍历对象,把他的属性依次赋值给name
+						var endValue = resultObject[name];
+						var curValue = getStyleValue(obj,name);
+						var speed = (parseInt(endValue)- parseInt(curValue))/6;
+						speed = speed>0?Math.ceil(speed):Math.floor(speed);
+						obj.style[name] 
+					}
+				}
+				function getStyleValue(obj,styleName){
+					if(obj.currentStyle){
+						return obj.currentStyle[styleName];
+					}else{
+						return getComputedStyle(obj,null)[styleName];
+					}
+				}
+
+			}
+
+	
+	</script> -->
+	<script src="../2016 09 02/js/common.js"></script>
+<script>
+		$(function(){
+			$('li').hover(function(e){
+				$(this).animate({'padding-left':'30px','padding-right':'30px'});
+			},function(e){
+				$(this).animate({'padding-left':'6px','padding-right':'6px'});
+			});
+		});
+</script>
+</body>
+</html>

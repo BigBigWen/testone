@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{ margin:0px;padding: 0px; }
+        .box{ width: 760px;height:300px;margin: 10px auto;  position: relative;overflow: hidden;}
+        .box ul{ position: absolute; width: 100%;height: 100%;top:0px;left:0px;}
+        .image>li{ list-style: none;position: absolute;top:0px;left:0px;width: 100%;height: 100%; }
+        .image>li>img:nth-child(1){ position: absolute;left: -760px;top: 0px; }
+        .image>li>img:nth-child(2){ position: absolute;left: 0px;top:-300px; }
+
+        .box .indicator{ position: absolute;left: 10px;top:30px;width: 40px;height: 100%;}
+        .box .indicator>li{ list-style:none;width: 30px;height: 30px;border: 1px solid black;margin-bottom: 5px;text-align: center;line-height: 30px; }
+        .box .indicator .active{ background-color: red; }
+	</style>
+	<script src="js/jquery-1.11.3.js"></script>
+</head>
+<body>
+	<div class="box">
+		<ul class="image">
+			<li style="background: url(images/bg1.jpg) no-repeat">
+				<img src="images/con1.png" alt="">
+				<img src="images/text1.png" alt="">
+			</li>
+			<li style="background: url(images/bg2.jpg) no-repeat">
+				<img src="images/con2.png" alt="">
+				<img src="images/text2.png" alt="">
+			</li>
+			<li style="background: url(images/bg3.jpg) no-repeat">
+				<img src="images/con3.png" alt="">
+				<img src="images/text3.png" alt="">
+			</li>
+			<li style="background: url(images/bg4.jpg) no-repeat">
+				<img src="images/con4.png" alt="">
+				<img src="images/text4.png" alt="">
+			</li>
+			<li style="background: url(images/bg5.jpg) no-repeat">
+				<img src="images/con5.png" alt="">
+				<img src="images/text5.png" alt="">
+			</li>
+		</ul>
+
+		<ul class="indicator">
+			<li class="active">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</div>
+
+	<script>
+		$(function(){
+			var index = 0;
+			$('.box .image li:eq(0)').show().siblings().hide();
+			var timer = setInterval(function(){
+				var $li = $('.image li').eq(index);
+				
+				$li.fadeIn().siblings().fadeOut();
+                $li.children().first().animate({'left':"0px"},1000,function(){
+                	$li.children().last().animate({'top':'0px'});
+                	$li.siblings().each(function(){
+                	    $(this).children().first().css({"left":"-760px"});
+                	    $(this).children().last().css({"top":"-300px"});
+                	});
+                });
+
+                $('.box .indicator li').eq(index).addClass('active').siblings().removeClass('active'); 
+                index++;
+                if( index == 5){
+                	index = 0;
+                }
+       
+			},2000);
+		});
+	</script>
+</body>
+</html>

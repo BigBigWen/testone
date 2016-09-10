@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script src="../lib/common.js"></script>
+</head>
+<body>
+	<script>
+		//$.ajax()
+/*	     $.ajax({
+			url:'',//必填 接口地址
+			data:{
+				"id":"1601",
+				"name":"yinguit"
+			},//入参  如果后端没有要求给参数,此项可以不填
+			type: "get",//get或post请求
+			async:true,//非必填项,默认true异步
+			timeout:3000,//超时时间,非必填,默认值0不加时间限制
+			success:function(res,status,xhr){
+				//接口返回成功后 执行函数
+			},
+			error:function(xhr,status,error){
+				//接口请求失败后,执行的函数
+			}
+			complete:function(){
+				//网络请求完成complete,参数与上面的success不一样[注意]
+				//在success后执行
+			}
+		});
+*/
+		$.ajax({
+			url:'http://10.48.0.41:3000/User/getImgSlide',
+			data:{
+				"id":"1601",
+				"name":"yinguit"
+			},
+			type:"get",
+			success:function(res){
+				console.log(res);
+			},
+		});
+		$.ajax({
+			url:"http://10.48.0.41:3000/User/getImgSlider",
+			data:{"id":"1601","name":"yinguit"},
+			type:"post",
+			success:function(res,status,xhr){
+				console.log(res);
+			},
+		});
+		//通过getScript函数,动态获取脚本内容 按需加载
+		//$.getScript('url',function(res,status){})
+	</script>
+</body>
+</html>

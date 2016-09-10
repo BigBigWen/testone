@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+    <style type="text/css" media="screen">
+    	*{ margin: 0px;padding:0px; }
+    	.clear:after{ content: "";display: block;overflow: hidden;clear: both;height: 0px; }
+    	li{ list-style: none; }
+        .box{ width: 100%;height: 100%; position: absolute;overflow: hidden;}
+        .showimagelist{ width: 100%;height: 100%;position: absolute;}
+        .showimagelist li{ list-style: none;position: absolute; left:0px;top:0px;width: 100%; height: 500px;}
+        img{ width: 100%; height: 500px;}
+
+        .bottom{ position: absolute; top: 450px;left: 10px; width: 200px;height: 30px;padding-top: 5px;z-index: 100;}
+        
+        .bottom #prev{ float:left;width: 20px;height: 20px;color:white;background-color: black; }
+        .bottom #next{float:left; width: 20px;height: 20px;color:white;background-color: black; }
+        .bottom ul{ float: left; }
+
+        .bottom ul li{ width: 20px;height: 20px; border-radius: 10px;background:blue;float: left; position: relative; margin: 0px 5px;}
+        .bottom li.active{ background-color: red; }
+
+    </style>
+    <script src='../作业1/js/jquery-1.11.3.js'></script>
+</head>
+<body>
+	<div class="box">
+		<ul class="showimagelist">
+			<li><a href=""><img src="images/banner1.jpg" alt=""></a></li>
+			<li><a href=""><img src="images/banner2.jpg" alt=""></a></li>
+			<li><a href=""><img src="images/banner3.jpg" alt=""></a></li>
+			<li><a href=""><img src="images/banner4.jpg" alt=""></a></li>
+		</ul>
+
+       <div class="bottom clear">
+	        <span id="prev"> << </span>
+			<ul class="clear">
+				<li class="active"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<span id="next"> >> </span>
+		</div>
+	</div>
+
+<script>
+  $(function(){
+
+    var curIndex = 0;
+    var timer = null;
+    var timerout = null
+    timer = setInterval(runloop,1000);
+    //showIndex(0);
+    //初始设置zindex显示第一张
+    $('.showimagelist li').eq(0).css({'z-index':'40'});
+    $('.showimagelist li').eq(1).css({'z-index':'30'});
+    $('.showimagelist li').eq(2).css({'z-index':'20'});
+    $('.showimagelist li').eq(3).css({'z-index':'10'});
+    function runloop(){
+      $('.showimagelist li').eq(curIndex).fadeOut('fast',function(){
+        curIndex = ( curIndex+1 )%4;
+
+        //curindex = 40
+        $('.showimagelist li').eq(curIndex).css({'z-index':'40'});
+        $('.showimagelist li').eq( (curIndex+1)%4 ).css({'z-index':'30'});
+        $('.showimagelist li').eq( (curIndex+2)%4 ).css({'z-index':'20'});
+        $('.showimagelist li').eq( (curIndex+3)%4 ).css({'z-index':'10'});
+      });
+    }
+    //点击next
+    $('#next').click(function(){
+
+      if($('.showimagelist').is(':animate')){return}
+        //清除定时器
+      clearInterval(timer);
+      clearTimeout(timerout)
+      $('.showimagelist').animate({'left':'-100%'},function(){
+        showIndex(curIndex+1);
+        $('.showimagelist').css({'left':'0px'});
+        //设置延迟
+        setTimeout(setuptimerout,2000)
+      })
+    });
+    //点击之后2s之间,查看是否有再次点击事件,如果没有启动渐隐动画
+    function setuptimerout(){
+        timerout = setTimeout(  timerout = setTimeout( function(){
+                $('.imagelist li').eq(currentIndex)[0].style.zIndex = 40;
+                $('.imagelist li').eq((currentIndex+1)%4)[0].style.zIndex = 30;
+                $('.imagelist li').eq((currentIndex+2)%4)[0].style.zIndex = 20;
+                $('.imagelist li').eq((currentIndex+3)%4)[0].style.zIndex = 10;
+                $('.indicatorlist ul li').eq(currentIndex).addClass('active').siblings().removeClass('active');
+                timer = setInterval(runloop,2000);
+              } ,2000);)//启动渐隐动画
+    }
+    //点击prev
+    $('#prev').click(function(){
+      //使用动画
+      $('.showimagelist').animate({'left':'100%'},function(){
+        showIndex(curIndex-1);
+        $('.showimagelist').css({'left':'0px'});
+      })
+      
+    });
+    //点击原点
+    $('.bottom ul li').click(function(){
+      showIndex($(this).index());
+      $(this).addClass('active').siblings().removeClass('active')
+    });
+    function showIndex(index){
+      curIndex = index;
+      if (curIndex == -1) {index = curIndex = 3}
+      if (curIndex==4) {index = curIndex=0}
+      if(index -1 < 0){
+        //3
+        $('.showimagelist li').eq(3).css({'left':'-100%'});
+      }else{
+        //index
+        $('.showimagelist li').eq(index-1).css({'left':'-100%'});
+      }
+      //index
+      $('.showimagelist li').eq(index).css({'left':'0px'});
+      //index+1
+      $('.showimagelist li').eq( (index+1)%4 ).css({'left':'100%'});
+      //index+2
+      $('.showimagelist li').eq( (index+2)%4 ).css({'left':'200%'});
+    }
+
+  });
+</script>		
+</body>
+</html>

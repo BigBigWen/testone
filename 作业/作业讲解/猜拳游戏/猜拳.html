@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{margin: 0;padding: 0;}
+		.clear:after{content: '';height: 0px;display: block;clear: both;overflow: hidden;}
+		.box{width: 600px;margin: 20px auto;text-align: center;}
+		.box>.user {float:left;}
+		.useravater{width: 223px;height: 337px;border: 10px solid pink;background:url(img/readyl.png) no-repeat;}
+		.box>.computer{float:right;}
+		.computeravater{background:url(img/readyr.png) no-repeat;width: 223px;height: 337px;border: 10px solid pink;}
+		.box>button{margin-top: 20px;width: 200px;height: 50px;border: 10px solid pink;}
+
+		.guessPnale{position: absolute;left: 0;top: 0;width: 150px;border: 10px solid pink;border: 10px solid pink;}
+		.guessPnale>ul>li{width: 150px;height: 150px;list-style: none;border-bottom:10px solid pink}
+		.guessPnale>ul>li:last-child{border: none;}
+		.guessPnale>ul>li:hover{background-color:#faa;}
+		.guess1{background:  url(img/1.png) center center no-repeat;}
+		.guess2{background:  url(img/2.png) center center no-repeat;}
+		.guess3{background:  url(img/3.png) center center no-repeat;}
+	</style>
+</head>
+<body>
+	<div class="box clear">
+		<div class="user ">
+			<h3>我:王二狗</h3>
+			<div class="useravater">
+				
+			</div>
+		</div>
+		<div class="computer">
+			<h3>电脑:张二麻</h3>
+			<div class="computeravater"></div>
+		</div>
+		<button id="button" type="button">开始游戏</button>
+	</div>
+    <div class="guessPnale">
+    	<ul>
+    		<li class="guess1"></li>
+    		<li class="guess2"></li>
+    		<li class="guess3"></li>
+    	</ul>
+    </div>
+    <script src="../作业1/js/jquery-1.11.3.js"></script>
+    <script>
+        function User(name){
+        	this.name = name;
+        	var titleEle = document.querySelector('.user h3');
+        	titleEle.innerHTML = '我:'+this.name;
+        	this.avater = document.querySelector('.ueser .avater');
+        	this.poin = -1;
+        }
+        user.prototype.guess = function(poin){
+        	this.point = point;
+        }
+        function Computer(name){
+        	this.name = name;
+        	var titleEle = document.querySelector('.computer h3');
+        	titleEle.innerHTML = '他'+this.name;
+        	this.avater = document.querySelector('.computer .avater');
+        	this.poin = -1;
+        }
+        computer.prototype.guess = function(){
+        	this.point = Math.floor(Math.random()*3)
+        }
+
+        function Game(name){
+        	this.user = user;
+        	this.comp = comp;
+        }
+        Game.prototype.start = function(){
+        	this.timer = setInterval(function(){
+        		//生成0-3的随机数
+        		var random1 = Math.floor(Math.random()*3);//user
+        		var random2 = Math.floor(Math.random()*3);//comp
+        		this.user.avaterEle.className = 'useravater guess'+random1;
+        		this.computer.avaterEle.className = 'computeravater guess'+random1;
+        	},100)
+        };
+        Game.prototype.stop = function(){
+        	clearInterval(this.timer)
+        };
+        var buttonEle = document.getElementById('button');
+        buttonEle.onclick = function(){
+        	game.start();
+        }
+        // var listEle = document.querySelectorAll('.guessPnale li');
+        // for( var i = 0;i < listEle.length;i++){
+        // 	listEle[i].index = i;
+        // 	listEle[i].onclick = function(){
+        // 		//点击的index作为我的出拳
+        // 	}
+        // }
+
+    	var user = new User('王二狗');
+    	var computer = new Computer('王二麻');
+    	var game = new Game(user,computer);
+    </script>
+</body>
+</html>

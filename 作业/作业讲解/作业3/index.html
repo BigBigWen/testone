@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		*{margin: 0px;padding: 0px;}
+        .box{ border: 1px solid black;width: 200px;margin: 20px auto; }
+		.title{ line-height: 30px;text-align: center; background-color: green;}
+		li{ list-style: none;text-align: center;line-height: 30px; }
+		.yiji>ul{ display: none; }
+        .yiji>ul>li{ border-bottom: 1px solid black; }
+	</style>
+</head>
+<body>
+	<ul class="box">
+		<li class="yiji">
+		   <h3 class="title">我的好友</h3>
+		   <ul>
+		   	<li>张三</li>
+		   	<li>张三</li>
+		   	<li>张三</li>
+		   	<li>张三</li>
+		   	<li>张三</li>
+		   </ul>
+		</li>
+		<li class="yiji">
+		   <h3 class="title">企业好友</h3>
+           <ul>
+           	<li>李四</li>
+           	<li>李四</li>
+           	<li>李四</li>
+           </ul>
+		</li>
+		<li class="yiji">
+		    <h3 class="title">黑名单</h3>
+			<ul>
+				<li>王五</li>
+				<li>王五</li>
+				<li>王五</li>
+			</ul>
+		</li>
+	</ul>
+
+	<script>
+		window.onload = function(){
+			var list = document.getElementsByClassName('yiji');
+			for( var i = 0; i < list.length;i++ ){
+				list[i].index = i;
+				list[i].onclick = function(e){
+					for( var j = 0; j < list.length;j++ ){
+						if( j == this.index ){
+							list[j].firstElementChild.style.backgroundColor = 'orange';
+							list[j].lastElementChild.style.display = 'block';
+						}else{
+							list[j].firstElementChild.style.backgroundColor = 'green';
+							list[j].lastElementChild.style.display = 'none';
+						}
+					}
+			}
+			}
+		};
+	</script>
+</body>
+</html>

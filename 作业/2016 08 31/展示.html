@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script src="common.js"></script>
+	<style type="text/css" media="screen">
+		*{ margin: 0px;padding: 0px; }
+		.clear:after{ content: "";display: block;clear: both;overflow: height;height: 0px; }
+        .box{ width: 1400px;margin: 0px auto; }
+        li{ float: left; width: 200px;height: 260px;overflow: hidden;list-style: none;text-align: center;}
+        h3{ width: 200px;height: 260px;display: inline-block; color: white;box-sizing: border-box;padding:90px;background-color: rgba(0,0,0,.3);}
+	</style>
+</head>
+<body>
+	<div class="box">
+	    <ul class="clear">
+	    	<li style="background: url(images/1.jpg) no-repeat center">
+	    		<h3>酒店管理</h3> 
+	    	</li>
+	    	<li style="background: url(images/2.jpg) no-repeat center">
+	    		<h3>酒店管理</h3>
+	    	</li>
+	    	<li style="background: url(images/3.jpg) no-repeat center">
+	    		<h3>酒店管理</h3>
+	    	</li>
+	    	<li style="background: url(images/4.jpg) no-repeat center">
+	    		<h3>酒店管理</h3>
+	    	</li>
+	    	<li style="background: url(images/5.jpg) no-repeat center">
+	    		<h3>酒店管理</h3>
+	    	</li>
+	    	<li style="background: url(images/6.jpg) no-repeat center">
+	    		<h3>酒店管理</h3>
+	    	</li>
+	    </ul>		
+	</div>
+	<script>
+	//stop的使用
+		$(function(){
+			$('ul li').hover(function(){
+				$(this).find('h3').hide();
+				//stop(clearQueue,gotoend)
+				$(this).stop(true).animate({'width':'400px'}).siblings().stop(true).animate({'width':'160px'});
+			},function(){
+				$('li').animate({'width':'200px'}).find('h3').fadeIn();
+			});
+		});
+	</script>
+</body>
+</html>

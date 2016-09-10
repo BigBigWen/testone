@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,jQuery焦点图/幻灯片">
+<meta name="Description" content="SuperSlide 致力于解决网站大部分特效展示问题，使网站代码规范整洁，方便维护更新。网站上常用的“焦点图/幻灯片”、“Tab标签切换”、“图片滚动”、“无缝滚动”等等只需要一个SuperSlide即可解决！还可以多个SuperSlide组合创造更多效果">
+<title>SuperSlide - 焦点图/幻灯片</title>
+<script type="text/javascript" src="../jquery1.42.min.js"></script><script type="text/javascript" src="../jquery.SuperSlide.2.1.js"></script>
+</head>
+
+<body>
+
+
+
+		<style type="text/css">
+		/* css 重置 */
+		*{margin:0; padding:0; list-style:none; }
+		body{ background:#fff; font:normal 12px/22px 宋体;  }
+		img{ border:0;  }
+		a{ text-decoration:none; color:#333;  }
+
+		/* banner */
+		.slideBox{ width:100%; height:325px; overflow:hidden; position:relative;  }
+		.slideBox .hd{ height:10px; overflow:hidden; position:absolute; right:48%; bottom:5px; z-index:1; }
+		.slideBox .hd ul{ overflow:hidden; float:left;  }
+		.slideBox .hd ul li{ float:left; margin-right:4px;  width:10px; height:10px;  background:#fff; cursor:pointer; border-radius: 50%; }
+		.slideBox .hd ul li.on{ background:#B0884B; color:#fff; }
+		.slideBox .bd{ position:relative; height:100%; z-index:0;   }
+		.slideBox .bd img{ width:100%; height:325px; display:block;  }
+
+
+		</style>
+
+		<div class="slideBox">
+			<div class="hd slideBox-num clear">
+				<ul><li>1</li><li>2</li><li>3</li><li>4</li></ul>
+			</div>
+			<div class="bd clear">
+				<ul class="clear">
+					<li><a href="#"><img src="pic/1.jpg" /></a></li>
+					<li><a href="#"><img src="pic/2.jpg" /></a></li>
+					<li><a href="#"><img src="pic/3.jpg" /></a></li>
+					<li><a href="#"><img src="pic/4.jpg" /></a></li>
+					<li><a href="#"><img src="pic/5.jpg" /></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+		//banner
+		$(".slideBox").slide({mainCell:".bd ul",effect:"leftLoop",autoPlay:true,delayTime:1000});
+		$(".slideBox-num li").text("");
+		</script>
+</body>
+</html>
+

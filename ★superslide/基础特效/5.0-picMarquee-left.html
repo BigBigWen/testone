@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<title>SuperSlide - 图片无缝滚动特效-左</title>
+<script type="text/javascript" src="../jquery1.42.min.js"></script>
+<script type="text/javascript" src="../jquery.SuperSlide.2.1.js"></script>
+</head>
+
+<body>
+
+
+
+		<style type="text/css">
+		/* css 重置 */
+		*{margin:0; padding:0; list-style:none; }
+		body{ background:#fff; font:normal 12px/22px 宋体;  }
+		img{ border:0;  }
+		a{ text-decoration:none; color:#333;  }
+
+		/* 本例子css */
+		.picMarquee-left{ width:1000px;  overflow:hidden; position:relative;  border:1px solid #ccc;   }
+		.picMarquee-left .bd ul{ overflow:hidden; zoom:1;}
+		.picMarquee-left .bd ul li{ margin:0 8px; float:left; _display:inline; overflow:hidden; text-align:center; width:150px; height:60px;}
+		.picMarquee-left .bd ul li .pic{ text-align:center; }
+		.picMarquee-left .bd ul li .pic img{ width:150px; height:60px; display:block; padding:2px; border:1px solid #ccc; }
+		.picMarquee-left .bd ul li .pic a:hover img{ border-color:#999;  }
+		.picMarquee-left .bd ul li .title{ line-height:24px;   }
+
+		</style>
+
+		<div class="picMarquee-left">
+			<div class="bd">
+				<ul class="picList">
+					<li>
+						<div class="pic"><a href="#" target="_blank"><img src="images/pic1.jpg" /></a></div>
+						<div class="title"><a href="#" target="_blank">效果图1</a></div>
+					</li>
+					<li>
+						<div class="pic"><a href="#" target="_blank"><img src="images/pic2.jpg" /></a></div>
+						<div class="title"><a href="#" target="_blank">效果图2</a></div>
+					</li>
+					<li>
+						<div class="pic"><a href="#" target="_blank"><img src="images/pic3.jpg" /></a></div>
+						<div class="title"><a href="#" target="_blank">效果图3</a></div>
+					</li>
+					<li>
+						<div class="pic"><a href="#" target="_blank"><img src="images/pic4.jpg" /></a></div>
+						<div class="title"><a href="#" target="_blank">效果图4</a></div>
+					</li>
+					<li>
+						<div class="pic"><a href="#" target="_blank"><img src="images/pic5.jpg" /></a></div>
+						<div class="title"><a href="#" target="_blank">效果图5</a></div>
+					</li>
+					<li>
+						<div class="pic"><a href="#" target="_blank"><img src="images/pic6.jpg" /></a></div>
+						<div class="title"><a href="#" target="_blank">效果图6</a></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+		jQuery(".picMarquee-left").slide({mainCell:".bd ul",autoPlay:true,effect:"leftMarquee",vis:6,interTime:50});
+		</script>
+</body>
+</html>
+

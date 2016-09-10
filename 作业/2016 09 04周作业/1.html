@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{position: relative;}
+		*{margin: 0;padding: 0;}
+		#small{width: 400px;height: 400px;margin-left: 100px;margin-top: 50px;border: 1px solid #000;}
+		#big{width: 500px;height: 500px;position: absolute;top: 0px;left: 550px;border: 1px solid #f00;display: none;}
+		#ul-click{margin-left:80px;}
+		#ul-click>li{width: 85px;height: 85px;margin-right: 10px;margin-top: 10px;float: left;list-style: none;}
+		#ul-click>li>img{display: block;width: 100%;}
+	</style>
+</head>
+<body>
+	<div id="small">
+		<img src="images/pro_img/blue_one_small.jpg" alt="">
+	</div>
+	
+	<ul id="ul-click">
+		<li><img src="images/pro_img/blue_one.jpg" alt=""></li>
+		<li><img src="images/pro_img/blue_two.jpg" alt=""></li>
+		<li><img src="images/pro_img/blue_three.jpg" alt=""></li>
+	</ul>
+
+	<div id="big">
+		<img src="" alt="">
+	</div>
+	
+	<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script>
+		$('#ul-click>li').click(function(){
+			var currentUrl = $(this).find('img').attr('src').replace('.jpg','_small.jpg');
+			$('#small>img').attr({src:currentUrl});
+		})
+		$('#small').mouseover(function(){
+			var currentUrl = $(this).find('img').attr('src').replace('_small','_big');
+			$('#big').show().find('img').attr({src:currentUrl});
+		}).mouseout(function(){
+			$('#big').hide();
+		})
+	</script>
+</body>
+</html>

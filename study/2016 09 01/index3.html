@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		//ajax 异步js和xml  核心技术XMLHttpRequest
+		//第一步 : var xhr = null;
+		//第二步:  xhr = new XMLHttpRequest  注意写兼容对象
+		if(window.XMLHttpRequest){
+			xhr = new XMLHttpRequest();
+		}else{
+			xhr = new ActionXObject('Micrsofot.XMLHTTP');
+		}
+		//第三步:  一定要放在open之前 
+		 xhr.onload = function(){
+		 	//判断返回http的状态码
+		 	if( xhr.status==200 ){
+		 		//do something by xhr.responseText
+		 	}
+		}
+		//第四步:
+		xhr.open(请求方式,接口地址,默认true异步) 准备发起请求
+		xhr.setRequestHeader(header, value)
+		xhr.send(不同方式注意参数的不同) 
+	</script>
+</body>
+</html>
